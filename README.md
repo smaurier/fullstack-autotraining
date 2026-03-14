@@ -2,7 +2,7 @@
 
 > Du debutant au developpeur full-stack JS expert, specialite front-end, staffable sur quasi toute mission en ESN.
 
-**14 cours** | **~400 modules** | **~350 labs** | **~600-700h de contenu** | VitePress
+**14 cours** | **~416 modules** | **~374 labs** | **~775h de contenu** | VitePress
 
 ---
 
@@ -54,7 +54,7 @@ Les cours sont numerotes dans l'ordre recommande. Chaque palier s'appuie sur les
 
 | # | Cours | Contenu | Duree estimee |
 |---|-------|---------|---------------|
-| 05 | [NestJS](./05-nestjs) | Node.js → Express → NestJS → TypeORM/Prisma → WebSockets → auth → deploy | ~55h |
+| 05 | [NestJS](./05-nestjs) | Node.js → Express → NestJS → TypeORM/Prisma → MongoDB/Mongoose → GraphQL → WebSockets → auth → deploy | ~65h |
 | 06 | [PostgreSQL](./06-postgresql) | SQL → indexes → EXPLAIN → MVCC → locks → replication → partitioning → backup | ~45h |
 | 07 | [HTTP & Caching](./07-http-caching) | HTTP/1.1 → HTTP/2 → HTTP/3 → Cache-Control → CDN → SSR/ISR → streaming → Service Workers | ~35h |
 
@@ -79,7 +79,7 @@ Les cours sont numerotes dans l'ordre recommande. Chaque palier s'appuie sur les
 |---|-------|---------|---------------|
 | 10 | [Architecture](./10-architecture) | SOLID → DDD → hexagonal → clean arch → CQRS → microservices → micro-frontends → securite → performance → serverless → Conway's law | ~80h |
 | 11 | [Systemes distribues](./11-distributed-systems) | CAP theorem, consensus, CRDT, event sourcing, saga, circuit breaker, back-pressure | ~55h |
-| 12 | [Observabilite & SRE](./12-observability-sre) | Logging (Pino) → metriques (Prometheus) → tracing (OpenTelemetry) → Grafana → SLI/SLO → alerting → incident management → chaos engineering → DORA → K8s → FinOps | ~50h |
+| 12 | [Observabilite & SRE](./12-observability-sre) | Logging (Pino) → metriques (Prometheus) → tracing (OpenTelemetry) → Grafana → SLI/SLO → alerting → incident management → chaos engineering → DORA → K8s → FinOps → Sentry → ELK/Kibana → Honeycomb | ~60h |
 
 **Pourquoi apres les frameworks ?** L'architecture s'apprecie et se comprend reellement quand on a deja souffert sur du vrai code. Les patterns prennent tout leur sens avec l'experience concrete.
 
@@ -99,11 +99,11 @@ Les cours sont numerotes dans l'ordre recommande. Chaque palier s'appuie sur les
 ```
 Palier 1 ─ Fondations         ██████████████░░░░░░░░░░░░░░░░░░░░░░░░░  ~85h
 Palier 2 ─ Framework + Tests  ████████████████████░░░░░░░░░░░░░░░░░░░  ~120h
-Palier 3 ─ Full-stack         ██████████████████████████░░░░░░░░░░░░░  ~135h
+Palier 3 ─ Full-stack         ██████████████████████████░░░░░░░░░░░░░  ~145h
 Palier 4 ─ Frameworks 2 & 3   ████████████████████████████████░░░░░░░  ~120h
-Palier 5 ─ Archi & systemes   ██████████████████████████████████████░  ~185h
+Palier 5 ─ Archi & systemes   ██████████████████████████████████████░  ~195h
 Palier 6 ─ Bonbons            ████████████████████████████████████████  ~115h
-                                                              Total : ~760h
+                                                              Total : ~775h
 ```
 
 **A 2h/jour** : ~15-18 mois | **A 3h/jour** : ~10-12 mois | **Temps plein** : ~4-5 mois
@@ -126,53 +126,25 @@ Palier 6 ─ Bonbons            ████████████████
 
 ---
 
-## Lacunes identifiees et recommandations
+## Lacunes identifiees — Resolues
 
-Les 14 cours couvrent l'essentiel. Voici les quelques points a completer :
+Les lacunes initiales ont ete comblees par des modules complementaires integres aux cours existants :
 
-### 1. MongoDB / NoSQL
+### 1. MongoDB / NoSQL — Integre au cours NestJS
 
-**Constat** : le cours PostgreSQL couvre les BDD relationnelles en profondeur, mais beaucoup de missions ESN utilisent MongoDB (stacks MEAN/MERN).
+**Module 25 — MongoDB & Mongoose** : schemas avec decorateurs @Schema/@Prop, CRUD complet, recherche regex, aggregation pipeline, embedding vs referencing, indexes, migration depuis TypeORM/Prisma. Lab avec mongodb-memory-server (14 tests e2e).
 
-**Recommandation** : pas besoin d'un cours entier. Ajouter un module complementaire au cours NestJS couvrant Mongoose + MongoDB, ou suivre la documentation officielle MongoDB + un projet CRUD. Comptez 2-3 jours.
+### 2. GraphQL — Integre au cours NestJS
 
-**Ou l'integrer** : entre le palier 3 (apres PostgreSQL) et le palier 4.
+**Module 26 — GraphQL avec NestJS** : approche code-first avec Apollo Server, @ObjectType/@Field, @Query/@Mutation/@ResolveField, probleme N+1 et DataLoader, subscriptions, comparaison REST vs GraphQL. Lab complet (10 tests e2e).
 
-### 2. GraphQL
+### 3. Outils d'observabilite commerciaux — Integres au cours Observabilite & SRE
 
-**Constat** : tres demande en ESN sur les missions React/Vue modernes (Apollo Client, Relay). Non couvert comme sujet principal.
+**Phase 6 — Outils Commerciaux** ajoutee au cours d'observabilite :
 
-**Recommandation** : un module GraphQL couvrant :
-- Apollo Client cote front (queries, mutations, cache)
-- NestJS GraphQL cote back (@nestjs/graphql, resolvers, schema-first vs code-first)
-- Comparaison REST vs GraphQL (quand utiliser quoi)
-
-**Ou l'integrer** : entre le palier 3 et le palier 4, ou comme extension du cours NestJS.
-
-### 3. Outils d'observabilite commerciaux
-
-Le cours d'observabilite (12) se concentre sur la stack open-source (Prometheus, Grafana, OpenTelemetry, Loki, Jaeger). Trois outils commerciaux meritent d'etre connus car tres repandus en entreprise :
-
-#### Sentry — Error tracking & performance monitoring
-
-- **Ce que c'est** : plateforme de suivi d'erreurs en temps reel. Capture les exceptions, les stack traces, le contexte utilisateur, et les transactions de performance.
-- **Pourquoi c'est utile** : en ESN, Sentry est souvent deja en place. Savoir lire un rapport Sentry, configurer les alertes et trier les issues est une competence attendue.
-- **Integration** : SDK disponible pour Node.js, React, Vue, Angular, React Native. Se branche en quelques lignes.
-- **Ou dans le cursus** : le cours Testing (04) ou Observabilite (12) pourrait inclure un module "Error tracking avec Sentry".
-
-#### Kibana — Visualisation et exploration de logs (ELK Stack)
-
-- **Ce que c'est** : interface de visualisation pour Elasticsearch. Fait partie de la stack ELK (Elasticsearch, Logstash, Kibana) ou EFK (Elasticsearch, Fluentd, Kibana).
-- **Pourquoi c'est utile** : alternative a Grafana/Loki pour l'exploration de logs. Tres repandu dans les grandes entreprises et banques.
-- **Etat actuel** : mentionne en passant dans le module 02 du cours d'observabilite, mais sans pratique.
-- **Ou dans le cursus** : un lab complementaire dans le cours d'observabilite (12), module 02 ou 03, avec un docker-compose ELK.
-
-#### Honeycomb — Observabilite haute cardinalite
-
-- **Ce que c'est** : plateforme d'observabilite creee par Charity Majors (ex-Facebook, Parse). Approche "observabilite 2.0" : au lieu de pre-agreger des metriques, Honeycomb stocke des evenements bruts haute cardinalite et permet de les explorer avec des requetes ad-hoc. Ideal pour debugger des systemes distribues complexes ou les dashboards classiques ne suffisent pas.
-- **Pourquoi c'est utile** : represente la direction dans laquelle l'observabilite evolue. Le livre "Observability Engineering" (cite dans le cours) est ecrit par ses fondateurs. Comprendre cette philosophie change la facon de penser le monitoring.
-- **Etat actuel** : le cours d'observabilite cite Honeycomb comme reference intellectuelle (livre, talks) et comme option SaaS de tracing (module 21 FinOps), mais sans lab pratique.
-- **Ou dans le cursus** : une section dans le module de tracing distribue (07) du cours d'observabilite, avec comparaison Jaeger (open-source, auto-heberge) vs Honeycomb (SaaS, haute cardinalite).
+- **Module 22 — Sentry** : error tracking, DSN, breadcrumbs, fingerprinting, PII scrubbing/RGPD, integration OpenTelemetry. Lab avec 20 tests.
+- **Module 23 — ELK Stack & Kibana** : Elasticsearch (index/mapping/shards), Logstash (grok patterns), Kibana (Discover/KQL), ILM hot-warm-cold, docker-compose. Lab avec 13 tests.
+- **Module 24 — Honeycomb** : observabilite 2.0, haute cardinalite, BubbleUp correlation, SLOs, Query Builder, comparaison Honeycomb vs Grafana vs Datadog vs ELK. Lab avec 11 tests.
 
 ---
 
@@ -252,17 +224,17 @@ git submodule update --remote --merge
 | 02 — JS Runtime | 16 | 15 | — | ~35h |
 | 03 — Vue.js | 51 | 34 | — | ~75h |
 | 04 — Testing | 19 | 18 | — | ~45h |
-| 05 — NestJS | 25 | 24 | — | ~55h |
+| 05 — NestJS | 27 | 26 | — | ~65h |
 | 06 — PostgreSQL | 19 | 18 | — | ~45h |
 | 07 — HTTP & Caching | 16 | 15 | — | ~35h |
 | 08 — React | 41 | ~24 | — | ~60h |
 | 09 — Angular | 42 | ~27 | — | ~60h |
 | 10 — Architecture | 56 | 71 | — | ~80h |
 | 11 — Systemes distribues | 25 | 24 | — | ~55h |
-| 12 — Observabilite & SRE | 22 | 22 | — | ~50h |
+| 12 — Observabilite & SRE | 25 | 25 | 44 | ~60h |
 | 13 — React Native | 28 | 28 | 691 | ~55h |
 | 14 — WebGPU & 3D | 31 | 30 | — | ~60h |
-| **Total** | **~411** | **~369** | **691+** | **~760h** |
+| **Total** | **~416** | **~374** | **735+** | **~775h** |
 
 ---
 
