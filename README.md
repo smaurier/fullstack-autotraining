@@ -2,7 +2,7 @@
 
 > Du debutant au developpeur full-stack JS expert, specialite front-end, staffable sur quasi toute mission en ESN.
 
-**14 cours** | **~416 modules** | **~374 labs** | **~775h de contenu** | VitePress
+**15 cours** | **~436 modules** | **~394 labs** | **~835h de contenu** | VitePress
 
 ---
 
@@ -16,6 +16,7 @@ Devenir un developpeur full-stack JavaScript accompli avec :
 - Expertise **accessibilite** (preparation certification auditeur)
 - Connaissance **architecture** (DDD, hexagonal, clean arch, microservices)
 - Capacite a **observer, debugger et maintenir** des systemes en production
+- Maitrise de l'**IA** en tant qu'outil et technologie (prompting, agents, RAG, LLMs locaux)
 - Bonus differenciants : **mobile** (React Native) et **3D** (WebGPU)
 
 ---
@@ -92,6 +93,16 @@ Les cours sont numerotes dans l'ordre recommande. Chaque palier s'appuie sur les
 | 13 | [React Native](./13-react-native) | JSX mobile → navigation → state → APIs natives → Reanimated 3 → Turbo Modules → Fabric/JSI → Hermes → EAS deploy | ~55h |
 | 14 | [WebGPU & 3D](./14-webgpu-3d) | GPU pipeline → shaders WGSL → geometrie → eclairage → PBR → post-processing → compute shaders → optimisation | ~60h |
 
+### Palier 7 — Intelligence Artificielle
+
+> Comprendre et maitriser l'IA en tant que developpeur : de l'utilisation quotidienne a la construction de systemes RAG.
+
+| # | Cours | Contenu | Duree estimee |
+|---|-------|---------|---------------|
+| 15 | [IA pour Devs JS](./15-ia) | Prompting → assistants code → API Claude/OpenAI → MCP → agents → maths IA → neural networks → transformers → fine-tuning → Ollama → embeddings → RAG → chatbot → evaluation → securite → production | ~60h |
+
+**Pourquoi en dernier palier ?** L'IA est un multiplicateur de productivite qui s'applique a tout le reste. Avoir d'abord le socle technique solide (paliers 1-5) permet de tirer le maximum de l'IA — tu sais ce que tu demandes et tu peux verifier ce qu'elle produit.
+
 ---
 
 ## Vue d'ensemble
@@ -103,10 +114,11 @@ Palier 3 ─ Full-stack         ████████████████
 Palier 4 ─ Frameworks 2 & 3   ████████████████████████████████░░░░░░░  ~120h
 Palier 5 ─ Archi & systemes   ██████████████████████████████████████░  ~195h
 Palier 6 ─ Bonbons            ████████████████████████████████████████  ~115h
-                                                              Total : ~775h
+Palier 7 ─ IA                 ████████████████████████████████████████  ~60h
+                                                              Total : ~835h
 ```
 
-**A 2h/jour** : ~15-18 mois | **A 3h/jour** : ~10-12 mois | **Temps plein** : ~4-5 mois
+**A 2h/jour** : ~16-20 mois | **A 3h/jour** : ~11-13 mois | **Temps plein** : ~5-6 mois
 
 ---
 
@@ -120,6 +132,7 @@ Palier 6 ─ Bonbons            ████████████████
 | Full-stack Node | 01, 02, 04, 05, 06, 07, 10 | Oui |
 | Mobile React Native | 01, 02, 08, 04, 13 | Oui |
 | Archi/Lead tech | 10, 11, 12, 04 | Oui |
+| IA / Agent dev | 15, 05, 10, 04 | Oui |
 | DevOps/SRE | 12, 11, 05 (deploy) | Oui |
 | Performance | 02, 07, 10, 12 | Oui |
 | Accessibilite | 03, 08, 09, 13 + certification auditeur | Oui |
@@ -234,7 +247,8 @@ git submodule update --remote --merge
 | 12 — Observabilite & SRE | 25 | 25 | 44 | ~60h |
 | 13 — React Native | 28 | 28 | 691 | ~55h |
 | 14 — WebGPU & 3D | 31 | 30 | — | ~60h |
-| **Total** | **~416** | **~374** | **735+** | **~775h** |
+| 15 — IA pour Devs JS | 20 | 20 | ~100 | ~60h |
+| **Total** | **~436** | **~394** | **835+** | **~835h** |
 
 ---
 

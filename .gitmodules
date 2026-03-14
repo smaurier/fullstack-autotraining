@@ -40,3 +40,6 @@
 [submodule "14-webgpu-3d"]
 	path = 14-webgpu-3d
 	url = https://github.com/smaurier/webGPU-3D-course.git
+[submodule "15-ia"]
+	path = 15-ia
+	url = https://github.com/smaurier/IA-autotraining.git
