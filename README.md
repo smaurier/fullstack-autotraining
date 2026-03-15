@@ -2,7 +2,7 @@
 
 > Du dev front React a l'aise vers le developpeur full-stack JS senior, staffable sur quasi toute mission en ESN.
 
-**16 cours** | **7 paliers** | VitePress
+**16 cours** | **~35 katas** | **1 capstone** | **7 paliers** | VitePress
 
 ---
 
@@ -882,8 +882,25 @@ git submodule update --remote --merge
 | 13 — React Native | 28 | 28 | VitePress | ~55h |
 | 14 — WebGPU & 3D | 31 | 30 | VitePress | ~60h |
 | 15 — IA pour Devs JS | 20 | 20 | VitePress | ~60h |
-| 16 — AWS Cloud | 20 | 20 | VitePress — repo local `aws-cloud-course/`, remote vide (a push) | ~60h |
-| **Total** | **~501** | **~414** | **15 submodules + 1 repo local** | **~905h** |
+| 16 — AWS Cloud | 20 | 20 | VitePress — [submodule GitHub](https://github.com/smaurier/aws-autotraining) | ~60h |
+| **Total** | **~501** | **~414** | **16 submodules** | **~905h** |
+
+---
+
+## Ressources transversales
+
+| Ressource | Fichier | Description |
+|-----------|---------|-------------|
+| Code Katas — Frameworks | `katas/phase-a-frameworks.md` | 15 katas React/Vue/Angular (30-60 min) |
+| Code Katas — Backend & Infra | `katas/phase-bde-backend-infra.md` | 20 katas TS/NestJS/PG/Testing/HTTP/Obs/AWS |
+| Projet Capstone | `capstone/projet-capstone-fullstack.md` | "TaskFlow" — projet fullstack cross-cours |
+| Erreurs Classiques | `cheat-sheets/erreurs-classiques.md` | 45 erreurs courantes avec code wrong/right |
+| Guides de Migration | `cheat-sheets/guides-migration.md` | React 18→19, Vue 3.4→3.5, Angular 18→19, Next Pages→App |
+| Diagrammes Architecture | `cheat-sheets/diagrammes-architecture.md` | 12 diagrammes Mermaid (event loop, MVCC, OAuth2...) |
+| Cheat Sheets | `cheat-sheets/phase-*.md` | 3 fiches de synthese par phase |
+| Questions d'Entretien | `interview/questions-entretien.md` | 106 questions Junior→Senior, 10 cours |
+| Glossaire | `glossaire.md` | 90 termes techniques avec renvois modules |
+| Parcours Thematiques | `parcours-thematiques.md` | 5 parcours orientes objectif (1-6 semaines) |
 
 ---
 
