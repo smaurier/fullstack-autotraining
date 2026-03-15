@@ -1,7 +1,7 @@
 # Catalogue des erreurs classiques par cours
 
 > Erreurs que tout dev fullstack rencontre (et qu'on te demandera en entretien).
-> Pour chaque erreur : pourquoi c'est faux, comment corriger, code avant/apres.
+> Pour chaque erreur : pourquoi c'est faux, comment corriger, code avant/après.
 
 ---
 
@@ -9,9 +9,9 @@
 
 ### ❌ `any` partout quand on ne sait pas typer
 
-**Pourquoi c'est un probleme** : `any` desactive le type-checker. Tu perds tout l'interet de TypeScript — les bugs passent a la compilation et explosent en production. C'est viral : un `any` se propage dans toute la chaine d'appels.
+**Pourquoi c'est un problème** : `any` désactivé le type-checker. Tu perds tout l'intérêt de TypeScript — les bugs passent à la compilation et explosent en production. C'est viral : un `any` se propage dans toute la chaine d'appels.
 
-**Le fix** : Utiliser `unknown` + narrowing. `unknown` force a verifier le type avant de l'utiliser.
+**Le fix** : Utiliser `unknown` + narrowing. `unknown` force a vérifier le type avant de l'utiliser.
 
 ```typescript
 // ❌ Mauvais
@@ -33,7 +33,7 @@ function parse(input: unknown) {
 
 ### ❌ Confusion entre `type` et `interface`
 
-**Pourquoi c'est un probleme** : Utiliser l'un a la place de l'autre sans comprendre les differences — `interface` se merge automatiquement (declaration merging), `type` peut representer des unions et intersections. Choisir au hasard cree de l'incoherence et des bugs subtils.
+**Pourquoi c'est un problème** : Utiliser l'un à la place de l'autre sans comprendre les différences — `interface` se merge automatiquement (declaration merging), `type` peut representer des unions et intersections. Choisir au hasard créé de l'incoherence et des bugs subtils.
 
 **Le fix** : `interface` pour les formes d'objets (surtout si extensible ou publique). `type` pour les unions, intersections, mapped types, et les types utilitaires.
 
@@ -66,7 +66,7 @@ interface UserService {
 
 ### ❌ Oublier `readonly` sur les props et le state
 
-**Pourquoi c'est un probleme** : Sans `readonly`, rien n'empeche de muter un objet passe en parametre. Les mutations accidentelles sont la source numero un de bugs dans les apps React/Vue avec du state partage.
+**Pourquoi c'est un problème** : Sans `readonly`, rien n'empeche de muter un objet passe en paramètre. Les mutations accidentelles sont la source numéro un de bugs dans les apps React/Vue avec du state partage.
 
 **Le fix** : Marquer les props, les retours de fonction et le state comme `readonly` ou `Readonly<T>`.
 
@@ -100,7 +100,7 @@ function process(props: Props) {
 
 ### ❌ Enum au lieu d'union literal
 
-**Pourquoi c'est un probleme** : Les `enum` numeriques generent du JavaScript a l'execution (reverse mapping), augmentent le bundle, et ont des pieges : `enum Color { Red }` → `Color[0] === 'Red'` (accessible par index). Les `const enum` sont inlines mais cassent avec `isolatedModules` (Vite, esbuild).
+**Pourquoi c'est un problème** : Les `enum` numériques generent du JavaScript a l'exécution (reverse mapping), augmentent le bundle, et ont des pieges : `enum Color { Red }` → `Color[0] === 'Red'` (accessible par index). Les `const enum` sont inlines mais cassent avec `isolatedModules` (Vite, esbuild).
 
 **Le fix** : Preferer les unions de literals. Utiliser `as const` pour un objet si on a besoin de la valeur et du mapping.
 
@@ -131,7 +131,7 @@ type Status = (typeof STATUS)[keyof typeof STATUS]; // 'idle' | 'loading' | 'err
 
 ### ❌ `as` casting au lieu de type guards
 
-**Pourquoi c'est un probleme** : `as` dit au compilateur "fais-moi confiance" — il ne verifie rien au runtime. Si la donnee ne correspond pas au type, le bug passe silencieusement. C'est un `any` deguise.
+**Pourquoi c'est un problème** : `as` dit au compilateur "fais-moi confiance" — il ne vérifié rien au runtime. Si la donnee ne correspond pas au type, le bug passe silencieusement. C'est un `any` deguise.
 
 **Le fix** : Utiliser des type guards (fonctions predicat `is`) ou du narrowing (`typeof`, `in`, `instanceof`).
 
@@ -164,7 +164,7 @@ console.log(data.email.toLowerCase()); // type-safe
 
 ### ❌ Memory leak sur useEffect (oublier le cleanup)
 
-**Pourquoi c'est un probleme** : Un `useEffect` qui s'abonne a un event, un WebSocket ou un interval sans cleanup continue a tourner apres le demontage du composant. En dev ca genere le warning "Can't perform a React state update on an unmounted component". En prod, c'est une fuite memoire.
+**Pourquoi c'est un problème** : Un `useEffect` qui s'abonne à un event, un WebSocket ou un interval sans cleanup continue a tourner après le demontage du composant. En dev ça généré le warning "Can't perform a React state update on an unmounted component". En prod, c'est une fuite mémoire.
 
 **Le fix** : Toujours retourner une fonction de nettoyage dans `useEffect`.
 
@@ -191,9 +191,9 @@ useEffect(() => {
 
 ### ❌ Closure stale dans useEffect/useCallback
 
-**Pourquoi c'est un probleme** : Le callback capture les valeurs du render ou il a ete cree. Si le dependency array est vide ou incomplet, le callback utilise des valeurs obsoletes — il "voit" l'ancien state/props.
+**Pourquoi c'est un problème** : Le callback capture les valeurs du render ou il a ete créé. Si le dependency array est vide ou incomplet, le callback utilise des valeurs obsoletes — il "voit" l'ancien state/props.
 
-**Le fix** : Lister toutes les dependances dans le tableau, ou utiliser la forme fonctionnelle du setter.
+**Le fix** : Lister toutes les dépendances dans le tableau, ou utiliser la forme fonctionnelle du setter.
 
 ```tsx
 // ❌ Mauvais — count est capture a 0 pour toujours
@@ -219,9 +219,9 @@ useEffect(() => {
 
 ### ❌ Muter le state directement
 
-**Pourquoi c'est un probleme** : React detecte les changements par reference (`===`). Si tu mutes un objet/array en place, la reference ne change pas → React ne re-rend pas → l'UI est desynchronisee du state.
+**Pourquoi c'est un problème** : React détecté les changements par référence (`===`). Si tu mutes un objet/array en place, la référence ne change pas → React ne re-rend pas → l'UI est desynchronisee du state.
 
-**Le fix** : Toujours creer une nouvelle reference (spread, `map`, `filter`, `structuredClone`).
+**Le fix** : Toujours créer une nouvelle référence (spread, `map`, `filter`, `structuredClone`).
 
 ```tsx
 // ❌ Mauvais
@@ -252,7 +252,7 @@ setUser(prev => ({
 
 ### ❌ Re-renders inutiles (memo/useMemo/useCallback mal utilises)
 
-**Pourquoi c'est un probleme** : A chaque render du parent, les enfants re-rendent — meme si leurs props n'ont pas change. Sur de grosses listes ou des composants lourds, ca tue la performance. Mais aussi : utiliser `memo` partout sans raison ajoute de la complexite sans gain mesurable.
+**Pourquoi c'est un problème** : A chaque render du parent, les enfants re-rendent — même si leurs props n'ont pas change. Sur de grosses listes ou des composants lourds, ça tue la performance. Mais aussi : utiliser `memo` partout sans raison ajoute de la complexite sans gain mesurable.
 
 **Le fix** : `React.memo` sur les enfants couteux + stabiliser les props avec `useMemo`/`useCallback`. Mesurer avant d'optimiser (React DevTools Profiler).
 
@@ -283,7 +283,7 @@ function Parent() {
 
 ### ❌ Key prop avec l'index du tableau
 
-**Pourquoi c'est un probleme** : Quand la liste change (ajout, suppression, reordonnement), React utilise la `key` pour identifier quel element correspond a quel noeud DOM. Avec `index`, un element supprime au milieu decale tous les index suivants → React reutilise les mauvais noeuds DOM → state interne melange, inputs qui gardent l'ancienne valeur.
+**Pourquoi c'est un problème** : Quand la liste change (ajout, suppression, reordonnement), React utilise la `key` pour identifier quel élément correspond a quel noeud DOM. Avec `index`, un élément supprime au milieu decale tous les index suivants → React reutilise les mauvais noeuds DOM → state interne melange, inputs qui gardent l'ancienne valeur.
 
 **Le fix** : Utiliser un identifiant stable et unique (id de la base, uuid).
 
@@ -306,9 +306,9 @@ function Parent() {
 
 ### ❌ Fetch dans useEffect sans gestion de race condition
 
-**Pourquoi c'est un probleme** : Si le composant re-rend avant que le fetch finisse (changement de filtre, navigation rapide), l'ancien fetch peut terminer apres le nouveau → le state affiche des donnees obsoletes correspondant a l'ancienne requete.
+**Pourquoi c'est un problème** : Si le composant re-rend avant que le fetch finisse (changement de filtre, navigation rapide), l'ancien fetch peut terminer après le nouveau → le state affiche des donnees obsoletes correspondant a l'ancienne requête.
 
-**Le fix** : Utiliser un flag `ignore` dans le cleanup, ou `AbortController` pour annuler la requete.
+**Le fix** : Utiliser un flag `ignore` dans le cleanup, ou `AbortController` pour annuler la requête.
 
 ```tsx
 // ❌ Mauvais
@@ -339,11 +339,11 @@ useEffect(() => {
 
 ## Vue
 
-### ❌ Reactivite perdue : destructurer un `reactive()`
+### ❌ Réactivité perdue : destructurer un `reactive()`
 
-**Pourquoi c'est un probleme** : `reactive()` retourne un Proxy. Quand tu destructures (`const { count } = state`), tu extrais la valeur primitive — elle n'est plus connectee au Proxy. Les modifications ne sont plus reactives, le template ne se met plus a jour.
+**Pourquoi c'est un problème** : `reactive()` retourne un Proxy. Quand tu destructures (`const { count } = state`), tu extrais la valeur primitive — elle n'est plus connectee au Proxy. Les modifications ne sont plus réactives, le template ne se met plus a jour.
 
-**Le fix** : Utiliser `toRefs()` pour convertir chaque propriete en `Ref`, ou utiliser `ref()` directement.
+**Le fix** : Utiliser `toRefs()` pour convertir chaque propriété en `Ref`, ou utiliser `ref()` directement.
 
 ```vue
 <script setup lang="ts">
@@ -369,9 +369,9 @@ count.value++; // reactif
 
 ### ❌ `watch` vs `watchEffect` : choisir le mauvais
 
-**Pourquoi c'est un probleme** : `watch` est explicite (tu listes les sources). `watchEffect` traque automatiquement les dependances reactives accedees dans le callback. Utiliser `watch` quand `watchEffect` suffit = du boilerplate inutile. Utiliser `watchEffect` quand tu as besoin de l'ancienne valeur ou d'un controle fin = impossible.
+**Pourquoi c'est un problème** : `watch` est explicite (tu listes les sources). `watchEffect` traque automatiquement les dépendances réactives accedees dans le callback. Utiliser `watch` quand `watchEffect` suffit = du boilerplate inutile. Utiliser `watchEffect` quand tu as besoin de l'ancienne valeur ou d'un controle fin = impossible.
 
-**Le fix** : `watchEffect` pour les effets de bord simples (synchroniser). `watch` quand tu as besoin de l'ancienne valeur, du `deep`, `immediate`, ou d'une source specifique.
+**Le fix** : `watchEffect` pour les effets de bord simples (synchroniser). `watch` quand tu as besoin de l'ancienne valeur, du `deep`, `immediate`, ou d'une source spécifique.
 
 ```vue
 <script setup lang="ts">
@@ -397,7 +397,7 @@ watch(searchQuery, (newVal, oldVal) => {
 
 ### ❌ `v-if` vs `v-show` : mauvais choix selon le cas
 
-**Pourquoi c'est un probleme** : `v-if` detruit et recree le DOM a chaque toggle → couteux si le composant est lourd ou si on toggle souvent. `v-show` garde le composant dans le DOM (display: none) → couteux au rendu initial si le composant n'est jamais affiche.
+**Pourquoi c'est un problème** : `v-if` detruit et recree le DOM à chaque toggle → couteux si le composant est lourd ou si on toggle souvent. `v-show` garde le composant dans le DOM (display: none) → couteux au rendu initial si le composant n'est jamais affiche.
 
 **Le fix** : `v-show` pour un toggle frequent (onglets, tooltips). `v-if` pour du contenu rarement affiche ou conditionnel au chargement.
 
@@ -416,7 +416,7 @@ watch(searchQuery, (newVal, oldVal) => {
 
 ### ❌ Modifier une prop directement
 
-**Pourquoi c'est un probleme** : En Vue, les props sont en one-way data flow. Muter une prop directement casse le flux de donnees, genere un warning en dev, et cree des bugs de synchronisation entre parent et enfant — le parent ne sait pas que la valeur a change.
+**Pourquoi c'est un problème** : En Vue, les props sont en one-way data flow. Muter une prop directement casse le flux de donnees, généré un warning en dev, et créé des bugs de synchronisation entre parent et enfant — le parent ne sait pas que la valeur a change.
 
 **Le fix** : Emettre un event pour que le parent modifie la valeur, ou utiliser `defineModel()` (Vue 3.4+).
 
@@ -449,9 +449,9 @@ const model = defineModel<string>();
 
 ### ❌ Oublier le cleanup dans `onUnmounted`
 
-**Pourquoi c'est un probleme** : Meme probleme qu'en React — les listeners, intervals, et subscriptions continuent apres la destruction du composant → fuite memoire, erreurs "setting reactive property on unmounted instance".
+**Pourquoi c'est un problème** : Même problème qu'en React — les listeners, intervals, et subscriptions continuent après la destruction du composant → fuite mémoire, erreurs "setting réactive property on unmounted instance".
 
-**Le fix** : Toujours nettoyer dans `onUnmounted` (ou utiliser `onScopeDispose` dans les composables).
+**Le fix** : Toujours nettoyer dans `onUnmounted` (où utiliser `onScopeDispose` dans les composables).
 
 ```vue
 <script setup lang="ts">
@@ -485,7 +485,7 @@ onUnmounted(() => {
 
 ### ❌ `subscribe()` sans `unsubscribe` → memory leak
 
-**Pourquoi c'est un probleme** : Chaque `subscribe()` cree un abonnement. Si le composant est detruit sans desabonnement, l'Observable continue d'emettre → fuite memoire, callbacks executees sur un composant detruit, requetes HTTP fantomes.
+**Pourquoi c'est un problème** : Chaque `subscribe()` créé un abonnement. Si le composant est detruit sans desabonnement, l'Observable continue d'emettre → fuite mémoire, callbacks executees sur un composant detruit, requêtes HTTP fantomes.
 
 **Le fix** : `takeUntilDestroyed()` (Angular 16+), ou le pipe `async` dans le template (zero subscribe manuel).
 
@@ -529,9 +529,9 @@ export class UserComponent {
 
 ### ❌ Change detection : zone.js re-rend tout
 
-**Pourquoi c'est un probleme** : Par defaut, Angular utilise `ChangeDetectionStrategy.Default` — a chaque event (click, timer, HTTP), zone.js declenche la detection de changements sur TOUT l'arbre de composants. Sur une grosse app, c'est catastrophique pour les performances.
+**Pourquoi c'est un problème** : Par defaut, Angular utilise `ChangeDetectionStrategy.Default` — à chaque event (click, timer, HTTP), zone.js declenche la detection de changements sur TOUT l'arbre de composants. Sur une grosse app, c'est catastrophique pour les performances.
 
-**Le fix** : `ChangeDetectionStrategy.OnPush` sur tous les composants. Le composant ne re-rend que quand ses `@Input` changent par reference ou quand un Observable emet via `async` pipe.
+**Le fix** : `ChangeDetectionStrategy.OnPush` sur tous les composants. Le composant ne re-rend que quand ses `@Input` changent par référence ou quand un Observable emet via `async` pipe.
 
 ```typescript
 // ❌ Mauvais — default strategy, re-check a chaque event global
@@ -558,7 +558,7 @@ export class UserListComponent {
 
 ### ❌ Dependance circulaire dans l'injection
 
-**Pourquoi c'est un probleme** : ServiceA injecte ServiceB qui injecte ServiceA → erreur a l'execution `Circular dependency detected`. Angular ne peut pas resoudre l'arbre de dependances.
+**Pourquoi c'est un problème** : ServiceA injecte ServiceB qui injecte ServiceA → erreur a l'exécution `Circular dependency detected`. Angular ne peut pas résoudre l'arbre de dépendances.
 
 **Le fix** : Extraire la logique partagee dans un troisieme service, ou utiliser `forwardRef` + injection lazy.
 
@@ -595,7 +595,7 @@ export class UserService {
 
 ### ❌ Template-driven forms sur un formulaire complexe
 
-**Pourquoi c'est un probleme** : Les template-driven forms (`ngModel`) fonctionnent pour des formulaires simples. Mais pour des validations dynamiques, des champs conditionnels, ou du testing unitaire, c'est un cauchemar — la logique est dispersee dans le template, difficile a tester et a typer.
+**Pourquoi c'est un problème** : Les template-driven forms (`ngModel`) fonctionnent pour des formulaires simples. Mais pour des validations dynamiques, des champs conditionnels, ou du testing unitaire, c'est un cauchemar — la logique est dispersee dans le template, difficile à tester et a typer.
 
 **Le fix** : Reactive Forms (`FormGroup`, `FormControl`) pour tout formulaire non trivial. Typees depuis Angular 14 avec `FormControl<string>`.
 
@@ -639,9 +639,9 @@ export class UserFormComponent {
 
 ### ❌ NgModule hell (ignorer les standalone components)
 
-**Pourquoi c'est un probleme** : Avant Angular 14, chaque composant devait etre declare dans un `NgModule`. Ca cree des fichiers boilerplate, des erreurs "Component X is not part of any NgModule", et une complexite structurelle inutile. Depuis Angular 14+, les standalone components rendent les NgModules optionnels.
+**Pourquoi c'est un problème** : Avant Angular 14, chaque composant devait etre declare dans un `NgModule`. Ça créé des fichiers boilerplate, des erreurs "Component X is not part of any NgModule", et une complexite structurelle inutile. Depuis Angular 14+, les standalone components rendent les NgModules optionnels.
 
-**Le fix** : `standalone: true` sur tous les nouveaux composants. Importer directement les dependances dans le composant.
+**Le fix** : `standalone: true` sur tous les nouveaux composants. Importer directement les dépendances dans le composant.
 
 ```typescript
 // ❌ Mauvais — NgModule classique
@@ -670,7 +670,7 @@ export class UserCardComponent {
 
 ### ❌ Dependance circulaire entre modules
 
-**Pourquoi c'est un probleme** : ModuleA importe ModuleB qui importe ModuleA → NestJS ne peut pas resoudre l'arbre d'injection et throw une erreur cryptique au demarrage.
+**Pourquoi c'est un problème** : ModuleA importe ModuleB qui importe ModuleA → NestJS ne peut pas résoudre l'arbre d'injection et throw une erreur cryptique au démarrage.
 
 **Le fix** : `forwardRef()` des deux cotes (module + provider). Ou mieux : restructurer pour casser la circularite.
 
@@ -708,7 +708,7 @@ export class SharedModule {}
 
 ### ❌ N+1 queries avec TypeORM
 
-**Pourquoi c'est un probleme** : Par defaut, les relations TypeORM sont en lazy loading. Charger une liste de 100 users avec leurs posts = 1 query users + 100 queries posts. La page met 3 secondes a charger, la DB souffre.
+**Pourquoi c'est un problème** : Par defaut, les relations TypeORM sont en lazy loading. Charger une liste de 100 users avec leurs posts = 1 query users + 100 queries posts. La page met 3 secondes a charger, la DB souffre.
 
 **Le fix** : Utiliser `relations` dans `find()` (eager join) ou `QueryBuilder` avec `leftJoinAndSelect`.
 
@@ -736,7 +736,7 @@ const users = await this.userRepo
 
 ### ❌ Pas de validation sur les DTOs
 
-**Pourquoi c'est un probleme** : Sans `class-validator` + `ValidationPipe`, n'importe quelle donnee passe. Un body `{ "email": 42, "role": "admin" }` est accepte → crash dans le service, ou pire, injection de donnees non prevues.
+**Pourquoi c'est un problème** : Sans `class-validator` + `ValidationPipe`, n'importe quelle donnee passe. Un body `{ "email": 42, "role": "admin" }` est accepte → crash dans le service, ou pire, injection de donnees non prevues.
 
 **Le fix** : Decorateurs `class-validator` sur les DTOs + `ValidationPipe` global.
 
@@ -782,7 +782,7 @@ create(@Body() dto: CreateUserDto) { // valide automatiquement
 
 ### ❌ Confusion global vs module-scoped providers
 
-**Pourquoi c'est un probleme** : Un provider `{ providedIn: 'root' }` (ou via `app.module`) est un singleton global. Mais un provider dans un module specifique est scope a ce module — si un autre module l'injecte sans importer le bon module, il obtient une instance differente ou une erreur.
+**Pourquoi c'est un problème** : Un provider `{ providedIn: 'root' }` (où via `app.module`) est un singleton global. Mais un provider dans un module spécifique est scope a ce module — si un autre module l'injecte sans importer le bon module, il obtient une instance différente ou une erreur.
 
 **Le fix** : Etre explicite sur le scope. Utiliser `@Global()` seulement pour les services vraiment transverses (config, logger). Exporter explicitement les providers partages.
 
@@ -815,9 +815,9 @@ export class ConfigModule {}
 
 ### ❌ `throw new Error()` au lieu de `HttpException`
 
-**Pourquoi c'est un probleme** : Un `throw new Error('Not found')` dans un service NestJS retourne un 500 Internal Server Error au client. Le message d'erreur original est perdu (ou expose du stack trace en dev). Le client ne peut pas distinguer une 404 d'une 500.
+**Pourquoi c'est un problème** : Un `throw new Error('Not found')` dans un service NestJS retourne un 500 Internal Server Error au client. Le message d'erreur original est perdu (où expose du stack trace en dev). Le client ne peut pas distinguer une 404 d'une 500.
 
-**Le fix** : Utiliser les classes `HttpException` specifiques (`NotFoundException`, `BadRequestException`, etc.) ou un `ExceptionFilter` custom.
+**Le fix** : Utiliser les classes `HttpException` spécifiques (`NotFoundException`, `BadRequestException`, etc.) ou un `ExceptionFilter` custom.
 
 ```typescript
 // ❌ Mauvais
@@ -854,9 +854,9 @@ export class UserService {
 
 ### ❌ `SELECT *` en production
 
-**Pourquoi c'est un probleme** : `SELECT *` ramene toutes les colonnes, y compris les BLOB, les colonnes ajoutees plus tard, les donnees sensibles. Ca casse les covering indexes, augmente le transfert reseau, et rend le code fragile face aux migrations de schema.
+**Pourquoi c'est un problème** : `SELECT *` ramene toutes les colonnes, y compris les BLOB, les colonnes ajoutees plus tard, les donnees sensibles. Ça casse les covering indexes, augmente le transfert réseau, et rend le code fragile face aux migrations de schema.
 
-**Le fix** : Toujours lister explicitement les colonnes necessaires.
+**Le fix** : Toujours lister explicitement les colonnes nécessaires.
 
 ```sql
 -- ❌ Mauvais
@@ -874,7 +874,7 @@ WHERE active = true;
 
 ### ❌ Index sur des colonnes a faible cardinalite
 
-**Pourquoi c'est un probleme** : Un index sur une colonne `boolean` (true/false) ou `status` (3 valeurs) est quasi-inutile. Le planner prefere un seq scan car l'index filtre trop peu. L'index occupe de l'espace disque et ralentit les INSERT/UPDATE pour rien.
+**Pourquoi c'est un problème** : Un index sur une colonne `boolean` (true/false) ou `status` (3 valeurs) est quasi-inutile. Le planner préféré un seq scan car l'index filtre trop peu. L'index occupe de l'espace disque et ralentit les INSERT/UPDATE pour rien.
 
 **Le fix** : Indexer les colonnes a haute cardinalite (email, uuid). Pour les booleens, utiliser un index partiel.
 
@@ -895,7 +895,7 @@ CREATE INDEX idx_users_email ON users(email);
 
 ### ❌ N+1 queries depuis l'ORM
 
-**Pourquoi c'est un probleme** : Charger des entites en boucle plutot qu'en un seul JOIN ou `IN`. L'ORM masque les queries SQL — 100 entities = 101 queries. Le temps de reponse de l'API explose.
+**Pourquoi c'est un problème** : Charger des entites en boucle plutot qu'en un seul JOIN ou `IN`. L'ORM masque les queries SQL — 100 entities = 101 queries. Le temps de réponse de l'API explose.
 
 **Le fix** : Eager loading, `IN` queries, ou DataLoader pattern pour GraphQL.
 
@@ -924,9 +924,9 @@ orders.forEach(o => o.customer = customerMap.get(o.customerId)!);
 
 ### ❌ Transaction isolation trop basse
 
-**Pourquoi c'est un probleme** : `READ COMMITTED` (defaut PostgreSQL) autorise les phantom reads — entre deux SELECT dans la meme transaction, de nouvelles lignes peuvent apparaitre. Pour un calcul financier ou un rapport, les chiffres deviennent incoherents.
+**Pourquoi c'est un problème** : `READ COMMITTED` (defaut PostgreSQL) autorise les phantom reads — entre deux SELECT dans la même transaction, de nouvelles lignes peuvent apparaître. Pour un calcul financier ou un rapport, les chiffres deviennent incoherents.
 
-**Le fix** : `REPEATABLE READ` pour les rapports, `SERIALIZABLE` pour les operations critiques. Gerer les erreurs de serialisation (retry).
+**Le fix** : `REPEATABLE READ` pour les rapports, `SERIALIZABLE` pour les operations critiques. Gérer les erreurs de serialisation (retry).
 
 ```sql
 -- ❌ Mauvais — read committed par defaut
@@ -949,7 +949,7 @@ COMMIT;
 
 ### ❌ `LIKE '%pattern'` : index impossible
 
-**Pourquoi c'est un probleme** : Un B-tree index ne peut pas aider quand le wildcard est au debut — il faudrait scanner tout l'index. Sur une table de 10M de lignes, c'est un seq scan.
+**Pourquoi c'est un problème** : Un B-tree index ne peut pas aider quand le wildcard est au debut — il faudrait scanner tout l'index. Sur une table de 10M de lignes, c'est un seq scan.
 
 **Le fix** : Utiliser un index trigram (`pg_trgm`) pour les recherches partielles, ou full-text search pour le texte naturel.
 
@@ -977,7 +977,7 @@ SELECT * FROM products WHERE search_vector @@ to_tsquery('french', 'telephone');
 
 ### ❌ Pas de `LIMIT` sur des tables volumineuses
 
-**Pourquoi c'est un probleme** : Sans LIMIT, PostgreSQL retourne TOUTES les lignes. Sur une table de 5M de lignes, ca sature la memoire du serveur, le reseau, et le client. Meme un `SELECT id FROM logs` peut generer des Go de donnees.
+**Pourquoi c'est un problème** : Sans LIMIT, PostgreSQL retourne TOUTES les lignes. Sur une table de 5M de lignes, ça sature la mémoire du serveur, le réseau, et le client. Même un `SELECT id FROM logs` peut générer des Go de donnees.
 
 **Le fix** : Toujours mettre un `LIMIT` + pagination (offset ou cursor-based).
 
@@ -1005,9 +1005,9 @@ LIMIT 50;
 
 ### ❌ Tout mocker → tests qui ne testent rien
 
-**Pourquoi c'est un probleme** : Si tu mockes le service, le repo, la DB, le HTTP client, et le logger — ton test verifie que tes mocks fonctionnent, pas ton code. Le test passe meme si l'implementation est cassee. Zero confiance dans le resultat.
+**Pourquoi c'est un problème** : Si tu mockes le service, le repo, la DB, le HTTP client, et le logger — ton test vérifié que tes mocks fonctionnent, pas ton code. Le test passe même si l'implementation est cassee. Zero confiance dans le résultat.
 
-**Le fix** : Mocker seulement les frontieres (I/O externe : API tierces, filesystem, horloge). Garder la logique metier reelle.
+**Le fix** : Mocker seulement les frontieres (I/O externe : API tierces, filesystem, horloge). Garder la logique metier réelle.
 
 ```typescript
 // ❌ Mauvais — tout est mocke
@@ -1034,9 +1034,9 @@ it('should calculate total with tax', () => {
 
 ### ❌ Tester l'implementation, pas le comportement
 
-**Pourquoi c'est un probleme** : Si le test verifie que `service.calculateTotal` appelle `repo.findById` puis `utils.multiply`, le moindre refactoring casse le test — meme si le resultat est identique. Les tests deviennent un frein au changement au lieu d'un filet de securite.
+**Pourquoi c'est un problème** : Si le test vérifié que `service.calculateTotal` appelle `repo.findById` puis `utils.multiply`, le moindre refactoring casse le test — même si le résultat est identique. Les tests deviennent un frein au changement au lieu d'un filet de sécurité.
 
-**Le fix** : Tester le resultat observable (output, effet de bord, etat final). Pas les etapes internes.
+**Le fix** : Tester le résultat observable (output, effet de bord, état final). Pas les étapes internes.
 
 ```typescript
 // ❌ Mauvais — teste l'implementation
@@ -1063,11 +1063,11 @@ it('should return formatted user', async () => {
 
 ---
 
-### ❌ Tests dependants de l'ordre d'execution
+### ❌ Tests dependants de l'ordre d'exécution
 
-**Pourquoi c'est un probleme** : Test A cree un user en DB. Test B suppose que ce user existe. Si on lance B seul ou si l'ordre change (parallelisation), B echoue. L'investigation est un cauchemar — "ca marchait hier".
+**Pourquoi c'est un problème** : Test A créé un user en DB. Test B suppose que ce user existe. Si on lance B seul ou si l'ordre change (parallelisation), B echoue. L'investigation est un cauchemar — "ça marchait hier".
 
-**Le fix** : Chaque test doit setup et cleanup son propre etat. Utiliser `beforeEach`/`afterEach`.
+**Le fix** : Chaque test doit setup et cleanup son propre état. Utiliser `beforeEach`/`afterEach`.
 
 ```typescript
 // ❌ Mauvais — depend de l'ordre
@@ -1105,7 +1105,7 @@ describe('UserService', () => {
 
 ### ❌ Tester uniquement le happy path
 
-**Pourquoi c'est un probleme** : Si tu testes seulement "quand tout va bien", tu ne sais pas comment ton code reagit aux erreurs — et c'est en production que tu l'apprendras. Les bugs les plus critiques sont dans les cas d'erreur.
+**Pourquoi c'est un problème** : Si tu testes seulement "quand tout va bien", tu ne sais pas comment ton code reagit aux erreurs — et c'est en production que tu l'apprendras. Les bugs les plus critiques sont dans les cas d'erreur.
 
 **Le fix** : Pour chaque test positif, ajouter au moins un test d'erreur et un test edge case.
 
@@ -1141,7 +1141,7 @@ describe('divide', () => {
 
 ### ❌ `afterEach` oublie → test pollution
 
-**Pourquoi c'est un probleme** : Un test modifie un etat global (variable, DOM, mock, timer) et ne le restaure pas. Le test suivant herite de cet etat modifie → resultats non deterministes. "Ca passe en local, ca echoue en CI."
+**Pourquoi c'est un problème** : Un test modifie un état global (variable, DOM, mock, timer) et ne le restaure pas. Le test suivant hérité de cet état modifie → résultats non déterministes. "Ça passe en local, ça echoue en CI."
 
 **Le fix** : Toujours nettoyer dans `afterEach`. Utiliser `vi.restoreAllMocks()` pour les mocks Vitest.
 
@@ -1176,7 +1176,7 @@ describe('DateService', () => {
 
 ### ❌ `Cache-Control` mal configure
 
-**Pourquoi c'est un probleme** : `max-age=31536000` sans `immutable` → le navigateur fait des requetes conditionnelles (If-None-Match) a chaque navigation. `no-cache` ne veut PAS dire "ne pas cacher" (c'est `no-store`) — ca veut dire "revalider a chaque requete". La confusion entre les deux est un classique d'entretien.
+**Pourquoi c'est un problème** : `max-age=31536000` sans `immutable` → le navigateur fait des requêtes conditionnelles (If-None-Match) à chaque navigation. `no-cache` ne veut PAS dire "ne pas cacher" (c'est `no-store`) — ça veut dire "revalider à chaque requête". La confusion entre les deux est un classique d'entretien.
 
 **Le fix** : Comprendre la semantique exacte de chaque directive.
 
@@ -1203,9 +1203,9 @@ Cache-Control: public, max-age=31536000, immutable
 
 ### ❌ ETag sans `If-None-Match` cote client
 
-**Pourquoi c'est un probleme** : Le serveur envoie un `ETag` mais le client ne renvoie jamais `If-None-Match` → pas de revalidation conditionnelle, le serveur retourne toujours 200 avec le body complet. L'ETag ne sert a rien.
+**Pourquoi c'est un problème** : Le serveur envoie un `ETag` mais le client ne renvoie jamais `If-None-Match` → pas de revalidation conditionnelle, le serveur retourne toujours 200 avec le body complet. L'ETag ne sert a rien.
 
-**Le fix** : S'assurer que le client (ou le framework) envoie automatiquement les headers conditionnels. `fetch()` natif le fait si le cache du navigateur est actif. Avec un CDN ou un proxy, verifier que les headers sont transmis.
+**Le fix** : S'assurer que le client (où le framework) envoie automatiquement les headers conditionnels. `fetch()` natif le fait si le cache du navigateur est actif. Avec un CDN ou un proxy, vérifier que les headers sont transmis.
 
 ```typescript
 // ❌ Mauvais — fetch sans revalidation
@@ -1232,9 +1232,9 @@ if (data.status === 304) {
 
 ### ❌ CORS : wildcard `*` avec credentials
 
-**Pourquoi c'est un probleme** : La spec CORS interdit `Access-Control-Allow-Origin: *` avec `Access-Control-Allow-Credentials: true`. Le navigateur BLOQUE la requete. C'est un piege classique — ca marche en dev (meme origine), ca casse en prod (cross-origin).
+**Pourquoi c'est un problème** : La spec CORS interdit `Access-Control-Allow-Origin: *` avec `Access-Control-Allow-Credentials: true`. Le navigateur BLOQUE la requête. C'est un piege classique — ça marche en dev (même origine), ça casse en prod (cross-origin).
 
-**Le fix** : Repondre avec l'origine specifique du client, pas `*`.
+**Le fix** : Repondre avec l'origine spécifique du client, pas `*`.
 
 ```
 # ❌ Mauvais — interdit par la spec
@@ -1261,7 +1261,7 @@ app.use(cors({
 
 ### ❌ `Content-Type` manquant sur les POST
 
-**Pourquoi c'est un probleme** : Sans `Content-Type`, le serveur ne sait pas comment parser le body. Express avec `express.json()` ignore le body si le Content-Type n'est pas `application/json` → `req.body` est `undefined`. Le dev passe 2h a debugger "pourquoi mon body est vide".
+**Pourquoi c'est un problème** : Sans `Content-Type`, le serveur ne sait pas comment parser le body. Express avec `express.json()` ignore le body si le Content-Type n'est pas `application/json` → `req.body` est `undefined`. Le dev passe 2h a debugger "pourquoi mon body est vide".
 
 **Le fix** : Toujours envoyer le header `Content-Type` adapte au format du body.
 
@@ -1285,7 +1285,7 @@ await fetch('/api/users', {
 
 ### ❌ Rate limiting cote client uniquement
 
-**Pourquoi c'est un probleme** : Un throttle dans le code frontend n'empeche personne d'appeler directement l'API (curl, Postman, bot). Le rate limiting client est une optimisation UX, PAS une protection. Sans rate limiting serveur, ton API est ouverte au DDoS et au brute force.
+**Pourquoi c'est un problème** : Un throttle dans le code frontend n'empeche personne d'appeler directement l'API (curl, Postman, bot). Le rate limiting client est une optimisation UX, PAS une protection. Sans rate limiting serveur, ton API est ouverte au DDoS et au brute force.
 
 **Le fix** : Rate limiting cote serveur (middleware). Le client peut en plus debounce/throttle pour l'UX.
 
@@ -1316,9 +1316,9 @@ const throttledSubmit = throttle(submit, 1000);
 
 ### ❌ `console.log` en production
 
-**Pourquoi c'est un probleme** : `console.log` n'a pas de niveaux (debug/info/warn/error), pas de format structure (JSON), pas de timestamp fiable, pas de metadata (requestId, userId). C'est impossible a filtrer dans un outil de centralisation (Loki, ELK, Datadog). En prod, tes logs sont un mur de texte inutile.
+**Pourquoi c'est un problème** : `console.log` n'a pas de niveaux (debug/info/warn/error), pas de format structure (JSON), pas de timestamp fiable, pas de metadata (requestId, userId). C'est impossible a filtrer dans un outil de centralisation (Loki, ELK, Datadog). En prod, tes logs sont un mur de texte inutile.
 
-**Le fix** : Utiliser un logger structure avec niveaux (pino, winston) qui ecrit en JSON.
+**Le fix** : Utiliser un logger structure avec niveaux (pino, winston) qui écrit en JSON.
 
 ```typescript
 // ❌ Mauvais
@@ -1340,7 +1340,7 @@ logger.error({ err: error, userId: user.id }, 'Failed to create user');
 
 ### ❌ Utiliser un gauge pour un compteur
 
-**Pourquoi c'est un probleme** : Un `gauge` peut monter ET descendre (temperature, queue length). Un `counter` ne fait que monter (requetes totales, erreurs). Si tu utilises un gauge pour compter des requetes, un restart remet a zero → les dashboards montrent des "dips" qui n'existent pas. Et `rate()` sur un gauge donne des resultats aberrants dans Prometheus.
+**Pourquoi c'est un problème** : Un `gauge` peut monter ET descendre (temperature, queue length). Un `counter` ne fait que monter (requêtes totales, erreurs). Si tu utilises un gauge pour compter des requêtes, un restart remet a zero → les dashboards montrent des "dips" qui n'existent pas. Et `rate()` sur un gauge donne des résultats aberrants dans Prometheus.
 
 **Le fix** : `counter` pour tout ce qui s'incremente. `gauge` pour les valeurs instantanees. `histogram` pour les distributions (latence).
 
@@ -1370,11 +1370,11 @@ const requestDuration = new promClient.Histogram({
 
 ---
 
-### ❌ Pas de correlation ID → requetes non tracables
+### ❌ Pas de correlation ID → requêtes non tracables
 
-**Pourquoi c'est un probleme** : Une requete utilisateur traverse API Gateway → Auth Service → User Service → DB. Sans identifiant commun, quand ca casse, impossible de relier les logs des differents services. Tu passes 3h a chercher quelle requete a cause l'erreur.
+**Pourquoi c'est un problème** : Une requête utilisateur traverse API Gateway → Auth Service → User Service → DB. Sans identifiant commun, quand ça casse, impossible de relier les logs des différents services. Tu passes 3h a chercher quelle requête a cause l'erreur.
 
-**Le fix** : Generer un `X-Request-Id` (ou `traceparent` pour OpenTelemetry) au point d'entree et le propager dans tous les services.
+**Le fix** : Générer un `X-Request-Id` (où `traceparent` pour OpenTelemetry) au point d'entree et le propager dans tous les services.
 
 ```typescript
 // ❌ Mauvais — aucune correlation
@@ -1410,9 +1410,9 @@ function getRequestId(): string {
 
 ### ❌ Alerter sur les symptomes plutot que les causes
 
-**Pourquoi c'est un probleme** : Alerter sur "CPU > 90%" declenche des faux positifs (un batch legitime utilise le CPU). Et ca ne dit pas QUEL service souffre ni POURQUOI. L'equipe recoit 50 alertes par jour → alert fatigue → plus personne ne reagit.
+**Pourquoi c'est un problème** : Alerter sur "CPU > 90%" declenche des faux positifs (un batch legitime utilise le CPU). Et ça ne dit pas QUEL service souffre ni POURQUOI. L'équipe recoit 50 alertes par jour → alert fatigue → plus personne ne reagit.
 
-**Le fix** : Alerter sur les symptomes orientes utilisateur (SLI/SLO) : taux d'erreur, latence p99, disponibilite. Utiliser les metriques infra comme contexte de diagnostic, pas comme source d'alertes.
+**Le fix** : Alerter sur les symptomes orientes utilisateur (SLI/SLO) : taux d'erreur, latence p99, disponibilité. Utiliser les metriques infra comme contexte de diagnostic, pas comme source d'alertes.
 
 ```yaml
 # ❌ Mauvais — alerte infra brute
@@ -1441,9 +1441,9 @@ function getRequestId(): string {
 
 ### ❌ Dashboards avec trop de panels
 
-**Pourquoi c'est un probleme** : Un dashboard Grafana avec 40 panels : personne ne le lit. Chaque panel charge des queries Prometheus → le dashboard met 30 secondes a s'afficher. L'equipe finit par l'ignorer. Un dashboard que personne ne regarde ne sert a rien.
+**Pourquoi c'est un problème** : Un dashboard Grafana avec 40 panels : personne ne le lit. Chaque panel charge des queries Prometheus → le dashboard met 30 secondes a s'afficher. L'équipe finit par l'ignorer. Un dashboard que personne ne regarde ne sert a rien.
 
-**Le fix** : Hierarchie USE/RED. Un dashboard principal avec 4-6 panels critiques (RED : Rate, Errors, Duration). Des dashboards de drill-down par service. Chaque panel doit repondre a une question precise.
+**Le fix** : Hiérarchie USE/RED. Un dashboard principal avec 4-6 panels critiques (RED : Rate, Errors, Duration). Des dashboards de drill-down par service. Chaque panel doit repondre à une question précisé.
 
 ```
 # ❌ Mauvais — dashboard "fourre-tout"
@@ -1474,4 +1474,4 @@ Dashboard "DB Performance" (level 3 - specialise) :
 
 ---
 
-> **Conseil d'entretien** : Pour chaque technologie, connais au moins 3 erreurs classiques par coeur avec un exemple concret. Les recruteurs testent ta capacite a anticiper les problemes, pas juste a coder le happy path.
+> **Conseil d'entretien** : Pour chaque technologie, connais au moins 3 erreurs classiques par coeur avec un exemple concret. Les recruteurs testent ta capacité a anticiper les problèmes, pas juste a coder le happy path.

@@ -1,6 +1,6 @@
 # Parcours thematiques
 
-> Cinq parcours cibles a travers le curriculum, chacun avec un objectif, une duree estimee et une liste ordonnee de modules a suivre.
+> Cinq parcours cibles a travers le curriculum, chacun avec un objectif, une duree estimee et une liste ordonnee de modules à suivre.
 
 ---
 
@@ -63,7 +63,7 @@
 | 8 | `09-angular/cours/12-recettes-esn/02-entretien-technique.md` | 1h |
 | - | Kata : `katas/phase-a-frameworks.md` (section Angular, katas 1-4) | 2h |
 
-### Jour 5 : Testing + HTTP + revision croisee
+### Jour 5 : Testing + HTTP + révision croisee
 
 | Ordre | Module | Temps |
 |-------|--------|-------|
@@ -72,14 +72,14 @@
 | 3 | `04-testing/modules/07-tests-de-composants.md` | 1h |
 | 4 | `07-http-caching/modules/04-cache-control.md` | 45min |
 | 5 | `07-http-caching/modules/05-etag-validation-conditionnelle.md` | 45min |
-| - | Cheat sheet : `cheat-sheets/phase-a-frameworks.md` (revision comparative) | 1h |
+| - | Cheat sheet : `cheat-sheets/phase-a-frameworks.md` (révision comparative) | 1h |
 | - | Cheat sheet : `cheat-sheets/phase-de-infra.md` (section HTTP) | 30min |
 
 ---
 
 ## Parcours 2 — "Mission React + NestJS" (2 semaines)
 
-**Objectif** : Etre operationnel sur une stack React + NestJS + PostgreSQL. A la fin, demarrer les sprints 1-2 du projet capstone TaskFlow.
+**Objectif** : Etre operationnel sur une stack React + NestJS + PostgreSQL. A la fin, démarrer les sprints 1-2 du projet capstone TaskFlow.
 
 ### Semaine 1 : Frontend React + bases backend
 
@@ -153,7 +153,7 @@
 | 5 | `04-testing/modules/10-playwright-fondamentaux.md` | 1h |
 | - | Cheat sheet : `cheat-sheets/phase-bc-backend.md` (section Testing) | 30min |
 
-**Jour 5 : Demarrer le Capstone TaskFlow (Sprint 1)**
+**Jour 5 : Démarrer le Capstone TaskFlow (Sprint 1)**
 
 | Ordre | Activite | Temps |
 |-------|----------|-------|
@@ -165,7 +165,7 @@
 
 ## Parcours 3 — "Backend Node.js Senior" (2 semaines)
 
-**Objectif** : Maitriser le backend JS en profondeur, de l'event loop aux systemes distribues.
+**Objectif** : Maîtriser le backend JS en profondeur, de l'event loop aux systèmes distribues.
 
 ### Semaine 1 : JS Runtime + NestJS
 
@@ -222,7 +222,7 @@
 | 4 | `07-http-caching/modules/19-redis-cache-applicatif.md` (dans le cours HTTP caching externe) | 2h |
 | - | Kata : `katas/phase-bde-backend-infra.md` (section Redis) | 1h |
 
-**Jours 3-4 : Systemes distribues**
+**Jours 3-4 : Systèmes distribues**
 
 | Ordre | Module | Temps |
 |-------|--------|-------|
@@ -236,7 +236,7 @@
 | 8 | `11-distributed-systems/modules/14-outbox-pattern-reliable-messaging.md` | 1h |
 | 9 | `11-distributed-systems/modules/16-circuit-breaker.md` | 1h |
 
-**Jour 5 : Testing backend + revision**
+**Jour 5 : Testing backend + révision**
 
 | Ordre | Module | Temps |
 |-------|--------|-------|
@@ -245,16 +245,16 @@
 | 3 | `04-testing/modules/09-tests-integration.md` | 1h |
 | 4 | `04-testing/modules/16-contract-testing.md` | 1h |
 | 5 | `05-nestjs/modules/18-nestjs-testing.md` | 1h |
-| - | Cheat sheet : `cheat-sheets/phase-bc-backend.md` (revision complete) | 30min |
+| - | Cheat sheet : `cheat-sheets/phase-bc-backend.md` (révision complete) | 30min |
 | - | Kata : `katas/phase-bde-backend-infra.md` (section NestJS) | 1h |
 
 ---
 
-## Parcours 4 — "DevOps & Observabilite" (1 semaine)
+## Parcours 4 — "DevOps & Observabilité" (1 semaine)
 
-**Objectif** : Savoir deployer, monitorer et diagnostiquer des applications en production.
+**Objectif** : Savoir déployer, monitorer et diagnostiquer des applications en production.
 
-### Jour 1 : HTTP, TLS et securite
+### Jour 1 : HTTP, TLS et sécurité
 
 | Ordre | Module | Temps |
 |-------|--------|-------|
@@ -274,7 +274,7 @@
 | 4 | `07-http-caching/modules/14-performance-web.md` | 1h |
 | - | Cheat sheet : `cheat-sheets/phase-de-infra.md` (section HTTP Caching) | 30min |
 
-### Jour 3 : Observabilite fondamentale
+### Jour 3 : Observabilité fondamentale
 
 | Ordre | Module | Temps |
 |-------|--------|-------|
@@ -297,7 +297,7 @@
 | 6 | aws-cloud-course : `modules/06-lambda-serverless.md` | 1h |
 | 7 | aws-cloud-course : `modules/17-cicd-devops.md` | 1h |
 
-### Jour 5 : Deploiement complet + katas infra
+### Jour 5 : Déploiement complet + katas infra
 
 | Ordre | Module | Temps |
 |-------|--------|-------|
@@ -305,8 +305,8 @@
 | 2 | aws-cloud-course : `modules/14-cloudwatch-xray-observabilite.md` | 1h |
 | 3 | aws-cloud-course : `modules/19-deployer-nuxt-next-aws.md` | 1h30 |
 | 4 | `12-observability-sre/modules/18-production-readiness.md` | 1h |
-| - | Cheat sheet : `cheat-sheets/phase-de-infra.md` (revision complete) | 30min |
-| - | Kata : `katas/phase-bde-backend-infra.md` (sections Docker, CI/CD, Observabilite) | 2h |
+| - | Cheat sheet : `cheat-sheets/phase-de-infra.md` (révision complete) | 30min |
+| - | Kata : `katas/phase-bde-backend-infra.md` (sections Docker, CI/CD, Observabilité) | 2h |
 
 ---
 
@@ -348,7 +348,7 @@
 | 9 | `02-js-runtime/modules/10-jit-compilation-optimization.md` | 1h |
 | 10 | `02-js-runtime/modules/12-performance-patterns.md` | 1h |
 
-**Jour 5 : Revision + katas TypeScript**
+**Jour 5 : Révision + katas TypeScript**
 
 | Ordre | Activite | Temps |
 |-------|----------|-------|
@@ -356,7 +356,7 @@
 | 2 | Exercices types avances (conditional, mapped, generics) | 3h |
 | 3 | `01-typescript/modules/18-patterns-de-conception.md` | 1h30 |
 
-### Semaine 2 : React (ou Vue au choix)
+### Semaine 2 : React (où Vue au choix)
 
 **Jours 1-3 : React fondamentaux a avance**
 
@@ -429,13 +429,13 @@
 | 11 | `05-nestjs/modules/14-typeorm-entites-relations.md` | 1h |
 | 12 | `05-nestjs/modules/15-typeorm-requetes-migrations.md` | 1h |
 
-**Jour 5 : Integration + tests backend**
+**Jour 5 : Intégration + tests backend**
 
 | Ordre | Module | Temps |
 |-------|--------|-------|
 | 1 | `05-nestjs/modules/18-nestjs-testing.md` | 1h |
 | 2 | `04-testing/modules/09-tests-integration.md` | 1h |
-| - | Cheat sheet : `cheat-sheets/phase-bc-backend.md` (revision complete) | 1h |
+| - | Cheat sheet : `cheat-sheets/phase-bc-backend.md` (révision complete) | 1h |
 | - | Kata : `katas/phase-bde-backend-infra.md` (sections NestJS + PostgreSQL) | 2h |
 
 ### Semaine 4 : HTTP/Caching + Redis + Distribue
@@ -453,7 +453,7 @@
 | 7 | `07-http-caching/modules/09-cache-multi-couches.md` | 1h |
 | 8 | `07-http-caching/modules/19-redis-cache-applicatif.md` (cours externe) | 2h |
 
-**Jours 3-4 : Systemes distribues**
+**Jours 3-4 : Systèmes distribues**
 
 | Ordre | Module | Temps |
 |-------|--------|-------|
@@ -467,17 +467,17 @@
 | 8 | `11-distributed-systems/modules/14-outbox-pattern-reliable-messaging.md` | 1h |
 | 9 | `11-distributed-systems/modules/16-circuit-breaker.md` | 1h |
 
-**Jour 5 : Revision mi-parcours**
+**Jour 5 : Révision mi-parcours**
 
 | Ordre | Activite | Temps |
 |-------|----------|-------|
 | 1 | Cheat sheet : `cheat-sheets/phase-de-infra.md` (section HTTP + Redis) | 30min |
 | 2 | Kata : `katas/phase-bde-backend-infra.md` (section Distributed) | 2h |
-| 3 | Revision du glossaire : `glossaire.md` | 1h |
+| 3 | Révision du glossaire : `glossaire.md` | 1h |
 
-### Semaine 5 : Observabilite + AWS
+### Semaine 5 : Observabilité + AWS
 
-**Jours 1-2 : Observabilite & SRE**
+**Jours 1-2 : Observabilité & SRE**
 
 | Ordre | Module | Temps |
 |-------|--------|-------|
@@ -505,12 +505,12 @@
 | 8 | aws-cloud-course : `modules/17-cicd-devops.md` | 1h |
 | 9 | aws-cloud-course : `modules/19-deployer-nuxt-next-aws.md` | 1h30 |
 
-**Jour 5 : Revision infra**
+**Jour 5 : Révision infra**
 
 | Ordre | Activite | Temps |
 |-------|----------|-------|
-| 1 | Cheat sheet : `cheat-sheets/phase-de-infra.md` (revision complete) | 1h |
-| 2 | Kata : `katas/phase-bde-backend-infra.md` (sections CI/CD + AWS + Observabilite) | 3h |
+| 1 | Cheat sheet : `cheat-sheets/phase-de-infra.md` (révision complete) | 1h |
+| 2 | Kata : `katas/phase-bde-backend-infra.md` (sections CI/CD + AWS + Observabilité) | 3h |
 | 3 | `12-observability-sre/modules/18-production-readiness.md` | 1h |
 
 ### Semaine 6 : Capstone TaskFlow
@@ -521,11 +521,11 @@
 |-------|----------|-------|
 | 1 | Lecture du cahier des charges : `capstone/projet-capstone-fullstack.md` | 1h |
 | 2 | Sprint 1 : Setup monorepo, Docker Compose, CRUD boards + colonnes (NestJS + PostgreSQL + React) | 1 jour |
-| 3 | Sprint 2 : Cartes, drag & drop, WebSocket temps reel | 1 jour |
+| 3 | Sprint 2 : Cartes, drag & drop, WebSocket temps réel | 1 jour |
 | 4 | Sprint 3 : Auth JWT, cache Redis, endpoint GraphQL dashboard | 1 jour |
 | 5 | Sprint 4 : Tests (Vitest + Playwright), instrumentation OTel + Prometheus + Grafana | 1 jour |
-| 6 | Sprint 5 : CI/CD GitHub Actions, deploiement Docker Compose, review finale | 1 jour |
+| 6 | Sprint 5 : CI/CD GitHub Actions, déploiement Docker Compose, review finale | 1 jour |
 
 ---
 
-> **Note** : Les references aux modules `aws-cloud-course` pointent vers le repository `aws-cloud-course/modules/` (projet separe). Les references au module `19-redis-cache-applicatif` et aux modules `17-tls-https` / `18-devsecops-owasp` pointent vers le cours HTTP caching externe (`http-caching-course/modules/`).
+> **Note** : Les références aux modules `aws-cloud-course` pointent vers le repository `aws-cloud-course/modules/` (projet separe). Les références au module `19-redis-cache-applicatif` et aux modules `17-tls-https` / `18-devsecops-owasp` pointent vers le cours HTTP caching externe (`http-caching-course/modules/`).

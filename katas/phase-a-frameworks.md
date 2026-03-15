@@ -17,7 +17,7 @@
 **Contraintes** :
 
 - Cleanup du timeout sur unmount et changement de value
-- Typage generique strict
+- Typage générique strict
 - Pas de `any`
 
 **Test attendu** :
@@ -35,7 +35,7 @@ const debounced = useDebounce(text, 300);
 **Difficulte** : ⭐⭐⭐
 **Temps cible** : 45 min
 
-**Enonce** : Cree un hook `useInfiniteScroll(callback: () => void)` qui declenche le callback quand un element sentinel entre dans le viewport.
+**Enonce** : Cree un hook `useInfiniteScroll(callback: () => void)` qui declenche le callback quand un élément sentinel entre dans le viewport.
 
 **Contraintes** :
 
@@ -52,7 +52,7 @@ const debounced = useDebounce(text, 300);
 **Difficulte** : ⭐⭐⭐
 **Temps cible** : 45 min
 
-**Enonce** : Implemente une todo list avec ajout optimiste. L'item apparait immediatement puis se confirme (ou rollback) apres l'appel API.
+**Enonce** : Implemente une todo list avec ajout optimiste. L'item apparait immediatement puis se confirme (où rollback) après l'appel API.
 
 **Contraintes** :
 
@@ -60,7 +60,7 @@ const debounced = useDebounce(text, 300);
 - Simule un delai API de 1s avec `setTimeout`
 - Simule un echec 1 fois sur 5 (random) avec rollback visuel
 
-**Test attendu** : l'item apparait instantanement en grise, passe en normal apres confirmation, ou disparait avec un toast si echec.
+**Test attendu** : l'item apparait instantanement en grise, passe en normal après confirmation, ou disparait avec un toast si echec.
 
 ---
 
@@ -69,16 +69,16 @@ const debounced = useDebounce(text, 300);
 **Difficulte** : ⭐⭐⭐
 **Temps cible** : 60 min
 
-**Enonce** : Un formulaire en 3 etapes (Identite -> Adresse -> Confirmation) avec navigation avant/arriere et validation par etape.
+**Enonce** : Un formulaire en 3 étapes (Identite -> Adresse -> Confirmation) avec navigation avant/arriere et validation par étape.
 
 **Contraintes** :
 
 - Pas de librairie de forms (ni React Hook Form ni Formik)
 - Validation custom avec messages d'erreur
-- Donnees persistees entre etapes (useReducer ou context)
+- Donnees persistees entre étapes (useReducer ou context)
 - Bouton "Retour" conserve les donnees
 
-**Test attendu** : chaque etape valide avant de passer a la suivante, retour garde les champs remplis.
+**Test attendu** : chaque étape valide avant de passer à la suivante, retour garde les champs remplis.
 
 ---
 
@@ -87,7 +87,7 @@ const debounced = useDebounce(text, 300);
 **Difficulte** : ⭐⭐⭐
 **Temps cible** : 45 min
 
-**Enonce** : Implemente un composant `<Tabs>` / `<TabPanel>` entierement accessible.
+**Enonce** : Implemente un composant `<Tabs>` / `<TabPanel>` entièrement accessible.
 
 **Contraintes** :
 
@@ -114,7 +114,7 @@ const debounced = useDebounce(text, 300);
 - `watch` pour persister les changements
 - Parsing JSON avec gestion d'erreur (valeur corrompue)
 - Synchronisation cross-onglets via `storage` event
-- TypeScript generique
+- TypeScript générique
 
 **Test attendu** : la valeur survit au refresh, et changer dans un onglet met a jour l'autre.
 
@@ -125,13 +125,13 @@ const debounced = useDebounce(text, 300);
 **Difficulte** : ⭐⭐
 **Temps cible** : 30 min
 
-**Enonce** : Implemente une directive `v-click-outside` qui execute un callback quand on clique en dehors de l'element.
+**Enonce** : Implemente une directive `v-click-outside` qui exécuté un callback quand on clique en dehors de l'élément.
 
 **Contraintes** :
 
 - Directive custom Vue 3 (mounted, unmounted)
 - Cleanup du event listener
-- Ne se declenche pas si on clique sur l'element ou ses enfants
+- Ne se declenche pas si on clique sur l'élément ou ses enfants
 
 **Test attendu** : un dropdown se ferme quand on clique en dehors.
 
@@ -142,11 +142,11 @@ const debounced = useDebounce(text, 300);
 **Difficulte** : ⭐⭐⭐
 **Temps cible** : 45 min
 
-**Enonce** : Implemente `useMachine(config)` — une state machine simple avec etats, transitions et guards.
+**Enonce** : Implemente `useMachine(config)` — une state machine simple avec états, transitions et guards.
 
 **Contraintes** :
 
-- API : `{ state, send, can }` ou `state` est reactif
+- API : `{ state, send, can }` ou `state` est réactif
 - Guards : fonctions qui autorisent ou non une transition
 - Pas de librairie (pas XState)
 
@@ -177,9 +177,9 @@ const { state, send, can } = useMachine({
 
 - `<TransitionGroup>` avec classes CSS (pas de librairie d'animation)
 - FLIP animation (move transition)
-- Input de filtre en temps reel
+- Input de filtre en temps réel
 
-**Test attendu** : les items glissent, apparaissent et disparaissent de maniere fluide quand on tape dans le filtre.
+**Test attendu** : les items glissent, apparaissent et disparaissent de manière fluide quand on tape dans le filtre.
 
 ---
 
@@ -188,13 +188,13 @@ const { state, send, can } = useMachine({
 **Difficulte** : ⭐⭐
 **Temps cible** : 30 min
 
-**Enonce** : Cree un systeme de theme (light/dark) avec `provide`/`inject` et InjectionKey typee.
+**Enonce** : Cree un système de theme (light/dark) avec `provide`/`inject` et InjectionKey typee.
 
 **Contraintes** :
 
 - `InjectionKey<ThemeContext>` pour le type safety
 - Composable `useTheme()` qui throw si utilise hors du provider
-- Toggle reactif
+- Toggle réactif
 - CSS variables mises a jour dynamiquement
 
 **Test attendu** : le toggle switch entre light et dark, les CSS variables changent instantanement, `useTheme()` hors provider lance une erreur explicite.
@@ -225,13 +225,13 @@ const { state, send, can } = useMachine({
 **Difficulte** : ⭐⭐⭐
 **Temps cible** : 45 min
 
-**Enonce** : Cree une directive `*appPermission="'admin'"` qui affiche ou masque un element selon les permissions de l'utilisateur.
+**Enonce** : Cree une directive `*appPermission="'admin'"` qui affiche ou masque un élément selon les permissions de l'utilisateur.
 
 **Contraintes** :
 
 - Directive structurelle (TemplateRef + ViewContainerRef)
 - Inject un `PermissionService`
-- Reactive : si les permissions changent, l'element apparait/disparait
+- Reactive : si les permissions changent, l'élément apparait/disparait
 
 **Test attendu** : `<button *appPermission="'admin'">Supprimer</button>` visible uniquement pour les admins.
 
@@ -242,16 +242,16 @@ const { state, send, can } = useMachine({
 **Difficulte** : ⭐⭐⭐
 **Temps cible** : 45 min
 
-**Enonce** : Cree un pipe `memoAsync` qui met en cache les resultats d'un Observable.
+**Enonce** : Cree un pipe `memoAsync` qui met en cache les résultats d'un Observable.
 
 **Contraintes** :
 
-- Pipe impure (pour detecter les changements d'input)
-- Cache par cle (l'argument du pipe)
+- Pipe impure (pour détecter les changements d'input)
+- Cache par clé (l'argument du pipe)
 - Expiration configurable
 - Unsubscribe propre (OnDestroy)
 
-**Test attendu** : `{{ userId | memoAsync:'user' }}` affiche le resultat et ne relance pas la requete si l'input n'a pas change.
+**Test attendu** : `{{ userId | memoAsync:'user' }}` affiche le résultat et ne relance pas la requête si l'input n'a pas change.
 
 ---
 
@@ -260,21 +260,21 @@ const { state, send, can } = useMachine({
 **Difficulte** : ⭐⭐⭐
 **Temps cible** : 45 min
 
-**Enonce** : Cree un dashboard avec 4 widgets lourds charges via `@defer` avec differents triggers.
+**Enonce** : Cree un dashboard avec 4 widgets lourds charges via `@defer` avec différents triggers.
 
 **Contraintes** :
 
 - Widget 1 : `@defer (on viewport)` — charge quand visible
 - Widget 2 : `@defer (on interaction)` — charge au hover
 - Widget 3 : `@defer (when isAdmin)` — conditionnel
-- Widget 4 : `@defer (on timer(2s))` — charge apres 2s
+- Widget 4 : `@defer (on timer(2s))` — charge après 2s
 - `@placeholder`, `@loading`, `@error` pour chaque
 
 **Test attendu** : les widgets apparaissent progressivement avec des skeletons de chargement.
 
 ---
 
-### Kata 15 — Formulaire reactif avec validation cross-field
+### Kata 15 — Formulaire réactif avec validation cross-field
 
 **Difficulte** : ⭐⭐⭐
 **Temps cible** : 45 min
@@ -285,7 +285,7 @@ const { state, send, can } = useMachine({
 
 - `FormGroup` avec `FormControl` types (Typed Forms Angular 14+)
 - Validateur cross-field : "confirm password" doit matcher "password"
-- Validateur async : verifier si l'email existe (simule)
+- Validateur async : vérifier si l'email existe (simule)
 - Messages d'erreur accessibles (`aria-describedby`, `aria-invalid`)
 
-**Test attendu** : erreurs affichees en temps reel, formulaire non-soumettable tant qu'invalide.
+**Test attendu** : erreurs affichees en temps réel, formulaire non-soumettable tant qu'invalide.

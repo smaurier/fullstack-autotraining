@@ -1,6 +1,6 @@
 # Cheat Sheet — Phase A : Les 3 frameworks
 
-> Revision rapide React 19 / Vue 3.5 / Angular 19 — concept par concept.
+> Révision rapide React 19 / Vue 3.5 / Angular 19 — concept par concept.
 
 ---
 
@@ -8,17 +8,17 @@
 
 | Concept | React | Vue | Angular |
 |---------|-------|-----|---------|
-| Etat local | `useState(init)` | `ref(init)` / `reactive({})` | `signal(init)` |
-| Etat derive | `useMemo(() => ..., [deps])` | `computed(() => ...)` | `computed(() => ...)` |
+| État local | `useState(init)` | `ref(init)` / `reactive({})` | `signal(init)` |
+| État dérivé | `useMemo(() => ..., [deps])` | `computed(() => ...)` | `computed(() => ...)` |
 | Effet de bord | `useEffect(() => ..., [deps])` | `watchEffect(() => ...)` / `watch(source, cb)` | `effect(() => ...)` |
 | Props | `function Comp({ name }: Props)` | `defineProps<Props>()` | `input<string>()` / `@Input()` |
-| Evenements | `onClick={handler}` | `@click="handler"` / `defineEmits` | `(click)="handler()"` / `output()` |
+| Événements | `onClick={handler}` | `@click="handler"` / `defineEmits` | `(click)="handler()"` / `output()` |
 | Two-way binding | pas natif (state + onChange) | `v-model` / `defineModel()` | `model()` / `[(ngModel)]` |
 | Ref DOM | `useRef<HTMLElement>(null)` | `ref<HTMLElement>()` + `ref="el"` | `viewChild<ElementRef>('el')` |
 
 ### Pieges courants
 - **React** : deps manquantes dans `useEffect` → stale closure. Utiliser `eslint-plugin-react-hooks`.
-- **Vue** : `reactive()` perd la reactivite si destructure → utiliser `toRefs()` ou `ref()`.
+- **Vue** : `reactive()` perd la réactivité si destructure → utiliser `toRefs()` ou `ref()`.
 - **Angular** : `signal.set()` remplace, `signal.update(fn)` mute. Ne pas oublier `untracked()` pour lire sans tracker.
 
 ---
@@ -34,7 +34,7 @@
 | Persistence | middleware Zustand | plugin Pinia | meta-reducer |
 
 ### Quand utiliser quoi
-- **Local** : etat du composant uniquement → state/ref/signal.
+- **Local** : état du composant uniquement → state/ref/signal.
 - **Partage parent-enfant** : props + events.
 - **Partage transverse** : store (Pinia, Zustand, SignalStore).
 - **Server state** : TanStack Query (React/Vue/Angular).
@@ -77,7 +77,7 @@
 | SSR only | — | `onServerPrefetch()` | `APP_INITIALIZER` |
 
 ### Piege : cleanup
-- **React** : toujours retourner une cleanup function dans `useEffect` pour eviter les fuites (abortController, listeners).
+- **React** : toujours retourner une cleanup function dans `useEffect` pour éviter les fuites (abortController, listeners).
 - **Vue** : `watchEffect` cleanup via `onCleanup` param.
 - **Angular** : `DestroyRef.onDestroy()` ou `takeUntilDestroyed()` pour RxJS.
 
@@ -96,7 +96,7 @@
 
 ---
 
-## Accessibilite (a11y)
+## Accessibilité (a11y)
 
 | Regle | Comment |
 |-------|---------|
@@ -114,7 +114,7 @@
 | Type | React | Vue | Angular |
 |------|-------|-----|---------|
 | Unit composant | Vitest + Testing Library | Vitest + @vue/test-utils | Vitest + TestBed |
-| Integration | Testing Library (render) | mount() + Testing Library | ComponentFixture |
+| Intégration | Testing Library (render) | mount() + Testing Library | ComponentFixture |
 | E2E | Playwright | Playwright | Playwright |
 | Snapshot | `toMatchSnapshot()` | `toMatchSnapshot()` | `toMatchSnapshot()` |
 | Mock HTTP | MSW | MSW | MSW / HttpTestingController |
@@ -139,7 +139,7 @@
 
 ---
 
-## Recapitulatif mental
+## Récapitulatif mental
 
 ```
 React  → "tout est fonction"    → hooks + JSX + composition
@@ -147,4 +147,4 @@ Vue    → "progressif + magique" → SFC + Composition API + reactivite fine
 Angular→ "framework complet"    → DI + signaux + decorateurs + CLI
 ```
 
-> Astuce : les 3 convergent vers signaux/computed/effect. Apprendre un modele, adapter la syntaxe.
+> Astuce : les 3 convergent vers signaux/computed/effect. Apprendre un modèle, adapter la syntaxe.

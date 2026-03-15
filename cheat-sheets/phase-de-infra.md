@@ -1,6 +1,6 @@
-# Cheat Sheet — Phase D-E : HTTP/Caching, AWS, Architecture, Observabilite
+# Cheat Sheet — Phase D-E : HTTP/Caching, AWS, Architecture, Observabilité
 
-> Revision rapide infra, cloud et ops du cursus.
+> Révision rapide infra, cloud et ops du cursus.
 
 ---
 
@@ -15,11 +15,11 @@
 | `Last-Modified` | Validation par date | `If-Modified-Since` |
 | `Vary` | Cache par variante | `Vary: Accept-Encoding, Accept-Language` |
 | `Surrogate-Key` | Invalidation ciblée CDN | `Surrogate-Key: product-123 category-shoes` |
-| `CDN-Cache-Control` | Politique specifique CDN | Overrides `Cache-Control` cote CDN |
+| `CDN-Cache-Control` | Politique spécifique CDN | Overrides `Cache-Control` cote CDN |
 
-### Strategies de cache
+### Stratégies de cache
 
-| Strategie | Cache-Control | Cas d'usage |
+| Stratégie | Cache-Control | Cas d'usage |
 |-----------|--------------|-------------|
 | Immutable | `max-age=31536000, immutable` | Assets hashes (`app.a1b2c3.js`) |
 | SWR | `max-age=60, stale-while-revalidate=3600` | API listings, pages semi-dynamiques |
@@ -35,7 +35,7 @@ Browser Cache → CDN (CloudFront/Varnish) → Reverse Proxy (Nginx) → App Cac
 - **Purge** : suppression immediate (`PURGE /path` ou API CDN).
 - **Surrogate keys** : tag-based, invalider tous les objets d'une categorie.
 - **TTL court + SWR** : compromis freshness/performance.
-- Regle d'or : **l'invalidation est le probleme le plus dur du caching**.
+- Regle d'or : **l'invalidation est le problème le plus dur du caching**.
 
 ---
 
@@ -53,7 +53,7 @@ Browser Cache → CDN (CloudFront/Varnish) → Reverse Proxy (Nginx) → App Cac
 
 ### Patterns
 - **Cache-aside** : read → miss → fetch DB → write cache → return.
-- **Write-through** : write DB + write cache en meme temps.
+- **Write-through** : write DB + write cache en même temps.
 - **Cache stampede** : proteger avec un lock (`SETNX`) ou probabilistic early expiration.
 
 ---
@@ -62,13 +62,13 @@ Browser Cache → CDN (CloudFront/Varnish) → Reverse Proxy (Nginx) → App Cac
 
 ### IAM
 - **Least privilege** : jamais `*` sur Action et Resource en prod.
-- **Jamais root** : creer un admin IAM, activer MFA.
+- **Jamais root** : créer un admin IAM, activer MFA.
 - **Roles > Users** : pour les services (Lambda, EC2, ECS).
 - **Policy** : `{ Effect, Action, Resource, Condition }`.
 
-### Services cles
+### Services clés
 
-| Service | Type | Points cles |
+| Service | Type | Points clés |
 |---------|------|-------------|
 | S3 | Stockage objet | Presigned URLs, lifecycle rules, versioning |
 | Lambda | Compute serverless | Cold start ~200ms, max 15min, 10 Go RAM |
@@ -101,7 +101,7 @@ bucket.grantRead(fn); // IAM least privilege
 ```
 
 - `cdk diff` avant chaque deploy.
-- `cdk synth` pour voir le CloudFormation genere.
+- `cdk synth` pour voir le CloudFormation généré.
 - Constructs L1 (Cfn) < L2 (defaults) < L3 (patterns).
 
 ---
@@ -110,30 +110,30 @@ bucket.grantRead(fn); // IAM least privilege
 
 | Pattern | Quand | Attention |
 |---------|-------|-----------|
-| Monolithe modulaire | MVP, equipe < 5 | Bien separer les modules (DDD boundaries) |
-| Microservices | Scale equipe, deploy independant | Complexite reseau, observabilite obligatoire |
+| Monolithe modulaire | MVP, équipe < 5 | Bien separer les modules (DDD boundaries) |
+| Microservices | Scale équipe, deploy independant | Complexite réseau, observabilité obligatoire |
 | Event-driven | Decouplage, async | Idempotence, ordering, dead letter queue |
 | CQRS | Read/write asymetriques | Eventual consistency, projection lag |
 | Saga | Transactions distribuees | Compensations, timeout, monitoring |
 | BFF | Clients multiples (web/mobile) | Un BFF par client type |
 
-### 12-Factor App (resume)
+### 12-Factor App (résumé)
 1. **Codebase** : un repo = une app
 2. **Dependencies** : explicites (package.json)
 3. **Config** : dans l'environnement (pas dans le code)
 4. **Backing services** : traites comme des ressources attachables
-5. **Build/Release/Run** : etapes strictement separees
+5. **Build/Release/Run** : étapes strictement separees
 6. **Processes** : stateless, share-nothing
 7. **Port binding** : self-contained (pas de serveur externe)
 8. **Concurrency** : scale via processus (horizontal)
-9. **Disposability** : demarrage rapide, arret gracieux
+9. **Disposability** : démarrage rapide, arret gracieux
 10. **Dev/Prod parity** : minimiser les ecarts
-11. **Logs** : flux d'evenements (stdout)
+11. **Logs** : flux d'événements (stdout)
 12. **Admin** : one-off processes (migrations, scripts)
 
 ---
 
-## Observabilite
+## Observabilité
 
 ### Les 3 piliers
 
@@ -147,25 +147,25 @@ bucket.grantRead(fn); // IAM least privilege
 
 | Concept | Definition | Exemple |
 |---------|-----------|---------|
-| SLI | Mesure reelle | % requetes < 200ms |
-| SLO | Objectif interne | 99.9% disponibilite (budget = 43min/mois) |
+| SLI | Mesure réelle | % requêtes < 200ms |
+| SLO | Objectif interne | 99.9% disponibilité (budget = 43min/mois) |
 | SLA | Contrat client | 99.5% avec penalites financieres |
 | Error budget | SLO - SLI actuel | Budget consomme → gel des deploys |
 
 ### Alerting (du meilleur au pire)
 1. **Burn rate multi-window** : alerte si le budget d'erreur se consomme trop vite.
-2. **Burn rate simple** : alerte sur un seul fenetre de temps.
-3. **Seuil fixe** : alerte si `error_rate > 1%` — genere du bruit.
+2. **Burn rate simple** : alerte sur un seul fenêtre de temps.
+3. **Seuil fixe** : alerte si `error_rate > 1%` — généré du bruit.
 
 ### Metriques RED (services)
-- **R**ate : requetes/seconde
+- **R**ate : requêtes/seconde
 - **E**rrors : taux d'erreurs
 - **D**uration : latence (p50, p95, p99)
 
 ### Metriques USE (infra)
-- **U**tilization : % de capacite utilisee
+- **U**tilization : % de capacité utilisee
 - **S**aturation : file d'attente
-- **E**rrors : erreurs hardware/systeme
+- **E**rrors : erreurs hardware/système
 
 ### Core Web Vitals (Frontend)
 
@@ -196,7 +196,7 @@ logger.info({ userId, action: 'login', duration: 42 }, 'User logged in');
 
 ---
 
-## Recapitulatif mental
+## Récapitulatif mental
 
 ```
 HTTP Caching → max-age + SWR + surrogate keys = performance sans complexite
