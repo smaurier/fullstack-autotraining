@@ -43,3 +43,6 @@
 [submodule "15-ia"]
 	path = 15-ia
 	url = https://github.com/smaurier/IA-autotraining.git
+[submodule "16-aws-cloud"]
+	path = 16-aws-cloud
+	url = https://github.com/smaurier/aws-autotraining.git
