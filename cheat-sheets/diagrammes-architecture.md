@@ -7,7 +7,7 @@ Chaque diagramme est accompagne d'une explication courte.
 
 ## 1. Event Loop Node.js
 
-L'event loop orchestre l'execution du code asynchrone en Node.js selon un ordre de priorite strict.
+L'event loop orchestre l'exécution du code asynchrone en Node.js selon un ordre de priorite strict.
 Les microtaches (Promises) sont toujours videes avant de passer aux macrotaches (timers, I/O).
 
 ```mermaid
@@ -63,10 +63,10 @@ flowchart LR
 
 ---
 
-## 3. Architecture NestJS — Cycle de vie d'une requete
+## 3. Architecture NestJS — Cycle de vie d'une requête
 
-NestJS applique une serie de couches (middleware, guards, interceptors, pipes) avant et apres le handler.
-L'ordre est deterministe et chaque couche a une responsabilite unique (authentification, validation, transformation).
+NestJS applique une serie de couches (middleware, guards, interceptors, pipes) avant et après le handler.
+L'ordre est déterministe et chaque couche à une responsabilite unique (authentification, validation, transformation).
 
 ```mermaid
 flowchart LR
@@ -87,7 +87,7 @@ flowchart LR
 
 ## 4. OAuth2 — Authorization Code Flow
 
-Le flux Authorization Code est le plus securise pour les applications web avec backend.
+Le flux Authorization Code est le plus sécurisé pour les applications web avec backend.
 Le code d'autorisation est echange cote serveur contre des tokens, evitant l'exposition du secret client.
 
 ```mermaid
@@ -113,8 +113,8 @@ sequenceDiagram
 
 ## 5. Saga Pattern — Choregraphie
 
-En choregraphie, chaque service ecoute les evenements et declenche l'etape suivante ou sa compensation.
-En cas d'echec, les transactions compensatoires annulent les etapes precedentes en ordre inverse.
+En choregraphie, chaque service ecoute les événements et declenche l'étape suivante ou sa compensation.
+En cas d'echec, les transactions compensatoires annulent les étapes precedentes en ordre inverse.
 
 ```mermaid
 sequenceDiagram
@@ -146,7 +146,7 @@ sequenceDiagram
 ## 6. Cache-Aside Pattern
 
 Le pattern Cache-Aside place le cache (Redis) devant la base de donnees pour reduire la latence.
-L'application verifie d'abord le cache ; en cas de miss, elle interroge la DB puis alimente le cache avec un TTL.
+L'application vérifié d'abord le cache ; en cas de miss, elle interroge la DB puis alimente le cache avec un TTL.
 
 ```mermaid
 flowchart TD
@@ -168,8 +168,8 @@ flowchart TD
 
 ## 7. React Reconciliation (Diffing du Virtual DOM)
 
-React utilise un arbre virtuel (VDOM) pour minimiser les manipulations couteuses du DOM reel.
-Apres un changement d'etat, React compare l'ancien et le nouveau VDOM puis applique uniquement les differences.
+React utilise un arbre virtuel (VDOM) pour minimiser les manipulations couteuses du DOM réel.
+Après un changement d'état, React compare l'ancien et le nouveau VDOM puis applique uniquement les différences.
 
 ```mermaid
 flowchart LR
@@ -188,8 +188,8 @@ flowchart LR
 
 ## 8. Pipeline CI/CD
 
-Le pipeline CI/CD automatise la verification, la construction et le deploiement du code.
-Les etapes de lint et tests unitaires tournent en parallele pour accelerer le feedback.
+Le pipeline CI/CD automatise la vérification, la construction et le déploiement du code.
+Les étapes de lint et tests unitaires tournent en parallele pour accelerer le feedback.
 
 ```mermaid
 flowchart LR
@@ -214,8 +214,8 @@ flowchart LR
 
 ## 9. PostgreSQL MVCC (Multi-Version Concurrency Control)
 
-MVCC permet aux transactions concurrentes de lire des versions differentes d'une meme ligne sans se bloquer.
-Chaque transaction voit un snapshot coherent de la base au moment ou elle a commence.
+MVCC permet aux transactions concurrentes de lire des versions différentes d'une même ligne sans se bloquer.
+Chaque transaction voit un snapshot coherent de la base au moment où elle a commence.
 
 ```mermaid
 sequenceDiagram
@@ -247,7 +247,7 @@ sequenceDiagram
 
 ---
 
-## 10. WebSocket + Redis Pub/Sub (Synchronisation temps reel)
+## 10. WebSocket + Redis Pub/Sub (Synchronisation temps réel)
 
 Redis Pub/Sub permet de synchroniser les messages WebSocket entre plusieurs instances de serveur.
 Quand un client envoie un message, il est publie dans Redis puis diffuse a tous les serveurs abonnes.
@@ -309,7 +309,7 @@ flowchart TD
 
 ## 12. JWT Auth Flow (Access + Refresh Tokens)
 
-Le access token (courte duree, 15 min) est utilise pour chaque requete authentifiee.
+Le access token (courte duree, 15 min) est utilise pour chaque requête authentifiee.
 Le refresh token (longue duree, 7 jours, httpOnly cookie) permet de renouveler le access token sans re-authentification.
 
 ```mermaid

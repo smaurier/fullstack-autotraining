@@ -9,10 +9,10 @@
 **TaskFlow** est une application de gestion de taches collaborative (type Trello simplifie) avec :
 
 - Boards, colonnes, cartes avec drag & drop
-- Collaboration temps reel (WebSocket)
+- Collaboration temps réel (WebSocket)
 - Authentification JWT + refresh tokens
 - API REST + un endpoint GraphQL pour le dashboard
-- Cache Redis, PostgreSQL, full observabilite
+- Cache Redis, PostgreSQL, full observabilité
 
 **Duree estimee** : 2-3 semaines (temps partiel)
 
@@ -29,9 +29,9 @@
 | BDD | PostgreSQL + TypeORM | 06-postgresql |
 | Cache | Redis (cache-aside + pub/sub) | HTTP Caching (module 19) |
 | Auth | JWT + refresh tokens | 05-nestjs |
-| Temps reel | WebSocket (Socket.io via NestJS Gateway) | 11-distributed-systems |
+| Temps réel | WebSocket (Socket.io via NestJS Gateway) | 11-distributed-systems |
 | Tests | Vitest (unit) + Playwright (e2e) | 04-testing |
-| Observabilite | OTel + Prometheus + Grafana | Observability course |
+| Observabilité | OTel + Prometheus + Grafana | Observability course |
 | Deploy | Docker Compose (dev) + AWS S3/Lambda optionnel | AWS course |
 | CI/CD | GitHub Actions | AWS course |
 
@@ -39,7 +39,7 @@
 
 ## Schema de la base de donnees
 
-Tu dois concevoir le schema toi-meme. Voici les entites minimales attendues :
+Tu dois concevoir le schema toi-même. Voici les entites minimales attendues :
 
 ```
 users          (id, email, password_hash, display_name, avatar_url, created_at)
@@ -51,7 +51,7 @@ refresh_tokens (id, user_id → users, token_hash, expires_at, revoked_at)
 ```
 
 Points d'attention :
-- `position` est un entier (ou un float si tu veux eviter de re-indexer au drag & drop — a toi de decider)
+- `position` est un entier (où un float si tu veux éviter de re-indexer au drag & drop — a toi de decider)
 - Les suppressions sont en cascade : supprimer un board supprime ses colonnes et cartes
 - `password_hash` : bcrypt, jamais stocke en clair
 - `refresh_tokens` : un user peut avoir plusieurs sessions actives
@@ -74,7 +74,7 @@ Points d'attention :
 - [ ] Tests : au moins 1 test unitaire par service NestJS
 - [ ] ESLint + Prettier configures des le depart
 
-**Critere de validation Sprint 1** : tu peux creer un compte, te connecter, voir la liste de tes boards (meme vide), et le token se refresh automatiquement.
+**Critere de validation Sprint 1** : tu peux créer un compte, te connecter, voir la liste de tes boards (même vide), et le token se refresh automatiquement.
 
 ### Sprint 2 — Core features (3-4 jours)
 
@@ -84,13 +84,13 @@ Points d'attention :
 - [ ] Endpoint `PATCH /cards/:id/move` qui prend `{ columnId, position }`
 - [ ] Optimistic UI : la carte bouge instantanement, rollback si le serveur repond une erreur
 - [ ] Assignation de membres aux cartes (dropdown avec les membres du board)
-- [ ] Filtres : par assignee, par mot-cle dans le titre
+- [ ] Filtres : par assignee, par mot-clé dans le titre
 - [ ] Recherche full-text PostgreSQL (`tsvector` + `ts_query` sur title + description)
-- [ ] Tests e2e Playwright : flow complet login → creer board → ajouter colonne → ajouter carte → drag vers autre colonne → verifier la position
+- [ ] Tests e2e Playwright : flow complet login → créer board → ajouter colonne → ajouter carte → drag vers autre colonne → vérifier la position
 
-**Critere de validation Sprint 2** : un utilisateur peut gerer un board complet avec drag & drop fluide, les donnees persistent apres refresh.
+**Critere de validation Sprint 2** : un utilisateur peut gérer un board complet avec drag & drop fluide, les donnees persistent après refresh.
 
-### Sprint 3 — Temps reel et cache (2-3 jours)
+### Sprint 3 — Temps réel et cache (2-3 jours)
 
 - [ ] NestJS WebSocket Gateway (`@WebSocketGateway()`) avec Socket.io
 - [ ] Rooms par board : quand un user ouvre un board, il rejoint la room `board:<id>`
@@ -100,13 +100,13 @@ Points d'attention :
 - [ ] Invalidation du cache sur toute mutation du board (create/update/delete card, column, member)
 - [ ] Indicateur "X personnes connectees" sur le board
 - [ ] Gestion de la reconnexion WebSocket cote client (backoff exponentiel)
-- [ ] Tests : verifier qu'un changement sur un client est visible sur un autre (test e2e avec 2 contextes Playwright)
+- [ ] Tests : vérifier qu'un changement sur un client est visible sur un autre (test e2e avec 2 contextes Playwright)
 
-**Critere de validation Sprint 3** : ouvre le meme board dans 2 onglets, deplace une carte dans l'un, elle bouge dans l'autre sans refresh.
+**Critere de validation Sprint 3** : ouvre le même board dans 2 onglets, deplace une carte dans l'un, elle bouge dans l'autre sans refresh.
 
-### Sprint 4 — Observabilite et production (2-3 jours)
+### Sprint 4 — Observabilité et production (2-3 jours)
 
-- [ ] OTel SDK : traces sur chaque requete HTTP entrant, spans custom sur les queries DB et les appels Redis
+- [ ] OTel SDK : traces sur chaque requête HTTP entrant, spans custom sur les queries DB et les appels Redis
 - [ ] Propagation du trace ID dans les headers WebSocket
 - [ ] Metriques Prometheus exposees sur `/metrics` :
   - `http_request_duration_seconds` (histogram, labels: method, route, status)
@@ -122,19 +122,19 @@ Points d'attention :
   - Panel 4 : Cache hit ratio
   - Panel 5 : Active WebSocket connections
   - Panel 6 : Saturation DB (query duration)
-- [ ] Alerting Grafana : notification si `error_rate > 1%` sur une fenetre de 5min
+- [ ] Alerting Grafana : notification si `error_rate > 1%` sur une fenêtre de 5min
 - [ ] Docker Compose complet :
   ```
   services: api, web, postgres, redis, otel-collector, prometheus, grafana
   ```
 - [ ] GitHub Actions pipeline : lint → test → build → docker build → (optionnel) deploy
-- [ ] Health check endpoint (`GET /health`) qui verifie la connexion DB + Redis
+- [ ] Health check endpoint (`GET /health`) qui vérifié la connexion DB + Redis
 
 **Critere de validation Sprint 4** : `docker compose up`, tout demarre. Tu provoques du trafic, tu vois les metriques dans Grafana, tu provoques une erreur, l'alerte se declenche.
 
 ---
 
-## Criteres d'evaluation
+## Criteres d'évaluation
 
 ### Architecture (/ 20)
 
@@ -160,9 +160,9 @@ Points d'attention :
 |---------|--------|
 | Toutes les features des sprints 1-3 fonctionnent | 8 |
 | UX fluide : optimistic UI, loading states, pas de flash blanc | 6 |
-| Accessibilite : navigation clavier du board, `aria-labels`, focus management apres drag | 6 |
+| Accessibilité : navigation clavier du board, `aria-labels`, focus management après drag | 6 |
 
-### Observabilite (/ 20)
+### Observabilité (/ 20)
 
 | Critere | Points |
 |---------|--------|
@@ -186,13 +186,13 @@ Points d'attention :
 ## Bonus (points supplementaires)
 
 - [ ] **GraphQL** : endpoint `/graphql` pour le dashboard analytics — nombre de cartes par colonne, activite recente, stats par utilisateur (Apollo Server ou Mercurius)
-- [ ] **Notifications in-app** : badge temps reel quand une carte t'est assignee (via WebSocket)
+- [ ] **Notifications in-app** : badge temps réel quand une carte t'est assignee (via WebSocket)
 - [ ] **Dark mode** : design tokens CSS custom properties, toggle persistant en localStorage
 - [ ] **Rate limiting** : sliding window Redis sur l'API (ex: 100 req/min par user)
 - [ ] **Audit a11y automatise** : axe-core dans la CI, fail si violation critique
-- [ ] **Feature flags** : toggle le temps reel on/off via un panneau admin (utile pour degrade graceful)
+- [ ] **Feature flags** : toggle le temps réel on/off via un panneau admin (utile pour degrade graceful)
 - [ ] **Deploy AWS** : S3 + CloudFront pour le front, ECS Fargate ou Lambda + API Gateway pour le back, RDS PostgreSQL, ElastiCache Redis
-- [ ] **Audit de securite** : headers CSP, CORS restrictif, protection CSRF sur les cookies, `helmet` configure
+- [ ] **Audit de sécurité** : headers CSP, CORS restrictif, protection CSRF sur les cookies, `helmet` configure
 
 ---
 
@@ -237,17 +237,17 @@ taskflow/
 
 > **Ne commence PAS par tout configurer.** Sprint 1 = API qui tourne + une page React qui s'affiche. Itere.
 
-> **Le temps reel vient APRES le CRUD.** Fais marcher les features en HTTP classique d'abord, ajoute les WebSockets ensuite. Si tu commences par le temps reel, tu vas t'enliser.
+> **Le temps réel vient APRES le CRUD.** Fais marcher les features en HTTP classique d'abord, ajoute les WebSockets ensuite. Si tu commences par le temps réel, tu vas t'enliser.
 
-> **L'observabilite n'est pas optionnelle.** C'est ce qui distingue un dev senior d'un dev junior. Instrumente des le sprint 1 (meme basiquement — un `console.log` structure avec pino, c'est deja un debut).
+> **L'observabilité n'est pas optionnelle.** C'est ce qui distingue un dev senior d'un dev junior. Instrumente des le sprint 1 (même basiquement — un `console.log` structure avec pino, c'est déjà un debut).
 
-> **Optimistic UI, ca veut dire quoi concretement ?** Tu mets a jour le state local AVANT la reponse serveur. Si le serveur repond 200, rien a faire. Si erreur, tu rollback le state et tu affiches un toast d'erreur. L'utilisateur ne doit jamais attendre un spinner pour deplacer une carte.
+> **Optimistic UI, ça veut dire quoi concretement ?** Tu mets a jour le state local AVANT la réponse serveur. Si le serveur repond 200, rien à faire. Si erreur, tu rollback le state et tu affiches un toast d'erreur. L'utilisateur ne doit jamais attendre un spinner pour deplacer une carte.
 
-> **Git** : un commit par feature, messages clairs, branches par sprint. Simule un vrai workflow pro. Pas de commit "fix" a la chaine.
+> **Git** : un commit par feature, messages clairs, branches par sprint. Simule un vrai workflow pro. Pas de commit "fix" à la chaine.
 
-> **Ne reinvente pas la roue.** Utilise les libs standard : `@nestjs/jwt`, `@nestjs/typeorm`, `@nestjs/websockets`, `ioredis`, `pino`, `@opentelemetry/*`. Le but n'est pas de tout coder from scratch, c'est de savoir assembler un systeme complet.
+> **Ne reinvente pas la roue.** Utilise les libs standard : `@nestjs/jwt`, `@nestjs/typeorm`, `@nestjs/websockets`, `ioredis`, `pino`, `@opentelemetry/*`. Le but n'est pas de tout coder from scratch, c'est de savoir assembler un système complet.
 
-> **Teste en conditions reelles.** Lance 2 onglets, deplace des cartes, coupe le serveur, rallume-le. C'est comme ca qu'on trouve les vrais bugs.
+> **Teste en conditions reelles.** Lance 2 onglets, deplace des cartes, coupe le serveur, rallume-le. C'est comme ça qu'on trouve les vrais bugs.
 
 ---
 
@@ -268,7 +268,7 @@ Si tu finis en avance et que tu veux pousser plus loin :
 2. **Activity feed** : un event log (event sourcing simplifie) qui trace toutes les actions sur un board
 3. **Export** : export d'un board en JSON ou CSV
 4. **PWA** : service worker pour acces offline aux boards (lecture seule)
-5. **Load testing** : script k6 qui simule 50 utilisateurs concurrents sur un board, analyse des resultats dans Grafana
+5. **Load testing** : script k6 qui simule 50 utilisateurs concurrents sur un board, analyse des résultats dans Grafana
 
 ---
 

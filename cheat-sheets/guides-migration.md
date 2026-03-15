@@ -1,7 +1,7 @@
 # Guides de migration — Legacy vers versions actuelles
 
 > Fiches pratiques pour migrer du code legacy rencontre en mission.
-> Chaque section couvre les breaking changes, les etapes mecaniques et les pieges.
+> Chaque section couvre les breaking changes, les étapes mecaniques et les pieges.
 
 ---
 
@@ -10,12 +10,12 @@
 ### Pourquoi migrer
 
 - Le React Compiler elimine 90 % des `useMemo` / `useCallback` manuels → moins de code, moins de bugs de deps.
-- Les Form Actions + `useActionState` simplifient drastiquement les formulaires avec etat serveur.
+- Les Form Actions + `useActionState` simplifient drastiquement les formulaires avec état serveur.
 - `use()` unifie le data fetching et supprime beaucoup de patterns useEffect + useState.
 
 ### Changements breaking
 
-| Avant (React 18) | Apres (React 19) |
+| Avant (React 18) | Après (React 19) |
 |---|---|
 | `forwardRef((props, ref) => ...)` | `ref` passe directement en prop |
 | `defaultProps` sur function components | Valeurs par defaut ES6 dans les params |
@@ -37,7 +37,7 @@
 7. Supprimer les `useMemo` / `useCallback` inutiles (laisser le Compiler faire)
 8. Tester les refs — le cleanup de ref callback change de comportement
 
-### Avant / Apres
+### Avant / Après
 
 **forwardRef supprime** :
 
@@ -220,10 +220,10 @@ function App() {
 ### Pieges courants
 
 - **`use()` ne remplace pas tous les useEffect** : il sert pour les promesses et les contextes, pas pour les souscriptions ou side effects.
-- **React Compiler requiert des regles strictes** : pas de mutation d'objets, pas de lecture de `ref.current` pendant le rendu. Utiliser `eslint-plugin-react-compiler` pour detecter les violations.
+- **React Compiler requiert des regles strictes** : pas de mutation d'objets, pas de lecture de `ref.current` pendant le rendu. Utiliser `eslint-plugin-react-compiler` pour détecter les violations.
 - **`useActionState` (pas `useFormState`)** : le nom a change entre les RC et la version finale.
 - **Les ref callbacks avec cleanup retournent maintenant `undefined` au lieu de recevoir `null`** : si votre ancien code teste `node === null`, il faut adapter.
-- **`defaultProps` ne declenche pas d'erreur mais un warning en dev** : migrer maintenant, ca sera retire dans une future version.
+- **`defaultProps` ne declenche pas d'erreur mais un warning en dev** : migrer maintenant, ça sera retire dans une future version.
 
 ---
 
@@ -232,32 +232,32 @@ function App() {
 ### Pourquoi migrer
 
 - Reactive props destructure rend le code des composants nettement plus lisible (plus besoin de `props.x` partout).
-- Le systeme reactif consomme 56 % de memoire en moins → gain direct en production.
+- Le système réactif consomme 56 % de mémoire en moins → gain direct en production.
 - `useTemplateRef()` apporte enfin un typage propre sur les refs template.
 
 ### Changements breaking
 
-| Avant (Vue 3.4) | Apres (Vue 3.5) |
+| Avant (Vue 3.4) | Après (Vue 3.5) |
 |---|---|
 | `const el = ref<HTMLInputElement>()` + `ref="el"` | `const el = useTemplateRef<HTMLInputElement>('el')` |
 | `:id="id"` / `:class="class"` | `:id` / `:class` (shorthand same-name) |
-| `const props = defineProps<Props>()` + `props.count` partout | `const { count } = defineProps<Props>()` (reactif) |
+| `const props = defineProps<Props>()` + `props.count` partout | `const { count } = defineProps<Props>()` (réactif) |
 | `Math.random().toString(36)` pour les IDs | `useId()` (SSR-safe) |
-| `<Teleport to="#modal">` (doit exister au mount) | `<Teleport defer to="#modal">` (resolu apres le rendu) |
+| `<Teleport to="#modal">` (doit exister au mount) | `<Teleport defer to="#modal">` (resolu après le rendu) |
 | cleanup manuel dans `watch` | `onWatcherCleanup()` |
 
 ### Etapes de migration
 
-1. Monter Vue : `npm i vue@3.5` (ou pnpm/yarn equivalent)
+1. Monter Vue : `npm i vue@3.5` (où pnpm/yarn équivalent)
 2. Monter le tooling : `npm i -D @vitejs/plugin-vue@latest vue-tsc@latest`
 3. Rechercher les `ref<HTML...>()` utilises comme template refs → migrer vers `useTemplateRef()`
 4. Rechercher les `:foo="foo"` → simplifier en `:foo`
 5. Migrer les `defineProps` suivis de `props.x` → destructure direct
 6. Remplacer les generateurs d'ID custom par `useId()`
-7. Migrer les `<Teleport>` avec des cibles dynamiques vers `defer` si necessaire
+7. Migrer les `<Teleport>` avec des cibles dynamiques vers `defer` si nécessaire
 8. Tester le SSR si applicable (useId + Teleport defer changent le rendu)
 
-### Avant / Apres
+### Avant / Après
 
 **useTemplateRef()** :
 
@@ -410,11 +410,11 @@ watch(searchQuery, (query) => {
 
 ### Pieges courants
 
-- **Reactive destructure ne fonctionne QUE dans `<script setup>`** : dans un `setup()` classique, ca reste non-reactif.
+- **Reactive destructure ne fonctionne QUE dans `<script setup>`** : dans un `setup()` classique, ça reste non-réactif.
 - **`useTemplateRef('name')` doit matcher le `ref="name"` du template** : si les noms divergent, la ref sera `null` sans warning.
 - **Le shorthand `:id` est confondu avec `:id=""` (string vide)** dans certains linters — mettre a jour `eslint-plugin-vue` a 9.28+.
-- **`useId()` genere des IDs differents entre Vue 3.5.0 et 3.5.1+** : ne pas stocker ces IDs en base ou dans des snapshots de test.
-- **Le `Teleport defer` change l'ordre de rendu** : les effets dans le contenu teleporte s'executent apres le reste du template parent.
+- **`useId()` généré des IDs différents entre Vue 3.5.0 et 3.5.1+** : ne pas stocker ces IDs en base ou dans des snapshots de test.
+- **Le `Teleport defer` change l'ordre de rendu** : les effets dans le contenu teleporte s'executent après le reste du template parent.
 
 ---
 
@@ -424,16 +424,16 @@ watch(searchQuery, (query) => {
 
 - Les `@defer` blocks remplacent le lazy loading manuel de composants → moins de boilerplate, meilleure UX.
 - Le zoneless change detection (en stabilisation) supprime zone.js → bundles plus legers et meilleures perfs.
-- `resource()` et `linkedSignal()` completent le modele reactif base sur les signals.
+- `resource()` et `linkedSignal()` completent le modèle réactif base sur les signals.
 
 ### Changements breaking
 
-| Avant (Angular 18) | Apres (Angular 19) |
+| Avant (Angular 18) | Après (Angular 19) |
 |---|---|
 | `@NgModule({ declarations: [...] })` | Standalone par defaut (plus de NgModule pour les composants) |
 | `loadChildren: () => import(...)` pour le lazy | `@defer { <HeavyComponent /> }` pour le lazy au niveau composant |
 | zone.js obligatoire | `provideExperimentalZonelessChangeDetection()` → stable path |
-| Signal derive en lecture seule | `linkedSignal()` pour un signal derive mutable |
+| Signal dérivé en lecture seule | `linkedSignal()` pour un signal dérivé mutable |
 | `HttpClient` + `subscribe()` pour l'async | `resource()` API declarative pour le data loading |
 | `constructor(private svc: MyService)` | `inject(MyService)` utilisable partout |
 | `CanActivate` class-based guard | Guard fonctionnel : `() => inject(Auth).isLoggedIn()` |
@@ -450,7 +450,7 @@ watch(searchQuery, (query) => {
 7. Tester le zoneless en ajoutant `provideExperimentalZonelessChangeDetection()` dans `app.config.ts`
 8. Configurer le `renderMode` par route si le projet utilise SSR
 
-### Avant / Apres
+### Avant / Après
 
 **Standalone par defaut (plus de NgModule)** :
 
@@ -635,12 +635,12 @@ export const routes: Routes = [
 
 ### Pieges courants
 
-- **`ng update` peut echouer si les deps tierces ne supportent pas Angular 19** : verifier la compatibilite de ng-zorro, PrimeNG, Angular Material avant de lancer.
+- **`ng update` peut echouer si les deps tierces ne supportent pas Angular 19** : vérifier la compatibilite de ng-zorro, PrimeNG, Angular Material avant de lancer.
 - **Standalone par defaut ≠ plus de modules** : les modules existants continuent de fonctionner, mais les nouveaux composants generes par le CLI seront standalone.
 - **`@defer` n'est PAS un remplacement du lazy loading de routes** : il sert au lazy loading de composants dans un template, pas au code-splitting de pages.
 - **Le zoneless casse les libs qui dependent de zone.js** (certaines libs Material, libs tierces qui utilisent `setTimeout` sans `markForCheck`).
 - **`resource()` retourne un signal, pas un Observable** : ne pas essayer de `.pipe()` dessus.
-- **`linkedSignal` est resolu en meme temps que `computed`** dans le cycle de detection — ne pas y mettre de side effects.
+- **`linkedSignal` est resolu en même temps que `computed`** dans le cycle de detection — ne pas y mettre de side effects.
 
 ---
 
@@ -658,7 +658,7 @@ export const routes: Routes = [
 |---|---|
 | `pages/index.tsx` | `app/page.tsx` |
 | `pages/_app.tsx` | `app/layout.tsx` |
-| `pages/_document.tsx` | Supprime (gere par le framework) |
+| `pages/_document.tsx` | Supprime (géré par le framework) |
 | `pages/api/hello.ts` | `app/api/hello/route.ts` |
 | `pages/blog/[slug].tsx` | `app/blog/[slug]/page.tsx` |
 | `getServerSideProps` | `async function Page()` (Server Component) |
@@ -671,11 +671,11 @@ export const routes: Routes = [
 
 ### Etapes de migration
 
-1. **Verifier la compatibilite** : Next.js 13.4+ requis, idealement monter en 14+
-2. **Creer le dossier `app/`** a la racine — il coexiste avec `pages/`
+1. **Vérifier la compatibilite** : Next.js 13.4+ requis, idealement monter en 14+
+2. **Créer le dossier `app/`** à la racine — il coexiste avec `pages/`
 3. **Migrer le layout global** : `_app.tsx` → `app/layout.tsx`
 4. **Migrer page par page** (les deux dossiers coexistent) :
-   - Creer `app/ma-page/page.tsx`
+   - Créer `app/ma-page/page.tsx`
    - Deplacer la logique de `getServerSideProps` dans le composant async
    - Supprimer l'ancienne `pages/ma-page.tsx` quand la nouvelle est prete
 5. **Migrer les API routes** : `pages/api/x.ts` → `app/api/x/route.ts`
@@ -685,7 +685,7 @@ export const routes: Routes = [
 9. **Revoir le caching** : l'App Router cache agressivement par defaut
 10. **Supprimer `pages/`** quand la migration est complete
 
-### Avant / Apres
+### Avant / Après
 
 **Structure de fichiers** :
 
@@ -988,6 +988,6 @@ export default function Error({
 - **On ne peut pas importer un Server Component dans un Client Component** : c'est l'inverse qui fonctionne (passer des Server Components comme `children` d'un Client Component).
 - **`useRouter`, `useSearchParams`, `usePathname` viennent de `next/navigation`** et non `next/router` — l'autocompletition propose souvent le mauvais import.
 - **Les cookies et headers ne sont accessibles que dans les Server Components** : utiliser `cookies()` et `headers()` de `next/headers`.
-- **`loading.tsx` wrap automatiquement dans Suspense** : ne pas ajouter un `<Suspense>` en plus dans le layout, ca cree un double fallback.
-- **Migration incrementale** : `pages/` et `app/` peuvent coexister, MAIS une meme route ne peut pas exister dans les deux — Next.js leve une erreur.
+- **`loading.tsx` wrap automatiquement dans Suspense** : ne pas ajouter un `<Suspense>` en plus dans le layout, ça créé un double fallback.
+- **Migration incrementale** : `pages/` et `app/` peuvent coexister, MAIS une même route ne peut pas exister dans les deux — Next.js leve une erreur.
 - **Les variables d'env `NEXT_PUBLIC_*` fonctionnent toujours** dans les Client Components, mais dans les Server Components on peut acceder a `process.env.SECRET` directement (sans prefix).
