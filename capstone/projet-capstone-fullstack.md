@@ -24,13 +24,13 @@
 
 | Couche | Technologie | Cours associe |
 |--------|-------------|---------------|
-| Frontend | React 19 + TypeScript | 01-typescript, 08-react |
-| Backend | NestJS | 05-nestjs |
-| BDD | PostgreSQL + TypeORM | 06-postgresql |
+| Frontend | React 19 + TypeScript | 03-typescript, 00-react |
+| Backend | NestJS | 07-nestjs |
+| BDD | PostgreSQL + TypeORM | 08-postgresql |
 | Cache | Redis (cache-aside + pub/sub) | HTTP Caching (module 19) |
-| Auth | JWT + refresh tokens | 05-nestjs |
-| Temps réel | WebSocket (Socket.io via NestJS Gateway) | 11-distributed-systems |
-| Tests | Vitest (unit) + Playwright (e2e) | 04-testing |
+| Auth | JWT + refresh tokens | 07-nestjs |
+| Temps réel | WebSocket (Socket.io via NestJS Gateway) | 13-distributed-systems |
+| Tests | Vitest (unit) + Playwright (e2e) | 06-testing |
 | Observabilité | OTel + Prometheus + Grafana | Observability course |
 | Deploy | Docker Compose (dev) + AWS S3/Lambda optionnel | AWS course |
 | CI/CD | GitHub Actions | AWS course |

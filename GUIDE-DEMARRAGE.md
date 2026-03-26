@@ -81,7 +81,7 @@ Repete ce cycle pour CHAQUE module. Ne saute pas d'étape.
 ### Si tu commences par Algorithms (recommande)
 
 ```bash
-cd 00-algorithms
+cd 05-algorithms
 npm install
 npm run docs:dev      # site avec sidebar navigable
 ```
@@ -110,22 +110,20 @@ Puis :
 
 Suis le parcours "Fullstack Complete" de `parcours-thematiques.md` :
 
-> **Attention — L'ordre pédagogique des frameworks ne suit pas la numérotation des dossiers.**
-> Le parcours actuel est **React-first** : 08-React → 03-Vue → 09-Angular (mission React en cours).
-> Les numéros de dossier ne dictent pas l'ordre de lecture — voir le README pour les parcours alternatifs.
+> L'ordre pédagogique suit la numérotation des dossiers (parcours React-first).
 
 ```
-Semaine 1-9  : React (08) → Vue (03) → Angular (09)
-Semaine 10-13: TypeScript (01) → JS Runtime (02)
-En parallele : Algorithms (00) — 1 module/semaine pendant les semaines 10-24
-Semaine 14-22: Testing avance (04) → NestJS (05) → PostgreSQL (06) → HTTP/Caching (07)
-Semaine 23-26: AWS (16)
-Semaine 27-35: Architecture (10) → Observability (12)
-Semaine 36-40: Distributed Systems (11) → IA (15)
-Bonus        : React Native (13), WebGPU (14), Capstone TaskFlow
+Semaine 1-9  : React (00) → Vue (01) → Angular (02)
+Semaine 10-13: TypeScript (03) → JS Runtime (04)
+En parallele : Algorithms (05) — 1 module/semaine pendant les semaines 10-24
+Semaine 14-22: Testing avance (06) → NestJS (07) → PostgreSQL (08) → HTTP/Caching (09)
+Semaine 23-26: AWS (10)
+Semaine 27-35: Architecture (11) → Observability (12)
+Semaine 36-40: Distributed Systems (13) → IA (14)
+Bonus        : React Native (15), WebGPU (16), Capstone TaskFlow
 ```
 
-> **Ordre important** : Architecture (10) se fait AVANT Distributed Systems (11) qui se fait AVANT Observability (12). L'architecture donne le vocabulaire, les systemes distribues montrent l'implementation, l'observabilité apprend a maintenir le tout en production.
+> **Ordre important** : Architecture (11) se fait AVANT Distributed Systems (13) qui se fait AVANT Observability (12). L'architecture donne le vocabulaire, les systemes distribues montrent l'implementation, l'observabilité apprend a maintenir le tout en production.
 
 ---
 
@@ -161,7 +159,7 @@ A utiliser ENTRE et APRES les cours :
 
 ## 7. Checklist avant de commencer le curriculum
 
-- [ ] `cd 00-algorithms && npm install`
+- [ ] `cd 05-algorithms && npm install`
 - [ ] `npm run docs:dev` → vérifier que le site s'ouvre
 - [ ] Créer un fichier `progress.md` à la racine du curriculum (notes personnelles)
 - [ ] Ouvrir `modules/00-prerequis-et-introduction.md`
