@@ -123,7 +123,7 @@ Tu construis UN projet qui grandit avec toi. Même sujet, même app — elle evo
 
 | Après phase | Ce que tu ajoutes au projet | Duree |
 |-------------|---------------------------|-------|
-| Phase A (3 frameworks) | L'app existe en 3 versions front (React, Vue, Angular). Tu peux montrer la même app dans 3 frameworks à un recruteur. | intégré aux labs |
+| Phase A (3 frameworks) | L'app existe en 3 versions front (Vue, Angular, React). Tu peux montrer la même app dans 3 frameworks à un recruteur. | intégré aux labs |
 | Phase B (TS + Runtime) | Tu refactores le front React avec des types stricts, tu profiles et optimises | 1-2 jours |
 | Phase C (Test + Back) | Tu ajoutes une API NestJS, une base PostgreSQL, et des tests. C'est une vraie app fullstack. | 3-5 jours |
 | Phase D (HTTP + Deploy) | Tu déployés sur AWS avec CloudFront, CI/CD et un vrai domaine. Tu envoies le lien à un recruteur. | 3-5 jours |
@@ -194,13 +194,13 @@ Les cours sont numérotés dans l'ordre de référence. Chaque palier s'appuie s
 
 | # | Cours | Contenu | Duree estimee |
 |---|-------|---------|---------------|
-| 01 | [Vue.js](./01-vue) | Composition API, réactivité, Pinia, Vue Router, SSR/Nuxt, testing, a11y, performance | ~75h |
-| 02 | [Angular](./02-angular) | Standalone, Signals, DI, RxJS, formulaires, routing, Material, testing, SSR | ~60h |
-| 00 | [React](./00-react) | JSX, hooks, Context, Zustand, React Router, Next.js, Server Components, Suspense | ~60h |
+| 00 | [Vue.js](./00-vue) | Composition API, réactivité, Pinia, Vue Router, SSR/Nuxt, testing, a11y, performance | ~75h |
+| 01 | [Angular](./01-angular) | Standalone, Signals, DI, RxJS, formulaires, routing, Material, testing, SSR | ~60h |
+| 02 | [React](./02-react) | JSX, hooks, Context, Zustand, React Router, Next.js, Server Components, Suspense | ~60h |
 
-> **Note numérotation** : les dossiers sont numérotés selon le parcours React-first (**00 → 01 → 02**). Dans ce palier, l'ordre pédagogique recommandé est **Vue (01) → Angular (02) → React (00)**.
+> **Ordre pédagogique** : **Vue (00) → Angular (01) → React (02)**. Vue pose les bases de la réactivité explicite, Angular introduit la DI et RxJS, React synthétise avec les hooks et Server Components.
 >
-> **Alternative React-first** : si ta première mission est React, fais **00 → 01 → 02** (React → Vue → Angular). L'important est de maîtriser les 3 rapidement.
+> **Alternative React-first** : si ta première mission est React et que tu dois démarrer vite, tu peux faire **02 → 00 → 01** (React → Vue → Angular). L'important est de maîtriser les 3 rapidement.
 
 **Conseil** : Angular est très demandé en ESN (banques, grandes entreprises, secteur public). Intercale un petit projet personnel entre chaque framework pour ancrer les patterns.
 
@@ -279,75 +279,51 @@ L'IA reste utile pour les **explications conceptuelles** (pas le code) : "expliq
 
 ---
 
-### Phase A — Les 3 frameworks, React-first (~195h, ~4 mois)
+### Phase A — Les 3 frameworks, Vue-first (~195h, ~4 mois)
 
-Tu es en mission React — commence par ce qui t'est utile immédiatement. React d'abord, puis Vue pour la réactivité explicite et Nuxt, enfin Angular pour la DI et RxJS. A la fin, chaque framework eclaire les autres.
+Vue pose les bases de réactivité explicite et de Composition API. Angular introduit la DI et RxJS. React synthétise avec les hooks et Next.js. Cet ordre est pédagogiquement supérieur : chaque framework éclaire les suivants.
 
 | Ordre | Cours | Pourquoi cet ordre | Mode |
 |-------|-------|-------------------|----|
-| 1 | 00 — React | En mission React — hooks, Context, Zustand, Next.js, Server Components. Directement applicable. | **Complet, from scratch** |
-| 2 | 01 — Vue.js | Deuxième framework. Composition API, réactivité, Pinia, Nuxt. Les concepts routing/state sont acquis depuis React. | **Complet, from scratch** |
-| 3 | 02 — Angular | Troisième framework. DI, Signals, RxJS, formulaires réactifs. Avec React + Vue derrière toi, les patterns sont rodés. | **Complet, from scratch** |
+| 1 | 00 — Vue.js | Premier framework. Réactivité Proxy, Composition API, Pinia, Nuxt. Les bases les plus explicites pour construire le modèle mental. | **Complet, from scratch** |
+| 2 | 01 — Angular | Deuxième framework. DI, Signals, RxJS, formulaires réactifs. Avec Vue derrière toi, les patterns composants sont rodés. | **Complet, from scratch** |
+| 3 | 02 — React | Troisième framework. Hooks, Context, Zustand, Next.js, Server Components. Vue + Angular derrière toi : React devient évident par comparaison. | **Complet, from scratch** |
 
-> **Parcours Vue-first** : si tu n'es pas en mission React, l'ordre **01 → 02 → 00** (Vue → Angular → React) est une bonne alternative. Vue pose des bases de réactivité plus explicites.
+> **Alternative React-first** : si ta première mission est React et que tu dois démarrer vite, l'ordre **02 → 00 → 01** (React → Vue → Angular) reste viable. Mais l'ordre Vue-first est la voie recommandée.
 
-**Résultat tangible :** ton app fil rouge existe en 3 versions (React, Vue, Angular). Tu peux montrer la même app dans 3 frameworks à un recruteur. C'est déjà un portfolio.
+**Résultat tangible :** ton app fil rouge existe en 3 versions (Vue, Angular, React). Tu peux montrer la même app dans 3 frameworks à un recruteur. C'est déjà un portfolio.
 
 <details>
-<summary><strong>Guide d'utilisation optimale — 00 React (40 modules, 24 exercices)</strong></summary>
+<summary><strong>Guide d'utilisation optimale — 00 Vue (44 modules, 33 exercices)</strong></summary>
 
 | Section | Mode | Pourquoi |
 |---------|------|----------|
-| 00-introduction | **Survol** | Pas encore de référence Vue/Angular — survole le pont, tu y reviendras après |
-| 01-composants-jsx | **Normal** | JSX, props, children — ton premier framework front from scratch |
-| 02-hooks-fondamentaux | **Deep dive** | useState, useEffect, custom hooks — le coeur de React |
-| 03-state-management | **Deep dive, découpé en 2** | Fais useReducer+Context d'abord (2 jours), PUIS Zustand+React Query (2 jours). |
-| 04-routing | **Normal** | React Router |
-| 05-formulaires | **Normal** | React Hook Form — très utilisé en mission |
-| 06-nextjs | **Deep dive** | Server Components, App Router, Server Actions — c'est LA que tu apprends le plus. |
-| 07-tests | **Deep dive** | Testing Library, Vitest, Playwright — premier contact avec le testing front |
-| 08-performance-patterns | **Deep dive** | React.memo, useMemo, profiling — différence entre junior et mid |
-| 09-styling | **Normal** | Tailwind, CSS Modules, shadcn/ui |
-| 10-auth-sécurité | **Normal** | NextAuth patterns |
-| 11-cicd-déploiement | **Normal** | Vercel/Docker deploy |
-| 12-recettes-esn | **Deep dive** | Patterns réels de mission — c'est ce qui te rend staffable |
-
-**Fil rouge :** Version React/Next de ton app. C'est ta première version — soigne-la.
-**Piege :** Module 03 (state) — ne fais PAS les 4 approches le même jour.
-
-</details>
-
-<details>
-<summary><strong>Guide d'utilisation optimale — 01 Vue (44 modules, 33 exercices)</strong></summary>
-
-| Section | Mode | Pourquoi |
-|---------|------|----------|
-| 01-débutant (8 cours) | **Normal, pas rapide** | Force-toi à faire les exercices SANS regarder. Compare avec les composants React. |
-| 02-intermédiaire (6 cours) | **Deep dive** | Composition API avancée, composables, async — compare avec les hooks React |
-| 03-avance (7 cours) | **Deep dive** | Testing Vue + Router + Pinia. Tu connais déjà Vitest et Playwright de React. |
-| 04-expert (4 cours) | **Deep dive** | Performance, SSR, architecture — ce qui fait la différence en entretien |
-| 05-nuxt3 | **Deep dive** | Le meta-framework de Vue. Compare avec Next.js. |
+| 01-débutant (8 cours) | **Normal, pas rapide** | Force-toi à faire les exercices SANS regarder. C'est ton premier framework — prends le temps. |
+| 02-intermédiaire (6 cours) | **Deep dive** | Composition API avancée, composables, async — le coeur de Vue moderne. |
+| 03-avance (7 cours) | **Deep dive** | Testing Vue + Router + Pinia. Vitest et Playwright s'installent ici pour tous les frameworks. |
+| 04-expert (4 cours) | **Deep dive** | Performance, SSR, architecture — ce qui fait la différence en entretien. |
+| 05-nuxt3 | **Deep dive** | Le meta-framework de Vue. Tu le compareras avec Next.js au moment de React. |
 | 06-storybook | **Normal** | Utile mais pas bloquant |
 | 07-cicd | **Normal** | Pipeline Vue |
 | 08-api-typees | **Deep dive** | Typer les API cote front — eliminer les `any` |
 | 09-accessibilité | **Deep dive** | Directement applicable en mission ESN |
 | 10-i18n | **Normal** | Utile en mission ESN (clients multi-langues) |
 | 11-auth-sécurité | **Normal** | Auth patterns Vue/Nuxt |
-| 12-vue-query | **Normal** | TanStack Query — tu l'as déjà vu côté React |
+| 12-vue-query | **Normal** | TanStack Query — tu le reverras côté Angular et React |
 
-**Fil rouge :** Version Vue/Nuxt de ton app. Deuxième version — compare avec React.
+**Fil rouge :** Version Vue/Nuxt de ton app. C'est ta première version — soigne-la.
 **Piege :** Ne survole PAS le Module 01 parce que "c'est du débutant". Fais les exercices.
 
 </details>
 
 <details>
-<summary><strong>Guide d'utilisation optimale — 02 Angular (43 modules, 26 exercices)</strong></summary>
+<summary><strong>Guide d'utilisation optimale — 01 Angular (43 modules, 26 exercices)</strong></summary>
 
 | Section | Mode | Pourquoi |
 |---------|------|----------|
-| 00-de-vue-a-angular (3 cours) | **Lecture attentive** | Le pont Vue → Angular. Tu as aussi React en tête — compare les 3 modèles. |
+| 00-de-vue-a-angular (3 cours) | **Lecture attentive** | Le pont Vue → Angular. Tu viens de Vue — toutes les analogies vont sonner juste. |
 | 01-composants-templates (7 cours) | **Normal** | Syntaxe Angular (@if, @for, etc.) |
-| 02-signals-avances (3 cours) | **Deep dive** | Le nouveau modèle réactif d'Angular — compare avec `ref()` (Vue) et `useState` (React) |
+| 02-signals-avances (3 cours) | **Deep dive** | Le nouveau modèle réactif d'Angular — compare avec `ref()` de Vue que tu connais. |
 | 03-services-di (3 cours) | **Deep dive** | DI = coeur d'Angular. Connecte avec NestJS (Phase D). Note la similitude. |
 | 04-routing (4 cours) | **Normal** | Le routing utilise des Observables (RxJS) — c'est OK de ne pas tout comprendre, le module 05 expliquera |
 | 05-rxjs-essentiel (4 cours) | **Deep dive, PRENDS TON TEMPS** | Le module le plus difficile du cours. Observable, operators, switchMap. Fais les marble diagrams. Si tu galères 2 jours c'est NORMAL. |
@@ -355,12 +331,36 @@ Tu es en mission React — commence par ce qui t'est utile immédiatement. React
 | 07-formulaires (4 cours) | **Deep dive** | Reactive forms — plus puissant que Vue/React forms |
 | 08-angular-material (3 cours) | **Normal** | Component library — survol OK si pas en mission Angular |
 | 09-tests (2 cours) | **Normal** | TestBed — spécifique Angular |
-| 10-state-management (3 cours) | **Deep dive** | NgRx vs Signal Store — compare avec Zustand (React) et Pinia (Vue) |
+| 10-state-management (3 cours) | **Deep dive** | NgRx vs Signal Store — compare avec Pinia (Vue) que tu connais. |
 | 11-cicd-auth-sécurité (1 cours) | **Normal** | |
 | 12-recettes-esn (2 cours) | **Deep dive** | Patterns réels de mission Angular |
 
-**Fil rouge :** Version Angular de ton app. Tu as maintenant 3 versions — c'est ton portfolio.
+**Fil rouge :** Version Angular de ton app. Deuxième version — compare avec Vue.
 **Piege :** Module 05 (RxJS). Protocole : 20 min par exercice, si tu bloques relis le marble diagram, si après 45 min c'est flou passe a l'exercice suivant.
+
+</details>
+
+<details>
+<summary><strong>Guide d'utilisation optimale — 02 React (40 modules, 24 exercices)</strong></summary>
+
+| Section | Mode | Pourquoi |
+|---------|------|----------|
+| 00-introduction | **Lecture attentive** | Le pont Vue/Angular → React. Tu connais déjà la réactivité et la DI — les analogies vont claquer. |
+| 01-composants-jsx | **Normal** | JSX, props, children — compare avec les templates Vue que tu connais. |
+| 02-hooks-fondamentaux | **Deep dive** | useState, useEffect, custom hooks — l'équivalent des composables Vue. |
+| 03-state-management | **Deep dive, découpé en 2** | Fais useReducer+Context d'abord (2 jours), PUIS Zustand+React Query (2 jours). Compare avec Pinia. |
+| 04-routing | **Normal** | React Router — compare avec Vue Router et Angular Router que tu connais. |
+| 05-formulaires | **Normal** | React Hook Form — très utilisé en mission. |
+| 06-nextjs | **Deep dive** | Server Components, App Router, Server Actions — compare avec Nuxt. C'est LA que tu apprends le plus. |
+| 07-tests | **Deep dive** | Testing Library, Vitest, Playwright — tu connais déjà Vitest de Vue. |
+| 08-performance-patterns | **Deep dive** | React.memo, useMemo, profiling — différence entre junior et mid. |
+| 09-styling | **Normal** | Tailwind, CSS Modules, shadcn/ui |
+| 10-auth-sécurité | **Normal** | NextAuth patterns |
+| 11-cicd-déploiement | **Normal** | Vercel/Docker deploy |
+| 12-recettes-esn | **Deep dive** | Patterns réels de mission — c'est ce qui te rend staffable. |
+
+**Fil rouge :** Version React/Next de ton app. Tu as maintenant 3 versions — c'est ton portfolio.
+**Piege :** Module 03 (state) — ne fais PAS les 4 approches le même jour.
 
 </details>
 
@@ -913,9 +913,9 @@ git submodule update --remote --merge
 
 | Cours | Modules | Exercices | Format | Duree est. |
 |-------|---------|-----------|--------|-----------|
-| 00 — React | 40 | 24 | Markdown (`cours/` + `exercices/`) | ~60h |
-| 01 — Vue.js | 44 | 33 | Vite app (`cours/` + `exercices/`) | ~75h |
-| 02 — Angular | 43 | 26 | Markdown (`cours/` + `exercices/`) | ~60h |
+| 00 — Vue.js | 44 | 33 | Vite app (`cours/` + `exercices/`) | ~75h |
+| 01 — Angular | 43 | 26 | Markdown (`cours/` + `exercices/`) | ~60h |
+| 02 — React | 40 | 24 | Markdown (`cours/` + `exercices/`) | ~60h |
 | 03 — TypeScript | 20 | 19 | VitePress (`modules/` + `labs/`) | ~50h |
 | 04 — JS Runtime | 16 | 15 | VitePress | ~35h |
 | 05 — Algorithms | 13 | 12 | VitePress | ~45h |

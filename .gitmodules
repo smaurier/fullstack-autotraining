@@ -5,7 +5,7 @@
 	path = 04-js-runtime
 	url = https://github.com/smaurier/js-runtime-autotraining.git
 [submodule "03-vue"]
-	path = 01-vue
+	path = 00-vue
 	url = https://github.com/smaurier/vue-autotraining.git
 [submodule "04-testing"]
 	path = 06-testing
@@ -20,10 +20,10 @@
 	path = 09-http-caching
 	url = https://github.com/smaurier/HTTP-Caching-autotraining.git
 [submodule "08-react"]
-	path = 00-react
+	path = 02-react
 	url = https://github.com/smaurier/react-autotraining.git
 [submodule "09-angular"]
-	path = 02-angular
+	path = 01-angular
 	url = https://github.com/smaurier/angular-autotraining.git
 [submodule "10-architecture"]
 	path = 11-architecture

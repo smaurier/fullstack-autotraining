@@ -118,7 +118,7 @@ Suis le parcours "Fullstack Complete" de `parcours-thematiques.md` :
 > L'ordre pédagogique suit la numérotation des dossiers (parcours React-first).
 
 ```
-Semaine 1-9  : React (00) → Vue (01) → Angular (02)
+Semaine 1-9  : Vue (00) → Angular (01) → React (02)
 Semaine 10-13: TypeScript (03) → JS Runtime (04)
 En parallele : Algorithms (05) — 1 module/semaine pendant les semaines 10-24
 Semaine 14-22: Testing avance (06) → NestJS (07) → PostgreSQL (08) → HTTP/Caching (09)
