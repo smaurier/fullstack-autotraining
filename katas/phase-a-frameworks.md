@@ -5,7 +5,7 @@
 
 ---
 
-## React (00-react)
+## Vue (00-vue)
 
 ### Kata 1 — useDebounce from scratch
 
@@ -100,7 +100,7 @@ const debounced = useDebounce(text, 300);
 
 ---
 
-## Vue (01-vue)
+## Angular (01-angular)
 
 ### Kata 6 — Composable useLocalStorage
 
@@ -201,7 +201,7 @@ const { state, send, can } = useMachine({
 
 ---
 
-## Angular (02-angular)
+## React (02-react)
 
 ### Kata 11 — Signal-based counter store
 
