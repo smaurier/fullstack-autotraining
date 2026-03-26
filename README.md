@@ -2,7 +2,7 @@
 
 > Du dev front React a l'aise vers le développeur full-stack JS senior, staffable sur quasi toute mission en ESN.
 
-**16 cours** | **~35 katas** | **1 capstone** | **7 paliers** | VitePress
+**17 cours** | **~35 katas** | **1 capstone** | **7 paliers** | VitePress
 
 ---
 
@@ -10,6 +10,7 @@
 
 Devenir un développeur full-stack JavaScript accompli avec :
 
+- Fondations solides en **algorithmie & structures de donnees**
 - Maîtrise des **3 frameworks front majeurs** (Vue, React, Angular)
 - Solide compétence **back-end** (Node.js, NestJS, PostgreSQL)
 - Expertise **performance** (V8 internals, HTTP/caching, profiling)
@@ -24,7 +25,7 @@ Devenir un développeur full-stack JavaScript accompli avec :
 
 ## Méthodologie — Comment suivre ce curriculum efficacement
 
-> Cette section est le coeur du document. Elle transforme 895h de contenu en un plan actionnable.
+> Cette section est le coeur du document. Elle transforme ~1000h de contenu en un plan actionnable.
 
 ### Principe 1 — Quand la frustration monte, STOP
 
@@ -177,14 +178,15 @@ Les cours sont numérotés dans l'ordre de référence. Chaque palier s'appuie s
 
 ### Palier 1 — Fondations
 
-> Avant tout framework : maîtriser le langage et comprendre le moteur.
+> Avant tout framework : apprendre a raisonner sur les problemes, maîtriser le langage et comprendre le moteur.
 
 | # | Cours | Contenu | Duree estimee |
 |---|-------|---------|---------------|
+| 00 | [Algorithms](./00-algorithms) | Complexité → structures de données → récursion → tri → arbres → graphes → backtracking → DP → patterns terrain JS | ~45h |
 | 01 | [TypeScript](./01-typescript) | Primitives → generics → mapped types → type-level programming → variance → decorators → design patterns | ~50h |
 | 02 | [JS Runtime](./02-js-runtime) | V8, event loop, garbage collection, JIT, hidden classes, memory leaks, profiling | ~35h |
 
-**Pourquoi cet ordre ?** TypeScript est le pre-requis de tout le reste. Les JS Runtime internals changent ta façon de penser la performance des le depart — tu ne verras plus jamais un `Array.map` de la même manière.
+**Pourquoi cet ordre ?** L'algorithmie t'apprend a choisir les bonnes structures et a raisonner sur les coûts avant même d'entrer dans les frameworks. TypeScript sécurise ensuite ces raisonnements dans le code. Enfin, les JS Runtime internals changent ta façon de penser la performance dès le départ — tu ne verras plus jamais un `Array.map` de la même manière.
 
 ### Palier 2 — Les 3 frameworks
 
@@ -277,39 +279,63 @@ L'IA reste utile pour les **explications conceptuelles** (pas le code) : "expliq
 
 ---
 
-### Phase A — Les 3 frameworks, from scratch (~195h, ~4 mois)
+### Phase A — Les 3 frameworks, React-first (~195h, ~4 mois)
 
-C'est ta priorite absolue. Les 3 frameworks s'enchainent tant que les patterns front sont frais. Vue pose les bases (réactivité, Composition API, testing), Angular ajoute DI et RxJS, React synthetise avec hooks et Server Components. A la fin, chaque framework eclaire les autres.
+Tu es en mission React — commence par ce qui t'est utile immédiatement. React d'abord, puis Vue pour la réactivité explicite et Nuxt, enfin Angular pour la DI et RxJS. A la fin, chaque framework eclaire les autres.
 
 | Ordre | Cours | Pourquoi cet ordre | Mode |
 |-------|-------|-------------------|----|
-| 1 | 03 — Vue.js | Premier framework. Composition API, réactivité, Pinia, Nuxt, testing (Vitest, Playwright, MSW). Pose les bases solides. | **Complet, from scratch** |
-| 2 | 09 — Angular | Deuxieme framework. DI, Signals, RxJS, formulaires réactifs. Les concepts de composants/routing/state sont acquis depuis Vue — tu te concentres sur ce qui est spécifique a Angular. | **Complet, from scratch** |
-| 3 | 08 — React | Troisieme framework. Hooks, Context, Zustand, Next.js, Server Components. Avec Vue + Angular derriere toi, les patterns sont rodes. Le cours est concu pour tirer parti de cette experience. | **Complet, from scratch** |
+| 1 | 08 — React | En mission React — hooks, Context, Zustand, Next.js, Server Components. Directement applicable. | **Complet, from scratch** |
+| 2 | 03 — Vue.js | Deuxième framework. Composition API, réactivité, Pinia, Nuxt. Les concepts routing/state sont acquis depuis React. | **Complet, from scratch** |
+| 3 | 09 — Angular | Troisième framework. DI, Signals, RxJS, formulaires réactifs. Avec React + Vue derrière toi, les patterns sont rodés. | **Complet, from scratch** |
 
-> **Parcours React-first** : si ta première mission est React, fais **08 → 03 → 09**. Les cours sont accessibles dans les deux sens. L'important est d'enchainer les 3 rapidement.
+> **Parcours Vue-first** : si tu n'es pas en mission React, l'ordre **03 → 09 → 08** (Vue → Angular → React) est une bonne alternative. Vue pose des bases de réactivité plus explicites.
 
-**Résultat tangible :** ton app fil rouge existe en 3 versions (Vue, Angular, React). Tu peux montrer la même app dans 3 frameworks à un recruteur. C'est déjà un portfolio.
+**Résultat tangible :** ton app fil rouge existe en 3 versions (React, Vue, Angular). Tu peux montrer la même app dans 3 frameworks à un recruteur. C'est déjà un portfolio.
+
+<details>
+<summary><strong>Guide d'utilisation optimale — 08 React (40 modules, 24 exercices)</strong></summary>
+
+| Section | Mode | Pourquoi |
+|---------|------|----------|
+| 00-introduction | **Survol** | Pas encore de référence Vue/Angular — survole le pont, tu y reviendras après |
+| 01-composants-jsx | **Normal** | JSX, props, children — ton premier framework front from scratch |
+| 02-hooks-fondamentaux | **Deep dive** | useState, useEffect, custom hooks — le coeur de React |
+| 03-state-management | **Deep dive, découpé en 2** | Fais useReducer+Context d'abord (2 jours), PUIS Zustand+React Query (2 jours). |
+| 04-routing | **Normal** | React Router |
+| 05-formulaires | **Normal** | React Hook Form — très utilisé en mission |
+| 06-nextjs | **Deep dive** | Server Components, App Router, Server Actions — c'est LA que tu apprends le plus. |
+| 07-tests | **Deep dive** | Testing Library, Vitest, Playwright — premier contact avec le testing front |
+| 08-performance-patterns | **Deep dive** | React.memo, useMemo, profiling — différence entre junior et mid |
+| 09-styling | **Normal** | Tailwind, CSS Modules, shadcn/ui |
+| 10-auth-sécurité | **Normal** | NextAuth patterns |
+| 11-cicd-déploiement | **Normal** | Vercel/Docker deploy |
+| 12-recettes-esn | **Deep dive** | Patterns réels de mission — c'est ce qui te rend staffable |
+
+**Fil rouge :** Version React/Next de ton app. C'est ta première version — soigne-la.
+**Piege :** Module 03 (state) — ne fais PAS les 4 approches le même jour.
+
+</details>
 
 <details>
 <summary><strong>Guide d'utilisation optimale — 03 Vue (44 modules, 33 exercices)</strong></summary>
 
 | Section | Mode | Pourquoi |
 |---------|------|----------|
-| 01-débutant (8 cours) | **Normal, pas rapide** | Force-toi à faire les exercices SANS regarder. La différence entre "je sais que ça existe" et "je sais le coder" est enorme. |
-| 02-intermédiaire (6 cours) | **Deep dive** | Composition API avancee, composables, async — c'est la que ta maîtrise se construit |
-| 03-avance (7 cours) | **Deep dive** | Testing Vue + Router + Pinia. Premier contact avec Vitest, Playwright, MSW |
+| 01-débutant (8 cours) | **Normal, pas rapide** | Force-toi à faire les exercices SANS regarder. Compare avec les composants React. |
+| 02-intermédiaire (6 cours) | **Deep dive** | Composition API avancée, composables, async — compare avec les hooks React |
+| 03-avance (7 cours) | **Deep dive** | Testing Vue + Router + Pinia. Tu connais déjà Vitest et Playwright de React. |
 | 04-expert (4 cours) | **Deep dive** | Performance, SSR, architecture — ce qui fait la différence en entretien |
-| 05-nuxt3 | **Deep dive** | Le meta-framework de Vue. Chaque module doit etre maîtrise à fond |
+| 05-nuxt3 | **Deep dive** | Le meta-framework de Vue. Compare avec Next.js. |
 | 06-storybook | **Normal** | Utile mais pas bloquant |
 | 07-cicd | **Normal** | Pipeline Vue |
 | 08-api-typees | **Deep dive** | Typer les API cote front — eliminer les `any` |
 | 09-accessibilité | **Deep dive** | Directement applicable en mission ESN |
 | 10-i18n | **Normal** | Utile en mission ESN (clients multi-langues) |
 | 11-auth-sécurité | **Normal** | Auth patterns Vue/Nuxt |
-| 12-vue-query | **Normal** | TanStack Query — tu le retrouveras en React |
+| 12-vue-query | **Normal** | TanStack Query — tu l'as déjà vu côté React |
 
-**Fil rouge :** Version Vue/Nuxt de ton app. C'est ta première version — soigne-la.
+**Fil rouge :** Version Vue/Nuxt de ton app. Deuxième version — compare avec React.
 **Piege :** Ne survole PAS le Module 01 parce que "c'est du débutant". Fais les exercices.
 
 </details>
@@ -319,46 +345,22 @@ C'est ta priorite absolue. Les 3 frameworks s'enchainent tant que les patterns f
 
 | Section | Mode | Pourquoi |
 |---------|------|----------|
-| 00-de-vue-a-angular (3 cours) | **Lecture attentive** | Le pont mental est crucial — comprends les équivalences avec Vue |
+| 00-de-vue-a-angular (3 cours) | **Lecture attentive** | Le pont Vue → Angular. Tu as aussi React en tête — compare les 3 modèles. |
 | 01-composants-templates (7 cours) | **Normal** | Syntaxe Angular (@if, @for, etc.) |
-| 02-signals-avances (3 cours) | **Deep dive** | Le nouveau modèle réactif d'Angular — c'est l'équivalent de `ref()` en Vue |
-| 03-services-di (3 cours) | **Deep dive** | DI = coeur d'Angular. Connecte avec NestJS (Phase C). Note la similitude. |
+| 02-signals-avances (3 cours) | **Deep dive** | Le nouveau modèle réactif d'Angular — compare avec `ref()` (Vue) et `useState` (React) |
+| 03-services-di (3 cours) | **Deep dive** | DI = coeur d'Angular. Connecte avec NestJS (Phase D). Note la similitude. |
 | 04-routing (4 cours) | **Normal** | Le routing utilise des Observables (RxJS) — c'est OK de ne pas tout comprendre, le module 05 expliquera |
-| 05-rxjs-essentiel (4 cours) | **Deep dive, PRENDS TON TEMPS** | Le module le plus difficile du cours. Observable, operators, switchMap. Fais les marble diagrams. Si tu galeres 2 jours c'est NORMAL. |
+| 05-rxjs-essentiel (4 cours) | **Deep dive, PRENDS TON TEMPS** | Le module le plus difficile du cours. Observable, operators, switchMap. Fais les marble diagrams. Si tu galères 2 jours c'est NORMAL. |
 | 06-http-api (3 cours) | **Normal** | HttpClient utilise RxJS — ça consolidera le module 05 |
 | 07-formulaires (4 cours) | **Deep dive** | Reactive forms — plus puissant que Vue/React forms |
 | 08-angular-material (3 cours) | **Normal** | Component library — survol OK si pas en mission Angular |
 | 09-tests (2 cours) | **Normal** | TestBed — spécifique Angular |
-| 10-state-management (3 cours) | **Deep dive** | NgRx vs Signal Store — compare avec Pinia (Vue) |
+| 10-state-management (3 cours) | **Deep dive** | NgRx vs Signal Store — compare avec Zustand (React) et Pinia (Vue) |
 | 11-cicd-auth-sécurité (1 cours) | **Normal** | |
 | 12-recettes-esn (2 cours) | **Deep dive** | Patterns réels de mission Angular |
 
-**Fil rouge :** Version Angular de ton app. Compare les approches DI/Services avec Vue.
+**Fil rouge :** Version Angular de ton app. Tu as maintenant 3 versions — c'est ton portfolio.
 **Piege :** Module 05 (RxJS). Protocole : 20 min par exercice, si tu bloques relis le marble diagram, si après 45 min c'est flou passe a l'exercice suivant.
-
-</details>
-
-<details>
-<summary><strong>Guide d'utilisation optimale — 08 React (40 modules, 24 exercices)</strong></summary>
-
-| Section | Mode | Pourquoi |
-|---------|------|----------|
-| 00-de-vue-angular-a-react | **Lecture attentive** | Le pont Vue/Angular → React est precieux. Compare les modèles mentaux. |
-| 01-composants-jsx | **Normal** | JSX, props, children — compare avec les templates Vue et Angular |
-| 02-hooks-fondamentaux | **Deep dive** | useState, useEffect, custom hooks — le coeur de React |
-| 03-state-management | **Deep dive, découpé en 2** | 4 approches en 1 module. Fais useReducer+Context d'abord (2 jours), PUIS Zustand+React Query (2 jours). Compare avec Pinia et NgRx. |
-| 04-routing | **Normal** | React Router — plus simple que Angular Router |
-| 05-formulaires | **Normal** | React Hook Form — très utilise en mission |
-| 06-nextjs | **Deep dive** | C'est LA que tu apprends le plus. Server Components, App Router, Server Actions. Compare avec Nuxt. |
-| 07-tests | **Normal** | Testing Library — tu connais déjà Vitest et Playwright de Vue |
-| 08-performance-patterns | **Deep dive** | React.memo, useMemo, profiling — différence entre junior et mid |
-| 09-styling | **Normal** | Tailwind, CSS Modules, shadcn/ui |
-| 10-auth-sécurité | **Normal** | NextAuth patterns |
-| 11-cicd-déploiement | **Normal** | Vercel/Docker deploy |
-| 12-recettes-esn | **Deep dive** | C'est le module qui te rend staffable — patterns réels de mission |
-
-**Fil rouge :** Version React de ton app. Tu as maintenant 3 versions — c'est ton portfolio.
-**Piege :** Module 03 (state) — ne fais PAS les 4 approches le même jour.
 
 </details>
 
@@ -415,15 +417,46 @@ Maintenant que tu as 3 frameworks derriere toi, TypeScript avance et JS Runtime 
 
 **Résultat tangible :** tu peux expliquer en entretien le fonctionnement de l'event loop, pourquoi `Array.map` créé un nouveau tableau en mémoire, et la différence entre covariance et contravariance. C'est ce qui impressionne un lead tech.
 
-### Phase C — Tester et construire le back (~155h, ~3-4 mois)
+### Phase C — Algorithmie et raisonnement (~45h, ~1 mois)
+
+> **Peut se faire en parallèle** des autres phases (15-20 min de kata/jour avant ta session principale).
+
+L'algorithmie renforce le raisonnement sur les coûts et les structures de données. Utile en entretien technique et pour les choix d'implémentation au quotidien. Si tu préfères, intercale 1 module algo par semaine pendant les phases B-D au lieu de faire un bloc dédié.
+
+| Ordre | Cours | Pourquoi maintenant | Mode |
+|-------|-------|-------------------|----||
+| 6 | 00 — Algorithms | Complexité, structures de données, récursion, tri, arbres, graphes, DP, patterns terrain JS. Renforce le raisonnement. | Complet ou en parallèle |
+
+<details>
+<summary><strong>Guide d'utilisation optimale — 00 Algorithms (13 modules, 12 labs, 13 quizzes)</strong></summary>
+
+| Modules | Mode | Notes |
+|---------|------|-------|
+| 00-03 | **Normal** | Complexité, tableaux, hash maps, stacks, queues — fondamentaux |
+| 04 | **Deep dive** | Récursion — le premier mur. Si tu bloques > 30 min, lis la solution et refais. |
+| 05-06 | **Normal** | Tri, heaps, arbres — structures classiques |
+| 07 | **Deep dive** | Graphes — BFS/DFS, utile pour comprendre le DOM et les dépendances |
+| 08-09 | **Normal** | Backtracking, DP — les plus durs. Comprends l'intuition, pas chaque variante. |
+| 10 | **Normal** | Greedy, union-find |
+| 11 | **Deep dive** | Patterns terrain JS — debounce, LRU cache, rate limiting. Directement applicable. |
+| 12 | **Normal** | Projet final |
+
+**Fil rouge :** Implémente les patterns du module 11 dans ton app (debounce sur la recherche, LRU cache côté API).
+**Alternative parallèle :** 1 module algo par semaine pendant les phases B-D (~15 semaines). Commence par les modules 00-03, puis 11 (patterns terrain), puis le reste.
+
+</details>
+
+**Résultat tangible :** tu raisonnes en O(n) vs O(n²), tu sais quand utiliser une hash map vs un tableau, et tu peux résoudre les questions algo d'entretien courantes.
+
+### Phase D — Tester et construire le back (~155h, ~3-4 mois)
 
 Tu sais construire 3 fronts. Maintenant tu apprends a garantir la qualite et à construire le back-end.
 
 | Ordre | Cours | Pourquoi maintenant | Mode |
-|-------|-------|-------------------|----|
-| 6 | 04 — Testing | Unit, intégration, E2E, TDD. Tu testes les 3 frameworks que tu viens d'apprendre. | Complet |
-| 7 | 05 — NestJS | Tu comprends enfin ce qu'il y a derriere une API. Node.js, Express, puis NestJS. | Complet |
-| 8 | 06 — PostgreSQL | La couche donnees. SQL, indexes, EXPLAIN ANALYZE, puis ORM. | Complet |
+|-------|-------|-------------------|----||
+| 7 | 04 — Testing | Unit, intégration, E2E, TDD. Tu testes les 3 frameworks que tu viens d'apprendre. | Complet |
+| 8 | 05 — NestJS | Tu comprends enfin ce qu'il y a derriere une API. Node.js, Express, puis NestJS. | Complet |
+| 9 | 06 — PostgreSQL | La couche donnees. SQL, indexes, EXPLAIN ANALYZE, puis ORM. | Complet |
 
 <details>
 <summary><strong>Guide d'utilisation optimale — 04 Testing (19 modules, 18 labs, 19 quizzes)</strong></summary>
@@ -496,14 +529,14 @@ Après NestJS, tu reviens sur ce que l'ORM faisait sous le capot. Le triplet 08-
 
 **Résultat tangible :** ton app fil rouge a maintenant une API NestJS, une base PostgreSQL, et des tests. C'est une vraie app fullstack.
 
-**Palier de staffabilite :** après Phase C (~435h), tu es **staffable fullstack JS**.
+**Palier de staffabilite :** après Phase D (~480h), tu es **staffable fullstack JS**.
 
-### Phase D — Déployer et connecter (~100h, ~2 mois)
+### Phase E — Déployer et connecter (~100h, ~2 mois)
 
 | Ordre | Cours | Pourquoi maintenant | Mode |
-|-------|-------|-------------------|----|
-| 9 | 07 — HTTP & Caching | Cache-Control, CDN, SSR/ISR, Redis, Service Workers. Tu comprends pourquoi ton site est lent ou rapide. | Complet |
-| 10 | 16 — AWS Cloud | Tu déployés ton app fil rouge. IAM, S3, Lambda, CDK, CloudFront, CI/CD. Le module 19 (déployer Nuxt/Next) est le climax. | Complet |
+|-------|-------|-------------------|----||
+| 10 | 07 — HTTP & Caching | Cache-Control, CDN, SSR/ISR, Redis, Service Workers. Tu comprends pourquoi ton site est lent ou rapide. | Complet |
+| 11 | 16 — AWS Cloud | Tu déployés ton app fil rouge. IAM, S3, Lambda, CDK, CloudFront, CI/CD. Le module 19 (déployer Nuxt/Next) est le climax. | Complet |
 
 <details>
 <summary><strong>Guide d'utilisation optimale — 07 HTTP & Caching (21 modules, 20 labs, 21 quizzes)</strong></summary>
@@ -556,14 +589,14 @@ Le climax du parcours — tu déployés ton app.
 
 **Résultat tangible :** ton app fil rouge est déployée sur AWS avec CloudFront, CI/CD et un vrai domaine. Tu peux envoyer le lien à un recruteur.
 
-**Palier de staffabilite :** après Phase D (~535h), tu es **staffable fullstack JS avec deploy**.
+**Palier de staffabilite :** après Phase E (~580h), tu es **staffable fullstack JS avec deploy**.
 
-### Phase E — Le palier senior (~140h, ~3 mois)
+### Phase F — Le palier senior (~140h, ~3 mois)
 
 | Ordre | Cours | Pourquoi maintenant | Mode |
-|-------|-------|-------------------|----|
-| 11 | 10 — Architecture | SOLID, DDD, clean arch, microservices, micro-frontends. Tu as construit une vraie app fullstack — ces patterns prennent tout leur sens. | Complet |
-| 12 | 12 — Observabilité & SRE | Logging, metriques, tracing, Grafana, SLOs, incidents. Tu sais construire et déployer — maintenant tu observes et maintiens. | Complet |
+|-------|-------|-------------------|----||
+| 12 | 10 — Architecture | SOLID, DDD, clean arch, microservices, micro-frontends. Tu as construit une vraie app fullstack — ces patterns prennent tout leur sens. | Complet |
+| 13 | 12 — Observabilité & SRE | Logging, metriques, tracing, Grafana, SLOs, incidents. Tu sais construire et déployer — maintenant tu observes et maintiens. | Complet |
 
 <details>
 <summary><strong>Guide d'utilisation optimale — 10 Architecture (99 modules, 67 exercices)</strong></summary>
@@ -606,14 +639,14 @@ C'est le cours **le plus massif** du curriculum. Ne fais PAS tout en deep dive �
 
 </details>
 
-**Palier de staffabilite :** après Phase E (~675h), tu es **staffable senior fullstack JS** (80% des missions).
+**Palier de staffabilite :** après Phase F (~778h), tu es **staffable senior fullstack JS** (80% des missions).
 
-### Phase F — Elargir le spectre (~150h, ~3 mois)
+### Phase G — Elargir le spectre (~150h, ~3 mois)
 
 | Ordre | Cours | Mode |
-|-------|-------|----|
-| 13 | 11 — Systèmes distribues | Partiel (~35h effectifs) : deep dive modules pratiques (00-09, 15-19), lecture modules théoriques (10-14, 20-23) |
-| 14 | 15 — IA pour Devs JS | Complet. Correction : lire module 12 (Tokenization/Embeddings) avant module 09 (Transformer) |
+|-------|-------|----||
+| 14 | 11 — Systèmes distribues | Partiel (~35h effectifs) : deep dive modules pratiques (00-09, 15-19), lecture modules théoriques (10-14, 20-23) |
+| 15 | 15 — IA pour Devs JS | Complet. Correction : lire module 12 (Tokenization/Embeddings) avant module 09 (Transformer) |
 
 <details>
 <summary><strong>Guide d'utilisation optimale — 11 Systèmes distribues (26 modules, 24 labs)</strong></summary>
@@ -659,7 +692,7 @@ Partiel (~35h effectifs). Deep dive sur le pratique, survol sur la théorie pure
 
 </details>
 
-### Phase G — Bonbons (optionnel, ~115h)
+### Phase H — Bonbons (optionnel, ~115h)
 
 | Cours | Quand |
 |-------|-------|
@@ -708,35 +741,36 @@ Partiel (~35h effectifs). Deep dive sur le pratique, survol sur la théorie pure
 ### Résumé du parcours personnalise
 
 ```
-Phase A ─ 3 Frameworks   ██████████████████████░░░░░░░░░░░░░░░░░  ~195h  (mois 1-4)
+Phase A ─ Frameworks     ██████████████████████░░░░░░░░░░░░░░░░░  ~195h  (mois 1-4)
 Phase B ─ TS + Runtime   █████████████████████████░░░░░░░░░░░░░░  ~85h   (mois 5-6)
-Phase C ─ Test + Back    ██████████████████████████████░░░░░░░░░  ~155h  (mois 7-10)
-Phase D ─ HTTP + Deploy  ███████████████████████████████░░░░░░░░  ~100h  (mois 10-12)
-Phase E ─ Senior         ███████████████████████████████████░░░░  ~198h  (mois 12-16)
-Phase F ─ Spectre        ████████████████████████████████████████  ~150h  (mois 16-19)
-Phase G ─ Bonbons        ████████████████████████████████████████  ~115h  (optionnel)
-                                                     Socle : ~883h (~19 mois a 2h/jour)
+Phase C ─ Algorithmie    ██████████████████████████░░░░░░░░░░░░░  ~45h   (mois 7, ou en parallèle)
+Phase D ─ Test + Back    ███████████████████████████████░░░░░░░░  ~155h  (mois 8-11)
+Phase E ─ HTTP + Deploy  ███████████████████████████████░░░░░░░░  ~100h  (mois 11-13)
+Phase F ─ Senior         ███████████████████████████████████░░░░  ~198h  (mois 14-17)
+Phase G ─ Spectre        ████████████████████████████████████████  ~150h  (mois 18-20)
+Phase H ─ Bonbons        ████████████████████████████████████████  ~115h  (optionnel)
+                                                     Socle : ~928h (~20 mois a 2h/jour)
 ```
 
 **Paliers de staffabilite :**
-- **Après Phase A (~195h, mois 4)** : staffable sur toute mission front-end (Vue, Angular, React)
-- **Après Phase C (~435h, mois 10)** : staffable fullstack JS
-- **Après Phase D (~535h, mois 12)** : staffable fullstack JS avec deploy
-- **Après Phase E (~733h, mois 16)** : staffable senior fullstack JS (80% des missions)
-- **Après Phase F (~883h, mois 19)** : staffable sur quasi tout le spectre JS
+- **Après Phase A (~195h, mois 4)** : staffable sur toute mission front-end (React, Vue/Nuxt, Angular)
+- **Après Phase D (~480h, mois 11)** : staffable fullstack JS
+- **Après Phase E (~580h, mois 13)** : staffable fullstack JS avec deploy
+- **Après Phase F (~778h, mois 17)** : staffable senior fullstack JS (80% des missions)
+- **Après Phase G (~928h, mois 20)** : staffable sur quasi tout le spectre JS
 
 ---
 
 ## Vue d'ensemble
 
 ```
-Palier 1 ─ Fondations         ██████████████░░░░░░░░░░░░░░░░░░░░░░░░░  ~85h
+Palier 1 ─ Fondations         ███████████████████░░░░░░░░░░░░░░░░░░░░  ~130h
 Palier 2 ─ 3 Frameworks       ██████████████████████████░░░░░░░░░░░░░  ~195h
 Palier 3 ─ Testing + Backend  ████████████████████████████████░░░░░░░  ~195h
 Palier 4 ─ Archi & systemes   ██████████████████████████████████████░  ~313h
 Palier 5 ─ Bonbons            ████████████████████████████████████████  ~115h
 Palier 6 ─ IA                 ████████████████████████████████████████  ~60h
-                                                              Total : ~963h
+                                                             Total : ~1008h
 ```
 
 **A 2h/jour** : ~20-24 mois | **A 3h/jour** : ~13-16 mois | **Temps plein** : ~5-6 mois
@@ -746,16 +780,16 @@ Palier 6 ─ IA                 ████████████████
 > Pour etre staffable fullstack JS rapidement. Le reste s'apprend en mission.
 
 ```
-TypeScript (modules 00-09)  ~25h
-  → Vue (complet)           ~75h
+React (complet)             ~60h
+  → TypeScript (modules 00-09)  ~25h
   → Testing (modules 00-11) ~30h
   → NestJS (complet)        ~65h
   → PostgreSQL (modules 00-11) ~30h
   → HTTP/Caching (modules 00-09) ~25h
-                   Total : ~250h (~3 mois a 3h/jour)
+                   Total : ~235h (~3 mois a 3h/jour)
 ```
 
-Ajoute Angular + React (~120h) pour couvrir les 3 frameworks = **~370h en ~4 mois**.
+Ajoute Vue + Angular (~135h) pour couvrir les 3 frameworks = **~370h en ~4 mois**.
 
 ---
 

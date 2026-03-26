@@ -7,11 +7,11 @@
 
 ## 1. Les 2 formats de cours
 
-Les 16 cours utilisent 2 structures différentes :
+Les 17 cours utilisent 2 structures différentes :
 
-### Format VitePress (12 cours)
+### Format VitePress (13 cours)
 
-**Cours concernes** : TypeScript, JS Runtime, NestJS, PostgreSQL, Testing, HTTP/Caching, Observability, AWS, Distributed Systems, React Native, WebGPU, IA
+**Cours concernes** : Algorithms, TypeScript, JS Runtime, NestJS, PostgreSQL, Testing, HTTP/Caching, Observability, AWS, Distributed Systems, React Native, WebGPU, IA
 
 ```
 cours-xyz/
@@ -78,52 +78,54 @@ Repete ce cycle pour CHAQUE module. Ne saute pas d'étape.
 
 ## 3. Par où commencer
 
-### Si tu commences par TypeScript (recommande)
+### Si tu commences par Algorithms (recommande)
 
 ```bash
-cd 01-typescript
+cd 00-algorithms
 npm install
 npm run docs:dev      # site avec sidebar navigable
 ```
 
 Puis :
 1. Ouvre `modules/00-prerequis-et-introduction.md` (où via le site web)
-2. Fais `labs/lab-01-premiers-types/` → `exercise.ts` (où `npm run lab:01`)
+2. Fais `labs/lab-01-complexite/` → `exercise.ts` (où `npm run lab:01`)
 3. Verifie avec `solution.ts` (où `npm run solution:01`)
-4. Ouvre `quizzes/quiz-01-types-primitifs.html` dans Chrome
+4. Ouvre `quizzes/quiz-01-complexite.html` dans Chrome
 5. Continue avec module 02, lab 02, quiz 02...
 
-### Parcours TypeScript par phases
+### Parcours Algorithms par phases
 
 | Phase | Modules | Ce que tu apprends |
 |-------|---------|-------------------|
-| Fondamentaux | 00-04 | Types, inference, fonctions, objets, narrowing |
-| Intermédiaire | 05-09 | Classes, generics, enums, modules |
-| Avance | 10-14 | Utility types, conditional types, mapped types, decorateurs |
-| Expert | 15-19 | Variance, declaration files, tsconfig, patterns, projet final |
+| Fondamentaux | 00-03 | Complexité, tableaux, hash maps, stacks, queues |
+| Intermédiaire | 04-07 | Récursion, binary search, tri, heaps, arbres, graphes |
+| Avance | 08-10 | Backtracking, DP, greedy, intervalles, union-find |
+| Ingénieur | 11-12 | Patterns terrain JS fullstack, projet final |
 
-**Temps estime** : ~40-50h (2-3 semaines a 2h/jour)
+**Temps estime** : ~40-45h (2-3 semaines a 2h/jour)
 
 ---
 
-## 4. Ordre global des 16 cours
+## 4. Ordre global des 17 cours
 
 Suis le parcours "Fullstack Complete" de `parcours-thematiques.md` :
 
-> **Attention — L'ordre pedagogique des frameworks ne suit pas la numérotation des dossiers.**
-> Le parcours de référence est : 03-Vue → 09-Angular → 08-React.
-> Les numéros de dossier (08 et 09) ne dictent pas l'ordre de lecture — voir le README pour les parcours alternatifs.
+> **Attention — L'ordre pédagogique des frameworks ne suit pas la numérotation des dossiers.**
+> Le parcours actuel est **React-first** : 08-React → 03-Vue → 09-Angular (mission React en cours).
+> Les numéros de dossier ne dictent pas l'ordre de lecture — voir le README pour les parcours alternatifs.
 
 ```
-Semaine 1-2  : TypeScript (01) → JS Runtime (02)
-Semaine 3-8  : Vue (03) → Angular (09) → React (08)
-Semaine 9-12 : Testing avance (04) → NestJS (05) → PostgreSQL (06) → HTTP/Caching (07)
-Semaine 13-18: Architecture (10) → Distributed Systems (11) → Observability (12)
-Semaine 19   : AWS (16) → Capstone TaskFlow
-Bonus        : React Native (13), WebGPU (14), IA (15)
+Semaine 1-9  : React (08) → Vue (03) → Angular (09)
+Semaine 10-13: TypeScript (01) → JS Runtime (02)
+En parallele : Algorithms (00) — 1 module/semaine pendant les semaines 10-24
+Semaine 14-22: Testing avance (04) → NestJS (05) → PostgreSQL (06) → HTTP/Caching (07)
+Semaine 23-26: AWS (16)
+Semaine 27-35: Architecture (10) → Observability (12)
+Semaine 36-40: Distributed Systems (11) → IA (15)
+Bonus        : React Native (13), WebGPU (14), Capstone TaskFlow
 ```
 
-> **Palier 5 — ordre important** : Architecture (10) se fait AVANT Distributed Systems (11) qui se fait AVANT Observability (12). L'architecture donne le vocabulaire, les systèmes distribues montrent l'implementation, l'observabilité apprend a maintenir le tout en production.
+> **Ordre important** : Architecture (10) se fait AVANT Distributed Systems (11) qui se fait AVANT Observability (12). L'architecture donne le vocabulaire, les systemes distribues montrent l'implementation, l'observabilité apprend a maintenir le tout en production.
 
 ---
 
@@ -157,9 +159,9 @@ A utiliser ENTRE et APRES les cours :
 
 ---
 
-## 7. Checklist avant de commencer TypeScript
+## 7. Checklist avant de commencer le curriculum
 
-- [ ] `cd 01-typescript && npm install`
+- [ ] `cd 00-algorithms && npm install`
 - [ ] `npm run docs:dev` → vérifier que le site s'ouvre
 - [ ] Créer un fichier `progress.md` à la racine du curriculum (notes personnelles)
 - [ ] Ouvrir `modules/00-prerequis-et-introduction.md`
