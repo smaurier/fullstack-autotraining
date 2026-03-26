@@ -5,7 +5,7 @@
 
 ---
 
-## TypeScript (01-typescript)
+## TypeScript (03-typescript)
 
 ### Kata 16 — EventEmitter type-safe avec generics
 
@@ -112,7 +112,7 @@ if (result.success) {
 
 ---
 
-## NestJS (05-nestjs)
+## NestJS (07-nestjs)
 
 ### Kata 19 — Rate limiter middleware from scratch
 
@@ -208,7 +208,7 @@ export class ProfileController {
 
 ---
 
-## PostgreSQL (06-postgresql)
+## PostgreSQL (08-postgresql)
 
 ### Kata 22 — Système de migrations from scratch
 
@@ -302,7 +302,7 @@ const results = await searchArticles('typescript generics');
 
 ---
 
-## Testing (04-testing)
+## Testing (06-testing)
 
 ### Kata 25 — Tester une race condition
 

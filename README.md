@@ -1,4 +1,4 @@
-# Full-Stack JavaScript — Curriculum Complet
+﻿# Full-Stack JavaScript — Curriculum Complet
 
 > Du dev front React a l'aise vers le développeur full-stack JS senior, staffable sur quasi toute mission en ESN.
 
@@ -182,9 +182,9 @@ Les cours sont numérotés dans l'ordre de référence. Chaque palier s'appuie s
 
 | # | Cours | Contenu | Duree estimee |
 |---|-------|---------|---------------|
-| 00 | [Algorithms](./00-algorithms) | Complexité → structures de données → récursion → tri → arbres → graphes → backtracking → DP → patterns terrain JS | ~45h |
-| 01 | [TypeScript](./01-typescript) | Primitives → generics → mapped types → type-level programming → variance → decorators → design patterns | ~50h |
-| 02 | [JS Runtime](./02-js-runtime) | V8, event loop, garbage collection, JIT, hidden classes, memory leaks, profiling | ~35h |
+| 00 | [Algorithms](./05-algorithms) | Complexité → structures de données → récursion → tri → arbres → graphes → backtracking → DP → patterns terrain JS | ~45h |
+| 03 | [TypeScript](./03-typescript) | Primitives → generics → mapped types → type-level programming → variance → decorators → design patterns | ~50h |
+| 04 | [JS Runtime](./04-js-runtime) | V8, event loop, garbage collection, JIT, hidden classes, memory leaks, profiling | ~35h |
 
 **Pourquoi cet ordre ?** L'algorithmie t'apprend a choisir les bonnes structures et a raisonner sur les coûts avant même d'entrer dans les frameworks. TypeScript sécurise ensuite ces raisonnements dans le code. Enfin, les JS Runtime internals changent ta façon de penser la performance dès le départ — tu ne verras plus jamais un `Array.map` de la même manière.
 
@@ -194,13 +194,13 @@ Les cours sont numérotés dans l'ordre de référence. Chaque palier s'appuie s
 
 | # | Cours | Contenu | Duree estimee |
 |---|-------|---------|---------------|
-| 03 | [Vue.js](./03-vue) | Composition API, réactivité, Pinia, Vue Router, SSR/Nuxt, testing, a11y, performance | ~75h |
-| 09 | [Angular](./09-angular) | Standalone, Signals, DI, RxJS, formulaires, routing, Material, testing, SSR | ~60h |
-| 08 | [React](./08-react) | JSX, hooks, Context, Zustand, React Router, Next.js, Server Components, Suspense | ~60h |
+| 01 | [Vue.js](./01-vue) | Composition API, réactivité, Pinia, Vue Router, SSR/Nuxt, testing, a11y, performance | ~75h |
+| 02 | [Angular](./02-angular) | Standalone, Signals, DI, RxJS, formulaires, routing, Material, testing, SSR | ~60h |
+| 00 | [React](./00-react) | JSX, hooks, Context, Zustand, React Router, Next.js, Server Components, Suspense | ~60h |
 
-> **Attention numérotation** : l'ordre pedagogique est **03 → 09 → 08** (Vue → Angular → React). Le numéro du dossier React (08) est inferieur a celui d'Angular (09), mais Angular se fait avant React.
+> **Note numérotation** : les dossiers sont numérotés selon le parcours React-first (**00 → 01 → 02**). Dans ce palier, l'ordre pédagogique recommandé est **Vue (01) → Angular (02) → React (00)**.
 >
-> **Alternative React-first** : si ta première mission est React, fais **08 → 03 → 09**. L'important est de maîtriser les 3 rapidement. Le cours React ajuste certains prérequis si tu viens de Vue, mais les concepts JSX/hooks sont accessibles directement.
+> **Alternative React-first** : si ta première mission est React, fais **00 → 01 → 02** (React → Vue → Angular). L'important est de maîtriser les 3 rapidement.
 
 **Conseil** : Angular est très demandé en ESN (banques, grandes entreprises, secteur public). Intercale un petit projet personnel entre chaque framework pour ancrer les patterns.
 
@@ -210,10 +210,10 @@ Les cours sont numérotés dans l'ordre de référence. Chaque palier s'appuie s
 
 | # | Cours | Contenu | Duree estimee |
 |---|-------|---------|---------------|
-| 04 | [Testing](./04-testing) | TDD/BDD, mutation testing, contract testing (Pact), performance testing (k6), CI/CD — les modules 00-05 consolident ce que Vue a introduit | ~45h |
-| 05 | [NestJS](./05-nestjs) | Node.js → Express → NestJS → TypeORM/Prisma → MongoDB/Mongoose → GraphQL → WebSockets → auth → deploy | ~65h |
-| 06 | [PostgreSQL](./06-postgresql) | SQL → indexes → EXPLAIN → MVCC → locks → replication → partitioning → backup | ~45h |
-| 07 | [HTTP & Caching](./07-http-caching) | HTTP/1.1 → HTTP/2 → HTTP/3 → Cache-Control → CDN → SSR/ISR → streaming → Redis → GraphQL caching → Service Workers | ~40h |
+| 06 | [Testing](./06-testing) | TDD/BDD, mutation testing, contract testing (Pact), performance testing (k6), CI/CD — les modules 00-05 consolident ce que Vue a introduit | ~45h |
+| 07 | [NestJS](./07-nestjs) | Node.js → Express → NestJS → TypeORM/Prisma → MongoDB/Mongoose → GraphQL → WebSockets → auth → deploy | ~65h |
+| 08 | [PostgreSQL](./08-postgresql) | SQL → indexes → EXPLAIN → MVCC → locks → replication → partitioning → backup | ~45h |
+| 09 | [HTTP & Caching](./09-http-caching) | HTTP/1.1 → HTTP/2 → HTTP/3 → Cache-Control → CDN → SSR/ISR → streaming → Redis → GraphQL caching → Service Workers | ~40h |
 
 **Pourquoi cet ordre ?** Testing consolide les 3 frameworks et ajoute TDD/BDD/contract testing. NestJS te rend autonome sur le back. PostgreSQL complete le back avec les donnees. HTTP/Caching connecte front et back.
 
@@ -223,12 +223,12 @@ Les cours sont numérotés dans l'ordre de référence. Chaque palier s'appuie s
 
 | # | Cours | Contenu | Duree estimee |
 |---|-------|---------|---------------|
-| 10 | [Architecture](./10-architecture) | SOLID → DDD → hexagonal → clean arch → CQRS → microservices → micro-frontends → sécurité → performance → serverless → Conway's law | ~138h |
-| 11 | [Systèmes distribues](./11-distributed-systems) | CAP theorem, consensus, CRDT, event sourcing, saga, circuit breaker, back-pressure | ~55h |
+| 11 | [Architecture](./11-architecture) | SOLID → DDD → hexagonal → clean arch → CQRS → microservices → micro-frontends → sécurité → performance → serverless → Conway's law | ~138h |
+| 13 | [Systèmes distribues](./13-distributed-systems) | CAP theorem, consensus, CRDT, event sourcing, saga, circuit breaker, back-pressure | ~55h |
 | 12 | [Observabilité & SRE](./12-observability-sre) | Logging (Pino) → metriques (Prometheus) → tracing (OpenTelemetry) → Sentry → Grafana → SLI/SLO → alerting → incidents/postmortems → chaos engineering → DORA → observabilité frontend → APM panorama → feature flags | ~60h |
-| 16 | [AWS Cloud](./16-aws-cloud) | IAM → VPC/EC2 (essentiel dev) → S3 → Lambda → API Gateway → CDK → DynamoDB → Cognito → CloudFront → RDS → serverless (SST) → CI/CD → déployer Nuxt/Next | ~60h |
+| 10 | [AWS Cloud](./10-aws-cloud) | IAM → VPC/EC2 (essentiel dev) → S3 → Lambda → API Gateway → CDK → DynamoDB → Cognito → CloudFront → RDS → serverless (SST) → CI/CD → déployer Nuxt/Next | ~60h |
 
-**Ordre recommande dans le palier :** 10-Architecture → 11-Distributed Systems → 12-Observabilité → 16-AWS Cloud. L'architecture donne le vocabulaire (CQRS, saga, hexagonal). Les systèmes distribues montrent comment implementer ces patterns a grande echelle. L'observabilité apprend a surveiller et maintenir ces systèmes en production. AWS est le terrain de déploiement.
+**Ordre recommande dans le palier :** 11-Architecture → 13-Distributed Systems → 12-Observabilité → 10-AWS Cloud. L'architecture donne le vocabulaire (CQRS, saga, hexagonal). Les systèmes distribues montrent comment implementer ces patterns a grande echelle. L'observabilité apprend a surveiller et maintenir ces systèmes en production. AWS est le terrain de déploiement.
 
 **Pourquoi après les frameworks ?** L'architecture s'apprecie et se comprend réellement quand on a déjà souffert sur du vrai code. Les patterns prennent tout leur sens avec l'experience concrete.
 
@@ -238,8 +238,8 @@ Les cours sont numérotés dans l'ordre de référence. Chaque palier s'appuie s
 
 | # | Cours | Contenu | Duree estimee |
 |---|-------|---------|---------------|
-| 13 | [React Native](./13-react-native) | JSX mobile → navigation → state → APIs natives → Reanimated 3 → Turbo Modules → Fabric/JSI → Hermes → EAS deploy | ~55h |
-| 14 | [WebGPU & 3D](./14-webgpu-3d) | GPU pipeline → shaders WGSL → geometrie → eclairage → PBR → post-processing → compute shaders → optimisation | ~60h |
+| 15 | [React Native](./15-react-native) | JSX mobile → navigation → state → APIs natives → Reanimated 3 → Turbo Modules → Fabric/JSI → Hermes → EAS deploy | ~55h |
+| 16 | [WebGPU & 3D](./16-webgpu-3d) | GPU pipeline → shaders WGSL → geometrie → eclairage → PBR → post-processing → compute shaders → optimisation | ~60h |
 
 ### Palier 6 — Intelligence Artificielle
 
@@ -247,7 +247,7 @@ Les cours sont numérotés dans l'ordre de référence. Chaque palier s'appuie s
 
 | # | Cours | Contenu | Duree estimee |
 |---|-------|---------|---------------|
-| 15 | [IA pour Devs JS](./15-ia) | Prompting → assistants code → API Claude/OpenAI → MCP → agents → maths IA → neural networks → transformers → fine-tuning → Ollama → embeddings → RAG → chatbot → évaluation → sécurité → production | ~60h |
+| 14 | [IA pour Devs JS](./14-ia) | Prompting → assistants code → API Claude/OpenAI → MCP → agents → maths IA → neural networks → transformers → fine-tuning → Ollama → embeddings → RAG → chatbot → évaluation → sécurité → production | ~60h |
 
 **Pourquoi en dernier palier ?** L'IA est un multiplicateur de productivite qui s'applique a tout le reste. Avoir d'abord le socle technique solide (paliers 1-5) permet de tirer le maximum de l'IA — tu sais ce que tu demandes et tu peux vérifier ce qu'elle produit.
 
@@ -285,16 +285,16 @@ Tu es en mission React — commence par ce qui t'est utile immédiatement. React
 
 | Ordre | Cours | Pourquoi cet ordre | Mode |
 |-------|-------|-------------------|----|
-| 1 | 08 — React | En mission React — hooks, Context, Zustand, Next.js, Server Components. Directement applicable. | **Complet, from scratch** |
-| 2 | 03 — Vue.js | Deuxième framework. Composition API, réactivité, Pinia, Nuxt. Les concepts routing/state sont acquis depuis React. | **Complet, from scratch** |
-| 3 | 09 — Angular | Troisième framework. DI, Signals, RxJS, formulaires réactifs. Avec React + Vue derrière toi, les patterns sont rodés. | **Complet, from scratch** |
+| 1 | 00 — React | En mission React — hooks, Context, Zustand, Next.js, Server Components. Directement applicable. | **Complet, from scratch** |
+| 2 | 01 — Vue.js | Deuxième framework. Composition API, réactivité, Pinia, Nuxt. Les concepts routing/state sont acquis depuis React. | **Complet, from scratch** |
+| 3 | 02 — Angular | Troisième framework. DI, Signals, RxJS, formulaires réactifs. Avec React + Vue derrière toi, les patterns sont rodés. | **Complet, from scratch** |
 
-> **Parcours Vue-first** : si tu n'es pas en mission React, l'ordre **03 → 09 → 08** (Vue → Angular → React) est une bonne alternative. Vue pose des bases de réactivité plus explicites.
+> **Parcours Vue-first** : si tu n'es pas en mission React, l'ordre **01 → 02 → 00** (Vue → Angular → React) est une bonne alternative. Vue pose des bases de réactivité plus explicites.
 
 **Résultat tangible :** ton app fil rouge existe en 3 versions (React, Vue, Angular). Tu peux montrer la même app dans 3 frameworks à un recruteur. C'est déjà un portfolio.
 
 <details>
-<summary><strong>Guide d'utilisation optimale — 08 React (40 modules, 24 exercices)</strong></summary>
+<summary><strong>Guide d'utilisation optimale — 00 React (40 modules, 24 exercices)</strong></summary>
 
 | Section | Mode | Pourquoi |
 |---------|------|----------|
@@ -318,7 +318,7 @@ Tu es en mission React — commence par ce qui t'est utile immédiatement. React
 </details>
 
 <details>
-<summary><strong>Guide d'utilisation optimale — 03 Vue (44 modules, 33 exercices)</strong></summary>
+<summary><strong>Guide d'utilisation optimale — 01 Vue (44 modules, 33 exercices)</strong></summary>
 
 | Section | Mode | Pourquoi |
 |---------|------|----------|
@@ -341,7 +341,7 @@ Tu es en mission React — commence par ce qui t'est utile immédiatement. React
 </details>
 
 <details>
-<summary><strong>Guide d'utilisation optimale — 09 Angular (43 modules, 26 exercices)</strong></summary>
+<summary><strong>Guide d'utilisation optimale — 02 Angular (43 modules, 26 exercices)</strong></summary>
 
 | Section | Mode | Pourquoi |
 |---------|------|----------|
@@ -372,11 +372,11 @@ Maintenant que tu as 3 frameworks derriere toi, TypeScript avance et JS Runtime 
 
 | Ordre | Cours | Pourquoi maintenant | Mode |
 |-------|-------|-------------------|----|
-| 4 | 01 — TypeScript | Les generics, mapped types, conditional types, variance — tu en as vu l'utilite dans les 3 frameworks. Maintenant tu comprends en profondeur. | Complet |
-| 5 | 02 — JS Runtime | V8, event loop, GC, memory leaks, JIT, hidden classes. Tu sais construire des apps — maintenant tu comprends POURQUOI elles sont rapides ou lentes. | Complet |
+| 4 | 03 — TypeScript | Les generics, mapped types, conditional types, variance — tu en as vu l'utilite dans les 3 frameworks. Maintenant tu comprends en profondeur. | Complet |
+| 5 | 04 — JS Runtime | V8, event loop, GC, memory leaks, JIT, hidden classes. Tu sais construire des apps — maintenant tu comprends POURQUOI elles sont rapides ou lentes. | Complet |
 
 <details>
-<summary><strong>Guide d'utilisation optimale — 01 TypeScript (20 modules, 20 labs, 20 quizzes)</strong></summary>
+<summary><strong>Guide d'utilisation optimale — 03 TypeScript (20 modules, 20 labs, 20 quizzes)</strong></summary>
 
 | Modules | Mode | Notes |
 |---------|------|-------|
@@ -398,7 +398,7 @@ Maintenant que tu as 3 frameworks derriere toi, TypeScript avance et JS Runtime 
 </details>
 
 <details>
-<summary><strong>Guide d'utilisation optimale — 02 JS Runtime (16 modules, 15 labs, 16 quizzes)</strong></summary>
+<summary><strong>Guide d'utilisation optimale — 04 JS Runtime (16 modules, 15 labs, 16 quizzes)</strong></summary>
 
 | Modules | Mode | Notes |
 |---------|------|-------|
@@ -425,10 +425,10 @@ L'algorithmie renforce le raisonnement sur les coûts et les structures de donn�
 
 | Ordre | Cours | Pourquoi maintenant | Mode |
 |-------|-------|-------------------|----||
-| 6 | 00 — Algorithms | Complexité, structures de données, récursion, tri, arbres, graphes, DP, patterns terrain JS. Renforce le raisonnement. | Complet ou en parallèle |
+| 6 | 05 — Algorithms | Complexité, structures de données, récursion, tri, arbres, graphes, DP, patterns terrain JS. Renforce le raisonnement. | Complet ou en parallèle |
 
 <details>
-<summary><strong>Guide d'utilisation optimale — 00 Algorithms (13 modules, 12 labs, 13 quizzes)</strong></summary>
+<summary><strong>Guide d'utilisation optimale — 05 Algorithms (13 modules, 12 labs, 13 quizzes)</strong></summary>
 
 | Modules | Mode | Notes |
 |---------|------|-------|
@@ -454,12 +454,12 @@ Tu sais construire 3 fronts. Maintenant tu apprends a garantir la qualite et à 
 
 | Ordre | Cours | Pourquoi maintenant | Mode |
 |-------|-------|-------------------|----||
-| 7 | 04 — Testing | Unit, intégration, E2E, TDD. Tu testes les 3 frameworks que tu viens d'apprendre. | Complet |
-| 8 | 05 — NestJS | Tu comprends enfin ce qu'il y a derriere une API. Node.js, Express, puis NestJS. | Complet |
-| 9 | 06 — PostgreSQL | La couche donnees. SQL, indexes, EXPLAIN ANALYZE, puis ORM. | Complet |
+| 7 | 06 — Testing | Unit, intégration, E2E, TDD. Tu testes les 3 frameworks que tu viens d'apprendre. | Complet |
+| 8 | 07 — NestJS | Tu comprends enfin ce qu'il y a derriere une API. Node.js, Express, puis NestJS. | Complet |
+| 9 | 08 — PostgreSQL | La couche donnees. SQL, indexes, EXPLAIN ANALYZE, puis ORM. | Complet |
 
 <details>
-<summary><strong>Guide d'utilisation optimale — 04 Testing (19 modules, 18 labs, 19 quizzes)</strong></summary>
+<summary><strong>Guide d'utilisation optimale — 06 Testing (19 modules, 18 labs, 19 quizzes)</strong></summary>
 
 **Correction d'ordre — TDD remonte tot :**
 
@@ -487,7 +487,7 @@ Tu sais construire 3 fronts. Maintenant tu apprends a garantir la qualite et à 
 </details>
 
 <details>
-<summary><strong>Guide d'utilisation optimale — 05 NestJS (27 modules, 26 labs)</strong></summary>
+<summary><strong>Guide d'utilisation optimale — 07 NestJS (27 modules, 26 labs)</strong></summary>
 
 3 blocs distincts. Le bloc Express (05-08) est la fondation. Le bloc NestJS (09-13) est le coeur. Le bloc ORM (14-17) s'eclairera après PostgreSQL.
 
@@ -511,7 +511,7 @@ Tu sais construire 3 fronts. Maintenant tu apprends a garantir la qualite et à 
 </details>
 
 <details>
-<summary><strong>Guide d'utilisation optimale — 06 PostgreSQL (19 modules, 18 labs, 19 quizzes)</strong></summary>
+<summary><strong>Guide d'utilisation optimale — 08 PostgreSQL (19 modules, 18 labs, 19 quizzes)</strong></summary>
 
 Après NestJS, tu reviens sur ce que l'ORM faisait sous le capot. Le triplet 08-10 est le passage le plus dur.
 
@@ -535,11 +535,11 @@ Après NestJS, tu reviens sur ce que l'ORM faisait sous le capot. Le triplet 08-
 
 | Ordre | Cours | Pourquoi maintenant | Mode |
 |-------|-------|-------------------|----||
-| 10 | 07 — HTTP & Caching | Cache-Control, CDN, SSR/ISR, Redis, Service Workers. Tu comprends pourquoi ton site est lent ou rapide. | Complet |
-| 11 | 16 — AWS Cloud | Tu déployés ton app fil rouge. IAM, S3, Lambda, CDK, CloudFront, CI/CD. Le module 19 (déployer Nuxt/Next) est le climax. | Complet |
+| 10 | 09 — HTTP & Caching | Cache-Control, CDN, SSR/ISR, Redis, Service Workers. Tu comprends pourquoi ton site est lent ou rapide. | Complet |
+| 11 | 10 — AWS Cloud | Tu déployés ton app fil rouge. IAM, S3, Lambda, CDK, CloudFront, CI/CD. Le module 19 (déployer Nuxt/Next) est le climax. | Complet |
 
 <details>
-<summary><strong>Guide d'utilisation optimale — 07 HTTP & Caching (21 modules, 20 labs, 21 quizzes)</strong></summary>
+<summary><strong>Guide d'utilisation optimale — 09 HTTP & Caching (21 modules, 20 labs, 21 quizzes)</strong></summary>
 
 | Modules | Mode | Notes |
 |---------|------|-------|
@@ -557,7 +557,7 @@ Après NestJS, tu reviens sur ce que l'ORM faisait sous le capot. Le triplet 08-
 </details>
 
 <details>
-<summary><strong>Guide d'utilisation optimale — 16 AWS Cloud (20 modules, 20 labs, 20 quizzes)</strong></summary>
+<summary><strong>Guide d'utilisation optimale — 10 AWS Cloud (20 modules, 20 labs, 20 quizzes)</strong></summary>
 
 Le climax du parcours — tu déployés ton app.
 
@@ -595,11 +595,11 @@ Le climax du parcours — tu déployés ton app.
 
 | Ordre | Cours | Pourquoi maintenant | Mode |
 |-------|-------|-------------------|----||
-| 12 | 10 — Architecture | SOLID, DDD, clean arch, microservices, micro-frontends. Tu as construit une vraie app fullstack — ces patterns prennent tout leur sens. | Complet |
+| 12 | 11 — Architecture | SOLID, DDD, clean arch, microservices, micro-frontends. Tu as construit une vraie app fullstack — ces patterns prennent tout leur sens. | Complet |
 | 13 | 12 — Observabilité & SRE | Logging, metriques, tracing, Grafana, SLOs, incidents. Tu sais construire et déployer — maintenant tu observes et maintiens. | Complet |
 
 <details>
-<summary><strong>Guide d'utilisation optimale — 10 Architecture (99 modules, 67 exercices)</strong></summary>
+<summary><strong>Guide d'utilisation optimale — 11 Architecture (99 modules, 67 exercices)</strong></summary>
 
 C'est le cours **le plus massif** du curriculum. Ne fais PAS tout en deep dive — 138h c'est trop.
 
@@ -645,11 +645,11 @@ C'est le cours **le plus massif** du curriculum. Ne fais PAS tout en deep dive �
 
 | Ordre | Cours | Mode |
 |-------|-------|----||
-| 14 | 11 — Systèmes distribues | Partiel (~35h effectifs) : deep dive modules pratiques (00-09, 15-19), lecture modules théoriques (10-14, 20-23) |
-| 15 | 15 — IA pour Devs JS | Complet. Correction : lire module 12 (Tokenization/Embeddings) avant module 09 (Transformer) |
+| 14 | 13 — Systèmes distribues | Partiel (~35h effectifs) : deep dive modules pratiques (00-09, 15-19), lecture modules théoriques (10-14, 20-23) |
+| 15 | 14 — IA pour Devs JS | Complet. Correction : lire module 12 (Tokenization/Embeddings) avant module 09 (Transformer) |
 
 <details>
-<summary><strong>Guide d'utilisation optimale — 11 Systèmes distribues (26 modules, 24 labs)</strong></summary>
+<summary><strong>Guide d'utilisation optimale — 13 Systèmes distribues (26 modules, 24 labs)</strong></summary>
 
 Partiel (~35h effectifs). Deep dive sur le pratique, survol sur la théorie pure.
 
@@ -666,7 +666,7 @@ Partiel (~35h effectifs). Deep dive sur le pratique, survol sur la théorie pure
 </details>
 
 <details>
-<summary><strong>Guide d'utilisation optimale — 15 IA pour Devs JS (20 modules, 20 labs, 20 quizzes)</strong></summary>
+<summary><strong>Guide d'utilisation optimale — 14 IA pour Devs JS (20 modules, 20 labs, 20 quizzes)</strong></summary>
 
 **Correction d'ordre dans Partie 2 :** Lis le module 12 (Tokenization/Embeddings) AVANT le module 09 (Transformer).
 
@@ -696,11 +696,11 @@ Partiel (~35h effectifs). Deep dive sur le pratique, survol sur la théorie pure
 
 | Cours | Quand |
 |-------|-------|
-| 13 — React Native | Si une mission mobile se présenté |
-| 14 — WebGPU & 3D | Si une mission dataviz/3D se présenté |
+| 15 — React Native | Si une mission mobile se présenté |
+| 16 — WebGPU & 3D | Si une mission dataviz/3D se présenté |
 
 <details>
-<summary><strong>Guide d'utilisation optimale — 13 React Native (28 modules, 28 labs)</strong></summary>
+<summary><strong>Guide d'utilisation optimale — 15 React Native (28 modules, 28 labs)</strong></summary>
 
 | Modules | Mode | Notes |
 |---------|------|-------|
@@ -719,7 +719,7 @@ Partiel (~35h effectifs). Deep dive sur le pratique, survol sur la théorie pure
 </details>
 
 <details>
-<summary><strong>Guide d'utilisation optimale — 14 WebGPU & 3D (31 modules, 30 labs)</strong></summary>
+<summary><strong>Guide d'utilisation optimale — 16 WebGPU & 3D (31 modules, 30 labs)</strong></summary>
 
 | Modules | Mode | Notes |
 |---------|------|-------|
@@ -797,17 +797,17 @@ Ajoute Vue + Angular (~135h) pour couvrir les 3 frameworks = **~370h en ~4 mois*
 
 | Type de mission | Cours concernes | Pret ? |
 |-----------------|-----------------|--------|
-| Front Vue/Nuxt | 01, 02, 03, 04, 07, 10 | Oui |
-| Front React/Next | 01, 02, 04, 07, 08, 10 | Oui |
-| Front Angular | 01, 02, 04, 07, 09, 10 | Oui |
-| Full-stack Node | 01, 02, 04, 05, 06, 07, 10, 16 | Oui |
-| Mobile React Native | 01, 02, 08, 04, 13 | Oui |
-| Archi/Lead tech | 10, 11, 12, 04, 16 | Oui |
-| Cloud / Deploy | 16, 07, 12, 05 (deploy) | Oui |
-| IA / Agent dev | 15, 05, 10, 04 | Oui |
-| DevOps/SRE | 12, 11, 16, 05 (deploy) | Oui |
-| Performance | 02, 07, 10, 12 | Oui |
-| Accessibilité | 03, 08, 09, 13 + certification auditeur | Oui |
+| Front Vue/Nuxt | 01, 03, 04, 06, 09, 11 | Oui |
+| Front React/Next | 00, 03, 04, 06, 09, 11 | Oui |
+| Front Angular | 02, 03, 04, 06, 09, 11 | Oui |
+| Full-stack Node | 03, 04, 06, 07, 08, 09, 10, 11 | Oui |
+| Mobile React Native | 00, 03, 04, 06, 15 | Oui |
+| Archi/Lead tech | 06, 10, 11, 12, 13 | Oui |
+| Cloud / Deploy | 07 (deploy), 09, 10, 12 | Oui |
+| IA / Agent dev | 06, 07, 11, 14 | Oui |
+| DevOps/SRE | 07 (deploy), 10, 12, 13 | Oui |
+| Performance | 04, 09, 11, 12 | Oui |
+| Accessibilité | 00, 01, 02, 15 + certification auditeur | Oui |
 
 ---
 
@@ -827,7 +827,7 @@ Les lacunes initiales ont ete comblees par des modules complementaires integres 
 
 Sentry deplace dans le tronc principal (après distributed tracing). ELK Stack & Kibana maintenu en annexe. Nouveaux modules ajoutes : observabilité frontend, panorama APM, feature flags.
 
-### 4. AWS Cloud — Nouveau cours #16
+### 4. AWS Cloud — Nouveau cours #10
 
 Cours complet ajoute couvrant IAM, S3, Lambda, CDK, CloudFront, DynamoDB, Cognito, déploiement Nuxt/Next. Place au Palier 5 (Architecture & Systèmes).
 
@@ -913,22 +913,23 @@ git submodule update --remote --merge
 
 | Cours | Modules | Exercices | Format | Duree est. |
 |-------|---------|-----------|--------|-----------|
-| 01 — TypeScript | 20 | 19 | VitePress (`modules/` + `labs/`) | ~50h |
-| 02 — JS Runtime | 16 | 15 | VitePress | ~35h |
-| 03 — Vue.js | 44 | 33 | Vite app (`cours/` + `exercices/`) | ~75h |
-| 04 — Testing | 19 | 18 | VitePress | ~45h |
-| 05 — NestJS | 27 | 26 | VitePress | ~65h |
-| 06 — PostgreSQL | 19 | 18 | VitePress | ~45h |
-| 07 — HTTP & Caching | 21 | 20 | VitePress | ~40h |
-| 08 — React | 40 | 24 | Markdown (`cours/` + `exercices/`) | ~60h |
-| 09 — Angular | 43 | 26 | Markdown (`cours/` + `exercices/`) | ~60h |
-| 10 — Architecture | 99 | 67 | Markdown (`cours/` + `exercices/`) | ~138h |
-| 11 — Systèmes distribues | 26 | 24 | VitePress | ~55h |
+| 00 — React | 40 | 24 | Markdown (`cours/` + `exercices/`) | ~60h |
+| 01 — Vue.js | 44 | 33 | Vite app (`cours/` + `exercices/`) | ~75h |
+| 02 — Angular | 43 | 26 | Markdown (`cours/` + `exercices/`) | ~60h |
+| 03 — TypeScript | 20 | 19 | VitePress (`modules/` + `labs/`) | ~50h |
+| 04 — JS Runtime | 16 | 15 | VitePress | ~35h |
+| 05 — Algorithms | 13 | 12 | VitePress | ~45h |
+| 06 — Testing | 19 | 18 | VitePress | ~45h |
+| 07 — NestJS | 27 | 26 | VitePress | ~65h |
+| 08 — PostgreSQL | 19 | 18 | VitePress | ~45h |
+| 09 — HTTP & Caching | 21 | 20 | VitePress | ~40h |
+| 10 — AWS Cloud | 20 | 20 | VitePress — [submodule GitHub](https://github.com/smaurier/aws-autotraining) | ~60h |
+| 11 — Architecture | 99 | 67 | Markdown (`cours/` + `exercices/`) | ~138h |
 | 12 — Observabilité & SRE | 28 | 26 | VitePress | ~60h |
-| 13 — React Native | 28 | 28 | VitePress | ~55h |
-| 14 — WebGPU & 3D | 31 | 30 | VitePress | ~60h |
-| 15 — IA pour Devs JS | 20 | 20 | VitePress | ~60h |
-| 16 — AWS Cloud | 20 | 20 | VitePress — [submodule GitHub](https://github.com/smaurier/aws-autotraining) | ~60h |
+| 13 — Systèmes distribues | 26 | 24 | VitePress | ~55h |
+| 14 — IA pour Devs JS | 20 | 20 | VitePress | ~60h |
+| 15 — React Native | 28 | 28 | VitePress | ~55h |
+| 16 — WebGPU & 3D | 31 | 30 | VitePress | ~60h |
 | **Total** | **~501** | **~414** | **16 submodules** | **~963h** |
 
 ---

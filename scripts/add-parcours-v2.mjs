@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
- * Phase 1: Add screencasts to existing parcours blocks (11 module-based courses)
- * Phase 2: Add parcours blocks to 4 cours-based courses (03-vue, 08-react, 09-angular, 10-architecture)
+ * Phase 1: Add screencasts to existing parcours blocks (12 module-based courses)
+ * Phase 2: Add parcours blocks to 4 cours-based courses (01-vue, 00-react, 02-angular, 11-architecture)
  */
 import { readdirSync, readFileSync, writeFileSync, existsSync } from 'fs';
 import { join } from 'path';
@@ -14,9 +14,9 @@ const MARKER = '<!-- parcours-recommande -->';
 // ════════════════════════════════════════════
 
 const MODULE_COURSES = [
-  '01-typescript', '02-js-runtime', '04-testing', '05-nestjs',
-  '06-postgresql', '07-http-caching', '11-distributed-systems',
-  '12-observability-sre', '13-react-native', '14-webgpu-3d', '15-ia',
+  '05-algorithms', '03-typescript', '04-js-runtime', '06-testing', '07-nestjs',
+  '08-postgresql', '09-http-caching', '13-distributed-systems',
+  '12-observability-sre', '15-react-native', '16-webgpu-3d', '14-ia',
 ];
 
 function findScreencast(courseDir, modNum) {
@@ -92,7 +92,7 @@ console.log(`Phase 1 done: ${phase1Count} screencasts added\n`);
 // and associated exercises, quizzes, projet-fil-rouge
 
 const COURS_COURSES = {
-  '03-vue': {
+  '01-vue': {
     modules: [
       {
         lastFile: 'cours/01-debutant/07-options-vs-composition-api.md',
@@ -146,7 +146,7 @@ const COURS_COURSES = {
       },
     ],
   },
-  '08-react': {
+  '00-react': {
     modules: [
       {
         lastFile: 'cours/00-de-vue-angular-a-react/03-premier-projet-react.md',
@@ -207,7 +207,7 @@ const COURS_COURSES = {
       },
     ],
   },
-  '09-angular': {
+  '02-angular': {
     modules: [
       {
         lastFile: 'cours/00-de-vue-a-angular/03-premier-projet-angular.md',
@@ -269,7 +269,7 @@ const COURS_COURSES = {
       },
     ],
   },
-  '10-architecture': {
+  '11-architecture': {
     modules: [
       {
         lastFile: 'cours/00-fondamentaux/06-raisonner-en-architecte.md',

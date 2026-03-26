@@ -1,51 +1,51 @@
 [submodule "01-typescript"]
-	path = 01-typescript
+	path = 03-typescript
 	url = https://github.com/smaurier/typescript-autotraining.git
 [submodule "02-js-runtime"]
-	path = 02-js-runtime
+	path = 04-js-runtime
 	url = https://github.com/smaurier/js-runtime-autotraining.git
 [submodule "03-vue"]
-	path = 03-vue
+	path = 01-vue
 	url = https://github.com/smaurier/vue-autotraining.git
 [submodule "04-testing"]
-	path = 04-testing
+	path = 06-testing
 	url = https://github.com/smaurier/testing-course.git
 [submodule "05-nestjs"]
-	path = 05-nestjs
+	path = 07-nestjs
 	url = https://github.com/smaurier/Nest-autotraining.git
 [submodule "06-postgresql"]
-	path = 06-postgresql
+	path = 08-postgresql
 	url = https://github.com/smaurier/Databases-autotraining.git
 [submodule "07-http-caching"]
-	path = 07-http-caching
+	path = 09-http-caching
 	url = https://github.com/smaurier/HTTP-Caching-autotraining.git
 [submodule "08-react"]
-	path = 08-react
+	path = 00-react
 	url = https://github.com/smaurier/react-autotraining.git
 [submodule "09-angular"]
-	path = 09-angular
+	path = 02-angular
 	url = https://github.com/smaurier/angular-autotraining.git
 [submodule "10-architecture"]
-	path = 10-architecture
+	path = 11-architecture
 	url = https://github.com/smaurier/archi-training.git
 [submodule "11-distributed-systems"]
-	path = 11-distributed-systems
+	path = 13-distributed-systems
 	url = https://github.com/smaurier/distributed-system-autotraining.git
 [submodule "12-observability-sre"]
 	path = 12-observability-sre
 	url = https://github.com/smaurier/observability-sre-autotraining.git
 [submodule "13-react-native"]
-	path = 13-react-native
+	path = 15-react-native
 	url = https://github.com/smaurier/react-native-autotraining.git
 [submodule "14-webgpu-3d"]
-	path = 14-webgpu-3d
+	path = 16-webgpu-3d
 	url = https://github.com/smaurier/webGPU-3D-course.git
 [submodule "15-ia"]
-	path = 15-ia
+	path = 14-ia
 	url = https://github.com/smaurier/IA-autotraining.git
 [submodule "16-aws-cloud"]
-	path = 16-aws-cloud
+	path = 10-aws-cloud
 	url = https://github.com/smaurier/aws-autotraining.git
 [submodule "00-algorithms"]
-	path = 00-algorithms
+	path = 05-algorithms
 	url = https://github.com/smaurier/algo-training.git

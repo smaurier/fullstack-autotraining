@@ -10,49 +10,56 @@ const ROOT = join(import.meta.dirname, '..');
 
 // ── Visualization mappings: course → { vizFile: [moduleNumbers] }
 const VIZ_MAP = {
-  '01-typescript': {
+  '05-algorithms': {
+    'complexity-growth.html': [1],
+    'binary-search.html': [4],
+    'heap-operations.html': [5],
+    'bfs-dfs.html': [7],
+    'dp-table.html': [9],
+  },
+  '03-typescript': {
     'type-hierarchy.html': [1, 8, 15],
     'type-narrowing.html': [4, 15],
     'generics-flow.html': [6, 7],
     'conditional-types.html': [11, 12],
     'module-resolution.html': [9, 16],
   },
-  '02-js-runtime': {
+  '04-js-runtime': {
     'event-loop.html': [3],
     'call-stack.html': [1],
     'gc-tricolor.html': [7],
     'jit-pipeline.html': [9, 10],
     'hidden-classes.html': [11],
   },
-  '04-testing': {
+  '06-testing': {
     'test-pyramid.html': [1],
     'tdd-cycle.html': [15],
     'ci-pipeline.html': [13],
     'page-object.html': [10, 11],
     'mocking-strategies.html': [4],
   },
-  '05-nestjs': {
+  '07-nestjs': {
     'event-loop.html': [1],
     'middleware-pipeline.html': [6, 7],
     'dependency-injection.html': [11],
     'orm-query-flow.html': [14, 15, 16, 17],
     'nestjs-lifecycle.html': [13],
   },
-  '06-postgresql': {
+  '08-postgresql': {
     'btree-index.html': [5, 6, 7],
     'query-planner.html': [6],
     'mvcc-isolation.html': [8],
     'lock-matrix.html': [9, 10],
     'wal-transaction.html': [4],
   },
-  '07-http-caching': {
+  '09-http-caching': {
     'http-lifecycle.html': [0, 1],
     'cache-decision-tree.html': [3, 4, 5, 6],
     'multi-layer-cache.html': [7, 8, 9],
     'ssr-hydration.html': [10, 11],
     'stale-while-revalidate.html': [5, 6],
   },
-  '11-distributed-systems': {
+  '13-distributed-systems': {
     'network-partitions.html': [1, 2, 15],
     'cap-theorem.html': [10, 11],
     'saga-orchestration.html': [12, 14],
@@ -67,7 +74,7 @@ const VIZ_MAP = {
     'slo-error-budget.html': [10, 11],
     'incident-lifecycle.html': [12, 13],
   },
-  '13-react-native': {
+  '15-react-native': {
     'react-native-architecture.html': [0],
     'flexbox-playground.html': [5],
     'navigation-flow.html': [8, 9],
@@ -76,7 +83,7 @@ const VIZ_MAP = {
     'bridge-vs-jsi.html': [24, 25],
     'bundle-analyzer.html': [22, 25],
   },
-  '14-webgpu-3d': {
+  '16-webgpu-3d': {
     'rendering-pipeline.html': [4],
     'transformations.html': [2],
     'projections.html': [3],
@@ -89,7 +96,7 @@ const VIZ_MAP = {
 
 // ── Special lab mappings where module number != lab number
 const SPECIAL_LAB_MAP = {
-  '07-http-caching': {
+  '09-http-caching': {
     // module num → lab folder name suffix
     4: null,  // no dedicated lab (lab-03 covers 03-04)
     5: 'lab-04-etag-conditional',
@@ -112,6 +119,11 @@ const SPECIAL_LAB_MAP = {
 
 // ── Visualization display names
 const VIZ_NAMES = {
+  'complexity-growth.html': 'Croissance des complexités',
+  'binary-search.html': 'Binary Search',
+  'heap-operations.html': 'Opérations sur heap',
+  'bfs-dfs.html': 'BFS vs DFS',
+  'dp-table.html': 'Table DP',
   'type-hierarchy.html': 'Hiérarchie des types',
   'type-narrowing.html': 'Type Narrowing',
   'generics-flow.html': 'Generics Flow',
@@ -170,9 +182,9 @@ const VIZ_NAMES = {
 
 // ── Courses with modules/ structure
 const COURSES = [
-  '01-typescript', '02-js-runtime', '04-testing', '05-nestjs',
-  '06-postgresql', '07-http-caching', '11-distributed-systems',
-  '12-observability-sre', '13-react-native', '14-webgpu-3d', '15-ia',
+  '05-algorithms', '03-typescript', '04-js-runtime', '06-testing', '07-nestjs',
+  '08-postgresql', '09-http-caching', '13-distributed-systems',
+  '12-observability-sre', '15-react-native', '16-webgpu-3d', '14-ia',
 ];
 
 // Marker to detect if block was already added
@@ -314,7 +326,7 @@ for (const courseSlug of COURSES) {
       continue;
     }
 
-    // Remove existing "Lab associé" section (02-js-runtime pattern)
+    // Remove existing "Lab associé" section (04-js-runtime pattern)
     content = content.replace(/\n## Lab associé\n[\s\S]*$/m, '');
 
     const block = buildParcoursBlock(courseSlug, courseDir, modNum, moduleFiles, i);
