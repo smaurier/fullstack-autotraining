@@ -49,3 +49,6 @@
 [submodule "00-algorithms"]
 	path = 05-algorithms
 	url = https://github.com/smaurier/algo-training.git
+[submodule "10-aws-cloud"]
+	path = 10-aws-cloud
+	url = https://github.com/smaurier/aws-autotraining.git

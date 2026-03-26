@@ -891,8 +891,8 @@ cours/
 
 ```bash
 cd <dossier-du-cours>
-npm install    # ou pnpm install
-npm run dev    # demarre VitePress sur localhost:5173
+pnpm install
+pnpm docs:dev   # demarre VitePress (port variable selon le cours)
 ```
 
 **Cloner le curriculum complet avec les submodules** :
