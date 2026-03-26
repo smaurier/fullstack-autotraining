@@ -28,8 +28,8 @@ cours-xyz/
 
 **Lancer le site de cours** (navigation web avec sidebar) :
 ```bash
-npm install        # une seule fois
-npm run docs:dev   # ouvre http://localhost:5173
+pnpm install        # une seule fois
+pnpm docs:dev       # ouvre http://localhost:5173
 ```
 
 ### Format Projet intégré (4 cours)
@@ -46,10 +46,15 @@ cours-xyz/
 └── README.md         ← Lis-le en premier
 ```
 
-**Lancer le projet** :
+**Lancer le site de cours** (navigation web avec sidebar) :
 ```bash
-pnpm install       # une seule fois
-pnpm dev           # ouvre l'app dans le navigateur
+pnpm install        # une seule fois
+pnpm docs:dev       # ouvre http://localhost:5171-5173 selon le cours
+```
+
+**Lancer l'application** (React, Vue, Angular uniquement) :
+```bash
+pnpm dev            # ouvre l'app Vite/Angular CLI dans le navigateur
 ```
 
 ---
@@ -82,8 +87,8 @@ Repete ce cycle pour CHAQUE module. Ne saute pas d'étape.
 
 ```bash
 cd 05-algorithms
-npm install
-npm run docs:dev      # site avec sidebar navigable
+pnpm install
+pnpm docs:dev         # site avec sidebar navigable
 ```
 
 Puis :
@@ -159,8 +164,8 @@ A utiliser ENTRE et APRES les cours :
 
 ## 7. Checklist avant de commencer le curriculum
 
-- [ ] `cd 05-algorithms && npm install`
-- [ ] `npm run docs:dev` → vérifier que le site s'ouvre
+- [ ] `cd 05-algorithms && pnpm install`
+- [ ] `pnpm docs:dev` → vérifier que le site s'ouvre
 - [ ] Créer un fichier `progress.md` à la racine du curriculum (notes personnelles)
 - [ ] Ouvrir `modules/00-prerequis-et-introduction.md`
 - [ ] Mettre un timer : 2h max par session, pause après
