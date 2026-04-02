@@ -22,18 +22,18 @@
 
 ## Stack imposee
 
-| Couche | Technologie | Cours associe |
-|--------|-------------|---------------|
-| Frontend | React 19 + TypeScript | 03-typescript, 00-react |
-| Backend | NestJS | 07-nestjs |
-| BDD | PostgreSQL + TypeORM | 08-postgresql |
-| Cache | Redis (cache-aside + pub/sub) | HTTP Caching (module 19) |
-| Auth | JWT + refresh tokens | 07-nestjs |
-| Temps réel | WebSocket (Socket.io via NestJS Gateway) | 13-distributed-systems |
-| Tests | Vitest (unit) + Playwright (e2e) | 06-testing |
-| Observabilité | OTel + Prometheus + Grafana | Observability course |
-| Deploy | Docker Compose (dev) + AWS S3/Lambda optionnel | AWS course |
-| CI/CD | GitHub Actions | AWS course |
+| Couche        | Technologie                                    | Cours associe            |
+| ------------- | ---------------------------------------------- | ------------------------ |
+| Frontend      | React 19 + TypeScript                          | 00-typescript, 04-react  |
+| Backend       | NestJS                                         | 07-nestjs                |
+| BDD           | PostgreSQL + TypeORM                           | 08-postgresql            |
+| Cache         | Redis (cache-aside + pub/sub)                  | HTTP Caching (module 19) |
+| Auth          | JWT + refresh tokens                           | 07-nestjs                |
+| Temps réel    | WebSocket (Socket.io via NestJS Gateway)       | 13-distributed-systems   |
+| Tests         | Vitest (unit) + Playwright (e2e)               | 06-testing               |
+| Observabilité | OTel + Prometheus + Grafana                    | Observability course     |
+| Deploy        | Docker Compose (dev) + AWS S3/Lambda optionnel | AWS course               |
+| CI/CD         | GitHub Actions                                 | AWS course               |
 
 ---
 
@@ -51,6 +51,7 @@ refresh_tokens (id, user_id → users, token_hash, expires_at, revoked_at)
 ```
 
 Points d'attention :
+
 - `position` est un entier (où un float si tu veux éviter de re-indexer au drag & drop — a toi de decider)
 - Les suppressions sont en cascade : supprimer un board supprime ses colonnes et cartes
 - `password_hash` : bcrypt, jamais stocke en clair
@@ -138,46 +139,46 @@ Points d'attention :
 
 ### Architecture (/ 20)
 
-| Critere | Points |
-|---------|--------|
-| Separation des responsabilites (modules NestJS propres, services injectables) | 5 |
-| TypeScript strict (`strict: true`), zero `any`, types partages via `packages/shared` | 5 |
-| Gestion d'erreurs centralisee (exception filters NestJS, error boundaries React) | 5 |
-| Config via variables d'environnement (`ConfigModule`, `.env.example` documente) | 5 |
+| Critere                                                                              | Points |
+| ------------------------------------------------------------------------------------ | ------ |
+| Separation des responsabilites (modules NestJS propres, services injectables)        | 5      |
+| TypeScript strict (`strict: true`), zero `any`, types partages via `packages/shared` | 5      |
+| Gestion d'erreurs centralisee (exception filters NestJS, error boundaries React)     | 5      |
+| Config via variables d'environnement (`ConfigModule`, `.env.example` documente)      | 5      |
 
 ### Qualite du code (/ 20)
 
-| Critere | Points |
-|---------|--------|
-| Tests unitaires : couverture > 70% sur les services NestJS | 5 |
-| Tests e2e : au moins 5 scenarios critiques | 5 |
-| ESLint zero erreur, Prettier formate, pas de `console.log` en prod | 5 |
-| Pas de secrets en dur, `.env` dans `.gitignore`, `.env.example` present | 5 |
+| Critere                                                                 | Points |
+| ----------------------------------------------------------------------- | ------ |
+| Tests unitaires : couverture > 70% sur les services NestJS              | 5      |
+| Tests e2e : au moins 5 scenarios critiques                              | 5      |
+| ESLint zero erreur, Prettier formate, pas de `console.log` en prod      | 5      |
+| Pas de secrets en dur, `.env` dans `.gitignore`, `.env.example` present | 5      |
 
 ### Fonctionnel (/ 20)
 
-| Critere | Points |
-|---------|--------|
-| Toutes les features des sprints 1-3 fonctionnent | 8 |
-| UX fluide : optimistic UI, loading states, pas de flash blanc | 6 |
-| Accessibilité : navigation clavier du board, `aria-labels`, focus management après drag | 6 |
+| Critere                                                                                 | Points |
+| --------------------------------------------------------------------------------------- | ------ |
+| Toutes les features des sprints 1-3 fonctionnent                                        | 8      |
+| UX fluide : optimistic UI, loading states, pas de flash blanc                           | 6      |
+| Accessibilité : navigation clavier du board, `aria-labels`, focus management après drag | 6      |
 
 ### Observabilité (/ 20)
 
-| Critere | Points |
-|---------|--------|
-| Traces distribuees end-to-end (frontend → API → DB) | 5 |
-| Dashboard Grafana fonctionnel avec au moins 4 panels | 5 |
-| Alerting configure et fonctionnel | 5 |
-| Logs structures avec correlation ID consultables | 5 |
+| Critere                                              | Points |
+| ---------------------------------------------------- | ------ |
+| Traces distribuees end-to-end (frontend → API → DB)  | 5      |
+| Dashboard Grafana fonctionnel avec au moins 4 panels | 5      |
+| Alerting configure et fonctionnel                    | 5      |
+| Logs structures avec correlation ID consultables     | 5      |
 
 ### DevOps (/ 20)
 
-| Critere | Points |
-|---------|--------|
-| `docker compose up` lance tout sans intervention manuelle | 8 |
-| CI/CD pipeline fonctionnel (lint, test, build passent au vert) | 7 |
-| README avec instructions de setup claires (< 5 min pour lancer le projet) | 5 |
+| Critere                                                                   | Points |
+| ------------------------------------------------------------------------- | ------ |
+| `docker compose up` lance tout sans intervention manuelle                 | 8      |
+| CI/CD pipeline fonctionnel (lint, test, build passent au vert)            | 7      |
+| README avec instructions de setup claires (< 5 min pour lancer le projet) | 5      |
 
 **Total : / 100**
 
@@ -272,4 +273,4 @@ Si tu finis en avance et que tu veux pousser plus loin :
 
 ---
 
-*Ce projet n'a pas de solution toute faite. C'est normal. Un dev senior ne suit pas un tutorial — il lit un cahier des charges et il livre.*
+_Ce projet n'a pas de solution toute faite. C'est normal. Un dev senior ne suit pas un tutorial — il lit un cahier des charges et il livre._

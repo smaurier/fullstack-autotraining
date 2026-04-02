@@ -10,7 +10,7 @@ const ROOT = join(import.meta.dirname, '..');
 const MARKER = '<!-- parcours-recommande -->';
 
 const COURSES = [
-  '05-algorithms', '03-typescript', '04-js-runtime', '06-testing', '07-nestjs',
+  '05-algorithms', '00-typescript', '01-js-runtime', '06-testing', '07-nestjs',
   '08-postgresql', '09-http-caching', '13-distributed-systems',
   '12-observability-sre', '15-react-native', '16-webgpu-3d', '14-ia',
 ];

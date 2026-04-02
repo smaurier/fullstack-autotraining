@@ -17,14 +17,14 @@ const VIZ_MAP = {
     'bfs-dfs.html': [7],
     'dp-table.html': [9],
   },
-  '03-typescript': {
+  '00-typescript': {
     'type-hierarchy.html': [1, 8, 15],
     'type-narrowing.html': [4, 15],
     'generics-flow.html': [6, 7],
     'conditional-types.html': [11, 12],
     'module-resolution.html': [9, 16],
   },
-  '04-js-runtime': {
+  '01-js-runtime': {
     'event-loop.html': [3],
     'call-stack.html': [1],
     'gc-tricolor.html': [7],
@@ -182,7 +182,7 @@ const VIZ_NAMES = {
 
 // ── Courses with modules/ structure
 const COURSES = [
-  '05-algorithms', '03-typescript', '04-js-runtime', '06-testing', '07-nestjs',
+  '05-algorithms', '00-typescript', '01-js-runtime', '06-testing', '07-nestjs',
   '08-postgresql', '09-http-caching', '13-distributed-systems',
   '12-observability-sre', '15-react-native', '16-webgpu-3d', '14-ia',
 ];
@@ -326,7 +326,7 @@ for (const courseSlug of COURSES) {
       continue;
     }
 
-    // Remove existing "Lab associé" section (04-js-runtime pattern)
+    // Remove existing "Lab associé" section (01-js-runtime pattern)
     content = content.replace(/\n## Lab associé\n[\s\S]*$/m, '');
 
     const block = buildParcoursBlock(courseSlug, courseDir, modNum, moduleFiles, i);

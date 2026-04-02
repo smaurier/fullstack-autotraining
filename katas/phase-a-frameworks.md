@@ -5,7 +5,7 @@
 
 ---
 
-## Vue (00-vue)
+## Vue (02-vue)
 
 ### Kata 1 — useDebounce from scratch
 
@@ -23,7 +23,7 @@
 **Test attendu** :
 
 ```tsx
-const [text, setText] = useState('');
+const [text, setText] = useState("");
 const debounced = useDebounce(text, 300);
 // debounced ne change que 300ms apres le dernier setText
 ```
@@ -100,7 +100,7 @@ const debounced = useDebounce(text, 300);
 
 ---
 
-## Angular (01-angular)
+## Angular (03-angular)
 
 ### Kata 6 — Composable useLocalStorage
 
@@ -154,12 +154,12 @@ const debounced = useDebounce(text, 300);
 
 ```ts
 const { state, send, can } = useMachine({
-  initial: 'idle',
+  initial: "idle",
   states: {
-    idle: { on: { FETCH: 'loading' } },
-    loading: { on: { SUCCESS: 'success', ERROR: 'error' } },
-    success: { on: { RESET: 'idle' } },
-    error: { on: { RETRY: 'loading', RESET: 'idle' } },
+    idle: { on: { FETCH: "loading" } },
+    loading: { on: { SUCCESS: "success", ERROR: "error" } },
+    success: { on: { RESET: "idle" } },
+    error: { on: { RETRY: "loading", RESET: "idle" } },
   },
 });
 ```
@@ -201,7 +201,7 @@ const { state, send, can } = useMachine({
 
 ---
 
-## React (02-react)
+## React (04-react)
 
 ### Kata 11 — Signal-based counter store
 
@@ -220,7 +220,7 @@ const { state, send, can } = useMachine({
 
 ---
 
-### Kata 12 — Directive structurelle *appPermission
+### Kata 12 — Directive structurelle \*appPermission
 
 **Difficulte** : ⭐⭐⭐
 **Temps cible** : 45 min
