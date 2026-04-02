@@ -27,6 +27,7 @@ cours-xyz/
 ```
 
 **Lancer le site de cours** (navigation web avec sidebar) :
+
 ```bash
 pnpm install        # une seule fois
 pnpm docs:dev       # ouvre http://localhost:5173
@@ -47,12 +48,14 @@ cours-xyz/
 ```
 
 **Lancer le site de cours** (navigation web avec sidebar) :
+
 ```bash
 pnpm install        # une seule fois
 pnpm docs:dev       # ouvre http://localhost:5171-5173 selon le cours
 ```
 
 **Lancer l'application** (React, Vue, Angular uniquement) :
+
 ```bash
 pnpm dev            # ouvre l'app Vite/Angular CLI dans le navigateur
 ```
@@ -92,6 +95,7 @@ pnpm docs:dev         # site avec sidebar navigable
 ```
 
 Puis :
+
 1. Ouvre `modules/00-prerequis-et-introduction.md` (où via le site web)
 2. Fais `labs/lab-01-complexite/` → `exercise.ts` (où `npm run lab:01`)
 3. Verifie avec `solution.ts` (où `npm run solution:01`)
@@ -100,12 +104,12 @@ Puis :
 
 ### Parcours Algorithms par phases
 
-| Phase | Modules | Ce que tu apprends |
-|-------|---------|-------------------|
-| Fondamentaux | 00-03 | Complexité, tableaux, hash maps, stacks, queues |
-| Intermédiaire | 04-07 | Récursion, binary search, tri, heaps, arbres, graphes |
-| Avance | 08-10 | Backtracking, DP, greedy, intervalles, union-find |
-| Ingénieur | 11-12 | Patterns terrain JS fullstack, projet final |
+| Phase         | Modules | Ce que tu apprends                                    |
+| ------------- | ------- | ----------------------------------------------------- |
+| Fondamentaux  | 00-03   | Complexité, tableaux, hash maps, stacks, queues       |
+| Intermédiaire | 04-07   | Récursion, binary search, tri, heaps, arbres, graphes |
+| Avance        | 08-10   | Backtracking, DP, greedy, intervalles, union-find     |
+| Ingénieur     | 11-12   | Patterns terrain JS fullstack, projet final           |
 
 **Temps estime** : ~40-45h (2-3 semaines a 2h/jour)
 
@@ -115,12 +119,12 @@ Puis :
 
 Suis le parcours "Fullstack Complete" de `parcours-thematiques.md` :
 
-> L'ordre pédagogique suit la numérotation des dossiers (parcours React-first).
+> L'ordre pédagogique suit la numérotation des dossiers pour les prérequis front.
 
 ```
-Semaine 1-9  : Vue (00) → Angular (01) → React (02)
-Semaine 10-13: TypeScript (03) → JS Runtime (04)
-En parallele : Algorithms (05) — 1 module/semaine pendant les semaines 10-24
+Semaine 1-4  : TypeScript (00) → JS Runtime (01)
+Semaine 5-13 : Vue (02) → Angular (03) → React (04)
+En parallele : Algorithms (05) — 1 module/semaine pendant les semaines 5-24
 Semaine 14-22: Testing avance (06) → NestJS (07) → PostgreSQL (08) → HTTP/Caching (09)
 Semaine 23-26: AWS (10)
 Semaine 27-35: Architecture (11) → Observability (12)
@@ -136,29 +140,29 @@ Bonus        : React Native (15), WebGPU (16), Capstone TaskFlow
 
 A utiliser ENTRE et APRES les cours :
 
-| Quand | Ressource | Fichier |
-|-------|-----------|---------|
-| Après chaque cours | **Code katas** — 15-30 min sans guidance | `katas/phase-a-frameworks.md` ou `katas/phase-bde-backend-infra.md` |
-| En fin de palier | **Cheat sheet** du palier | `cheat-sheets/phase-*.md` |
-| Quand tu fais une erreur | **Erreurs classiques** — vérifié si c'est un piege connu | `cheat-sheets/erreurs-classiques.md` |
-| Avant un entretien | **Questions d'entretien** — teste-toi | `interview/questions-entretien.md` |
-| Pour réviser visuellement | **Diagrammes Mermaid** — 12 schemas d'architecture | `cheat-sheets/diagrammes-architecture.md` |
-| Pour chercher un terme | **Glossaire** — 90 termes avec renvois | `glossaire.md` |
-| Si tu changes de framework | **Guides de migration** — avant/après | `cheat-sheets/guides-migration.md` |
-| En fin de curriculum | **Capstone TaskFlow** — projet fullstack cross-cours | `capstone/projet-capstone-fullstack.md` |
+| Quand                      | Ressource                                                | Fichier                                                             |
+| -------------------------- | -------------------------------------------------------- | ------------------------------------------------------------------- |
+| Après chaque cours         | **Code katas** — 15-30 min sans guidance                 | `katas/phase-a-frameworks.md` ou `katas/phase-bde-backend-infra.md` |
+| En fin de palier           | **Cheat sheet** du palier                                | `cheat-sheets/phase-*.md`                                           |
+| Quand tu fais une erreur   | **Erreurs classiques** — vérifié si c'est un piege connu | `cheat-sheets/erreurs-classiques.md`                                |
+| Avant un entretien         | **Questions d'entretien** — teste-toi                    | `interview/questions-entretien.md`                                  |
+| Pour réviser visuellement  | **Diagrammes Mermaid** — 12 schemas d'architecture       | `cheat-sheets/diagrammes-architecture.md`                           |
+| Pour chercher un terme     | **Glossaire** — 90 termes avec renvois                   | `glossaire.md`                                                      |
+| Si tu changes de framework | **Guides de migration** — avant/après                    | `cheat-sheets/guides-migration.md`                                  |
+| En fin de curriculum       | **Capstone TaskFlow** — projet fullstack cross-cours     | `capstone/projet-capstone-fullstack.md`                             |
 
 ---
 
 ## 6. Ce que tu peux ignorer
 
-| Dossier/Fichier | Pourquoi |
-|-----------------|----------|
-| `scripts/` | Outils de génération automatique (pas du contenu) |
-| `package-lock.json` / `pnpm-lock.yaml` | Fichier de lock npm/pnpm (géré automatiquement) |
-| `.vitepress/` | Config du site VitePress (pas du contenu) |
-| `screencasts/` | Scripts de videos — utiles pour réviser, mais pas prioritaires |
-| `visualizations/` | Animations HTML — sympas mais optionnelles |
-| `index.md` | Page d'accueil VitePress (renvoie vers les modules) |
+| Dossier/Fichier                        | Pourquoi                                                       |
+| -------------------------------------- | -------------------------------------------------------------- |
+| `scripts/`                             | Outils de génération automatique (pas du contenu)              |
+| `package-lock.json` / `pnpm-lock.yaml` | Fichier de lock npm/pnpm (géré automatiquement)                |
+| `.vitepress/`                          | Config du site VitePress (pas du contenu)                      |
+| `screencasts/`                         | Scripts de videos — utiles pour réviser, mais pas prioritaires |
+| `visualizations/`                      | Animations HTML — sympas mais optionnelles                     |
+| `index.md`                             | Page d'accueil VitePress (renvoie vers les modules)            |
 
 ---
 

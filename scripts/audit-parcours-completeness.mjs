@@ -12,7 +12,7 @@ const MARKER = '<!-- parcours-recommande -->';
 
 // ── Module-based courses
 const MODULE_COURSES = [
-  '05-algorithms', '03-typescript', '04-js-runtime', '06-testing', '07-nestjs',
+  '05-algorithms', '00-typescript', '01-js-runtime', '06-testing', '07-nestjs',
   '08-postgresql', '09-http-caching', '13-distributed-systems',
   '12-observability-sre', '15-react-native', '16-webgpu-3d', '14-ia',
 ];
@@ -85,7 +85,7 @@ for (const slug of MODULE_COURSES) {
 // ── Cours-based courses
 console.log('\n=== COURS-BASED COURSES ===\n');
 
-const COURS_COURSES = ['01-vue', '00-react', '02-angular', '11-architecture'];
+const COURS_COURSES = ['02-vue', '04-react', '03-angular', '11-architecture'];
 
 for (const slug of COURS_COURSES) {
   const courseDir = join(ROOT, slug);

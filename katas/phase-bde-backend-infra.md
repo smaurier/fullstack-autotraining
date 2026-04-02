@@ -5,7 +5,7 @@
 
 ---
 
-## TypeScript (03-typescript)
+## TypeScript (00-typescript)
 
 ### Kata 16 — EventEmitter type-safe avec generics
 
@@ -32,13 +32,13 @@ type MyEvents = {
 };
 
 const emitter = new TypedEmitter<MyEvents>();
-emitter.on('login', (payload) => {
+emitter.on("login", (payload) => {
   // payload est infere comme { userId: string; timestamp: number }
   console.log(payload.userId);
 });
-emitter.emit('login', { userId: '42', timestamp: Date.now() }); // OK
-emitter.emit('login', { userId: '42' }); // Erreur de type : timestamp manquant
-emitter.emit('unknown', {}); // Erreur de type : event inconnu
+emitter.emit("login", { userId: "42", timestamp: Date.now() }); // OK
+emitter.emit("login", { userId: "42" }); // Erreur de type : timestamp manquant
+emitter.emit("unknown", {}); // Erreur de type : event inconnu
 ```
 
 ---
@@ -68,8 +68,8 @@ type Result = DeepMerge<A, B>;
 // { a: number; b: string; nested: { x: number; y: boolean; z: Date } }
 
 const merged = deepMerge(
-  { a: 1, nested: { x: 'hello', y: true } },
-  { b: 'world', nested: { x: 42, z: new Date() } },
+  { a: 1, nested: { x: "hello", y: true } },
+  { b: "world", nested: { x: 42, z: new Date() } },
 );
 // merged.nested.x est number (pas string), merged.nested.y est boolean
 ```
@@ -104,7 +104,7 @@ const userSchema = v.object({
 type User = Infer<typeof userSchema>;
 // { name: string; age: number; email?: string | undefined }
 
-const result = userSchema.safeParse({ name: 'Alice', age: 30 });
+const result = userSchema.safeParse({ name: "Alice", age: 30 });
 if (result.success) {
   result.data.name; // string, infere
 }
@@ -132,12 +132,12 @@ if (result.success) {
 **Test attendu** :
 
 ```ts
-@Controller('api')
+@Controller("api")
 export class ApiController {
-  @Get('data')
-  @RateLimit(10, '1m')
+  @Get("data")
+  @RateLimit(10, "1m")
   getData() {
-    return { data: 'ok' };
+    return { data: "ok" };
   }
 }
 // 11eme requete en moins d'1 min -> 429 { message: 'Too Many Requests', retryAfter: 34 }
@@ -164,10 +164,10 @@ export class ApiController {
 
 ```ts
 // Commande
-await commandBus.execute(new CreateOrderCommand({ product: 'Widget', qty: 3 }));
+await commandBus.execute(new CreateOrderCommand({ product: "Widget", qty: 3 }));
 
 // Query
-const summary = await queryBus.execute(new GetOrderQuery({ orderId: '123' }));
+const summary = await queryBus.execute(new GetOrderQuery({ orderId: "123" }));
 // summary vient du read model (table separee), pas de la table orders
 ```
 
@@ -191,7 +191,7 @@ const summary = await queryBus.execute(new GetOrderQuery({ orderId: '123' }));
 **Test attendu** :
 
 ```ts
-@Controller('profile')
+@Controller("profile")
 @UseGuards(JwtAuthGuard)
 export class ProfileController {
   @Get()
@@ -199,8 +199,8 @@ export class ProfileController {
     return user; // { sub: '123', email: 'alice@test.com', role: 'admin' }
   }
 
-  @Get('email')
-  getEmail(@CurrentUser('email') email: string) {
+  @Get("email")
+  getEmail(@CurrentUser("email") email: string) {
     return { email }; // 'alice@test.com'
   }
 }
@@ -265,7 +265,7 @@ const alice = await getProduct(id); // version: 1
 const bob = await getProduct(id); // version: 1
 
 // Alice update -> OK, version passe a 2
-await updateProduct(id, { name: 'New Name' }, alice.version); // success
+await updateProduct(id, { name: "New Name" }, alice.version); // success
 
 // Bob update avec version 1 -> FAIL
 await updateProduct(id, { price: 9.99 }, bob.version);
@@ -293,7 +293,7 @@ await updateProduct(id, { price: 9.99 }, bob.version);
 **Test attendu** :
 
 ```ts
-const results = await searchArticles('typescript generics');
+const results = await searchArticles("typescript generics");
 // [
 //   { id: 3, title: 'Advanced TypeScript <b>Generics</b>', rank: 0.89, headline: '...<b>TypeScript</b>...<b>generics</b>...' },
 //   { id: 7, title: 'Learning <b>TypeScript</b>', rank: 0.42, headline: '...' },
@@ -309,7 +309,7 @@ const results = await searchArticles('typescript generics');
 **Difficulte** : ⭐⭐⭐⭐
 **Temps cible** : 60 min
 
-**Enonce** : Ecris un test qui prouve qu'un compteur concurrent est casse (race condition), puis corrige-le. Le compteur est incremente par N workers en parallele — le total final doit etre N * iterations.
+**Enonce** : Ecris un test qui prouve qu'un compteur concurrent est casse (race condition), puis corrige-le. Le compteur est incremente par N workers en parallele — le total final doit etre N \* iterations.
 
 **Contraintes** :
 
@@ -323,15 +323,15 @@ const results = await searchArticles('typescript generics');
 **Test attendu** :
 
 ```ts
-describe('Counter race condition', () => {
-  it('FAILS with naive read-then-write', async () => {
+describe("Counter race condition", () => {
+  it("FAILS with naive read-then-write", async () => {
     await resetCounter(); // value = 0
     await Promise.all(Array.from({ length: 10 }, () => naiveIncrement()));
     const value = await getCounter();
     expect(value).toBeLessThan(10); // race condition prouvee
   });
 
-  it('WORKS with atomic increment', async () => {
+  it("WORKS with atomic increment", async () => {
     await resetCounter();
     await Promise.all(Array.from({ length: 10 }, () => atomicIncrement()));
     const value = await getCounter();
@@ -366,7 +366,10 @@ describe('Counter race condition', () => {
 ```ts
 fc.assert(
   fc.property(
-    fc.record(fc.string(), fc.oneof(fc.string(), fc.integer(), fc.boolean(), fc.constant(null))),
+    fc.record(
+      fc.string(),
+      fc.oneof(fc.string(), fc.integer(), fc.boolean(), fc.constant(null)),
+    ),
     (obj) => {
       const result = compact(obj);
       // Toutes les valeurs sont truthy
@@ -397,18 +400,18 @@ fc.assert(
 **Test attendu** :
 
 ```ts
-test('full auth flow', async ({ page, request }) => {
+test("full auth flow", async ({ page, request }) => {
   // 1. Signup
-  await page.goto('/signup');
-  await page.fill('[name=email]', 'test@example.com');
-  await page.fill('[name=password]', 'SecureP@ss1');
-  await page.click('button[type=submit]');
-  await expect(page.getByText('Verifiez votre email')).toBeVisible();
+  await page.goto("/signup");
+  await page.fill("[name=email]", "test@example.com");
+  await page.fill("[name=password]", "SecureP@ss1");
+  await page.click("button[type=submit]");
+  await expect(page.getByText("Verifiez votre email")).toBeVisible();
 
   // 2. Verify (intercept token)
-  const token = await getVerificationToken('test@example.com');
+  const token = await getVerificationToken("test@example.com");
   await page.goto(`/verify?token=${token}`);
-  await expect(page.getByText('Email verifie')).toBeVisible();
+  await expect(page.getByText("Email verifie")).toBeVisible();
 
   // 3. Login -> /me -> Logout -> /me 401
   // ...
@@ -440,18 +443,18 @@ test('full auth flow', async ({ page, request }) => {
 
 ```ts
 // Premier appel
-const res1 = await fetch('/api/data');
+const res1 = await fetch("/api/data");
 // 200, body: {...}, headers: { etag: '"abc123"' }
 
 // Deuxieme appel avec If-None-Match
-const res2 = await fetch('/api/data', {
-  headers: { 'If-None-Match': '"abc123"' },
+const res2 = await fetch("/api/data", {
+  headers: { "If-None-Match": '"abc123"' },
 });
 // 304, pas de body
 
 // Donnees changent cote serveur
-const res3 = await fetch('/api/data', {
-  headers: { 'If-None-Match': '"abc123"' },
+const res3 = await fetch("/api/data", {
+  headers: { "If-None-Match": '"abc123"' },
 });
 // 200, nouveau body, nouveau ETag
 ```
@@ -480,9 +483,9 @@ const res3 = await fetch('/api/data', {
 ```ts
 let fetchCount = 0;
 const getData = () =>
-  cacheable('user:42', 60, async () => {
+  cacheable("user:42", 60, async () => {
     fetchCount++;
-    return db.query('SELECT * FROM users WHERE id = 42');
+    return db.query("SELECT * FROM users WHERE id = 42");
   });
 
 // 10 appels concurrents
