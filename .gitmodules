@@ -11,13 +11,13 @@
 	path = 06-testing
 	url = https://github.com/smaurier/testing-course.git
 [submodule "05-nestjs"]
-	path = 07-nestjs
+	path = 09-nestjs
 	url = https://github.com/smaurier/Nest-autotraining.git
 [submodule "06-postgresql"]
-	path = 08-postgresql
+	path = 10-postgresql
 	url = https://github.com/smaurier/Databases-autotraining.git
 [submodule "07-http-caching"]
-	path = 09-http-caching
+	path = 11-http-caching
 	url = https://github.com/smaurier/HTTP-Caching-autotraining.git
 [submodule "04-react"]
 	path = 04-react
@@ -26,29 +26,38 @@
 	path = 03-angular
 	url = https://github.com/smaurier/angular-autotraining.git
 [submodule "10-architecture"]
-	path = 11-architecture
+	path = 13-architecture
 	url = https://github.com/smaurier/archi-training.git
 [submodule "11-distributed-systems"]
-	path = 13-distributed-systems
+	path = 17-distributed-systems
 	url = https://github.com/smaurier/distributed-system-autotraining.git
 [submodule "12-observability-sre"]
-	path = 12-observability-sre
+	path = 16-observability-sre
 	url = https://github.com/smaurier/observability-sre-autotraining.git
 [submodule "13-react-native"]
-	path = 15-react-native
+	path = 19-react-native
 	url = https://github.com/smaurier/react-native-autotraining.git
 [submodule "14-webgpu-3d"]
-	path = 16-webgpu-3d
+	path = 20-webgpu-3d
 	url = https://github.com/smaurier/webGPU-3D-course.git
 [submodule "15-ia"]
-	path = 14-ia
+	path = 18-ia
 	url = https://github.com/smaurier/IA-autotraining.git
-[submodule "16-aws-cloud"]
-	path = 10-aws-cloud
-	url = https://github.com/smaurier/aws-autotraining.git
 [submodule "00-algorithms"]
 	path = 05-algorithms
 	url = https://github.com/smaurier/algo-training.git
 [submodule "10-aws-cloud"]
-	path = 10-aws-cloud
+	path = 12-aws-cloud
 	url = https://github.com/smaurier/aws-autotraining.git
+[submodule "07-git-avance"]
+	path = 07-git-avance
+	url = https://github.com/smaurier/git-advance.git
+[submodule "08-soft-skills"]
+	path = 08-soft-skills
+	url = https://github.com/smaurier/soft-skills.git
+[submodule "14-securite-applicative"]
+	path = 14-securite-applicative
+	url = https://github.com/smaurier/secu-applicative.git
+[submodule "15-cicd-devops"]
+	path = 15-cicd-devops
+	url = https://github.com/smaurier/ci-cd-dev.git
