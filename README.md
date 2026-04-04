@@ -185,6 +185,36 @@ L'ordre des paliers ci-dessous est l'ordre générique. **Ton** ordre optimal es
 
 ---
 
+## Couverture JavaScript — Rappels progressifs intégrés
+
+> **Pourquoi cette section** : ce curriculum couvre TypeScript avancé et le runtime JS en profondeur, mais **pas la syntaxe JavaScript de base**. Ces lacunes sont comblées de manière dispersée (Option B) — juste à temps, dans le contexte où tu en as besoin.
+
+### Sujets couverts et emplacements
+
+| Sujet | Où | Quand | Contexte |
+|-------|-----|-------|---------|
+| **Callbacks (async patterns)** | 01-js-runtime/modules | Après event loop | Comprendre l'asynchrone sans Promises |
+| **Destructuring (objets/arrays)** | 03-objets-interfaces/modules | Avant TypeScript avancé | Syntaxe ES6+ essentielle |
+| **Spread operator (objets/arrays)** | 03-objets-interfaces/modules | Avec destructuring | Pattern omniprésent en React/Vue |
+| **Template literals** | 03-objets-interfaces/modules | Avec strings | Alternative à la concaténation |
+| **Prototypes & héritage prototypal** | 05-classes/modules | Rappel avant TS classes | Fondation du modèle OOP JS |
+| **APIs natives (Array methods)** | 05-algorithms/modules | Quand on manipule des données | map, filter, reduce, find |
+| **Object methods (keys, values, entries)** | 05-algorithms/modules | Avec Array methods | Accès aux propriétés d'objets |
+| **JSON (stringify/parse)** | 03-objets-interfaces/modules | Avec types sérialisables | Serialization JS natif |
+| **RegExp (regex basics)** | 03-objets-interfaces/modules | Avec string patterns | Pattern matching JS |
+| **try/catch/finally (error handling)** | 09-nestjs/modules | Avant error handling NestJS | Gestion d'erreurs produit |
+
+### Garantie de couverture
+
+☑️ **Après Phase A (frameworks)** : tu as revu destructuring, spread, template literals
+☑️ **Après Phase B (TypeScript + Runtime)** : tu connais les prototypes et l'asynchrone  
+☑️ **Après Phase C (Algorithmie)** : tu maîtrises Array methods, Object methods
+☑️ **Après Phase D (Testing + Backend)** : tu sais try/catch et les erreurs en prod
+
+**Total** : todo couvrir, progressif, applicable immédiatement.
+
+---
+
 ## Plan de formation — Ordre de référence
 
 Les cours sont numérotés dans l'ordre de référence. Chaque palier s'appuie sur les précédents.
