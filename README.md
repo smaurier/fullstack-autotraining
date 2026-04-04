@@ -191,18 +191,20 @@ L'ordre des paliers ci-dessous est l'ordre générique. **Ton** ordre optimal es
 
 ### Sujets couverts et emplacements
 
-| Sujet | Où | Quand | Contexte |
-|-------|-----|-------|---------|
-| **Callbacks (async patterns)** | 01-js-runtime/modules | Après event loop | Comprendre l'asynchrone sans Promises |
-| **Destructuring (objets/arrays)** | 03-objets-interfaces/modules | Avant TypeScript avancé | Syntaxe ES6+ essentielle |
-| **Spread operator (objets/arrays)** | 03-objets-interfaces/modules | Avec destructuring | Pattern omniprésent en React/Vue |
-| **Template literals** | 03-objets-interfaces/modules | Avec strings | Alternative à la concaténation |
-| **Prototypes & héritage prototypal** | 05-classes/modules | Rappel avant TS classes | Fondation du modèle OOP JS |
-| **APIs natives (Array methods)** | 05-algorithms/modules | Quand on manipule des données | map, filter, reduce, find |
-| **Object methods (keys, values, entries)** | 05-algorithms/modules | Avec Array methods | Accès aux propriétés d'objets |
-| **JSON (stringify/parse)** | 03-objets-interfaces/modules | Avec types sérialisables | Serialization JS natif |
-| **RegExp (regex basics)** | 03-objets-interfaces/modules | Avec string patterns | Pattern matching JS |
-| **try/catch/finally (error handling)** | 09-nestjs/modules | Avant error handling NestJS | Gestion d'erreurs produit |
+| Sujet                                      | Où                           | Quand                          | Contexte                                    |
+| ------------------------------------------ | ---------------------------- | ------------------------------ | ------------------------------------------- |
+| **Callbacks (async patterns)**             | 01-js-runtime/modules        | Après event loop               | Comprendre l'asynchrone sans Promises       |
+| **Destructuring (objets/arrays)**          | 03-objets-interfaces/modules | Avant TypeScript avancé        | Syntaxe ES6+ essentielle                    |
+| **Spread operator (objets/arrays)**        | 03-objets-interfaces/modules | Avec destructuring             | Pattern omniprésent en React/Vue            |
+| **Template literals**                      | 03-objets-interfaces/modules | Avec strings                   | Alternative à la concaténation              |
+| **Prototypes & héritage prototypal**       | 05-classes/modules           | Rappel avant TS classes        | Fondation du modèle OOP JS                  |
+| **APIs natives (Array methods)**           | 05-algorithms/modules        | Quand on manipule des données  | map, filter, reduce, find                   |
+| **Object methods (keys, values, entries)** | 05-algorithms/modules        | Avec Array methods             | Accès aux propriétés d'objets               |
+| **Generators / iterators**                 | 05-algorithms/labs           | Pendant les patterns fullstack | Produire un flux sans tableau intermédiaire |
+| **URLSearchParams**                        | 05-algorithms/labs           | Pendant les patterns fullstack | Construire des query strings fiables        |
+| **JSON (stringify/parse)**                 | 03-objets-interfaces/modules | Avec types sérialisables       | Serialization JS natif                      |
+| **RegExp (regex basics)**                  | 03-objets-interfaces/modules | Avec string patterns           | Pattern matching JS                         |
+| **try/catch/finally (error handling)**     | 09-nestjs/modules            | Avant error handling NestJS    | Gestion d'erreurs produit                   |
 
 ### Garantie de couverture
 
@@ -212,6 +214,26 @@ L'ordre des paliers ci-dessous est l'ordre générique. **Ton** ordre optimal es
 ☑️ **Après Phase D (Testing + Backend)** : tu sais try/catch et les erreurs en prod
 
 **Total** : todo couvrir, progressif, applicable immédiatement.
+
+### Automatisation de la répétition JS
+
+La prochaine étape n'est pas d'ajouter encore plus de théorie, mais de rendre la répétition JS **pilotable** :
+
+1. Chaque rappel JS explicite doit rester visible dans les labs via des marqueurs du type `Rappel JS` ou `Rappel JS avance`.
+2. Un audit automatique doit pouvoir répondre à trois questions :
+
+- quels concepts JS sont réellement répétés ;
+- dans quels cours/labs ils apparaissent ;
+- quels concepts ne sont vus qu'une seule fois.
+
+3. Les nouvelles passes d'enrichissement doivent prioriser les concepts à faible répétition plutôt que d'ajouter du bruit partout.
+
+Référentiel et script de départ :
+
+- stratégie : `js-repetition-automation.md`
+- audit : `node scripts/audit-js-repetition.mjs`
+
+Objectif à terme : passer d'une répétition artisanale à une répétition mesurée, avec seuil minimal par concept.
 
 ---
 
@@ -251,14 +273,14 @@ Les cours sont numérotés dans l'ordre de référence. Chaque palier s'appuie s
 
 > Testing approfondi après les 3 frameworks, Git avancé et soft skills pour le travail en équipe, puis back-end complet.
 
-| #   | Cours                                  | Contenu                                                                                                                                    | Duree estimee |
-| --- | -------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ | ------------- |
-| 06  | [Testing](./06-testing)                | TDD/BDD, mutation testing, contract testing (Pact), performance testing (k6), CI/CD — les modules 00-05 consolident ce que Vue a introduit | ~45h          |
-| 07  | [Git Avancé](./07-git-avance)          | Rebase interactif, bisect, stash, cherry-pick, stratégies de branching, monorepo, hooks, workflows collaboratifs                           | ~35h          |
-| 08  | [Soft Skills](./08-soft-skills)        | Code review (ASK), communication technique, estimation (PERT/poker), documentation (Divio), pair programming, ADR, gestion des conflits    | ~45h          |
-| 09  | [NestJS](./09-nestjs)                  | Node.js → Express → NestJS → TypeORM/Prisma → MongoDB/Mongoose → GraphQL → WebSockets → auth → deploy                                      | ~65h          |
-| 10  | [PostgreSQL](./10-postgresql)          | SQL → indexes → EXPLAIN → MVCC → locks → replication → partitioning → backup                                                               | ~45h          |
-| 11  | [HTTP & Caching](./11-http-caching)    | HTTP/1.1 → HTTP/2 → HTTP/3 → Cache-Control → CDN → SSR/ISR → streaming → Redis → GraphQL caching → Service Workers                         | ~40h          |
+| #   | Cours                               | Contenu                                                                                                                                    | Duree estimee |
+| --- | ----------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ | ------------- |
+| 06  | [Testing](./06-testing)             | TDD/BDD, mutation testing, contract testing (Pact), performance testing (k6), CI/CD — les modules 00-05 consolident ce que Vue a introduit | ~45h          |
+| 07  | [Git Avancé](./07-git-avance)       | Rebase interactif, bisect, stash, cherry-pick, stratégies de branching, monorepo, hooks, workflows collaboratifs                           | ~35h          |
+| 08  | [Soft Skills](./08-soft-skills)     | Code review (ASK), communication technique, estimation (PERT/poker), documentation (Divio), pair programming, ADR, gestion des conflits    | ~45h          |
+| 09  | [NestJS](./09-nestjs)               | Node.js → Express → NestJS → TypeORM/Prisma → MongoDB/Mongoose → GraphQL → WebSockets → auth → deploy                                      | ~65h          |
+| 10  | [PostgreSQL](./10-postgresql)       | SQL → indexes → EXPLAIN → MVCC → locks → replication → partitioning → backup                                                               | ~45h          |
+| 11  | [HTTP & Caching](./11-http-caching) | HTTP/1.1 → HTTP/2 → HTTP/3 → Cache-Control → CDN → SSR/ISR → streaming → Redis → GraphQL caching → Service Workers                         | ~40h          |
 
 **Pourquoi cet ordre ?** Testing consolide les 3 frameworks. Git avancé et Soft Skills installent les pratiques d'équipe avant le backend. NestJS te rend autonome sur le back. PostgreSQL complete le back avec les donnees. HTTP/Caching connecte front et back.
 
@@ -266,14 +288,14 @@ Les cours sont numérotés dans l'ordre de référence. Chaque palier s'appuie s
 
 > C'est ce palier qui fait la différence entre un dev mid et un dev senior.
 
-| #   | Cours                                              | Contenu                                                                                                                                                                                                              | Duree estimee |
-| --- | -------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- |
-| 12  | [AWS Cloud](./12-aws-cloud)                        | IAM → VPC/EC2 (essentiel dev) → S3 → Lambda → API Gateway → CDK → DynamoDB → Cognito → CloudFront → RDS → serverless (SST) → CI/CD → déployer Nuxt/Next                                                              | ~60h          |
-| 13  | [Architecture](./13-architecture)                  | SOLID → DDD → hexagonal → clean arch → CQRS → microservices → micro-frontends → sécurité → performance → serverless → Conway's law                                                                                   | ~138h         |
-| 14  | [Sécurité Applicative](./14-securite-applicative)  | OWASP Top 10 → XSS/CSRF/injection → authentification → chiffrement → CORS/CSP → audit sécurité → dépendances → DevSecOps                                                                                            | ~40h          |
-| 15  | [CI/CD & DevOps](./15-cicd-devops)                 | GitHub Actions → workflows avancés → testing en CI → Docker en CI → artefacts → stratégies de déploiement → preview environments → sécurité pipelines → IaC                                                          | ~40h          |
-| 16  | [Observabilité & SRE](./16-observability-sre)      | Logging (Pino) → metriques (Prometheus) → tracing (OpenTelemetry) → Sentry → Grafana → SLI/SLO → alerting → incidents/postmortems → chaos engineering → DORA → observabilité frontend → APM panorama → feature flags | ~60h          |
-| 17  | [Systèmes distribues](./17-distributed-systems)    | CAP theorem, consensus, CRDT, event sourcing, saga, circuit breaker, back-pressure                                                                                                                                   | ~55h          |
+| #   | Cours                                             | Contenu                                                                                                                                                                                                              | Duree estimee |
+| --- | ------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- |
+| 12  | [AWS Cloud](./12-aws-cloud)                       | IAM → VPC/EC2 (essentiel dev) → S3 → Lambda → API Gateway → CDK → DynamoDB → Cognito → CloudFront → RDS → serverless (SST) → CI/CD → déployer Nuxt/Next                                                              | ~60h          |
+| 13  | [Architecture](./13-architecture)                 | SOLID → DDD → hexagonal → clean arch → CQRS → microservices → micro-frontends → sécurité → performance → serverless → Conway's law                                                                                   | ~138h         |
+| 14  | [Sécurité Applicative](./14-securite-applicative) | OWASP Top 10 → XSS/CSRF/injection → authentification → chiffrement → CORS/CSP → audit sécurité → dépendances → DevSecOps                                                                                             | ~40h          |
+| 15  | [CI/CD & DevOps](./15-cicd-devops)                | GitHub Actions → workflows avancés → testing en CI → Docker en CI → artefacts → stratégies de déploiement → preview environments → sécurité pipelines → IaC                                                          | ~40h          |
+| 16  | [Observabilité & SRE](./16-observability-sre)     | Logging (Pino) → metriques (Prometheus) → tracing (OpenTelemetry) → Sentry → Grafana → SLI/SLO → alerting → incidents/postmortems → chaos engineering → DORA → observabilité frontend → APM panorama → feature flags | ~60h          |
+| 17  | [Systèmes distribues](./17-distributed-systems)   | CAP theorem, consensus, CRDT, event sourcing, saga, circuit breaker, back-pressure                                                                                                                                   | ~55h          |
 
 **Ordre recommande dans le palier :** 12-AWS Cloud → 13-Architecture → 14-Sécurité → 15-CI/CD → 16-Observabilité → 17-Systèmes Distribués. AWS donne le terrain de déploiement. L'architecture donne le vocabulaire. La sécurité et le CI/CD complètent la chaîne de livraison. L'observabilité apprend a surveiller. Les systèmes distribues montrent l'échelle.
 
@@ -283,18 +305,18 @@ Les cours sont numérotés dans l'ordre de référence. Chaque palier s'appuie s
 
 > Differenciants rares sur le marche. A faire quand le socle est solide.
 
-| #   | Cours                              | Contenu                                                                                                          | Duree estimee |
-| --- | ---------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ------------- |
-| 19  | [React Native](./19-react-native)  | JSX mobile → navigation → state → APIs natives → Reanimated 3 → Turbo Modules → Fabric/JSI → Hermes → EAS deploy | ~55h          |
+| #   | Cours                             | Contenu                                                                                                          | Duree estimee |
+| --- | --------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ------------- |
+| 19  | [React Native](./19-react-native) | JSX mobile → navigation → state → APIs natives → Reanimated 3 → Turbo Modules → Fabric/JSI → Hermes → EAS deploy | ~55h          |
 | 20  | [WebGPU & 3D](./20-webgpu-3d)     | GPU pipeline → shaders WGSL → geometrie → eclairage → PBR → post-processing → compute shaders → optimisation     | ~60h          |
 
 ### Palier 6 — Intelligence Artificielle
 
 > Comprendre et maîtriser l'IA en tant que développeur : de l'utilisation quotidienne à la construction de systèmes RAG.
 
-| #   | Cours                       | Contenu                                                                                                                                                                                             | Duree estimee |
-| --- | --------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- |
-| 18  | [IA pour Devs JS](./18-ia)  | Prompting → assistants code → API Claude/OpenAI → MCP → agents → maths IA → neural networks → transformers → fine-tuning → Ollama → embeddings → RAG → chatbot → évaluation → sécurité → production | ~60h          |
+| #   | Cours                      | Contenu                                                                                                                                                                                             | Duree estimee |
+| --- | -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- |
+| 18  | [IA pour Devs JS](./18-ia) | Prompting → assistants code → API Claude/OpenAI → MCP → agents → maths IA → neural networks → transformers → fine-tuning → Ollama → embeddings → RAG → chatbot → évaluation → sécurité → production | ~60h          |
 
 **Pourquoi en dernier palier ?** L'IA est un multiplicateur de productivite qui s'applique a tout le reste. Avoir d'abord le socle technique solide (paliers 1-5) permet de tirer le maximum de l'IA — tu sais ce que tu demandes et tu peux vérifier ce qu'elle produit.
 
@@ -746,8 +768,8 @@ Partiel (~35h effectifs). Deep dive sur le pratique, survol sur la théorie pure
 
 ### Phase H — Bonbons (optionnel, ~115h)
 
-| Cours              | Quand                                 |
-| ------------------ | ------------------------------------- |
+| Cours             | Quand                                 |
+| ----------------- | ------------------------------------- |
 | 19 — React Native | Si une mission mobile se présenté     |
 | 20 — WebGPU & 3D  | Si une mission dataviz/3D se présenté |
 
@@ -848,19 +870,19 @@ Ajoute Vue + Angular (~135h) pour couvrir les 3 frameworks = **~370h en ~4 mois*
 
 ## Compétences couvertes vs missions ESN
 
-| Type de mission     | Cours concernes                                    | Pret ? |
-| ------------------- | -------------------------------------------------- | ------ |
-| Front Vue/Nuxt      | 01, 03, 04, 06, 11, 13                              | Oui    |
-| Front React/Next    | 00, 03, 04, 06, 11, 13                              | Oui    |
-| Front Angular       | 02, 03, 04, 06, 11, 13                              | Oui    |
-| Full-stack Node     | 03, 04, 06, 07, 08, 09, 10, 11, 12, 13, 14, 15     | Oui    |
-| Mobile React Native | 00, 03, 04, 06, 19                                  | Oui    |
-| Archi/Lead tech     | 06, 07, 08, 12, 13, 16, 17                          | Oui    |
-| Cloud / Deploy      | 09 (deploy), 11, 12, 15, 16                         | Oui    |
-| IA / Agent dev      | 06, 09, 13, 18                                      | Oui    |
-| DevOps/SRE          | 09 (deploy), 12, 14, 15, 16, 17                     | Oui    |
-| Performance         | 04, 11, 13, 16                                      | Oui    |
-| Accessibilité       | 00, 01, 02, 19 + certification auditeur              | Oui    |
+| Type de mission     | Cours concernes                                | Pret ? |
+| ------------------- | ---------------------------------------------- | ------ |
+| Front Vue/Nuxt      | 01, 03, 04, 06, 11, 13                         | Oui    |
+| Front React/Next    | 00, 03, 04, 06, 11, 13                         | Oui    |
+| Front Angular       | 02, 03, 04, 06, 11, 13                         | Oui    |
+| Full-stack Node     | 03, 04, 06, 07, 08, 09, 10, 11, 12, 13, 14, 15 | Oui    |
+| Mobile React Native | 00, 03, 04, 06, 19                             | Oui    |
+| Archi/Lead tech     | 06, 07, 08, 12, 13, 16, 17                     | Oui    |
+| Cloud / Deploy      | 09 (deploy), 11, 12, 15, 16                    | Oui    |
+| IA / Agent dev      | 06, 09, 13, 18                                 | Oui    |
+| DevOps/SRE          | 09 (deploy), 12, 14, 15, 16, 17                | Oui    |
+| Performance         | 04, 11, 13, 16                                 | Oui    |
+| Accessibilité       | 00, 01, 02, 19 + certification auditeur        | Oui    |
 
 ---
 
@@ -912,17 +934,17 @@ Les lacunes senior sont couvertes par le cours Architecture (99 modules) et les 
 
 Certains sujets traversent plusieurs cours. Voici les ponts à connaître pour éviter la sensation de déjà-vu et comprendre les différentes perspectives :
 
-| Sujet                   | Cours concernes                                                                                                    | Perspective                                                                                        |
-| ----------------------- | ------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------- |
-| **Authentification**    | 09 (NestJS: JWT, Passport, guards), 12 (AWS: Cognito + IAM), 14 (Sécurité: auth, sessions, tokens)                 | NestJS = implémentation, AWS = auth-as-a-service, Sécurité = bonnes pratiques                      |
-| **Sécurité**            | 11 (HTTP: CSP, CORS, HSTS), 13 (Archi: sécurité by design), 14 (Sécurité: OWASP, audit), 12 (AWS: IAM, KMS, WAF)  | HTTP = headers, Archi = patterns, Sécurité = OWASP/pentest, AWS = sécurité cloud                   |
-| **CDN / Cache**         | 11 (HTTP: Cache-Control, CDN, SSR/ISR), 12 (AWS: CloudFront CDN)                                                   | HTTP = théorie et headers, AWS = mise en pratique avec CloudFront                                  |
-| **Systèmes distribues** | 17 (Systèmes distribues: théorie CAP, consensus, CRDT), 16 (Observabilité: tracing distribue, SLO)                 | SD = patterns théoriques, Obs = comment observer ces systèmes en prod                              |
-| **CI/CD**               | 06 (Testing: CI pipelines), 15 (CI/CD: GitHub Actions, pipelines), 12 (AWS: CodePipeline), 16 (Obs: DORA metrics)  | Testing = tests en CI, CI/CD = pipeline complet, AWS = déployer, Obs = mesurer                     |
-| **GraphQL**             | 09 (NestJS: GraphQL server), 11 (HTTP: cache et GraphQL — module 20)                                               | NestJS = serveur GraphQL, HTTP = caching GraphQL                                                   |
-| **Performance**         | 04 (JS Runtime: V8, profiling), 11 (HTTP: Core Web Vitals, cache), 16 (Obs: metriques, RUM)                        | Runtime = performance moteur, HTTP = performance réseau, Obs = mesurer en prod                     |
-| **Docker / Containers** | 09 (NestJS: deploy), 17 (SD: containers), 16 (Obs: K8s observability), 12 (AWS: ECS/Fargate), 15 (CI/CD: Docker)   | Chaque cours utilise Docker sous un angle différent                                                |
-| **Git & collaboration** | 07 (Git: branching, rebase, hooks, monorepo), 08 (Soft Skills: code review, pair prog, ADR)                        | Git = outils et workflows, Soft Skills = pratiques d'équipe                                        |
+| Sujet                   | Cours concernes                                                                                                   | Perspective                                                                      |
+| ----------------------- | ----------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| **Authentification**    | 09 (NestJS: JWT, Passport, guards), 12 (AWS: Cognito + IAM), 14 (Sécurité: auth, sessions, tokens)                | NestJS = implémentation, AWS = auth-as-a-service, Sécurité = bonnes pratiques    |
+| **Sécurité**            | 11 (HTTP: CSP, CORS, HSTS), 13 (Archi: sécurité by design), 14 (Sécurité: OWASP, audit), 12 (AWS: IAM, KMS, WAF)  | HTTP = headers, Archi = patterns, Sécurité = OWASP/pentest, AWS = sécurité cloud |
+| **CDN / Cache**         | 11 (HTTP: Cache-Control, CDN, SSR/ISR), 12 (AWS: CloudFront CDN)                                                  | HTTP = théorie et headers, AWS = mise en pratique avec CloudFront                |
+| **Systèmes distribues** | 17 (Systèmes distribues: théorie CAP, consensus, CRDT), 16 (Observabilité: tracing distribue, SLO)                | SD = patterns théoriques, Obs = comment observer ces systèmes en prod            |
+| **CI/CD**               | 06 (Testing: CI pipelines), 15 (CI/CD: GitHub Actions, pipelines), 12 (AWS: CodePipeline), 16 (Obs: DORA metrics) | Testing = tests en CI, CI/CD = pipeline complet, AWS = déployer, Obs = mesurer   |
+| **GraphQL**             | 09 (NestJS: GraphQL server), 11 (HTTP: cache et GraphQL — module 20)                                              | NestJS = serveur GraphQL, HTTP = caching GraphQL                                 |
+| **Performance**         | 04 (JS Runtime: V8, profiling), 11 (HTTP: Core Web Vitals, cache), 16 (Obs: metriques, RUM)                       | Runtime = performance moteur, HTTP = performance réseau, Obs = mesurer en prod   |
+| **Docker / Containers** | 09 (NestJS: deploy), 17 (SD: containers), 16 (Obs: K8s observability), 12 (AWS: ECS/Fargate), 15 (CI/CD: Docker)  | Chaque cours utilise Docker sous un angle différent                              |
+| **Git & collaboration** | 07 (Git: branching, rebase, hooks, monorepo), 08 (Soft Skills: code review, pair prog, ADR)                       | Git = outils et workflows, Soft Skills = pratiques d'équipe                      |
 
 ---
 
@@ -966,30 +988,30 @@ git submodule update --remote --merge
 
 ## Statistiques
 
-| Cours                    | Modules  | Exercices | Format                                                                       | Duree est. |
-| ------------------------ | -------- | --------- | ---------------------------------------------------------------------------- | ---------- |
-| 00 — Vue.js              | 44       | 33        | Vite app (`cours/` + `exercices/`)                                           | ~75h       |
-| 01 — Angular             | 43       | 26        | Markdown (`cours/` + `exercices/`)                                           | ~60h       |
-| 02 — React               | 40       | 24        | Markdown (`cours/` + `exercices/`)                                           | ~60h       |
-| 03 — TypeScript          | 20       | 19        | VitePress (`modules/` + `labs/`)                                             | ~50h       |
-| 04 — JS Runtime          | 16       | 15        | VitePress                                                                    | ~35h       |
-| 05 — Algorithms          | 13       | 12        | VitePress                                                                    | ~45h       |
-| 06 — Testing             | 19       | 18        | VitePress                                                                    | ~45h       |
-| 07 — Git Avancé          | 11       | 10        | VitePress                                                                    | ~35h       |
-| 08 — Soft Skills         | 11       | 8         | VitePress                                                                    | ~45h       |
-| 09 — NestJS              | 27       | 26        | VitePress                                                                    | ~65h       |
-| 10 — PostgreSQL          | 19       | 18        | VitePress                                                                    | ~45h       |
-| 11 — HTTP & Caching      | 21       | 20        | VitePress                                                                    | ~40h       |
-| 12 — AWS Cloud           | 20       | 20        | VitePress — [submodule GitHub](https://github.com/smaurier/aws-autotraining) | ~60h       |
-| 13 — Architecture        | 99       | 67        | Markdown (`cours/` + `exercices/`)                                           | ~138h      |
-| 14 — Sécurité Applicative | 12      | 10        | VitePress                                                                    | ~40h       |
-| 15 — CI/CD & DevOps      | 12       | 10        | VitePress                                                                    | ~40h       |
-| 16 — Observabilité & SRE | 28       | 26        | VitePress                                                                    | ~60h       |
-| 17 — Systèmes distribues | 26       | 24        | VitePress                                                                    | ~55h       |
-| 18 — IA pour Devs JS     | 20       | 20        | VitePress                                                                    | ~60h       |
-| 19 — React Native        | 28       | 28        | VitePress                                                                    | ~55h       |
-| 20 — WebGPU & 3D         | 31       | 30        | VitePress                                                                    | ~60h       |
-| **Total**                | **~547** | **~452**  | **21 submodules**                                                            | **~1168h** |
+| Cours                     | Modules  | Exercices | Format                                                                       | Duree est. |
+| ------------------------- | -------- | --------- | ---------------------------------------------------------------------------- | ---------- |
+| 00 — Vue.js               | 44       | 33        | Vite app (`cours/` + `exercices/`)                                           | ~75h       |
+| 01 — Angular              | 43       | 26        | Markdown (`cours/` + `exercices/`)                                           | ~60h       |
+| 02 — React                | 40       | 24        | Markdown (`cours/` + `exercices/`)                                           | ~60h       |
+| 03 — TypeScript           | 20       | 19        | VitePress (`modules/` + `labs/`)                                             | ~50h       |
+| 04 — JS Runtime           | 16       | 15        | VitePress                                                                    | ~35h       |
+| 05 — Algorithms           | 13       | 12        | VitePress                                                                    | ~45h       |
+| 06 — Testing              | 19       | 18        | VitePress                                                                    | ~45h       |
+| 07 — Git Avancé           | 11       | 10        | VitePress                                                                    | ~35h       |
+| 08 — Soft Skills          | 11       | 8         | VitePress                                                                    | ~45h       |
+| 09 — NestJS               | 27       | 26        | VitePress                                                                    | ~65h       |
+| 10 — PostgreSQL           | 19       | 18        | VitePress                                                                    | ~45h       |
+| 11 — HTTP & Caching       | 21       | 20        | VitePress                                                                    | ~40h       |
+| 12 — AWS Cloud            | 20       | 20        | VitePress — [submodule GitHub](https://github.com/smaurier/aws-autotraining) | ~60h       |
+| 13 — Architecture         | 99       | 67        | Markdown (`cours/` + `exercices/`)                                           | ~138h      |
+| 14 — Sécurité Applicative | 12       | 10        | VitePress                                                                    | ~40h       |
+| 15 — CI/CD & DevOps       | 12       | 10        | VitePress                                                                    | ~40h       |
+| 16 — Observabilité & SRE  | 28       | 26        | VitePress                                                                    | ~60h       |
+| 17 — Systèmes distribues  | 26       | 24        | VitePress                                                                    | ~55h       |
+| 18 — IA pour Devs JS      | 20       | 20        | VitePress                                                                    | ~60h       |
+| 19 — React Native         | 28       | 28        | VitePress                                                                    | ~55h       |
+| 20 — WebGPU & 3D          | 31       | 30        | VitePress                                                                    | ~60h       |
+| **Total**                 | **~547** | **~452**  | **21 submodules**                                                            | **~1168h** |
 
 ---
 
