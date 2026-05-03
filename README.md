@@ -2,7 +2,7 @@
 
 > Du dev front React a l'aise vers le développeur full-stack JS senior, staffable sur quasi toute mission en ESN.
 
-**21 cours** | **~35 katas** | **1 capstone** | **7 paliers** | VitePress
+**21 cours** | **~35 katas guides** | **1 capstone** | **7 paliers** | VitePress
 
 ---
 
