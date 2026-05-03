@@ -99,37 +99,18 @@ Puis :
 1. Ouvre `modules/00-prerequis-et-introduction.md` (où via le site web)
 2. Fais `labs/lab-01-complexite/` → `exercise.ts` (où `npm run lab:01`)
 3. Verifie avec `solution.ts` (où `npm run solution:01`)
-4. Ouvre `quizzes/quiz-01-complexite.html` dans Chrome
-5. Continue avec module 02, lab 02, quiz 02...
+   │ 5. NOTER 1-3 phrases : qu'est-ce que j'ai appris│ 2 min
+   │ → dans un fichier progress.md perso │
+   | Phase | Modules | Ce que tu apprends |
+   | ------------- | ------- | ----------------------------------------------------- |
+   | Fondamentaux | 00-03 | Complexité, tableaux, hash maps, stacks, queues |
+   | Intermédiaire | 04-07 | Récursion, binary search, tri, heaps, arbres, graphes |
+   Semaine 14-22: Testing avance (06) → NestJS (07) → PostgreSQL (08) → HTTP/Caching (09)
+   Semaine 23-26: AWS (10)
+   Semaine 27-35: Architecture (11) → Observability (12)
+   Semaine 36-40: Distributed Systems (13) → IA (14)
+   Bonus : React Native (15), WebGPU (16), Capstone TaskFlow
 
-### Parcours Algorithms par phases
-
-| Phase         | Modules | Ce que tu apprends                                    |
-| ------------- | ------- | ----------------------------------------------------- |
-| Fondamentaux  | 00-03   | Complexité, tableaux, hash maps, stacks, queues       |
-| Intermédiaire | 04-07   | Récursion, binary search, tri, heaps, arbres, graphes |
-| Avance        | 08-10   | Backtracking, DP, greedy, intervalles, union-find     |
-| Ingénieur     | 11-12   | Patterns terrain JS fullstack, projet final           |
-
-**Temps estime** : ~40-45h (2-3 semaines a 2h/jour)
-
----
-
-## 4. Ordre global des 17 cours
-
-Suis le parcours "Fullstack Complete" de `parcours-thematiques.md` :
-
-> L'ordre pédagogique suit la numérotation des dossiers pour les prérequis front.
-
-```
-Semaine 1-4  : TypeScript (00) → JS Runtime (01)
-Semaine 5-13 : Vue (02) → Angular (03) → React (04)
-En parallele : Algorithms (05) — 1 module/semaine pendant les semaines 5-24
-Semaine 14-22: Testing avance (06) → NestJS (07) → PostgreSQL (08) → HTTP/Caching (09)
-Semaine 23-26: AWS (10)
-Semaine 27-35: Architecture (11) → Observability (12)
-Semaine 36-40: Distributed Systems (13) → IA (14)
-Bonus        : React Native (15), WebGPU (16), Capstone TaskFlow
 ```
 
 > **Ordre important** : Architecture (11) se fait AVANT Distributed Systems (13) qui se fait AVANT Observability (12). L'architecture donne le vocabulaire, les systemes distribues montrent l'implementation, l'observabilité apprend a maintenir le tout en production.
@@ -175,3 +156,4 @@ A utiliser ENTRE et APRES les cours :
 - [ ] Mettre un timer : 2h max par session, pause après
 
 Bonne formation !
+```
