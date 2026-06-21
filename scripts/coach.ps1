@@ -279,6 +279,23 @@ foreach ($line in (Get-Content $progressFile -Encoding UTF8)) {
     }
 }
 
+# Suggestion talk > 30 jours
+$talkAlert = ""
+foreach ($line in (Get-Content $progressFile -Encoding UTF8)) {
+    if ($line -match 'Derni.re suggestion coach.*?(\d{4}-\d{2}-\d{2})') {
+        $talkDate = [datetime]::ParseExact($Matches[1], "yyyy-MM-dd", $null)
+        $daysSince = ($today - $talkDate).Days
+        if ($daysSince -ge 30) {
+            $talkAlert = "SUGGESTION TALK DUE (derniere il y a $daysSince jours) - En fin de session, proposer 1 idee de talk adaptee au profil (UX natif + RGAA + 3D/WebGL + TS fullstack) et au contenu vu recemment. Cibles : HumanTalks Lyon (15 min), LyonJS, MiXiT, Lyon Craft. Si Sylvain accepte : noter dans progress.md section 'Idees de talk' + mettre a jour 'Derniere suggestion coach'"
+        }
+        break
+    }
+    if ($line -match 'Derni.re suggestion coach.*\(jamais\)') {
+        $talkAlert = "SUGGESTION TALK DUE (jamais faite) - En fin de session, proposer 1 idee de talk adaptee au profil (UX natif + RGAA + 3D/WebGL + TS fullstack) et au contenu vu recemment. Cibles : HumanTalks Lyon (15 min), LyonJS, MiXiT, Lyon Craft. Si Sylvain accepte : noter dans progress.md section 'Idees de talk' + mettre a jour 'Derniere suggestion coach'"
+        break
+    }
+}
+
 # PROJECTS.md : stale > 30 jours
 $staleProjects = @()
 if (Test-Path $projectsFile) {
@@ -350,6 +367,9 @@ if ($presenceAuditAlert) {
 }
 if ($eventsAlert) {
     $alert += "*** $($eventsAlert -replace '"', '\"') ***\n\n"
+}
+if ($talkAlert) {
+    $alert += "*** $($talkAlert -replace '"', '\"') ***\n\n"
 }
 if ($metaReflectAlert) {
     $alert += "*** $($metaReflectAlert -replace '"', '\"') ***\n\n"
