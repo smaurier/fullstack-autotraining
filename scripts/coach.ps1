@@ -262,6 +262,23 @@ foreach ($line in (Get-Content $progressFile -Encoding UTF8)) {
     }
 }
 
+# Meta-reflexion coach > 15 jours
+$metaReflectAlert = ""
+foreach ($line in (Get-Content $progressFile -Encoding UTF8)) {
+    if ($line -match 'Derni.re r.flexion meta coach.*?(\d{4}-\d{2}-\d{2})') {
+        $mrDate = [datetime]::ParseExact($Matches[1], "yyyy-MM-dd", $null)
+        $daysSince = ($today - $mrDate).Days
+        if ($daysSince -ge 15) {
+            $metaReflectAlert = "REFLEXION META COACH DUE (derniere il y a $daysSince jours) - Prendre 2 min en fin de session : est-ce que le coach est utile tel quel ? Y a-t-il un service manquant, une friction recurrente, quelque chose a supprimer ? Proposer 1-2 ajustements concrets si pertinent, modifier coach.ps1 si valide"
+        }
+        break
+    }
+    if ($line -match 'Derni.re r.flexion meta coach.*\(jamais\)') {
+        $metaReflectAlert = "REFLEXION META COACH DUE (jamais faite) - Prendre 2 min en fin de session : est-ce que le coach est utile tel quel ? Y a-t-il un service manquant, une friction recurrente, quelque chose a supprimer ? Proposer 1-2 ajustements concrets si pertinent, modifier coach.ps1 si valide"
+        break
+    }
+}
+
 # PROJECTS.md : stale > 30 jours
 $staleProjects = @()
 if (Test-Path $projectsFile) {
@@ -333,6 +350,9 @@ if ($presenceAuditAlert) {
 }
 if ($eventsAlert) {
     $alert += "*** $($eventsAlert -replace '"', '\"') ***\n\n"
+}
+if ($metaReflectAlert) {
+    $alert += "*** $($metaReflectAlert -replace '"', '\"') ***\n\n"
 }
 
 # --- Context final ---
