@@ -4,6 +4,8 @@
 
 **21 cours** | **~35 katas guides** | **1 capstone** | **7 paliers** | VitePress
 
+> **Versions de référence** — Curriculum audité et mis à jour périodiquement par le coach IA (voir section Coach IA). Versions cibles actuelles : Angular 20+ (cycle 6 mois), React 19, Next.js 15+, Vue 3.5+, Nuxt 4, TypeScript 5.8+, NestJS v11, Tailwind CSS v4, Vitest v2, Playwright v1.40+, pnpm v9.
+
 ---
 
 ## Objectif
@@ -260,8 +262,8 @@ Les cours sont numérotés dans l'ordre de référence. Chaque palier s'appuie s
 | #   | Cours                   | Contenu                                                                              | Duree estimee |
 | --- | ----------------------- | ------------------------------------------------------------------------------------ | ------------- |
 | 02  | [Vue.js](./02-vue)      | Composition API, réactivité, Pinia, Vue Router, SSR/Nuxt, testing, a11y, performance | ~75h          |
-| 03  | [Angular](./03-angular) | Standalone, Signals, DI, RxJS, formulaires, routing, Material, testing, SSR          | ~60h          |
-| 04  | [React](./04-react)     | JSX, hooks, Context, Zustand, React Router, Next.js, Server Components, Suspense     | ~60h          |
+| 03  | [Angular](./03-angular) | Standalone, Signals, DI, RxJS, formulaires, routing, Material, testing, SSR — cycle 6 mois (v20+ en 2025) | ~60h          |
+| 04  | [React](./04-react)     | JSX, hooks, Context, Zustand, React Router, Next.js 15+, Server Components, React 19 APIs | ~60h          |
 
 > **Ordre pédagogique** : **TypeScript (00) → JS Runtime (01) → Vue (02) → Angular (03) → React (04)**. Vue vient après les prérequis langage/runtime, Angular introduit la DI et RxJS, React synthétise avec les hooks et Server Components.
 >
@@ -307,7 +309,7 @@ Les cours sont numérotés dans l'ordre de référence. Chaque palier s'appuie s
 
 | #   | Cours                             | Contenu                                                                                                          | Duree estimee |
 | --- | --------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ------------- |
-| 19  | [React Native](./19-react-native) | JSX mobile → navigation → state → APIs natives → Reanimated 3 → Turbo Modules → Fabric/JSI → Hermes → EAS deploy | ~55h          |
+| 19  | [React Native](./19-react-native) | JSX mobile → navigation → state → APIs natives → Reanimated 3 → New Architecture (Fabric/JSI/Turbo Modules, **défaut depuis RN 0.76**) → Hermes → EAS deploy | ~55h          |
 | 20  | [WebGPU & 3D](./20-webgpu-3d)     | GPU pipeline → shaders WGSL → geometrie → eclairage → PBR → post-processing → compute shaders → optimisation     | ~60h          |
 
 ### Palier 6 — Intelligence Artificielle
@@ -424,7 +426,7 @@ Vue pose les bases de réactivité explicite et de Composition API. Angular intr
 | 06-nextjs               | **Deep dive**               | Server Components, App Router, Server Actions — compare avec Nuxt. C'est LA que tu apprends le plus. |
 | 07-tests                | **Deep dive**               | Testing Library, Vitest, Playwright — tu connais déjà Vitest de Vue.                                 |
 | 08-performance-patterns | **Deep dive**               | React.memo, useMemo, profiling — différence entre junior et mid.                                     |
-| 09-styling              | **Normal**                  | Tailwind, CSS Modules, shadcn/ui                                                                     |
+| 09-styling              | **Normal**                  | Tailwind CSS v4 (CSS-first, `@import "tailwindcss"` — rupture avec v3), CSS Modules, shadcn/ui      |
 | 10-auth-sécurité        | **Normal**                  | NextAuth patterns                                                                                    |
 | 11-cicd-déploiement     | **Normal**                  | Vercel/Docker deploy                                                                                 |
 | 12-recettes-esn         | **Deep dive**               | Patterns réels de mission — c'est ce qui te rend staffable.                                          |
@@ -785,8 +787,8 @@ Partiel (~35h effectifs). Deep dive sur le pratique, survol sur la théorie pure
 | 18      | **Normal avec patience** | Reanimated + Gesture Handler — pic de difficulte                                  |
 | 19-20   | **Deep dive**            | Testing + E2E avec Detox                                                          |
 | 21-22   | **Normal**               | Deploy EAS + CI/CD                                                                |
-| 23-24   | **Survol**               | Native Modules + Fabric/JSI — très avance, lire pour la culture                   |
-| 25-27   | **Survol**               | Hermes, Turbo Modules, performance — idem                                         |
+| 23-24   | **Deep dive**            | New Architecture (Fabric/JSI + Turbo Modules) — **standard depuis RN 0.76** (oct 2024), plus une option avancée |
+| 25-27   | **Normal**               | Hermes (activé par défaut), performance — connaître le fonctionnement de base     |
 
 **Fil rouge :** Version mobile de ton app.
 
@@ -1023,12 +1025,68 @@ git submodule update --remote --merge
 | Code Katas — Backend & Infra | `katas/phase-bde-backend-infra.md`        | 20 katas TS/NestJS/PG/Testing/HTTP/Obs/AWS              |
 | Projet Capstone              | `capstone/projet-capstone-fullstack.md`   | "TaskFlow" — projet fullstack cross-cours               |
 | Erreurs Classiques           | `cheat-sheets/erreurs-classiques.md`      | 45 erreurs courantes avec code wrong/right              |
-| Guides de Migration          | `cheat-sheets/guides-migration.md`        | React 18→19, Vue 3.4→3.5, Angular 18→19, Next Pages→App |
+| Guides de Migration          | `cheat-sheets/guides-migration.md`        | React 18→19, Vue 3.4→3.5, Angular 18→20+ (cycle 6 mois), Next Pages→App Router, Tailwind v3→v4 |
 | Diagrammes Architecture      | `cheat-sheets/diagrammes-architecture.md` | 12 diagrammes Mermaid (event loop, MVCC, OAuth2...)     |
 | Cheat Sheets                 | `cheat-sheets/phase-*.md`                 | 3 fiches de synthese par phase                          |
 | Questions d'Entretien        | `interview/questions-entretien.md`        | 106 questions Junior→Senior, 10 cours                   |
 | Glossaire                    | `glossaire.md`                            | 90 termes techniques avec renvois modules               |
 | Parcours Thematiques         | `parcours-thematiques.md`                 | 5 parcours orientes objectif (1-6 semaines)             |
+
+---
+
+---
+
+## Coach IA — Setup
+
+Un coach Claude Code s'active automatiquement à chaque session. Il suit ta progression, déclenche les révisions espacées (SM-2), scanne les offres d'emploi, surveille ton LinkedIn et ta présence publique.
+
+### Architecture
+
+```
+fullstack-autotraining/        ← repo public (curriculum)
+└── private/                   ← repo privé gitignore (données sensibles)
+    ├── progress.md            ← progression, instructions coach
+    ├── IDEAS.md               ← idées projets
+    ├── PROJECTS.md            ← projets en cours
+    └── JOBS.md                ← critères et historique offres
+```
+
+Le dossier `private/` est gitignore et pointe vers un repo GitHub séparé (`fullstack-autotraining-private`). Jamais sur le repo public.
+
+### Prérequis
+
+- [Claude Code](https://claude.ai/code) installé
+- PowerShell 5.1+
+- Git
+
+### Installation (nouveau poste, une seule commande)
+
+```powershell
+iwr -useb "https://raw.githubusercontent.com/smaurier/fullstack-autotraining/main/scripts/setup.ps1" | iex
+```
+
+Ce script :
+1. Clone ce repo dans `~/Documents/projects/fullstack-autotraining/`
+2. Clone le repo privé dans `private/`
+3. Installe `coach.ps1` dans `~/.claude/hooks/`
+4. Patch `~/.claude/settings.json` avec le hook `SessionStart`
+
+Puis relancer Claude Code — le coach s'active automatiquement.
+
+### Mise à jour du coach
+
+Si `coach.ps1` évolue dans ce repo, réinstaller :
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts/install-coach.ps1
+```
+
+### Fin de session — sync repo privé
+
+```powershell
+cd private
+git add -A && git commit -m "session $(Get-Date -Format 'yyyy-MM-dd')" && git push
+```
 
 ---
 
