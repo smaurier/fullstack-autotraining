@@ -88,7 +88,7 @@ foreach ($line in (Get-Content $progressFile -Encoding UTF8)) {
     if ($line -match 'Dernier scan.*?(\d{4}-\d{2}-\d{2})' -and $line -match 'Scan curriculum') {
         $scanDate = [datetime]::ParseExact($Matches[1], "yyyy-MM-dd", $null)
         $daysSince = ($today - $scanDate).Days
-        if ($daysSince -ge 50) {
+        if ($daysSince -ge 75) {
             $curriculumScanAlert = "SCAN CURRICULUM DU (dernier il y a $daysSince jours) - AUDIT COMPLET : 1) WebSearch versions actuelles Angular/React/TS/NestJS/Tailwind/Vitest vs bloc 'Versions de reference' du README 2) verifier git log submodules cours deja vus 3) signaler patterns obsoletes ou nouvelles technos a integrer"
         }
         break
