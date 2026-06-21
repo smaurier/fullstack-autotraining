@@ -89,7 +89,7 @@ foreach ($line in (Get-Content $progressFile -Encoding UTF8)) {
         $scanDate = [datetime]::ParseExact($Matches[1], "yyyy-MM-dd", $null)
         $daysSince = ($today - $scanDate).Days
         if ($daysSince -ge 75) {
-            $curriculumScanAlert = "SCAN CURRICULUM DU (dernier il y a $daysSince jours) - AUDIT COMPLET : 1) WebSearch versions actuelles Angular/React/TS/NestJS/Tailwind/Vitest vs bloc 'Versions de reference' du README 2) verifier git log submodules cours deja vus 3) signaler patterns obsoletes ou nouvelles technos a integrer"
+            $curriculumScanAlert = "SCAN CURRICULUM DU (dernier il y a $daysSince jours) - AUDIT COMPLET : 1) WebSearch versions actuelles Angular/React/TS/NestJS/Tailwind/Vitest vs bloc 'Versions de reference' du README 2) verifier git log submodules cours deja vus 3) signaler patterns obsoletes ou nouvelles technos a integrer 4) AUTORISE a modifier les fichiers de cours : ajouter des notions manquantes ou pertinentes, supprimer du contenu obsolete ou redondant, committer dans chaque submodule concerne"
         }
         break
     }
