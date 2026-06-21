@@ -8,15 +8,21 @@ Une liste. Un cours à la fois. Tu coches quand c'est fini.
 
 - [ ] **01 — TypeScript** `00-typescript/`
   > Prérequis : JS de base (fonctions, objets, tableaux). Aucun autre cours.
-  > Tu es à mi-parcours — finir labs 10 à 19.
+  > Labs 01-09 faits. **Fais lab-10 (Utility types) uniquement, puis passe au cours 02.**
+  > Labs 11-13 (conditional/mapped/type-level) : skip ou défer — trop abstraits, ROI faible maintenant.
+  > Lab 14 (Décorateurs) : revenir juste avant le cours 04 (NestJS).
+  > Labs 15-19 : optionnels, selon besoins en mission.
 
 ---
 
 ## À venir
 
 - [ ] **02 — Testing / TDD** `06-testing/`
-  > Prérequis : TypeScript (tu dois typer tes tests).
+  > Prérequis : TypeScript labs 01-10.
   > Commencer par `modules/15-tdd-et-bdd.md` + `labs/lab-15-tdd-bdd/kata-stringcalculator.ts` avant les autres labs.
+
+- [ ] **→ Reprendre TypeScript lab-14 (Décorateurs)** `00-typescript/labs/lab-14-decorateurs/`
+  > Faire CE lab uniquement, juste avant NestJS. Pas besoin de refaire tout le cours.
 
 - [ ] **03 — React** `04-react/`
   > Prérequis : TypeScript + Testing/TDD (coder React en TS avec le réflexe TDD ancré).
