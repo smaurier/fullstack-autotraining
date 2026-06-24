@@ -18,11 +18,9 @@ if (-not (Test-Path $hooksDir)) {
     Write-Host "[OK] Dossier .claude/hooks existe"
 }
 
-# 2. Copie coach.ps1 et end-session.ps1
+# 2. Copie coach.ps1
 Copy-Item -Force "$projectRoot\scripts\coach.ps1" "$hooksDir\coach.ps1"
 Write-Host "[OK] coach.ps1 installe dans $hooksDir"
-Copy-Item -Force "$projectRoot\scripts\end-session.ps1" "$hooksDir\end-session.ps1"
-Write-Host "[OK] end-session.ps1 installe dans $hooksDir"
 
 # 3. Verifier que private/ existe (repo prive a cloner manuellement)
 $privateDir = "$projectRoot\private"
@@ -62,26 +60,7 @@ if (-not $settings.hooks.PSObject.Properties["SessionStart"]) {
     $settings.hooks | Add-Member -NotePropertyName "SessionStart" -NotePropertyValue @($hookEntry)
     Write-Host "[OK] Hook SessionStart ajoute"
 } else {
-    Write-Host "[INFO] Hook SessionStart deja present — verifier manuellement si necessaire"
-}
-
-$endSessionCommand = "powershell -NoProfile -ExecutionPolicy Bypass -File `"$hooksDir\end-session.ps1`""
-$stopHookEntry = [PSCustomObject]@{
-    hooks = @(
-        [PSCustomObject]@{
-            type          = "command"
-            command       = $endSessionCommand
-            timeout       = 30
-            statusMessage = "Saving session..."
-        }
-    )
-}
-
-if (-not $settings.hooks.PSObject.Properties["Stop"]) {
-    $settings.hooks | Add-Member -NotePropertyName "Stop" -NotePropertyValue @($stopHookEntry)
-    Write-Host "[OK] Hook Stop (auto commit+push) ajoute"
-} else {
-    Write-Host "[INFO] Hook Stop deja present — verifier manuellement si necessaire"
+    Write-Host "[INFO] Hook SessionStart deja present - verifier manuellement si necessaire"
 }
 
 $settings | ConvertTo-Json -Depth 10 | Set-Content $settingsFile -Encoding UTF8
