@@ -392,7 +392,8 @@ if ($metaReflectAlert) {
 }
 
 # --- Context final ---
+$endSessionRule = "FIN DE SESSION : quand la session de travail est terminee et que tu proposes de clore, demander a Sylvain s il veut committer et pusher les modifications. Si oui, executer git add -u + git commit + git push sur le repo principal ($mainRepoDir) et sur le repo private ($mainRepoDir\private) s il existe et a des changements.\n\n"
 $escaped = $progressContent -replace '\\', '\\\\' -replace '"', '\"' -replace "`r`n", '\n' -replace "`n", '\n' -replace "`t", '\t'
-$context = "$($timeContext)$($alert)COACH CURRICULUM - lire et suivre les instructions du debut de session :\n\n$escaped"
+$context = "$($timeContext)$($alert)$($endSessionRule)COACH CURRICULUM - lire et suivre les instructions du debut de session :\n\n$escaped"
 
 Write-Output "{`"hookSpecificOutput`":{`"hookEventName`":`"SessionStart`",`"additionalContext`":`"$context`"}}"
