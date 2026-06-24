@@ -1,6 +1,19 @@
 $OutputEncoding = [System.Text.Encoding]::UTF8
 [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
 
+# === SYNC REPO PRINCIPAL AU DEMARRAGE DE SESSION ===
+$mainRepoDir   = "$env:USERPROFILE\Documents\projects\fullstack-autotraining"
+$mainSyncAlert = ""
+if (Test-Path "$mainRepoDir\.git") {
+    Push-Location $mainRepoDir
+    $pullOutput = git pull --recurse-submodules 2>&1
+    $pullStatus = $LASTEXITCODE
+    Pop-Location
+    if ($pullStatus -ne 0) {
+        $mainSyncAlert = "ERREUR PULL REPO PRINCIPAL - conflit detecte, verifier manuellement : cd fullstack-autotraining && git status"
+    }
+}
+
 $base         = "$env:USERPROFILE\Documents\projects\fullstack-autotraining\private"
 $progressFile = "$base\progress.md"
 $ideasFile    = "$base\IDEAS.md"
@@ -315,6 +328,9 @@ $alert = ""
 
 if ($missionAlert) {
     $alert += "*** $($missionAlert -replace '"', '\"') ***\n\n"
+}
+if ($mainSyncAlert) {
+    $alert += "*** $($mainSyncAlert -replace '"', '\"') ***\n\n"
 }
 if ($privateSyncAlert) {
     $alert += "*** $($privateSyncAlert -replace '"', '\"') ***\n\n"
