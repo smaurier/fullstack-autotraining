@@ -26,7 +26,7 @@ Tu n'apprends pas "pour plus tard" — tu construis maintenant.
 > Labs 01-09 déjà faits.
 
 **Faire :**
-- [ ] lab-10 (Utility types — `Partial<T>`, `Pick<T>`, `Omit<T>`, `ReturnType<T>`)
+- [x] lab-10 (Utility types — `Partial<T>`, `Pick<T>`, `Omit<T>`, `ReturnType<T>`)
 
 **Déférer :** labs 11-13 (conditional types, mapped types, type-level programming — trop abstraits, ROI quasi nul pour toi maintenant)
 
