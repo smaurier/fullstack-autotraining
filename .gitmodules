@@ -61,3 +61,12 @@
 [submodule "15-cicd-devops"]
 	path = 15-cicd-devops
 	url = https://github.com/smaurier/ci-cd-dev.git
+[submodule "21-design-system"]
+	path = 21-design-system
+	url = https://github.com/smaurier/design-system-training.git
+[submodule "22-stripe-billing"]
+	path = 22-stripe-billing
+	url = https://github.com/smaurier/stripe-billing-training.git
+[submodule "23-droit-numerique"]
+	path = 23-droit-numerique
+	url = https://github.com/smaurier/droit-numerique-training.git
