@@ -742,8 +742,8 @@ Focus :
 19  Vue             ⚠️ déféré — après premier poste si mission Vue
 20  Angular         ⚠️ déféré — après premier poste si mission Angular
 21  React Native    si mission mobile
-21b WebGPU          si mission 3D + Dia de los muertos
 22  Droit numérique avant beta TribuZen
+23  WebGPU          si mission 3D + Dia de los muertos
 ```
 
 **Stack cible (profil Tidjani) :**
