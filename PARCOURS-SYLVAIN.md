@@ -50,6 +50,23 @@ type UpdateUser = Partial<Omit<User, 'id'>>
 
 ---
 
+## Ordre révisé (acté 2026-06-26)
+
+**Objectif : front moyen → bon fullstack. NestJS + PostgreSQL avant React.**
+
+```
+02  Testing/TDD      → en cours
+03  NestJS           → TS lab-14 décorateurs juste avant (checkpoint)
+04  PostgreSQL       → SQL brut avant ORM
+05  React + Next.js  → avec l'API déjà construite, le frontend a du sens
+06  Design System    → après React (prérequis Tamagui)
+07  Vue              → déférer, après premier poste si besoin mission
+08  Angular          → déférer, après premier poste si besoin mission
+09+ Soft Skills, Architecture, Sécurité, JS Runtime, HTTP/Cache, Git, CI/CD, AWS...
+```
+
+---
+
 ## À venir
 
 ### 02 — Testing / TDD `06-testing/`
@@ -700,36 +717,33 @@ Focus :
 
 ---
 
-## Récap rapide
+## Récap rapide (ordre révisé 2026-06-26)
 
 ```
-01  TypeScript      lab-10 seulement → puis 02
-02  Testing/TDD     kata RED d'abord → puis labs 01-05, 07, 09, 10-11
-    ↳ Checkpoint TS lab-14 (décorateurs)
-03  React           hooks, Next.js, perf, recettes ESN — NE PAS sauter section 09 styling
-03b Design System   CSS vars, Tailwind, Radix UI, shadcn/ui, tokens, Framer Motion, RGAA, Tamagui (cross-platform)
-04  NestJS          core + auth + WebSockets
-    ↳ Docker EN PARALLÈLE (Dockerfile multi-stage + docker-compose)
-    ↳ Clean Architecture dès le début (domain/ application/ infrastructure/)
-05  PostgreSQL      SQL brut, indexes, JSONB
-06  Vue             tout sauf storybook/cicd
-07  Angular         DI + RxJS bien
-08  Soft Skills     tout — ADR, code review
-09  Architecture    Clean/Hexagonal/DDD/CQRS — consolider ce qui a commencé en 04
-10  Sécurité        OWASP + OIDC/PKCE + WebAuthn/Passkeys
-11  JS Runtime      event loop, GC, V8, perf
-12  HTTP/Caching    cache headers, Redis + PWA Service Workers + Push API
-13  Git Avancé      tout
-14  CI/CD           GitHub Actions + Terraform (infra as code)
-15  AWS             IAM, S3, Lambda, CloudFront, deploy Next.js
-16  Observabilité   Pino, Sentry, Grafana, PostHog, Plausible
-16b Stripe Billing  Checkout, webhooks, freemium gates, Customer Portal
-17  Algorithms      complexité, hash maps, graphes, patterns JS
-18  Distribués      circuit breaker, retry, event-driven, CQRS
-19  IA              RAG, agents, embeddings, MCP server TribuZen
-20  React Native    si mission mobile (ou si PostHog install rate < 40% après 500 users)
-21  WebGPU          si mission 3D + Dia de los muertos
-22  Droit numérique RGPD réflexes dev, DPIA, DPA, PI, RGAA légal — avant beta TribuZen
+01  TypeScript      lab-10 ✅ → lab-14 décorateurs juste avant NestJS
+02  Testing/TDD     en cours — labs 01-05, 07, 09, 10-11 + Vitest réel TribuZen
+03  NestJS          ⭐ ROI #1 — core + auth + WebSockets + Clean Architecture + Docker
+04  PostgreSQL      ⭐ ROI #1 — SQL brut, indexes, JSONB (après NestJS)
+05  React           hooks, Next.js, perf, recettes ESN — avec l'API déjà construite
+06  Design System   ⭐ ROI #2 — Tamagui cross-platform, shadcn/ui, tokens, RGAA
+07  Soft Skills     ADR, code review ASK, estimation
+08  Architecture    Clean/Hexagonal/DDD/CQRS — consolider ce qui a commencé en 03
+09  Sécurité        OWASP + OIDC/PKCE + WebAuthn/Passkeys
+10  JS Runtime      event loop, GC, V8, perf
+11  HTTP/Caching    cache headers, Redis + PWA + Push API
+12  Git Avancé      tout
+13  CI/CD           GitHub Actions + Terraform
+14  AWS             IAM, S3, Lambda, CloudFront, deploy TribuZen
+15  Observabilité   Pino, Sentry, Grafana
+15b Stripe Billing  Checkout, webhooks, freemium gates
+16  Algorithms      complexité, hash maps, graphes, patterns JS
+17  Distribués      circuit breaker, retry, event-driven
+18  IA              RAG, agents, embeddings, MCP server TribuZen
+19  Vue             ⚠️ déféré — après premier poste si mission Vue
+20  Angular         ⚠️ déféré — après premier poste si mission Angular
+21  React Native    si mission mobile
+21b WebGPU          si mission 3D + Dia de los muertos
+22  Droit numérique avant beta TribuZen
 ```
 
 **Stack cible (profil Tidjani) :**
