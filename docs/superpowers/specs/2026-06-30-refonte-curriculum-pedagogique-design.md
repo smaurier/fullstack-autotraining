@@ -130,7 +130,7 @@ Chaque cours = un cycle :
 3. **Réécriture modules** au template §5 (lourde sous plancher, légère sinon).
 4. **Réécriture/remplacement labs** au template §6.
 5. **Absorption screencasts + quizzes** → suppression dure.
-6. **Câblage VitePress** (sidebar) + **fix imports** + **build de vérification**.
+6. **Câblage VitePress** (sidebar) + **fix imports** + **build de vérification** (`npm install && npm run docs:build` vert — voir `docs/curriculum/BUILD-CHECK.md` : contrôle liens morts récurrent, intra-cours = fixer, cross-cours = ignorer via pattern standard).
 7. **Génération seeds Anki + entrées SM-2** + push anki-mcp.
 8. **Commits par submodule sur `main`** (fréquents pour rollback granulaire ; pas de branche — rollback via git si besoin).
 
@@ -181,7 +181,7 @@ Workstream dédié — **refactor du protocole coach** (pas un bolt-on : `progre
 - Tous labs au template (vrai outil + corrigé).
 - Screencasts + quizzes absorbés et supprimés.
 - Couverture 13-prio du cours = 100 %.
-- Build VitePress vert, imports cohérents, zéro lien mort.
+- Build VitePress vert, imports cohérents, zéro lien mort intra-cours (cf. `docs/curriculum/BUILD-CHECK.md`).
 - Seeds Anki générées + SM-2 + anki-mcp branchés.
 - Coach (progress.md) aligné sur la nouvelle structure.
 - Commits par submodule sur main.
