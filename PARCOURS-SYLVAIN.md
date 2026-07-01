@@ -21,22 +21,27 @@ Mission ESN **Bedrock** (dev Vue/Nuxt, squad Core : migration + outils internes 
 
 Refonte 02-vue en cours : rebuild de chaque module au template v1 (audit-first), dans l'ordre pédagogique débutant→expert. Ne pas sauter l'ordre.
 
-### Vagues de réécriture — pilotées CV + offre Bedrock (maj 2026-07-01)
+### Vagues de réécriture — Bedrock, mais novice→expert STRICT (maj 2026-07-01)
 
-L'ordre de réécriture des cours suit ce qui prépare à **défendre chaque claim du CV** (Eudonet : Nuxt 4/Vue 3 SSR+ISR, tokens OKLCH, cache 3 couches Nitro, AI-assisted engineering) et à couvrir les 3 axes du poste Bedrock (**migration d'app · outils internes réutilisables · IA, voire en construire**).
+Bedrock oriente le **choix du cours prioritaire** (Vue/Nuxt), pas l'ordre interne. ⚠️ **Le "slice avancé-first" (SSR/tokens/Nitro d'abord) était cassé pédagogiquement — erreur corrigée.** L'ordre interne suit la colonne vertébrale `02-vue/cours/parcours.md` (débutant→intermédiaire→avancé→expert→nuxt3…). Les claims CV avancés (SSR+ISR/SWR, cache Nitro 3 couches, tokens OKLCH, AI-assisted) sont couverts **à leur vraie place en fin de séquence (expert/nuxt)**, jamais anticipés.
 
 ```
-Vague 1  02-vue          ⭐ cœur — Composition API, Pinia, Nuxt SSR/ISR, Router
-                            + modules NEUFS : migration Options→Composition · outil interne réutilisable
-Vague 2  11-http-caching   SSR/ISR/SWR + cache Nitro 3 couches (ETag / session TTL / mémoire) — claim direct Eudonet
-Vague 3  21-design-system  pipeline tokens OKLCH→sémantiques→Tailwind, dark mode SSR, motion — claim direct
-Vague 4  18-ia            agents + MCP + RAG — "construire des outils IA" (verbatim boss)
-Vague 5  06-testing       Vitest / Playwright / Storybook (déjà à moitié pilote)
+Vague 1  02-vue ENTIER   ⭐ cours prioritaire Bedrock — réécrit au template v1, dans l'ordre du parcours.md
+           Bloc débutant  00-typer → 01-env → 02-template → 03-réactivité → 04-events/v-model
+                          → 05-props/emits → 06-lifecycle → 07-options-vs-composition
+           puis           intermédiaire → avancé → expert (SSR/hydration, archi, perf) → nuxt3 (SSR/ISR/SWR, SEO)
+           puis           storybook / cicd / api-typées / a11y / i18n / auth / vue-query
+Vagues 2+  autres cours (couverture large Bedrock) : 11-http-caching (cache Nitro), 21-design-system (tokens OKLCH),
+           18-ia (outils IA), 06-testing… — APRÈS 02-vue, chacun novice→expert.
 ```
 
-Chaque module réécrit au **template v1** : audit grille-plancher → réécriture → `validate-module.ps1` OK → build VitePress zéro lien mort. Ordre débutant→expert dans le cours, jamais sauté.
+Méthode par module (déjà actée) : **audit-first** du `cours/…` existant → upgrade au template v1 (frontmatter parsable coach + 7 sections) → gate Context7 (précision technique) → self-review → `validate-module.ps1` OK → build VitePress zéro lien mort. Commit sur main du submodule, puis maj pointeur parent.
 
-**Matière première stashée** (`git stash pop` quand la vague vient) : WIP non conformes récupérables — 11-http-caching (cache-navigateur, pwa-sw, seo) → vague 2 ; 21-design-system (framer-motion, gsap) → vague 3. Hors-Bedrock stashés aussi (01-js-runtime, 15-cicd, 20-webgpu) → revisite à leur tour dans l'ordre révisé plus bas.
+**Cadence** : petits lots. Sylvain ÉTUDIE 00→03 dans l'ordre pendant que la suite se fabrique — rétention = nord, ne pas fabriquer plus vite qu'il n'absorbe.
+
+**État 02-vue** (voir `progress.md` / mémoire `project_refonte_curriculum`) : ✅ 00, ✅ 01 (review Context7 à confirmer), ✅ 03. Prochain = **02-template-et-directives**, puis 04→07.
+
+**Matière première stashée** (`git stash pop` à la bonne vague) : 11-http-caching (cache-navigateur, pwa-sw, seo) ; 21-design-system (framer-motion, gsap). Hors-Bedrock stashés (01-js-runtime, 15-cicd, 20-webgpu) → à leur tour dans l'ordre révisé plus bas.
 
 ---
 
