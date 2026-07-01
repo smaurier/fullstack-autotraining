@@ -17,6 +17,9 @@ Chaque cours traverse la même boucle. Deux natures de gate :
           exemplar = 02-vue/modules/00 + labs/lab-02, frontmatter fourni.
           ⚠️ Context7 OBLIGATOIRE dans chaque prompt d'agent (pas optionnel — la
           majorité des erreurs QA venaient d'APIs devinées).
+          ⚠️ audit-first inclut la SUPPRESSION des fichiers legacy simulés du cours
+          (exercise.ts/solution.ts/test-utils harnais) — labs = README-only. Le gate
+          anti-simulé le vérifie de toute façon, mais le stripper au write évite un cycle.
 2. GATE   pwsh scripts/gate-course.ps1 -Course <NN>  → doit être GATE PASS.
           Si FAIL : lire le rapport, corriger (souvent YAML ': ' ou fence mustache),
           re-gate. Déterministe, boucle courte.
@@ -36,7 +39,18 @@ Chaque cours traverse la même boucle. Deux natures de gate :
    → boucler 3-5 jusqu'à QA propre OU cap N=2-3 itérations, puis escalade humaine.
 ```
 
-## Garde-fous (durs)
+## Garde-fous (durs) — encodés dans `gate-course.ps1` (pas de vigilance)
+
+Le gate ENFORCE les règles établies (leçon 02/07 : une règle connue mais non-gatée slippe — le harnais simulé est passé malgré la règle "zéro test simulé"). Checks durs (GATE FAIL) :
+- **validate-module** : frontmatter + 7 sections + seeds≥5 + lint YAML (pas de `: ` nu).
+- **anti-simulé** : aucun `createTestRunner`/assert maison/`runTests([`. Labs = README-only, corrigé vrai-outil, feedback=coach.
+- **delimiters** : config VitePress neutralise `{{ }}` (sinon SSR casse sur moustaches/GitHub Actions).
+- **J+30** : chaque lab README a sa variante J+30.
+- **intégrité prereq/next** : tout slug de module référencé existe (pas de slug fantôme type `assertions`).
+- **cross-framework** : pas de React dans un cours non-React (cohérence de stack ; ne scanne que `modules/`+`labs/`, pas l'archive `cours/`).
+- **build VitePress**.
+Advisory (warn) : libs déclarées semblent référencées.
+→ **Ajouter tout nouveau garde-fou vérifiable ici** plutôt que de compter sur la vigilance. Le jugement (concret-avant-abstrait, factuel/RGAA, qualité péda) reste QA-agents + checkpoint humain.
 
 1. **Gate déterministe bloquant** : rien ne se commit sans `GATE PASS`.
 2. **Context7 obligatoire** au write ET au fix (pas « auto-déclaré »).
