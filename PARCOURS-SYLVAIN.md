@@ -7,6 +7,22 @@ Tu n'apprends pas "pour plus tard" — tu construis maintenant.
 
 ---
 
+## 🔴 Priorité actuelle (maj 2026-07-01) — Bedrock
+
+Mission ESN **Bedrock** (dev Vue/Nuxt, squad Core : migration + outils internes + IA, "dev qui utilise beaucoup Claude"). Le boss est hypé (CV + mission Eudonet). → **Vue passe #1**, devant tout le reste. RGAA (22 oct) reste la 2e priorité datée.
+
+**Cet ordre-ci prime sur "l'ordre révisé 2026-06-26" plus bas** (qui déférait Vue "après premier poste"). L'ancien ordre reste valable pour les cours non-Bedrock, à reprendre après.
+
+```
+1  Vue / Nuxt   ⭐ Bedrock — refonte v1 en cours, ordre novice→expert (voir 02-vue/cours/parcours.md)
+2  RGAA         priorité datée 22 oct (préparation séparée)
+…  reste du parcours (ordre révisé 2026-06-26 ci-dessous) ensuite
+```
+
+Refonte 02-vue en cours : rebuild de chaque module au template v1 (audit-first), dans l'ordre pédagogique débutant→expert. Ne pas sauter l'ordre.
+
+---
+
 ## Légende
 
 - **Faire** : labs/modules à faire maintenant
