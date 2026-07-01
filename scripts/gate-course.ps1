@@ -40,7 +40,9 @@ if ($SkipBuild) { Write-Output "build: SKIP"; Write-Output "GATE PASS (validatio
 
 Push-Location $courseDir
 try {
-    $build = & pnpm docs:build 2>&1 | Out-String
+    # Détecte le gestionnaire de paquets du cours (pnpm si lockfile, sinon npm).
+    $pm = if (Test-Path (Join-Path $courseDir "pnpm-lock.yaml")) { "pnpm" } else { "npm" }
+    $build = & $pm run docs:build 2>&1 | Out-String
 } finally {
     Pop-Location
 }
