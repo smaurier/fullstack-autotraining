@@ -24,6 +24,27 @@ foreach ($k in $requiredKeys) {
     if ($fm -notmatch "(?m)^\s*$([regex]::Escape($k))\s*:") { $errors += "clé frontmatter manquante: $k" }
 }
 
+# 2b. Lint YAML — un deux-points+espace non échappé dans une valeur scalaire casse le build VitePress.
+#     (bug réel rencontré : `tribuzen: FamilyCard (props: family typée)` -> YAML invalide.)
+foreach ($line in ($fm -split "`n")) {
+    $l = $line.TrimEnd("`r")
+    # valeur d'une clé scalaire : `clé: valeur`
+    if ($l -match '^\s*[\w-]+:\s+(.+)$') {
+        $val = $Matches[1].Trim()
+        # on ignore les collections flow ([...] / {...}) et les valeurs déjà entre guillemets
+        if ($val -notmatch '^[\[{"'']' -and $val -match ':\s') {
+            $errors += "YAML: deux-points non échappé dans une valeur -> $l  (mets la valeur entre guillemets ou retire le ' : ')"
+        }
+    }
+    # item de liste : `- valeur` (outcomes) contenant un ' : ' non quoté
+    elseif ($l -match '^\s*-\s+(.+)$') {
+        $val = $Matches[1].Trim()
+        if ($val -notmatch '^["'']' -and $val -match ':\s') {
+            $errors += "YAML: deux-points non échappé dans un item de liste -> $l  (mets l'item entre guillemets)"
+        }
+    }
+}
+
 # 3. Sections obligatoires (titres ##)
 $requiredSections = @(
     '## 1. Cas concret',
