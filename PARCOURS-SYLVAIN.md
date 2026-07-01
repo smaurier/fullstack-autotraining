@@ -21,6 +21,23 @@ Mission ESN **Bedrock** (dev Vue/Nuxt, squad Core : migration + outils internes 
 
 Refonte 02-vue en cours : rebuild de chaque module au template v1 (audit-first), dans l'ordre pédagogique débutant→expert. Ne pas sauter l'ordre.
 
+### Vagues de réécriture — pilotées CV + offre Bedrock (maj 2026-07-01)
+
+L'ordre de réécriture des cours suit ce qui prépare à **défendre chaque claim du CV** (Eudonet : Nuxt 4/Vue 3 SSR+ISR, tokens OKLCH, cache 3 couches Nitro, AI-assisted engineering) et à couvrir les 3 axes du poste Bedrock (**migration d'app · outils internes réutilisables · IA, voire en construire**).
+
+```
+Vague 1  02-vue          ⭐ cœur — Composition API, Pinia, Nuxt SSR/ISR, Router
+                            + modules NEUFS : migration Options→Composition · outil interne réutilisable
+Vague 2  11-http-caching   SSR/ISR/SWR + cache Nitro 3 couches (ETag / session TTL / mémoire) — claim direct Eudonet
+Vague 3  21-design-system  pipeline tokens OKLCH→sémantiques→Tailwind, dark mode SSR, motion — claim direct
+Vague 4  18-ia            agents + MCP + RAG — "construire des outils IA" (verbatim boss)
+Vague 5  06-testing       Vitest / Playwright / Storybook (déjà à moitié pilote)
+```
+
+Chaque module réécrit au **template v1** : audit grille-plancher → réécriture → `validate-module.ps1` OK → build VitePress zéro lien mort. Ordre débutant→expert dans le cours, jamais sauté.
+
+**Matière première stashée** (`git stash pop` quand la vague vient) : WIP non conformes récupérables — 11-http-caching (cache-navigateur, pwa-sw, seo) → vague 2 ; 21-design-system (framer-motion, gsap) → vague 3. Hors-Bedrock stashés aussi (01-js-runtime, 15-cicd, 20-webgpu) → revisite à leur tour dans l'ordre révisé plus bas.
+
 ---
 
 ## Légende
