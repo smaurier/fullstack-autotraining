@@ -1,7 +1,9 @@
 # gate-course.ps1 — Gate DÉTERMINISTE d'un cours réécrit (pipeline rollout).
 # Étape "gate dur" de la boucle : bloque tout état cassé avant QA/commit.
 #   1. valide chaque module/*.md au template (validate-module.ps1)
-#   2. build VitePress (détecte YAML cassé, liens/mustaches SSR)
+#   2. ANTI-SIMULÉ : aucun harnais de test simulé dans le cours (règle "feedback=coach,
+#      zéro test simulé" — LAB-TEMPLATE + spec refonte). Labs = README-only + vrais outils.
+#   3. build VitePress (détecte YAML cassé, liens/mustaches SSR)
 # Usage : pwsh -File scripts/gate-course.ps1 -Course 02-vue [-SkipBuild]
 # Exit 0 si tout passe, 1 sinon. Sortie = rapport compact machine-lisible.
 param(
@@ -34,6 +36,31 @@ Write-Output "modules: $($modules.Count) | validate KO: $($failed.Count)"
 foreach ($f in $failed) { Write-Output "  KO $($f.file): $($f.detail)" }
 
 if ($failed.Count -gt 0) { Write-Output "GATE FAIL (validation template)"; exit 1 }
+
+# --- 1b. ANTI-SIMULÉ : garde-fou déterministe contre les harnais de test simulés ---
+# Règle établie (LAB-TEMPLATE + spec refonte) : JAMAIS de test-runner/harnais maison ;
+# les labs sont README-only avec corrigé au VRAI outil, feedback = coach. Ce check
+# ENFORCE la règle (elle ne dépend plus de la vigilance des agents).
+# Patterns du harnais simulé maison. NB : import RELATIF de test-utils uniquement
+# (`./test-utils` / `../test-utils`) — surtout PAS le vrai package npm `@vue/test-utils`.
+$simPatterns = @('createTestRunner', 'assertEqual\s*\(', 'assertThrows\s*\(', "from\s+['""]\.{1,2}/[^'""]*test-utils['""]", 'runTests\s*\(\s*\[')
+$simHits = @()
+$scanDirs = @('labs','modules','cours') | ForEach-Object { Join-Path $courseDir $_ } | Where-Object { Test-Path $_ }
+foreach ($d in $scanDirs) {
+    Get-ChildItem -Path $d -Recurse -File -Include *.ts,*.js,*.md -ErrorAction SilentlyContinue | ForEach-Object {
+        $c = Get-Content $_.FullName -Raw -ErrorAction SilentlyContinue
+        foreach ($p in $simPatterns) {
+            if ($c -match $p) { $simHits += "$($_.FullName.Substring($courseDir.Length+1))  (~$p)"; break }
+        }
+    }
+}
+if ($simHits.Count -gt 0) {
+    Write-Output "anti-simulé: $($simHits.Count) fichier(s) avec harnais simulé"
+    $simHits | Select-Object -First 20 | ForEach-Object { Write-Output "  SIMULÉ $_" }
+    Write-Output "GATE FAIL (harnais simulé — règle feedback=coach/zéro test simulé)"
+    exit 1
+}
+Write-Output "anti-simulé: OK (aucun harnais)"
 
 # --- 2. Build VitePress ---
 if ($SkipBuild) { Write-Output "build: SKIP"; Write-Output "GATE PASS (validation only)"; exit 0 }
