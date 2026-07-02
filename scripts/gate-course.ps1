@@ -103,14 +103,21 @@ foreach ($m in $modules) {
     }
 }
 
-# --- 6. Cross-framework (pas de React dans un cours non-React) ---
+# --- 6. Cross-framework (pas de React dans un cours engagé sur un AUTRE framework) ---
+# Intention réelle : empêcher du React de fuiter dans un cours Vue/Angular (cohérence de stack).
+# Un cours React ou framework-AGNOSTIQUE (TypeScript, JS, algorithmes, Node, SQL…) mentionne
+# légitimement `.tsx`/`from 'react'` en exemple — ne PAS le flaguer. On ne déclenche donc que
+# si le cours est explicitement Vue ou Angular.
 $pkg = Join-Path $courseDir "package.json"
-$isReactCourse = ($Course -match 'react') -or ((Test-Path $pkg) -and ((Get-Content $pkg -Raw) -match '"react"\s*:'))
-if (-not $isReactCourse) {
+$pkgRaw = if (Test-Path $pkg) { Get-Content $pkg -Raw } else { "" }
+$isVueCourse     = ($Course -match 'vue')     -or ($pkgRaw -match '"vue"\s*:')
+$isAngularCourse = ($Course -match 'angular') -or ($pkgRaw -match '"@angular/core"\s*:')
+if ($isVueCourse -or $isAngularCourse) {
+    $fw = if ($isVueCourse) { "Vue" } else { "Angular" }
     $reactPat = @('@testing-library/react', 'react-dom', "from\s+['""]react['""]", '\.tsx\b', 'ReactDOM')
     foreach ($f in $codeFiles) {
         $c = Get-Content $f.FullName -Raw -ErrorAction SilentlyContinue
-        foreach ($p in $reactPat) { if ($c -match $p) { $issues += "React dans un cours non-React: $($f.FullName.Substring($courseDir.Length+1)) (~$p)"; break } }
+        foreach ($p in $reactPat) { if ($c -match $p) { $issues += "React dans un cours ${fw}: $($f.FullName.Substring($courseDir.Length+1)) (~$p)"; break } }
     }
 }
 
