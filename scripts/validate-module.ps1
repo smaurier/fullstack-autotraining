@@ -43,6 +43,16 @@ foreach ($line in ($fm -split "`n")) {
             $errors += "YAML: deux-points non échappé dans un item de liste -> $l  (mets l'item entre guillemets)"
         }
     }
+    # collection flow `clé: [a, b, ...]` : un item ne peut PAS commencer par un indicateur
+    #     YAML réservé non quoté (@, `). (bug réel : `notions: [..., @nestjs/jwt, ...]`.)
+    if ($l -match '^\s*[\w-]+:\s*\[(.+)\]\s*$') {
+        foreach ($item in ($Matches[1] -split ',')) {
+            $it = $item.Trim()
+            if ($it -match '^[@`]') {
+                $errors += "YAML: item de flow commençant par un indicateur réservé (@ ou backtick) -> '$it'  (reformule ou mets entre guillemets)"
+            }
+        }
+    }
 }
 
 # 3. Sections obligatoires (titres ##)
