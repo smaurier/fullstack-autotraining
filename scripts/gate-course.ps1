@@ -53,11 +53,12 @@ if ($vfailed.Count -gt 0) {
 $mdFiles = @()
 $mdFiles += $modules
 if (Test-Path $labDir) { $mdFiles += Get-ChildItem -Path $labDir -Recurse -Filter "*.md" -ErrorAction SilentlyContinue }
-# Scan uniquement le contenu LIVE (modules/ + labs/). PAS `cours/` : c'est l'archive
-# pré-refonte (exclue du build), ses vieux fichiers ne doivent pas faire échouer le gate.
+# Scan uniquement le contenu LIVE (modules/ + labs/). PAS `cours/` (archive pré-refonte)
+# ni `node_modules`/`dist`/`.vitepress` (dépendances/build, pas notre contenu).
 $codeFiles = @()
 foreach ($d in @($modDir,$labDir) | Where-Object { Test-Path $_ }) {
-    $codeFiles += Get-ChildItem -Path $d -Recurse -File -Include *.ts,*.js,*.md,*.vue -ErrorAction SilentlyContinue
+    $codeFiles += Get-ChildItem -Path $d -Recurse -File -Include *.ts,*.js,*.md,*.vue -ErrorAction SilentlyContinue |
+        Where-Object { $_.FullName -notmatch '[\\/](node_modules|dist|\.vitepress|\.git)[\\/]' }
 }
 
 # --- 2. Anti-simulé (règle feedback=coach / zéro test simulé) ---
