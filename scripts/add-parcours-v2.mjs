@@ -272,7 +272,7 @@ const COURS_COURSES = {
   '11-architecture': {
     modules: [
       {
-        lastFile: 'cours/00-fondamentaux/06-raisonner-en-architecte.md',
+        lastFile: 'cours/00-fondamentaux/07-raisonner-en-architecte.md',
         exercises: ['01-refactoring-solid', '02-identifier-patterns', '03-injection-dependances', '04-tradeoff-analysis'],
       },
       {
