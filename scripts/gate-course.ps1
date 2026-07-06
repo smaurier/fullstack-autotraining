@@ -70,10 +70,13 @@ foreach ($f in $codeFiles) {
     foreach ($p in $simPatterns) { if ($c -match $p) { $issues += "harnais simulé: $($f.FullName.Substring($courseDir.Length+1)) (~$p)"; break } }
 }
 
-# --- 3. Delimiters VitePress ---
+# --- 3. Config VitePress présente ---
+# NB : on n'exige PLUS l'override `delimiters` — il casse le thème par défaut (menu/outline
+# affichés `{{ title }}`). Le build SSR (check 7) est le vrai garde-fou contre les moustaches
+# en prose. Préférer, dans le contenu, garder `{{ }}` dans des blocs de code ou v-pre.
 $cfg = Get-ChildItem (Join-Path $courseDir ".vitepress") -Filter "config.*" -File -ErrorAction SilentlyContinue | Select-Object -First 1
 if (-not $cfg) { $issues += "config VitePress introuvable (.vitepress/config.*)" }
-elseif ((Get-Content $cfg.FullName -Raw) -notmatch 'delimiters') { $issues += 'config VitePress sans delimiters — moustaches en prose / expressions GitHub Actions casseront le build SSR' }
+elseif ((Get-Content $cfg.FullName -Raw) -match "delimiters:\s*\[") { $warns += "config VitePress utilise l'override delimiters — casse le {{ }} du theme par defaut (menu/outline). Fix : retirer + v-pre les moustaches de prose." }
 
 # --- 4. Variante J+30 dans chaque lab ---
 if (Test-Path $labDir) {
