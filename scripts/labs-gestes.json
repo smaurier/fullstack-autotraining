@@ -394,8 +394,8 @@
     [
       "lab-02-pwa-offline-first",
       "Z",
-      "Service Worker, queue offline, sync",
-      "cible"
+      "trois stratégies de cache Service Worker (cache-first/network-first/SWR) ; cycle de vie SW hors oracle (navigateur requis)",
+      "oracle"
     ],
     [
       "lab-03-cache-stale-en-prod",
