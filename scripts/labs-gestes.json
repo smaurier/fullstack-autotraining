@@ -369,7 +369,7 @@
       "lab-01-profil-de-perf",
       "Z",
       "mesurer, trouver, corriger, prouver au chiffre",
-      "cible"
+      "oracle"
     ],
     [
       "lab-02-fuite-memoire",
