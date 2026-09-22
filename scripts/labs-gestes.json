@@ -211,7 +211,7 @@
       "lab-01-feature-de-zero",
       "Z",
       "écran, état, appel API typé, formulaire validé, tests RTL + MSW, a11y",
-      "cible"
+      "oracle"
     ],
     [
       "lab-02-state-et-cache",
