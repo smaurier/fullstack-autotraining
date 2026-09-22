@@ -335,7 +335,7 @@
       "lab-05-contester-un-adr",
       "I",
       "réécrire un ADR existant avec preuves",
-      "cible"
+      "oracle"
     ]
   ],
   "14-securite-applicative": [
