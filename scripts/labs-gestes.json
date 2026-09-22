@@ -141,7 +141,7 @@
       "lab-04-clean-archi-de-zero",
       "Z",
       "domain/application/infrastructure avec tests de frontière",
-      "cible"
+      "oracle"
     ],
     [
       "lab-05-ajouter-un-endpoint",
