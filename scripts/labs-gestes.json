@@ -361,7 +361,7 @@
       "lab-04-relire-une-pr-auth",
       "I",
       "findings avant vérité",
-      "cible"
+      "oracle"
     ]
   ],
   "01-js-runtime": [
