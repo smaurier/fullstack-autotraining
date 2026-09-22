@@ -153,7 +153,7 @@
       "lab-06-faille-autorisation",
       "I",
       "faille rapportée à reproduire, corriger, tester",
-      "cible"
+      "oracle"
     ],
     [
       "lab-07-migrer-nestjs-11",
