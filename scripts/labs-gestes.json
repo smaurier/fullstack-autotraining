@@ -235,7 +235,7 @@
       "lab-05-ajouter-une-capacite",
       "I",
       "composant existant consommé par plusieurs écrans (le cas Elcia côté React)",
-      "cible"
+      "oracle"
     ],
     [
       "lab-06-re-render-mesure",
