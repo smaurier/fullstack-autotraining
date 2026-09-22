@@ -389,7 +389,7 @@
       "lab-01-strategie-de-cache",
       "Z",
       "headers, ETag, CDN, Redis, mesuré avant/après",
-      "cible"
+      "oracle"
     ],
     [
       "lab-02-pwa-offline-first",
