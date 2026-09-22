@@ -311,7 +311,7 @@
       "lab-01-clean-hexagonal-de-zero",
       "Z",
       "frontières prouvées par les tests, ADR par coupe",
-      "cible"
+      "oracle"
     ],
     [
       "lab-02-ddd-un-domaine-de-zero",
