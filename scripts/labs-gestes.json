@@ -173,7 +173,7 @@
       "lab-01-schema-de-zero",
       "Z",
       "tables, contraintes, migrations additives, index justifiés par EXPLAIN, jeu de données",
-      "cible"
+      "oracle"
     ],
     [
       "lab-02-requetes-de-l-appli",
