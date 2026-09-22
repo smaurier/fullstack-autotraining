@@ -349,7 +349,7 @@
       "lab-02-audit-owasp",
       "I",
       "auditer une appli, corriger le top 3 trouvé",
-      "cible"
+      "oracle"
     ],
     [
       "lab-03-csp-sur-un-front-existant",
