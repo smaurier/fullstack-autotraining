@@ -5,8 +5,10 @@
 > **intervenir dans l'existant** (consommateurs + non-régression + findings avant code).
 > Ce document est le jugement par cours ; le signal brut (heuristique par lab) est dans
 > `scan-gestes.md`. Le constat global : 485 labs, **8 oracles** (tous TypeScript 01-08), et un
-> format « un lab = un concept d'un module » quasi partout. Application juste-à-temps : chaque
-> cours est réécrit selon cette cible **avant d'entrer en file**, jamais en masse.
+> format « un lab = un concept d'un module » quasi partout. Amendé le 22/09 (Sylvain :
+> « ne gèle pas, mets à jour tous les cours ») : **chantier continu dans l'ordre des arcs**. Chaque cours
+> porte déjà sa table de labs-gestes dans son README (`scripts/labs-gestes.json`, `apply-labs-gestes.mjs`) ;
+> les oracles s'écrivent cours après cours : 06 → 09 → 10 → 04 → arc 2 → arc 3 → bibliothèque.
 
 Légende : **Z** = geste de zéro · **I** = geste d'intervention · **fiche** = concept qui reste
 une lecture + retrieval, pas un lab.
