@@ -342,8 +342,8 @@
     [
       "lab-01-oidc-pkce-webauthn-de-zero",
       "Z",
-      "flux d'auth complet API + front, testé",
-      "cible"
+      "PKCE RFC 7636 complet (vecteur de test officiel) ; OIDC/WebAuthn documentés, hors oracle (besoin d'un vrai IdP/navigateur)",
+      "oracle"
     ],
     [
       "lab-02-audit-owasp",
