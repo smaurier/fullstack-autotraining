@@ -323,7 +323,7 @@
       "lab-03-extraire-un-domaine",
       "I",
       "d'un monolithe existant, sans casser les consommateurs",
-      "cible"
+      "oracle"
     ],
     [
       "lab-04-relire-une-architecture",
