@@ -1,12 +1,12 @@
 # Qualité des labs — arc 1
 
-> Généré le 2026-09-21 par `scripts/score-labs.mjs`. Un point par critère : oracle exécutable · solution séparée (et pas de corrigé dans le README) · outillage exécutable · ancrage TribuZen. **Éligible en file = oracle présent ET score ≥ 2** (un lab sans oracle n'est pas un lab, règle qualité 2 du parcours).
+> Généré le 2026-09-22 par `scripts/score-labs.mjs`. Un point par critère : oracle exécutable · solution séparée (et pas de corrigé dans le README) · outillage exécutable · ancrage TribuZen. **Éligible en file = oracle présent ET score ≥ 2** (un lab sans oracle n'est pas un lab, règle qualité 2 du parcours).
 
 ## Par cours
 
 | Cours | Labs | Avec oracle | Solution séparée | Éligibles (oracle + ≥ 2) | Score moyen |
 |---|---|---|---|---|---|
-| 00-typescript | 19 | 5 | 5 | 5 | 1.79 |
+| 00-typescript | 19 | 8 | 8 | 8 | 2.26 |
 | 06-testing | 19 | 0 | 0 | 0 | 1.00 |
 | 09-nestjs | 26 | 1 | 1 | 1 | 1.92 |
 | 10-postgresql | 18 | 0 | 0 | 0 | 1.00 |
@@ -21,9 +21,9 @@
 | 00-typescript | labs/lab-03-objets-interfaces | ✅ | ✅ | ✅ | ✅ | **4** |
 | 00-typescript | labs/lab-04-narrowing | ✅ | ✅ | ✅ | ✅ | **4** |
 | 00-typescript | labs/lab-05-classes | ✅ | ✅ | ✅ | ✅ | **4** |
-| 00-typescript | labs/lab-06-generics-base | · | · | · | ✅ | **1** |
-| 00-typescript | labs/lab-07-generics-avances | · | · | · | ✅ | **1** |
-| 00-typescript | labs/lab-08-enums-tuples | · | · | · | ✅ | **1** |
+| 00-typescript | labs/lab-06-generics-base | ✅ | ✅ | ✅ | ✅ | **4** |
+| 00-typescript | labs/lab-07-generics-avances | ✅ | ✅ | ✅ | ✅ | **4** |
+| 00-typescript | labs/lab-08-enums-tuples | ✅ | ✅ | ✅ | ✅ | **4** |
 | 00-typescript | labs/lab-09-modules | · | · | · | ✅ | **1** |
 | 00-typescript | labs/lab-10-utility-types | · | · | · | ✅ | **1** |
 | 00-typescript | labs/lab-11-conditional-types | · | · | · | ✅ | **1** |
