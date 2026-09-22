@@ -165,7 +165,7 @@
       "lab-08-relire-une-pr-api",
       "I",
       "findings avant vérité",
-      "cible"
+      "oracle"
     ]
   ],
   "10-postgresql": [
