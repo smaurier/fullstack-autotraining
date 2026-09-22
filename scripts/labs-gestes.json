@@ -123,7 +123,7 @@
       "lab-01-api-de-zero",
       "Z",
       "module, DTO + validation, guard, service, repository, tests unit + e2e, Docker, jusqu'au curl",
-      "cible"
+      "oracle"
     ],
     [
       "lab-02-auth-jwt-de-zero",
