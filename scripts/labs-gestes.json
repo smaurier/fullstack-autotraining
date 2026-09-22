@@ -203,7 +203,7 @@
       "lab-06-jsonb-en-production",
       "I",
       "ajouter un champ JSONB indexé à une table vivante",
-      "cible"
+      "oracle"
     ]
   ],
   "04-react": [
