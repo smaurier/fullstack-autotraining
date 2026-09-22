@@ -31,7 +31,7 @@ une lecture + retrieval, pas un lab.
 - Z : **une API de bout en bout depuis un dossier vide** — module, DTO + validation, guard, service, repository, tests unit + e2e supertest, Docker, jusqu'au `curl` qui répond. Aujourd'hui découpé en 26 labs-concepts (pipes ici, guards là).
 - I : **ajouter un endpoint à une API existante consommée par un front** (contrat OpenAPI à ne pas casser) ; **corriger une faille d'autorisation rapportée** ; **migrer NestJS 10 → 11** (le lab-18 est pinné ^10, courant 11 : intervention réelle).
 - Fiches : GraphQL, MongoDB, microservices.
-- Statut : 1/26 oracle ; cible 4 Z + 4 I + fiches.
+- Statut : **8/8 livrés et vérifiés (22/09) — cours COMPLET.** lab-01 (Z, API complète, 18 tests) · lab-02 (Z, AuthModule JWT, 17 tests) · lab-03 (Z, WebSockets temps réel, 7 tests) · lab-04 (Z, Clean Architecture, 16 tests) · lab-05 (I, endpoint ajouté sans régression, 7 tests) · lab-06 (I, faille IDOR réelle corrigée, 6 tests) · lab-07 (I, migration NestJS 10→11 réelle, 3 breakages découverts, 12 tests) · lab-08 (I, PR relue — mass assignment + data leak réels corrigés, 5 tests).
 
 ### 10 PostgreSQL
 - Z : **un schéma complet depuis zéro** — tables, contraintes, migrations additives, index justifiés par `EXPLAIN`, jeu de données, requêtes de l'appli. Un seul geste, pas 18.
