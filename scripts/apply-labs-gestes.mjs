@@ -12,6 +12,7 @@ const data = JSON.parse(readFileSync(join(ROOT, "scripts/labs-gestes.json"), "ut
 const args = process.argv.slice(2);
 const doCommit = args.includes("--commit");
 const doPush = args.includes("--push");
+const only = args.filter((a) => !a.startsWith("--"));
 
 const START = "<!-- labs-gestes:start -->";
 const END = "<!-- labs-gestes:end -->";
@@ -19,6 +20,7 @@ const FORME = { Z: "Zéro", I: "Intervention", fiche: "Fiche" };
 
 for (const [course, labs] of Object.entries(data)) {
   if (course === "_") continue;
+  if (only.length && !only.includes(course)) continue;
   const dir = join(ROOT, course);
   const file = join(dir, "README.md");
   if (!existsSync(dir)) { console.error("cours introuvable :", course); continue; }
