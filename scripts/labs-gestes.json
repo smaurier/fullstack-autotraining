@@ -179,7 +179,7 @@
       "lab-02-requetes-de-l-appli",
       "Z",
       "les requêtes réelles de TribuZen, SQL brut avant l'ORM",
-      "cible"
+      "oracle"
     ],
     [
       "lab-03-requete-lente-en-prod",
