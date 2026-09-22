@@ -285,7 +285,7 @@
       "lab-05-routinecard-de-zero",
       "Z",
       "composé + stories des états vide/chargement/erreur",
-      "cible"
+      "oracle"
     ],
     [
       "lab-06-dark-mode-par-les-tokens",
