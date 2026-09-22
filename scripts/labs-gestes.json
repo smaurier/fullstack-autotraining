@@ -147,7 +147,7 @@
       "lab-05-ajouter-un-endpoint",
       "I",
       "API existante consommée par un front, contrat OpenAPI à ne pas casser",
-      "cible"
+      "oracle"
     ],
     [
       "lab-06-faille-autorisation",
