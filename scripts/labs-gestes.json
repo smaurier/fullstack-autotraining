@@ -91,7 +91,7 @@
       "lab-02-pyramide-reelle",
       "Z",
       "unit → intégration → E2E Playwright sur un écran réel",
-      "cible"
+      "oracle"
     ],
     [
       "lab-03-caracteriser-du-legacy",
@@ -109,13 +109,13 @@
       "lab-05-relire-une-pr-de-tests",
       "I",
       "findings avant vérité sur une PR de tests",
-      "cible"
+      "oracle"
     ],
     [
       "lab-06-tests-de-contrat",
       "Z",
       "contrat front/API testé des deux côtés",
-      "cible"
+      "oracle"
     ]
   ],
   "09-nestjs": [

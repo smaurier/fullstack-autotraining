@@ -25,7 +25,7 @@ une lecture + retrieval, pas un lab.
 - Z : **un module métier écrit en TDD strict de A à Z** (invitation familiale : règles, doubles, tests de contrat), avec pyramide visible (unit → intégration → E2E Playwright sur un écran réel).
 - I : **caractériser du code legacy sans tests** (golden master, puis refactor sous filet) ; **réparer une suite flaky** ; **relire une PR de tests** (findings avant vérité). Aucun de ces trois n'existe aujourd'hui.
 - Fiches : mutation testing, performance testing.
-- Statut : **3/6 livrés et vérifiés (22/09)** — lab-01 (Z, TDD strict sur `evaluerInvitation`), lab-03 (I, golden master + bug rapporté sur un plafond familial), lab-04 (I, suite flaky réparée : état partagé + async non maîtrisé). Restent : lab-02 (pyramide réelle + E2E), lab-05 (relire une PR de tests), lab-06 (contrat front/API).
+- Statut : **6/6 livrés et vérifiés (22/09) — cours COMPLET.** lab-01 (Z, TDD strict), lab-02 (Z, pyramide unit→intégration→e2e, vrai Chromium via Playwright), lab-03 (I, golden master + bug rapporté), lab-04 (I, suite flaky réparée), lab-05 (I, PR de tests renforcée jusqu'à tuer un mutant caché), lab-06 (Z, contrat consumer-driven front/API, adaptation sans Pact).
 
 ### 09 NestJS
 - Z : **une API de bout en bout depuis un dossier vide** — module, DTO + validation, guard, service, repository, tests unit + e2e supertest, Docker, jusqu'au `curl` qui répond. Aujourd'hui découpé en 26 labs-concepts (pipes ici, guards là).
