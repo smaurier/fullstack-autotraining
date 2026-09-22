@@ -317,7 +317,7 @@
       "lab-02-ddd-un-domaine-de-zero",
       "Z",
       "modélisation + tests du domaine",
-      "cible"
+      "oracle"
     ],
     [
       "lab-03-extraire-un-domaine",
