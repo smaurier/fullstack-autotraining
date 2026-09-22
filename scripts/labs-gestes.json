@@ -185,7 +185,7 @@
       "lab-03-requete-lente-en-prod",
       "I",
       "EXPLAIN ANALYZE, index, réécriture, preuve au chiffre",
-      "cible"
+      "oracle"
     ],
     [
       "lab-04-deadlock-reproduit",
