@@ -375,7 +375,7 @@
       "lab-02-fuite-memoire",
       "I",
       "dans un composant existant",
-      "cible"
+      "oracle"
     ],
     [
       "lab-03-event-loop-bloque",
