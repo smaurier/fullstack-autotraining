@@ -197,7 +197,7 @@
       "lab-05-migration-destructive",
       "I",
       "rendre sûre une migration qui perd des données",
-      "cible"
+      "oracle"
     ],
     [
       "lab-06-jsonb-en-production",
