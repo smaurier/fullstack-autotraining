@@ -1,149 +1,639 @@
 {
   "_": "Cible des labs-gestes par cours (règle qualité 5, 22/09/2026). Source : docs/gestes-complets.md. Z = construire de zéro un artefact entier, I = intervenir dans l'existant. Statut : oracle = livré et vérifié, cible = à écrire.",
   "00-typescript": [
-    ["lab-01-premiers-types", "Z", "typer Member, unknown + guard, satisfies", "oracle"],
-    ["lab-02-fonctions", "Z", "signatures, défaut, guard is, asserts", "oracle"],
-    ["lab-03-objets-interfaces", "Z", "la source de vérité du domaine TribuZen", "oracle"],
-    ["lab-04-narrowing", "Z", "union discriminée + never exhaustif", "oracle"],
-    ["lab-05-classes", "Z", "hiérarchie d'entités, #private, this", "oracle"],
-    ["lab-06-generics-base", "I", "refactorer la duplication en ApiResponse<T>, getById, Repository<T>", "oracle"],
-    ["lab-07-generics-avances", "Z", "pick, QueryBuilder<T>, NoInfer, chasse au generic de trop", "oracle"],
-    ["lab-08-enums-tuples", "I", "commit fautif d'un collègue : enum → as const, number[] → tuple", "oracle"],
-    ["lab-09-modules", "Z", "découper le domaine en modules, exports, résolution", "cible"],
-    ["lab-10-utility-types", "Z", "DTO dérivés du domaine avec Partial/Pick/Omit/ReturnType", "cible"],
-    ["lab-11-durcir-une-base-any", "I", "une base héritée en any à durcir sans casser ses appels (fusion 11-13)", "cible"],
-    ["lab-14-decorateurs", "Z", "checkpoint juste avant NestJS", "cible"],
-    ["lab-19-paquet-domaine", "Z", "publier @tribuzen/domain consommé par le front et l'API", "cible"]
+    [
+      "lab-01-premiers-types",
+      "Z",
+      "typer Member, unknown + guard, satisfies",
+      "oracle"
+    ],
+    [
+      "lab-02-fonctions",
+      "Z",
+      "signatures, défaut, guard is, asserts",
+      "oracle"
+    ],
+    [
+      "lab-03-objets-interfaces",
+      "Z",
+      "la source de vérité du domaine TribuZen",
+      "oracle"
+    ],
+    [
+      "lab-04-narrowing",
+      "Z",
+      "union discriminée + never exhaustif",
+      "oracle"
+    ],
+    [
+      "lab-05-classes",
+      "Z",
+      "hiérarchie d'entités, #private, this",
+      "oracle"
+    ],
+    [
+      "lab-06-generics-base",
+      "I",
+      "refactorer la duplication en ApiResponse<T>, getById, Repository<T>",
+      "oracle"
+    ],
+    [
+      "lab-07-generics-avances",
+      "Z",
+      "pick, QueryBuilder<T>, NoInfer, chasse au generic de trop",
+      "oracle"
+    ],
+    [
+      "lab-08-enums-tuples",
+      "I",
+      "commit fautif d'un collègue : enum → as const, number[] → tuple",
+      "oracle"
+    ],
+    [
+      "lab-09-modules",
+      "Z",
+      "découper le domaine en modules, exports, résolution",
+      "cible"
+    ],
+    [
+      "lab-10-utility-types",
+      "Z",
+      "DTO dérivés du domaine avec Partial/Pick/Omit/ReturnType",
+      "cible"
+    ],
+    [
+      "lab-11-durcir-une-base-any",
+      "I",
+      "une base héritée en any à durcir sans casser ses appels (fusion 11-13)",
+      "cible"
+    ],
+    [
+      "lab-14-decorateurs",
+      "Z",
+      "checkpoint juste avant NestJS",
+      "cible"
+    ],
+    [
+      "lab-19-paquet-domaine",
+      "Z",
+      "publier @tribuzen/domain consommé par le front et l'API",
+      "cible"
+    ]
   ],
   "06-testing": [
-    ["lab-01-module-metier-tdd", "Z", "invitation familiale en TDD strict, doubles, contrat, de A à Z", "cible"],
-    ["lab-02-pyramide-reelle", "Z", "unit → intégration → E2E Playwright sur un écran réel", "cible"],
-    ["lab-03-caracteriser-du-legacy", "I", "golden master sur du code sans tests, puis refactor sous filet", "cible"],
-    ["lab-04-reparer-une-suite-flaky", "I", "diagnostiquer et stabiliser des tests intermittents", "cible"],
-    ["lab-05-relire-une-pr-de-tests", "I", "findings avant vérité sur une PR de tests", "cible"],
-    ["lab-06-tests-de-contrat", "Z", "contrat front/API testé des deux côtés", "cible"]
+    [
+      "lab-01-module-metier-tdd",
+      "Z",
+      "invitation familiale en TDD strict, doubles, contrat, de A à Z",
+      "oracle"
+    ],
+    [
+      "lab-02-pyramide-reelle",
+      "Z",
+      "unit → intégration → E2E Playwright sur un écran réel",
+      "cible"
+    ],
+    [
+      "lab-03-caracteriser-du-legacy",
+      "I",
+      "golden master sur du code sans tests, puis refactor sous filet",
+      "oracle"
+    ],
+    [
+      "lab-04-reparer-une-suite-flaky",
+      "I",
+      "diagnostiquer et stabiliser des tests intermittents",
+      "oracle"
+    ],
+    [
+      "lab-05-relire-une-pr-de-tests",
+      "I",
+      "findings avant vérité sur une PR de tests",
+      "cible"
+    ],
+    [
+      "lab-06-tests-de-contrat",
+      "Z",
+      "contrat front/API testé des deux côtés",
+      "cible"
+    ]
   ],
   "09-nestjs": [
-    ["lab-01-api-de-zero", "Z", "module, DTO + validation, guard, service, repository, tests unit + e2e, Docker, jusqu'au curl", "cible"],
-    ["lab-02-auth-jwt-de-zero", "Z", "AuthModule complet avec tests", "cible"],
-    ["lab-03-websockets-de-zero", "Z", "NotificationsGateway temps réel testée", "cible"],
-    ["lab-04-clean-archi-de-zero", "Z", "domain/application/infrastructure avec tests de frontière", "cible"],
-    ["lab-05-ajouter-un-endpoint", "I", "API existante consommée par un front, contrat OpenAPI à ne pas casser", "cible"],
-    ["lab-06-faille-autorisation", "I", "faille rapportée à reproduire, corriger, tester", "cible"],
-    ["lab-07-migrer-nestjs-11", "I", "migrer le lab-18 historique (pinné ^10) vers NestJS 11", "cible"],
-    ["lab-08-relire-une-pr-api", "I", "findings avant vérité", "cible"]
+    [
+      "lab-01-api-de-zero",
+      "Z",
+      "module, DTO + validation, guard, service, repository, tests unit + e2e, Docker, jusqu'au curl",
+      "cible"
+    ],
+    [
+      "lab-02-auth-jwt-de-zero",
+      "Z",
+      "AuthModule complet avec tests",
+      "cible"
+    ],
+    [
+      "lab-03-websockets-de-zero",
+      "Z",
+      "NotificationsGateway temps réel testée",
+      "cible"
+    ],
+    [
+      "lab-04-clean-archi-de-zero",
+      "Z",
+      "domain/application/infrastructure avec tests de frontière",
+      "cible"
+    ],
+    [
+      "lab-05-ajouter-un-endpoint",
+      "I",
+      "API existante consommée par un front, contrat OpenAPI à ne pas casser",
+      "cible"
+    ],
+    [
+      "lab-06-faille-autorisation",
+      "I",
+      "faille rapportée à reproduire, corriger, tester",
+      "cible"
+    ],
+    [
+      "lab-07-migrer-nestjs-11",
+      "I",
+      "migrer le lab-18 historique (pinné ^10) vers NestJS 11",
+      "cible"
+    ],
+    [
+      "lab-08-relire-une-pr-api",
+      "I",
+      "findings avant vérité",
+      "cible"
+    ]
   ],
   "10-postgresql": [
-    ["lab-01-schema-de-zero", "Z", "tables, contraintes, migrations additives, index justifiés par EXPLAIN, jeu de données", "cible"],
-    ["lab-02-requetes-de-l-appli", "Z", "les requêtes réelles de TribuZen, SQL brut avant l'ORM", "cible"],
-    ["lab-03-requete-lente-en-prod", "I", "EXPLAIN ANALYZE, index, réécriture, preuve au chiffre", "cible"],
-    ["lab-04-deadlock-reproduit", "I", "isolation, verrous, deadlock reproduit puis résolu", "cible"],
-    ["lab-05-migration-destructive", "I", "rendre sûre une migration qui perd des données", "cible"],
-    ["lab-06-jsonb-en-production", "I", "ajouter un champ JSONB indexé à une table vivante", "cible"]
+    [
+      "lab-01-schema-de-zero",
+      "Z",
+      "tables, contraintes, migrations additives, index justifiés par EXPLAIN, jeu de données",
+      "cible"
+    ],
+    [
+      "lab-02-requetes-de-l-appli",
+      "Z",
+      "les requêtes réelles de TribuZen, SQL brut avant l'ORM",
+      "cible"
+    ],
+    [
+      "lab-03-requete-lente-en-prod",
+      "I",
+      "EXPLAIN ANALYZE, index, réécriture, preuve au chiffre",
+      "cible"
+    ],
+    [
+      "lab-04-deadlock-reproduit",
+      "I",
+      "isolation, verrous, deadlock reproduit puis résolu",
+      "cible"
+    ],
+    [
+      "lab-05-migration-destructive",
+      "I",
+      "rendre sûre une migration qui perd des données",
+      "cible"
+    ],
+    [
+      "lab-06-jsonb-en-production",
+      "I",
+      "ajouter un champ JSONB indexé à une table vivante",
+      "cible"
+    ]
   ],
   "04-react": [
-    ["lab-01-feature-de-zero", "Z", "écran, état, appel API typé, formulaire validé, tests RTL + MSW, a11y", "cible"],
-    ["lab-02-state-et-cache", "Z", "Zustand + TanStack Query sur une feature réelle", "cible"],
-    ["lab-03-page-nextjs-de-zero", "Z", "App Router, Server Components, Route Handler, devant l'API NestJS", "cible"],
-    ["lab-04-recette-esn", "Z", "un pattern réel de mission de bout en bout", "cible"],
-    ["lab-05-ajouter-une-capacite", "I", "composant existant consommé par plusieurs écrans (le cas Elcia côté React)", "cible"],
-    ["lab-06-re-render-mesure", "I", "profiler, trouver, corriger, prouver", "cible"],
-    ["lab-07-migrer-vers-server-components", "I", "une page client existante", "cible"],
-    ["lab-08-relire-une-pr-react", "I", "findings avant vérité", "cible"]
+    [
+      "lab-01-feature-de-zero",
+      "Z",
+      "écran, état, appel API typé, formulaire validé, tests RTL + MSW, a11y",
+      "cible"
+    ],
+    [
+      "lab-02-state-et-cache",
+      "Z",
+      "Zustand + TanStack Query sur une feature réelle",
+      "cible"
+    ],
+    [
+      "lab-03-page-nextjs-de-zero",
+      "Z",
+      "App Router, Server Components, Route Handler, devant l'API NestJS",
+      "cible"
+    ],
+    [
+      "lab-04-recette-esn",
+      "Z",
+      "un pattern réel de mission de bout en bout",
+      "cible"
+    ],
+    [
+      "lab-05-ajouter-une-capacite",
+      "I",
+      "composant existant consommé par plusieurs écrans (le cas Elcia côté React)",
+      "cible"
+    ],
+    [
+      "lab-06-re-render-mesure",
+      "I",
+      "profiler, trouver, corriger, prouver",
+      "cible"
+    ],
+    [
+      "lab-07-migrer-vers-server-components",
+      "I",
+      "une page client existante",
+      "cible"
+    ],
+    [
+      "lab-08-relire-une-pr-react",
+      "I",
+      "findings avant vérité",
+      "cible"
+    ]
   ],
   "21-design-system": [
-    ["lab-01-text-de-zero", "Z", "Text avec ses six endroits", "oracle"],
-    ["lab-02-button-de-zero", "Z", "Button : cva, asChild, loading/disabled accessibles", "oracle"],
-    ["lab-03-ajouter-lines-a-text", "I", "ajouter lines à Text consommé par 3 écrans", "oracle"],
-    ["lab-04-bug-a11y-dialog", "I", "bug rapporté sur un Dialog Radix, findings avant code", "cible"],
-    ["lab-05-routinecard-de-zero", "Z", "composé + stories des états vide/chargement/erreur", "cible"],
-    ["lab-06-dark-mode-par-les-tokens", "I", "sans toucher aux consommateurs", "cible"],
-    ["lab-07-migrer-storybook", "I", "catalogue SB8/9 → 10.6", "cible"],
-    ["lab-08-tamagui-de-zero", "Z", "cross-platform web + RN", "cible"]
+    [
+      "lab-01-text-de-zero",
+      "Z",
+      "Text avec ses six endroits",
+      "oracle"
+    ],
+    [
+      "lab-02-button-de-zero",
+      "Z",
+      "Button : cva, asChild, loading/disabled accessibles",
+      "oracle"
+    ],
+    [
+      "lab-03-ajouter-lines-a-text",
+      "I",
+      "ajouter lines à Text consommé par 3 écrans",
+      "oracle"
+    ],
+    [
+      "lab-04-bug-a11y-dialog",
+      "I",
+      "bug rapporté sur un Dialog Radix, findings avant code",
+      "cible"
+    ],
+    [
+      "lab-05-routinecard-de-zero",
+      "Z",
+      "composé + stories des états vide/chargement/erreur",
+      "cible"
+    ],
+    [
+      "lab-06-dark-mode-par-les-tokens",
+      "I",
+      "sans toucher aux consommateurs",
+      "cible"
+    ],
+    [
+      "lab-07-migrer-storybook",
+      "I",
+      "catalogue SB8/9 → 10.6",
+      "cible"
+    ],
+    [
+      "lab-08-tamagui-de-zero",
+      "Z",
+      "cross-platform web + RN",
+      "cible"
+    ]
   ],
   "13-architecture": [
-    ["lab-01-clean-hexagonal-de-zero", "Z", "frontières prouvées par les tests, ADR par coupe", "cible"],
-    ["lab-02-ddd-un-domaine-de-zero", "Z", "modélisation + tests du domaine", "cible"],
-    ["lab-03-extraire-un-domaine", "I", "d'un monolithe existant, sans casser les consommateurs", "cible"],
-    ["lab-04-relire-une-architecture", "I", "findings, sparring archi", "cible"],
-    ["lab-05-contester-un-adr", "I", "réécrire un ADR existant avec preuves", "cible"]
+    [
+      "lab-01-clean-hexagonal-de-zero",
+      "Z",
+      "frontières prouvées par les tests, ADR par coupe",
+      "cible"
+    ],
+    [
+      "lab-02-ddd-un-domaine-de-zero",
+      "Z",
+      "modélisation + tests du domaine",
+      "cible"
+    ],
+    [
+      "lab-03-extraire-un-domaine",
+      "I",
+      "d'un monolithe existant, sans casser les consommateurs",
+      "cible"
+    ],
+    [
+      "lab-04-relire-une-architecture",
+      "I",
+      "findings, sparring archi",
+      "cible"
+    ],
+    [
+      "lab-05-contester-un-adr",
+      "I",
+      "réécrire un ADR existant avec preuves",
+      "cible"
+    ]
   ],
   "14-securite-applicative": [
-    ["lab-01-oidc-pkce-webauthn-de-zero", "Z", "flux d'auth complet API + front, testé", "cible"],
-    ["lab-02-audit-owasp", "I", "auditer une appli, corriger le top 3 trouvé", "cible"],
-    ["lab-03-csp-sur-un-front-existant", "I", "sans rien casser", "cible"],
-    ["lab-04-relire-une-pr-auth", "I", "findings avant vérité", "cible"]
+    [
+      "lab-01-oidc-pkce-webauthn-de-zero",
+      "Z",
+      "flux d'auth complet API + front, testé",
+      "cible"
+    ],
+    [
+      "lab-02-audit-owasp",
+      "I",
+      "auditer une appli, corriger le top 3 trouvé",
+      "cible"
+    ],
+    [
+      "lab-03-csp-sur-un-front-existant",
+      "I",
+      "sans rien casser",
+      "cible"
+    ],
+    [
+      "lab-04-relire-une-pr-auth",
+      "I",
+      "findings avant vérité",
+      "cible"
+    ]
   ],
   "01-js-runtime": [
-    ["lab-01-profil-de-perf", "Z", "mesurer, trouver, corriger, prouver au chiffre", "cible"],
-    ["lab-02-fuite-memoire", "I", "dans un composant existant", "cible"],
-    ["lab-03-event-loop-bloque", "I", "en prod, diagnostic et correction", "cible"]
+    [
+      "lab-01-profil-de-perf",
+      "Z",
+      "mesurer, trouver, corriger, prouver au chiffre",
+      "cible"
+    ],
+    [
+      "lab-02-fuite-memoire",
+      "I",
+      "dans un composant existant",
+      "cible"
+    ],
+    [
+      "lab-03-event-loop-bloque",
+      "I",
+      "en prod, diagnostic et correction",
+      "cible"
+    ]
   ],
   "11-http-caching": [
-    ["lab-01-strategie-de-cache", "Z", "headers, ETag, CDN, Redis, mesuré avant/après", "cible"],
-    ["lab-02-pwa-offline-first", "Z", "Service Worker, queue offline, sync", "cible"],
-    ["lab-03-cache-stale-en-prod", "I", "diagnostiquer et corriger", "cible"],
-    ["lab-04-ajouter-le-push", "I", "à une appli existante", "cible"]
+    [
+      "lab-01-strategie-de-cache",
+      "Z",
+      "headers, ETag, CDN, Redis, mesuré avant/après",
+      "cible"
+    ],
+    [
+      "lab-02-pwa-offline-first",
+      "Z",
+      "Service Worker, queue offline, sync",
+      "cible"
+    ],
+    [
+      "lab-03-cache-stale-en-prod",
+      "I",
+      "diagnostiquer et corriger",
+      "cible"
+    ],
+    [
+      "lab-04-ajouter-le-push",
+      "I",
+      "à une appli existante",
+      "cible"
+    ]
   ],
   "07-git-avance": [
-    ["lab-01-strategie-de-branches", "Z", "sur un vrai repo", "cible"],
-    ["lab-02-bisect-une-regression", "I", "réelle", "cible"],
-    ["lab-03-rebase-une-branche-sale", "I", "historique propre", "cible"],
-    ["lab-04-conflit-sans-perte", "I", "résoudre sans perdre de travail", "cible"]
+    [
+      "lab-01-strategie-de-branches",
+      "Z",
+      "sur un vrai repo",
+      "cible"
+    ],
+    [
+      "lab-02-bisect-une-regression",
+      "I",
+      "réelle",
+      "cible"
+    ],
+    [
+      "lab-03-rebase-une-branche-sale",
+      "I",
+      "historique propre",
+      "cible"
+    ],
+    [
+      "lab-04-conflit-sans-perte",
+      "I",
+      "résoudre sans perdre de travail",
+      "cible"
+    ]
   ],
   "12-aws-cloud": [
-    ["lab-01-deployer-tribuzen", "Z", "IAM, S3, Lambda/ECS, RDS, CloudFront — geste transverse avec 15 et 16", "cible"],
-    ["lab-02-deploiement-casse", "I", "diagnostiquer", "cible"],
-    ["lab-03-facture-a-reduire", "I", "FinOps réel", "cible"]
+    [
+      "lab-01-deployer-tribuzen",
+      "Z",
+      "IAM, S3, Lambda/ECS, RDS, CloudFront — geste transverse avec 15 et 16",
+      "cible"
+    ],
+    [
+      "lab-02-deploiement-casse",
+      "I",
+      "diagnostiquer",
+      "cible"
+    ],
+    [
+      "lab-03-facture-a-reduire",
+      "I",
+      "FinOps réel",
+      "cible"
+    ]
   ],
   "15-cicd-devops": [
-    ["lab-01-pipeline-de-tribuzen", "Z", "GitHub Actions + Terraform, preview par PR — geste transverse avec 12 et 16", "cible"],
-    ["lab-02-pipeline-lente", "I", "accélérer", "cible"],
-    ["lab-03-pipeline-cassee", "I", "diagnostiquer", "cible"]
+    [
+      "lab-01-pipeline-de-tribuzen",
+      "Z",
+      "GitHub Actions + Terraform, preview par PR — geste transverse avec 12 et 16",
+      "cible"
+    ],
+    [
+      "lab-02-pipeline-lente",
+      "I",
+      "accélérer",
+      "cible"
+    ],
+    [
+      "lab-03-pipeline-cassee",
+      "I",
+      "diagnostiquer",
+      "cible"
+    ]
   ],
   "16-observability-sre": [
-    ["lab-01-observer-tribuzen", "Z", "Pino, Sentry, dashboard — geste transverse avec 12 et 15", "cible"],
-    ["lab-02-alerte-sur-un-sli", "I", "réel", "cible"],
-    ["lab-03-incident-a-remonter", "I", "traces, logs, cause", "cible"]
+    [
+      "lab-01-observer-tribuzen",
+      "Z",
+      "Pino, Sentry, dashboard — geste transverse avec 12 et 15",
+      "cible"
+    ],
+    [
+      "lab-02-alerte-sur-un-sli",
+      "I",
+      "réel",
+      "cible"
+    ],
+    [
+      "lab-03-incident-a-remonter",
+      "I",
+      "traces, logs, cause",
+      "cible"
+    ]
   ],
   "05-algorithms": [
-    ["lab-01-arbre-familial-en-graphe", "Z", "BFS + debounce, testé", "cible"],
-    ["katas", "fiche", "complexité, hash maps, patterns JS : katas + retrieval", "cible"]
+    [
+      "lab-01-arbre-familial-en-graphe",
+      "Z",
+      "BFS + debounce, testé",
+      "cible"
+    ],
+    [
+      "katas",
+      "fiche",
+      "complexité, hash maps, patterns JS : katas + retrieval",
+      "cible"
+    ]
   ],
   "17-distributed-systems": [
-    ["lab-01-appel-externe-resilient", "Z", "circuit breaker, retry, backoff, test de panne", "cible"],
-    ["lab-02-saga-outbox-sur-un-flux", "I", "existant", "cible"],
-    ["lab-03-panne-en-cascade", "I", "reproduire et contenir", "cible"]
+    [
+      "lab-01-appel-externe-resilient",
+      "Z",
+      "circuit breaker, retry, backoff, test de panne",
+      "cible"
+    ],
+    [
+      "lab-02-saga-outbox-sur-un-flux",
+      "I",
+      "existant",
+      "cible"
+    ],
+    [
+      "lab-03-panne-en-cascade",
+      "I",
+      "reproduire et contenir",
+      "cible"
+    ]
   ],
   "08-soft-skills": [
-    ["fiches", "fiche", "estimation, communication non-dev ; ADR et revue → voie lecture critique du parcours", "cible"]
+    [
+      "fiches",
+      "fiche",
+      "estimation, communication non-dev ; ADR et revue → voie lecture critique du parcours",
+      "cible"
+    ]
   ],
   "22-stripe-billing": [
-    ["lab-01-freemium-de-zero", "Z", "Checkout, webhook signé, gate NestJS, portail", "cible"],
-    ["lab-02-webhook-perdu", "I", "rejouer, idempotence", "cible"]
+    [
+      "lab-01-freemium-de-zero",
+      "Z",
+      "Checkout, webhook signé, gate NestJS, portail",
+      "cible"
+    ],
+    [
+      "lab-02-webhook-perdu",
+      "I",
+      "rejouer, idempotence",
+      "cible"
+    ]
   ],
   "18-ia": [
-    ["lab-01-assistant-rag-de-zero", "Z", "RAG + eval + guardrails + coûts", "cible"],
-    ["lab-02-injection-reussie", "I", "corriger", "cible"]
+    [
+      "lab-01-assistant-rag-de-zero",
+      "Z",
+      "RAG + eval + guardrails + coûts",
+      "cible"
+    ],
+    [
+      "lab-02-injection-reussie",
+      "I",
+      "corriger",
+      "cible"
+    ]
   ],
   "02-vue": [
-    ["lab-01-feature-de-zero", "Z", "une feature de bout en bout, Composition API + Pinia", "cible"],
-    ["lab-02-ajouter-une-capacite", "I", "composant consommé", "cible"]
+    [
+      "lab-01-feature-de-zero",
+      "Z",
+      "une feature de bout en bout, Composition API + Pinia",
+      "cible"
+    ],
+    [
+      "lab-02-ajouter-une-capacite",
+      "I",
+      "composant consommé",
+      "cible"
+    ]
   ],
   "03-angular": [
-    ["lab-01-feature-de-zero", "Z", "composant + service DI + RxJS sur l'API TribuZen", "cible"],
-    ["lab-02-ajouter-une-capacite", "I", "composant consommé", "cible"]
+    [
+      "lab-01-feature-de-zero",
+      "Z",
+      "composant + service DI + RxJS sur l'API TribuZen",
+      "cible"
+    ],
+    [
+      "lab-02-ajouter-une-capacite",
+      "I",
+      "composant consommé",
+      "cible"
+    ]
   ],
   "19-react-native": [
-    ["lab-01-feature-de-zero", "Z", "écran mobile de bout en bout, a11y RN", "cible"],
-    ["lab-02-ajouter-une-capacite", "I", "composant consommé", "cible"]
+    [
+      "lab-01-feature-de-zero",
+      "Z",
+      "écran mobile de bout en bout, a11y RN",
+      "cible"
+    ],
+    [
+      "lab-02-ajouter-une-capacite",
+      "I",
+      "composant consommé",
+      "cible"
+    ]
   ],
   "20-webgpu-3d": [
-    ["lab-01-scene-complete", "Z", "pipeline, shaders, interaction", "cible"],
-    ["lab-02-fps-effondre", "I", "retrouver (cas réel Nahual)", "cible"]
+    [
+      "lab-01-scene-complete",
+      "Z",
+      "pipeline, shaders, interaction",
+      "cible"
+    ],
+    [
+      "lab-02-fps-effondre",
+      "I",
+      "retrouver (cas réel Nahual)",
+      "cible"
+    ]
   ],
   "23-droit-numerique": [
-    ["lab-01-checklist-rgpd-tribuzen", "Z", "appliquée, DPIA, DPA", "cible"],
-    ["fiches", "fiche", "RGPD, CGU, PI, accessibilité légale", "cible"]
+    [
+      "lab-01-checklist-rgpd-tribuzen",
+      "Z",
+      "appliquée, DPIA, DPA",
+      "cible"
+    ],
+    [
+      "fiches",
+      "fiche",
+      "RGPD, CGU, PI, accessibilité légale",
+      "cible"
+    ]
   ]
 }
