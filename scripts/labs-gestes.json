@@ -521,7 +521,7 @@
       "lab-02-saga-outbox-sur-un-flux",
       "I",
       "existant",
-      "cible"
+      "oracle"
     ],
     [
       "lab-03-panne-en-cascade",
