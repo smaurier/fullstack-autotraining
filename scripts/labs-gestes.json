@@ -421,7 +421,7 @@
       "lab-02-bisect-une-regression",
       "I",
       "réelle",
-      "cible"
+      "oracle"
     ],
     [
       "lab-03-rebase-une-branche-sale",
