@@ -76,7 +76,7 @@ une lecture + retrieval, pas un lab.
 ### 07 Git avancé
 - Z : **une stratégie de branches + historique propre** sur un vrai repo.
 - I : tout le cours est naturellement de l'intervention : **bisect sur une régression réelle**, **rebase interactif d'une branche sale**, **conflit à résoudre sans perdre de travail**.
-- Statut : 0/10 ; cible 1 Z + 3 I.
+- Statut : **3/4 livrés et vérifiés (23/09), cours presque COMPLET.** lab-01 (Z, stratégie de branches sur dépôt scratch réel, hotfix correctement branché depuis `main`) · lab-02 (I, régression localisée par un vrai `git bisect run`) · lab-03 (I, historique sale nettoyé par un vrai `git rebase -i` piloté sans éditeur). Reste lab-04 (I, conflit à résoudre sans perdre de travail).
 
 ## ARC 3
 
