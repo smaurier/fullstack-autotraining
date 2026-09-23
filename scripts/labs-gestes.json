@@ -501,7 +501,7 @@
       "lab-01-arbre-familial-en-graphe",
       "Z",
       "BFS + debounce, testé",
-      "cible"
+      "oracle"
     ],
     [
       "katas",
