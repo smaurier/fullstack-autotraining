@@ -59,7 +59,7 @@
       "lab-10-utility-types",
       "Z",
       "DTO dérivés du domaine avec Partial/Pick/Omit/ReturnType",
-      "cible"
+      "oracle"
     ],
     [
       "lab-11-durcir-une-base-any",
