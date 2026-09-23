@@ -74,10 +74,10 @@
       "oracle"
     ],
     [
-      "lab-19-paquet-domaine",
+      "lab-19-projet-final",
       "Z",
       "publier @tribuzen/domain consommé par le front et l'API",
-      "cible"
+      "oracle"
     ]
   ],
   "06-testing": [
