@@ -87,7 +87,7 @@ une lecture + retrieval, pas un lab.
 
 ### 05 Algorithms
 - Concepts par nature (fiches + katas). Un seul Z : **l'arbre familial TribuZen en graphe** avec BFS + debounce, testé.
-- Statut : 0/12 ; cible 1 Z + katas.
+- Statut : **1/1 geste livré et vérifié (23/09) — le seul lab-geste du cours est COMPLET.** lab-01-arbre-familial-en-graphe (Z) : recherche de membres à inviter, débouncée, triée par proximité dans le graphe familial (un seul BFS par recherche donne les distances vers tous les membres, réutilisé pour le tri — pas un BFS par candidat). 18 tests, solution GREEN / starter RED. Reste les katas (fiches, hors format oracle).
 
 ### 17 Systèmes distribués
 - Z : **rendre résilient un appel externe** (circuit breaker, retry, backoff) sur l'API existante, prouvé par un test de panne.
