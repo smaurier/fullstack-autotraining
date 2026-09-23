@@ -584,8 +584,8 @@
     [
       "lab-01-feature-de-zero",
       "Z",
-      "composant + service DI + RxJS sur l'API TribuZen",
-      "cible"
+      "service DI + RxJS (recherche debouncée + création) ; composant hors oracle — @analogjs/vite-plugin-angular + @angular/build crashent (segfault) sur cet environnement",
+      "oracle"
     ],
     [
       "lab-02-ajouter-une-capacite",
