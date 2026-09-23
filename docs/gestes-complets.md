@@ -19,7 +19,7 @@ une lecture + retrieval, pas un lab.
 - Z : la **source de vérité d'un domaine** (types, guards, entités) utilisable telle quelle par un front et une API. Labs 03 + 05 en sont déjà proches ; le lab-19 projet final doit devenir *ce* geste : un paquet de types publié (`@tribuzen/domain`) consommé par les deux côtés.
 - I : lab-06 (refactor de duplication) et lab-08 (commit fautif d'un collègue) **sont déjà** des interventions ; en ajouter une sur une base typée `any` héritée à durcir (labs 11-13 fusionnés).
 - Fiches : conditional/mapped types, variance, declaration files (labs 11-13, 15-16) → concepts, pas gestes.
-- Statut : 8/19 au format oracle ; règle 5 appliquée aux prochains convertis (09-10, 14, 19).
+- Statut : **9/19 au format oracle (23/09).** lab-09-modules converti : barrel type-only (Family/Member/Role/Event) + export de valeur (ROLES) sous `verbatimModuleSyntax`, 11 tests. Reste 10, 11, 14, 19.
 
 ### 06 Testing / TDD
 - Z : **un module métier écrit en TDD strict de A à Z** (invitation familiale : règles, doubles, tests de contrat), avec pyramide visible (unit → intégration → E2E Playwright sur un écran réel).
