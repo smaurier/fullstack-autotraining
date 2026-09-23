@@ -70,8 +70,8 @@
     [
       "lab-14-decorateurs",
       "Z",
-      "checkpoint juste avant NestJS",
-      "cible"
+      "checkpoint juste avant NestJS — décorateur standard + mini-DI legacy (reflect-metadata)",
+      "oracle"
     ],
     [
       "lab-19-paquet-domaine",
