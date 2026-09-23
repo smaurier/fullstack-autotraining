@@ -515,7 +515,7 @@
       "lab-01-appel-externe-resilient",
       "Z",
       "circuit breaker, retry, backoff, test de panne",
-      "cible"
+      "oracle"
     ],
     [
       "lab-02-saga-outbox-sur-un-flux",
