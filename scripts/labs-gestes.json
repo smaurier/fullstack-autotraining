@@ -65,7 +65,7 @@
       "lab-11-durcir-une-base-any",
       "I",
       "une base héritée en any à durcir sans casser ses appels (fusion 11-13)",
-      "cible"
+      "oracle"
     ],
     [
       "lab-14-decorateurs",
