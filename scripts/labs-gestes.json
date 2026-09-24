@@ -543,13 +543,13 @@
       "lab-01-freemium-de-zero",
       "Z",
       "Checkout, webhook signé, gate NestJS, portail",
-      "cible"
+      "oracle"
     ],
     [
       "lab-02-webhook-perdu",
       "I",
       "rejouer, idempotence",
-      "cible"
+      "oracle"
     ]
   ],
   "18-ia": [
