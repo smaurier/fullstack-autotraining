@@ -75,6 +75,22 @@ doit pouvoir se raconter en suivant la structure d'étude de cas déjà pratiqu�
 minutes chronométrées comme en a13 — avec un vrai contradicteur, pas une répétition solo. Ce
 module prépare ce récit, il ne se contente pas de produire des écrans.
 
+### 2.5 Le récit a besoin d'un chiffre : l'entonnoir d'activation du capstone
+
+Le module A01 posait, comme critère de succès du brief console GPU, que « le temps entre
+l'inscription et le premier déploiement GPU diminue ». C'est un critère d'entonnoir, et le
+capstone doit le traiter explicitement plutôt que le laisser en intention.
+
+Concrètement, le capstone produit **l'entonnoir d'activation** du parcours « inscription →
+premier déploiement GPU », avec la méthode du module G05 : les étapes observables et
+séquentielles, la perte entre chaque étape, et la base de référence du parcours existant avant
+toute refonte. Appliqué au produit long d'un SaaS, c'est le temps jusqu'à la première valeur
+du module H05 — ici, le premier déploiement qui tourne.
+
+Sans ce chiffre, le capstone reste une démonstration d'écrans. Avec lui, il devient le récit
+d'un résultat, et c'est la seule version qui résiste à la question « et ça a servi à quoi ? »
+en entretien.
+
 ## 3. Worked examples
 
 ### Exemple A — flow de pilotage avec une micro-interaction Rive justifiée

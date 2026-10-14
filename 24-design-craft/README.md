@@ -48,14 +48,56 @@ lien Framer publié, document écrit) vérifié par :
 | D | Framer (outil) | **7/7** — [d01](modules/d01-positionnement-outil.md) à [d07](modules/d07-publication-seo.md) |
 | E | Motion design (After Effects/Lottie + Rive) | **6/6** — [e01](modules/e01-douze-principes-animation.md) à [e06](modules/e06-performance-a11y-mouvement.md) |
 | F | Identité de marque multi-supports | **5/5** — [f01](modules/f01-anatomie-identite.md) à [f05](modules/f05-licences-typo.md) |
+| **G** | **Parcours & conversion** | **6/6** — [g01](modules/g01-intentions-points-entree.md) à [g06](modules/g06-architecture-decision.md) |
+| **H** | **Design produit (éditeur logiciel)** | **6/6** — [h01](modules/h01-concevoir-dans-existant.md) à [h06](modules/h06-cycle-vie-maquette.md) |
 | Capstone | Étude de cas "console SaaS GPU" | **3/3** — [cap01](modules/cap01-audit-charte-maquettes.md) à [cap03](modules/cap03-facturation-usage.md) |
 
-**56/56 modules rédigés, rédaction du cours complète au 10/10/2026.** Chaque module a son lab
-associé dans `labs/<slug>/` (brief + rubrique objective + revue qualitative), sauf b01 dont le
-lab a un nom distinct (`labs/b01-trois-langages-visuels/`, exception historique documentée,
-à ne pas reproduire). **La rédaction est terminée ; le statut "pas encore activé" plus haut
-reste inchangé** : zéro pratique avant le jalon `reprise-curriculum` (04/11/2026) et une
-validation explicite de Sylvain sur l'insertion dans `PARCOURS-SYLVAIN.md`.
+**68/68 modules rédigés** (56 au 10/10/2026, puis les blocs G et H ajoutés le 14/10/2026).
+Chaque module a son lab associé dans `labs/<slug>/` (brief + rubrique objective + revue
+qualitative), sauf b01 dont le lab a un nom distinct
+(`labs/b01-trois-langages-visuels/`, exception historique documentée, à ne pas reproduire).
+**La rédaction est terminée ; le statut "pas encore activé" plus haut reste inchangé** : zéro
+pratique avant le jalon `reprise-curriculum` (04/11/2026) et une validation explicite de
+Sylvain sur l'insertion dans `PARCOURS-SYLVAIN.md`.
+
+## Pourquoi les blocs G et H existent (ajoutés le 14/10/2026)
+
+Les blocs A à F forment l'œil et la main : culture, théorie, outils, motion, marque. Un scan
+du cours a montré qu'il leur manquait une colonne vertébrale : **intention d'entrée → parcours
+→ mesure**. Le cours savait cadrer un problème (A01) et dessiner un écran (B et C), pas
+conduire quelqu'un d'une entrée A à une sortie B sur plusieurs pages, ni le mesurer. Pire,
+A01 exigeait des critères de succès mesurables qu'aucun module n'apprenait à relever.
+
+- **Bloc G — Parcours & conversion.** Modéliser qui arrive et pourquoi (g01), cartographier le
+  parcours au-delà du produit (g02), rendre une navigation testable (g03), concevoir un
+  parcours en plusieurs étapes qui survit à l'interruption (g04), **mesurer** (g05), et guider
+  vers une sortie assumée sans manipuler (g06, pendant constructif de a08).
+- **Bloc H — Design produit.** Le métier tel qu'il se pratique dans un éditeur logiciel :
+  concevoir dans l'existant (h01), les patterns de données denses (h02), la matrice d'états
+  (h03), le domaine et les permissions (h04), le parcours long d'un SaaS (h05), et le cycle de
+  vie d'une maquette en équipe (h06).
+
+**Deux ancrages réels, pas des exercices d'école :**
+
+- Bloc G : **nuada-audit.com** et **nahual.fr**, qui ont une vraie sortie attendue et où une
+  mesure est possible. `g05` est le lab charnière et doit être fait **en premier** du bloc : sans
+  base de référence relevée avant les corrections, le travail de tout le bloc reste
+  indémontrable.
+- Bloc H : fil rouge **« Nahual 2D »** — construire le design system du portfolio en Figma et
+  en tirer une déclinaison 2D de nahual.fr (même structure, même contenu, sans WebGL ni
+  mouvement), avec une bascule entre les deux modes. Cadrage complet et règles non négociables
+  dans [`labs/h01-concevoir-dans-existant/`](labs/h01-concevoir-dans-existant/README.md).
+  Deux labs restent sur TribuZen par nécessité (h02 données denses, h04 domaine et permissions),
+  parce qu'un portfolio n'a ni volume de données ni rôles.
+
+Chaque lab des blocs G et H ouvre par un **échauffement** court, contraint et jetable, sur un
+sujet qui n'est pas un projet de Sylvain : le geste s'isole avant de s'appliquer au réel.
+
+> **Garde-fou de confidentialité.** Ce dépôt est public. Le bloc H prévoit un exercice de
+> calibration sur un ticket professionnel réel (maquetter avant de voir la maquette officielle,
+> puis comparer). Il ne produit **rien** ici : ni capture, ni export, ni nom de client, ni nom
+> de composant interne, ni libellé métier, ni donnée. Ce qui en revient est une note de méthode
+> générique, dans l'espace privé.
 
 Convention de nommage des fichiers : `modules/<bloc><NN>-<slug>.md` (ex. `b03-typographie.md`).
 Détail complet des modules/labs encore à rédiger : `brain/scratchpad/formation-design-figma-framer-brouillon.md`.
@@ -67,11 +109,16 @@ Détail complet des modules/labs encore à rédiger : `brain/scratchpad/formatio
 > explicite, voir statut en haut de ce fichier).
 
 1. **B (modules 1-8) + A (modules 1-5)** en parallèle — théorie et structure avant tout outil.
-2. **C (Figma)** ensuite.
-3. **D (Framer) et E (Motion)** en parallèle une fois C posé.
-4. **F (Marque)** en parallèle de tout le reste dès le début, sauf son module 4 (pont tokens).
-5. **Reste de A (6-13) et B (9-12)** au fil de l'eau sur les projets produits par C/D/E/F.
-6. **Capstone en dernier**, toujours.
+2. **G01, G02 et G05** dès que A1-5 est posé. G05 **avant** toute correction issue de G01/G03/G06,
+   sinon il n'y aura pas de base de référence et rien ne sera démontrable.
+3. **C (Figma)** ensuite.
+4. **D (Framer) et E (Motion)** en parallèle une fois C posé.
+5. **F (Marque)** en parallèle de tout le reste dès le début, sauf son module 4 (pont tokens).
+6. **H (bloc entier, dans l'ordre h01 → h06)** une fois C posé — le fil rouge « Nahual 2D »
+   a besoin de Figma, et h06 rassemble les livrables de h01, h03, h04 et g05.
+7. **Reste de A (6-13), B (9-12) et G (03, 04, 06)** au fil de l'eau sur les projets produits
+   par C/D/E/F/H.
+8. **Capstone en dernier**, toujours.
 
 Calibrer la taille du geste sur la fenêtre de temps réelle : un module théorique ou un seul
 composant Figma en soirée contrainte ; capstone, labs motion, brand book complet réservés

@@ -53,6 +53,9 @@ directe, pas un nouveau départ.
   boucle indépendante de l'interaction).
 - Le document de process cite explicitement le choix d'outil (Framer vs Figma→React) et sa
   justification.
+- L'entonnoir d'activation « inscription → premier déploiement GPU » est écrit (§2.5 du
+  module) : étapes observables et séquentielles, perte entre chaque étape, base de référence du
+  parcours avant refonte. Un critère de succès formulé sans étapes comptables est refusé.
 
 **Revue qualitative :** la question centrale est "est-ce que je peux déclencher l'animation
 Rive moi-même en suivant le flow, et comprendre immédiatement ce qu'elle signifie" — si
