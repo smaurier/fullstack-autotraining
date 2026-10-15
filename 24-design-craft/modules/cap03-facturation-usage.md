@@ -34,7 +34,7 @@ spécifique, le plus exigeant en responsabilité de tout le capstone.
 
 ### 2.1 Pourquoi la facturation à l'usage est un genre à part
 
-Noté dès le brouillon initial de ce cours (confrontation à l'offre réelle Arkane Cloud,
+Noté dès le brouillon initial de ce cours (confrontation à l'offre réelle qui a déclenché ce cours,
 §1bis) : une console de pilotage technique dense en données n'est pas un genre générique.
 Son sous-cas le plus exigeant est la facturation à l'usage, qui ajoute une exigence de
 CONFIANCE au-dessus de l'exigence habituelle de lisibilité. L'utilisateur doit pouvoir

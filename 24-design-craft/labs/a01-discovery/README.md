@@ -1,4 +1,6 @@
-# Lab A01 — Reformuler le brief Arkane en problème utilisateur
+# Lab A01 — Reformuler le brief Kerion en problème utilisateur
+
+> Kerion Cloud est une société **fictive** inventée pour l'exercice (voir le README du cours).
 
 > **Module associé :** [`modules/a01-discovery.md`](../../modules/a01-discovery.md)
 > **Forme :** Zéro — reformulation écrite, aucun Figma à ce stade.
@@ -8,7 +10,7 @@
 
 Relire précisément :
 - §2.1-2.3 (5 Pourquoi, feature vs problème, reformulation "Comment pourrions-nous").
-- Worked example A — la décomposition du brief Arkane complet en 3 problèmes empilés
+- Worked example A — la décomposition du brief Kerion complet en 3 problèmes empilés
   (marque, conversion, usage). C'est le raisonnement attendu, pas le corrigé littéral.
 - §4 "Pièges" — en particulier "traiter un brief multi-problèmes comme un seul problème"
   et "s'arrêter au premier pourquoi qui semble suffisant".

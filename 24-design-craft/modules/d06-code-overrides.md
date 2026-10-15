@@ -54,7 +54,7 @@ nécessite d'exécuter une LOGIQUE qui réagit dynamiquement, il faut un Code Ov
 
 Un designer pur qui utilise Framer s'arrête structurellement à la frontière décrite en 2.2
 — il n'a pas la compétence pour écrire la logique manquante. Un profil hybride comme celui
-visé par cette formation (et explicitement par l'offre Arkane Cloud qui a déclenché ce
+visé par cette formation (et explicitement par l'offre qui a déclenché ce
 cours) peut franchir cette frontière lui-même, sans dépendre d'un développeur tiers pour
 chaque besoin qui dépasse le visuel pur. C'est un avantage concret et démontrable, pas une
 affirmation abstraite de polyvalence.

@@ -25,7 +25,7 @@ last-reviewed: 2026-10
 "pourquoi ces trois couleurs ensemble plutôt que trois autres ?", la réponse honnête
 aujourd'hui serait "ça allait bien visuellement" — une réponse de goût, pas de théorie.
 
-Imaginons maintenant qu'un client (ou un recruteur type Maxence/Arkane) demande d'étendre
+Imaginons maintenant qu'un client (ou un recruteur de ce type) demande d'étendre
 cette palette avec une quatrième couleur pour un état d'erreur, et une cinquième pour un
 badge "nouveau". Sans théorie, le choix se refait au hasard, avec le risque réel de produire
 une palette qui jure visuellement ou qui envoie un signal culturel non voulu (le rouge

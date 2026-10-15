@@ -13,9 +13,15 @@
 > **Prérequis** : aucun prérequis technique dur. Profil dev front déjà solide (ce cours
 > *complète* le profil, voir cours 06 Design System pour le pendant code).
 
-Cours né d'un refus de candidature (Creative Front-end, Arkane Cloud, 06/10/2026) qui a
-révélé un vrai manque d'outillage design malgré une intuition UI/UX déjà forte et un vrai
-bagage de projets perso (kleyfrance.fr, nuada-audit.netlify.app, nahual.fr). Objectif : un
+Cours né d'un refus de candidature sur un poste « Creative Front-end » chez un fournisseur
+de GPU cloud (octobre 2026), qui a révélé un vrai manque d'outillage design malgré une
+intuition UI/UX déjà forte et un vrai bagage de projets perso (kleyfrance.fr,
+nuada-audit.netlify.app, nahual.fr).
+
+> **Note sur le brief d'exercice.** Plusieurs labs et le capstone travaillent pour un client
+> appelé **Kerion Cloud**. C'est une **société fictive**, inventée pour l'exercice. Seul
+> l'archétype de poste qu'elle incarne est réel ; aucune entreprise ni aucune personne réelle
+> n'est nommée dans ce cours. Objectif : un
 **vrai bagage d'étudiant** (théorie, histoire, culture graphique) — Figma et Framer sont
 l'application de cette théorie, pas le centre de gravité de la formation.
 

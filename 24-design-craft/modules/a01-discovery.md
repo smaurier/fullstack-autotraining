@@ -6,7 +6,7 @@ notions: [besoin exprimé vs besoin réel, problème utilisateur vs liste de fea
 outcomes: [transformer un brief flou en un énoncé de problème utilisateur précis, distinguer une feature demandée d'un problème sous-jacent, écrire des critères de succès vérifiables avant de proposer une solution]
 prerequis: []
 next: a02-benchmark-concurrentiel
-tribuzen: reformulation du brief "améliore la console Arkane" (générique) en problème utilisateur réel, appliqué au capstone
+tribuzen: reformulation du brief "améliore la console Kerion" (générique) en problème utilisateur réel, appliqué au capstone
 last-reviewed: 2026-10
 ---
 
@@ -22,7 +22,7 @@ last-reviewed: 2026-10
 
 Un brief arrive, typique de ce que tu recevrais vraiment en poste : *"Il faut repenser
 l'interface de la console, de l'inscription au pilotage des GPU."* (brief réel, tiré de
-l'offre Arkane Cloud qui a déclenché ce cours).
+l'offre qui a déclenché ce cours).
 
 Réflexe à éviter — ouvrir directement Figma et commencer à dessiner un dashboard parce que
 "console = dashboard avec des graphiques". C'est traiter le brief comme une commande de
@@ -122,7 +122,7 @@ pas évaluée après coup avec des critères inventés pour coller au résultat.
 
 ## 3. Worked examples
 
-### Exemple A — refaire la reformulation du brief Arkane complet
+### Exemple A — refaire la reformulation du brief Kerion complet
 
 Brief complet (celui qui a déclenché ce cours) :
 
@@ -225,7 +225,7 @@ Pourquoi un brief réel empile-t-il souvent plusieurs problèmes ?|Parce qu'il e
 ## Pont vers le lab
 
 > Lab associé : `24-design-craft/labs/a01-discovery/`. Tu y reformules le
-> brief Arkane complet (ou un brief générique équivalent) en 1 problème utilisateur précis
+> brief Kerion complet (ou un brief générique équivalent) en 1 problème utilisateur précis
 > + 3 user flows texte — zéro Figma à ce stade. Brief et rubrique de vérification dans le
 > README du lab : la preuve attendue est la distinction explicite des 3 problèmes empilés
 > dans le brief (marque, conversion, usage) et au moins une reformulation "Comment

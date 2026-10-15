@@ -6,7 +6,7 @@ notions: [domaine custom vs sous-domaine générique, meta tags et Open Graph, a
 outcomes: [publier un projet Framer avec un domaine soigné, configurer les meta tags de partage social et vérifier l'aperçu généré, mesurer et justifier le poids d'une page avant de la considérer livrable]
 prerequis: [d06-code-overrides]
 next: aucun — dernier module du Bloc D
-tribuzen: publication soignée de la landing page vitrine de TribuZen, livrable final présentable tel quel à un recruteur type Maxence
+tribuzen: publication soignée de la landing page vitrine de TribuZen, livrable final présentable tel quel à un recruteur de ce type
 last-reviewed: 2026-10
 ---
 
@@ -23,7 +23,7 @@ last-reviewed: 2026-10
 La landing page TribuZen est construite (D01-D06). Le réflexe serait de considérer le
 travail terminé au moment où elle "a l'air finie" dans l'éditeur Framer. Mais le moment où
 cette page compte vraiment n'est pas quand elle est ouverte dans l'éditeur — c'est quand un
-recruteur type Maxence (déclencheur de ce cours entier, voir README) colle le lien dans un
+recruteur de ce type (le profil de poste qui a déclenché ce cours entier, voir README) colle le lien dans un
 message LinkedIn ou un email. À cet instant précis, si les meta tags de partage ne sont pas
 configurés, la plateforme de destination affiche un aperçu vide, cassé, ou un texte
 générique sans rapport avec le contenu réel — la toute première impression, avant même un

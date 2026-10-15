@@ -6,7 +6,7 @@ notions: [moodboard vs décision, système de règles répétables, cohérence p
 outcomes: [produire un moodboard sans décision prématurée, transformer un moodboard en système de règles nommées et répétables, produire plusieurs variantes de DA pour un même brief et justifier par écrit laquelle retenir]
 prerequis: [b10-mouvement-micro-interactions]
 next: b12-conventions-plateforme
-tribuzen: reproduction consciente du processus moodboard→système qui a produit design.md, appliqué à un cas nouveau (brief Arkane)
+tribuzen: reproduction consciente du processus moodboard→système qui a produit design.md, appliqué à un cas nouveau (brief Kerion)
 last-reviewed: 2026-10
 ---
 
@@ -27,7 +27,7 @@ bien visuellement" — exactement le même défaut de méthode que celui déjà 
 couleur seule en [[b02-theorie-couleur]].
 
 Le risque : une DA obtenue par tâtonnement fonctionne tant qu'elle n'a pas besoin d'être
-étendue. Dès qu'un nouveau cas se présente — ici le brief fictif Arkane Cloud (console GPU,
+étendue. Dès qu'un nouveau cas se présente — ici le brief fictif Kerion Cloud (console GPU,
 univers technique, pas familial) — il faut reproduire un processus, pas une intuition qui a
 marché une fois par hasard. Ce module construit ce processus : moodboard, puis système, de
 façon reproductible sur n'importe quel brief futur.
@@ -99,7 +99,7 @@ change pas d'échelle ; le périmètre des supports concernés s'élargit.
    complémentaire vu en b02) — en la formulant maintenant, elle devient vérifiable pour tout
    futur écran.
 
-### Exemple B — 3 variantes pour le brief Arkane Cloud (console GPU)
+### Exemple B — 3 variantes pour le brief Kerion Cloud (console GPU)
 
 1. **Variante "technique froide"** : palette de gris/bleus désaturés, typographie
    monospace/sans-serif géométrique pour les métriques, règle "toute donnée chiffrée en
@@ -140,7 +140,7 @@ change pas d'échelle ; le périmètre des supports concernés s'élargit.
 - Le système `design.md` existant gagne, grâce à ce module, des règles explicites
   formulables et vérifiables (Exemple A) plutôt qu'une cohérence qui tenait surtout dans la
   tête de son auteur.
-- Le brief fictif Arkane Cloud devient le terrain d'application direct de la méthode
+- Le brief fictif Kerion Cloud devient le terrain d'application direct de la méthode
   moodboard→système sur un cas neuf et contraint (Exemple B), réutilisable pour le capstone.
 - Toute DA produite pour un futur cas (portfolio, nouveau produit) doit repasser par ce même
   processus en 2 étapes — jamais directement par une seule variante "qui semble bien".
@@ -171,5 +171,5 @@ Comment une DA se délite-t-elle typiquement dans le temps ?|Par accumulation d'
 ## Pont vers le lab
 
 > Lab associé : `24-design-craft/labs/b11-direction-artistique/`. Tu y produis un moodboard
-> puis 3 variantes système pour le brief Arkane Cloud, et tu justifies par écrit celle
+> puis 3 variantes système pour le brief Kerion Cloud, et tu justifies par écrit celle
 > retenue — brief complet et rubrique de vérification dans le README du lab.

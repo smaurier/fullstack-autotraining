@@ -24,7 +24,7 @@ Tous les labs produits depuis le module A01 ont été réalisés SEUL — c'est 
 réelle du contexte de Sylvain (unique développeur de TribuZen), mais ce n'est pas comment le
 métier se pratique en équipe. Le module A03 a déjà introduit le tri par cartes "simulé seul,
 en se forçant à l'honnêteté" — une approximation honnête, pas l'expérience réelle. Un
-recruteur qui évalue un profil "créatif-front-end hybride" (cf. brief Arkane) voudra savoir
+recruteur qui évalue un profil "créatif-front-end hybride" (cf. brief Kerion) voudra savoir
 si le candidat sait aussi FACILITER un atelier collectif, pas seulement produire seul.
 
 Ce module ferme cette approximation en organisant un vrai atelier avec au moins une autre
@@ -131,7 +131,7 @@ plusieurs semaines).
   atelier, y compris ceux prévus plus tard autour du capstone console GPU.
 - Le réflexe "collecte puis traduction, jamais l'un sans l'autre" prépare directement à toute
   collaboration future en mission réelle (ex. un atelier avec une équipe produit chez un futur
-  employeur type Arkane), où le même piège (post-its jamais traduits) coûte cher en réunion.
+  employeur de ce type), où le même piège (post-its jamais traduits) coûte cher en réunion.
 
 ## 6. Points clés
 

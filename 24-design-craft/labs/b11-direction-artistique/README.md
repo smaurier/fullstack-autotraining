@@ -1,4 +1,4 @@
-# Lab B11 — Moodboard puis 3 variantes de DA pour le brief Arkane Cloud
+# Lab B11 — Moodboard puis 3 variantes de DA pour le brief Kerion Cloud
 
 > **Module associé :** [`modules/b11-direction-artistique.md`](../../modules/b11-direction-artistique.md)
 > **Forme :** Zéro — construire de zéro un moodboard et 3 systèmes complets.
@@ -18,7 +18,7 @@ but est d'explorer librement, pas de recopier une référence déjà digérée.
 
 ## Brief
 
-Brief fictif : Arkane Cloud demande une direction artistique pour une console de pilotage de
+Brief fictif : **Kerion Cloud** (société inventée pour l'exercice) demande une direction artistique pour une console de pilotage de
 ressources GPU, destinée à des utilisateurs techniques qui surveillent des coûts en temps
 réel (voir le capstone du cours pour le contexte complet).
 
