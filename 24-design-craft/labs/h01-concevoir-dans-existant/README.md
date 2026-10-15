@@ -75,19 +75,34 @@ Relire précisément :
    nouveau — donc en réutilisant les motifs inventoriés en partie 1.
 6. Écrire la **liste de ce que tu ne touches pas**, avec la raison de chaque non-intervention.
 
-### Partie 3 — calibration professionnelle (exercice récurrent, hors de ce dépôt)
+### Partie 3 — calibration à l'aveugle contre un design system public
 
-7. Dans ton contexte professionnel, prendre un ticket d'évolution que tu vas implémenter.
-   **Avant** d'ouvrir la maquette conçue par les designers du produit, produire ton propre
-   inventaire et ta propre proposition minimale. Comparer ensuite.
-8. Noter l'écart : ce qu'ils ont vu que tu n'avais pas vu, ce qu'ils ont laissé que tu aurais
-   touché, les conventions qu'ils appliquent et que tu ignorais.
+L'exercice récurrent du bloc H, et le seul endroit du cours qui te dit où tu en es par rapport
+à des professionnels, sans que tu aies à le deviner.
 
-> **Garde-fou sans exception.** Ce dépôt est public. L'exercice 7-8 ne produit **rien** ici : ni
-> capture, ni export, ni nom de client, ni nom de composant interne, ni libellé métier, ni
-> donnée. Ce que tu en ramènes est une **note de méthode** dans ton espace privé, formulée en
-> générique (« les maquettes de ce produit documentent systématiquement l'état de droit »), et
-> rien d'autre. Si une note ne peut pas être écrite en générique, elle ne sort pas.
+7. Choisir un **composant d'un design system public et documenté** que tu n'as jamais conçu :
+   DSFR (Système de Design de l'État français), GOV.UK Design System, IBM Carbon, Shopify
+   Polaris, Material 3. Un composant non trivial : champ de recherche avec suggestions,
+   pagination, notification, sélecteur de dates, tableau triable, fil d'Ariane.
+8. **Sans ouvrir leur documentation**, le concevoir : l'anatomie, les états, les variantes, le
+   comportement au clavier, le texte par défaut, et ce que tu documenterais si tu le livrais à
+   une équipe.
+9. **Ensuite seulement**, ouvrir la documentation publiée et comparer. Relever trois écarts :
+   - ce qu'ils ont prévu et que tu n'avais pas vu ;
+   - ce qu'ils ont **refusé** de faire, et la raison qu'ils en donnent ;
+   - leur section « quand ne pas utiliser ce composant », qui est presque toujours la partie
+     la plus instructive et celle qu'on n'écrit jamais spontanément.
+10. Écrire la note : qu'est-ce que ça change à ta méthode pour le composant suivant.
+
+> **Règle de non-collusion.** La documentation ne s'ouvre qu'**après** la production de ta
+> version. Lire d'abord transforme le test en recopie, et le lab ne mesure plus rien. C'est la
+> même exigence de page blanche que partout ailleurs dans ce curriculum.
+
+Pourquoi cet oracle plutôt qu'une comparaison à une maquette quelconque : ces design systems
+publient **la raison** de leurs choix. Tu obtiens donc la réponse à la troisième question de
+l'inventaire (« pourquoi a-t-il été fait comme ça ») au lieu de devoir la deviner — et cette
+raison écrite est exactement ce qui manque quand on arrive sur un produit dont les décisions
+ne sont documentées nulle part.
 
 ## Livrable attendu
 
@@ -95,7 +110,8 @@ Relire précisément :
 - Les trois incohérences qualifiées par les trois réponses possibles.
 - La proposition minimale sur une page, réutilisant les motifs inventoriés.
 - La liste écrite du non-touché, avec les raisons.
-- (Hors dépôt) la note de méthode issue de la calibration professionnelle.
+- La calibration : ta version conçue à l'aveugle, puis les trois écarts relevés face à la
+  documentation publiée, puis la note de ce que ça change à ta méthode.
 
 ## Rubrique de vérification
 
@@ -107,7 +123,10 @@ Relire précisément :
 - La proposition n'introduit **aucun** motif nouveau. Si elle en introduit un, elle doit
   justifier le coût du §2.3, par écrit.
 - La liste du non-touché existe et contient au moins trois entrées avec leur raison.
-- Aucun élément confidentiel dans le dépôt (vérifiable : relire le livrable avant de committer).
+- La calibration porte sur un composant de design system **public**, et ta version est datée
+  avant la consultation de la documentation (l'ordre doit être vérifiable).
+- Les trois écarts sont relevés, dont celui portant sur ce que le design system **refuse** de
+  faire et la raison qu'il en donne.
 
 **Revue qualitative :** le brief demandait d'intervenir, pas de refondre. La question est
 donc : la proposition résout-elle le problème nommé avec le plus petit changement possible, et
@@ -117,7 +136,9 @@ serait justifiée par ailleurs.
 
 ## Variante J+30 (fading)
 
-Refaire la partie 3 (calibration professionnelle) sur un deuxième ticket, sans relire la note
-de méthode du premier. Comparer les deux écarts : si le deuxième écart porte sur les mêmes
-points que le premier, la note n'a pas été intégrée — c'est une information sur ta façon
-d'apprendre, pas sur ta capacité.
+Refaire la partie 3 sur un **deuxième composant**, pris dans un **autre** design system que le
+premier, sans relire la note du premier. Comparer les deux écarts : s'ils portent sur les mêmes
+points, la note n'a pas été intégrée — c'est une information sur ta façon d'apprendre, pas sur
+ta capacité. Et comparer les deux design systems entre eux : là où ils divergent sur le même
+composant, il y a presque toujours une contrainte de contexte explicitée d'un côté et pas de
+l'autre.

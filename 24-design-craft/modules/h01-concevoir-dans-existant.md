@@ -6,7 +6,7 @@ notions: [inventaire avant proposition, le précédent, coût réel d'un composa
 outcomes: [inventorier les motifs existants d'un produit avant de proposer quoi que ce soit, proposer la modification minimale qui résout un problème nommé, dire explicitement ce qu'on ne touche pas et pourquoi]
 prerequis: [a10-design-critique, a11-design-ops-handoff]
 next: h02-patterns-donnees-denses
-tribuzen: fil rouge « Nahual 2D » (design system Figma du portfolio + déclinaison 2D sans WebGL) — inventaire des motifs existants de nahual.fr puis modification minimale ; calibration sur un ticket professionnel, notes de méthode hors dépôt
+tribuzen: fil rouge « Nahual 2D » (design system Figma du portfolio + déclinaison 2D sans WebGL) — inventaire des motifs existants de nahual.fr puis modification minimale ; calibration à l'aveugle contre un composant de design system public documenté
 last-reviewed: 2026-10
 ---
 
@@ -184,19 +184,24 @@ et voilà ce que la seconde apporte » est une compétence de métier, traitée 
 - **Ne pas écrire ce qu'on ne touche pas.** Le relecteur ne peut alors pas distinguer un
   oubli d'une décision.
 
-## 5. Ancrage TribuZen et pratique professionnelle
+## 5. Ancrage : nahual.fr existant, et calibration sur un design system public
 
-- Le lab se fait sur un écran TribuZen **existant** avec une demande d'évolution réelle : le
-  but est de produire l'inventaire, la proposition minimale et la liste du non-touché.
-- Un deuxième exercice, à faire dans ton contexte professionnel, vaut plus que n'importe quel
-  lab : prendre un ticket d'évolution réel, produire l'inventaire et la proposition minimale,
-  et **comparer ensuite** à ce qui a effectivement été conçu par les designers du produit.
-  L'écart est la note.
-- Garde-fou sans exception, pour ce dépôt public : rien de confidentiel ici. Ce que tu
-  ramènes d'un contexte professionnel est une **note de méthode** dans ton espace privé —
-  jamais une capture, un export, un nom de client, un nom de composant interne, une donnée
-  ou un libellé métier. Le dépôt `fullstack-autotraining` est public : il ne contient que
-  TribuZen et le produit fictif du capstone.
+- Le lab principal se fait sur **nahual.fr**, qui est en production et porte déjà une
+  direction artistique et des précédents : inventaire des motifs, proposition minimale, liste
+  du non-touché.
+- **La calibration se fait contre un design system public et documenté** (le DSFR de l'État
+  français, le GOV.UK Design System, IBM Carbon, Shopify Polaris, Material 3). La méthode :
+  choisir un composant que tu n'as jamais conçu, le concevoir **à l'aveugle** avec ses états,
+  puis ouvrir la documentation publiée et comparer. L'écart est la note.
+- Cet oracle est meilleur qu'une comparaison à une maquette quelconque, et pour une raison
+  précise : ces design systems publient **la raison** de leurs choix et leur section « quand
+  ne pas utiliser ce composant ». Tu obtiens donc la réponse à la troisième question de
+  l'inventaire (§2.1, « pourquoi a-t-il été fait comme ça ») au lieu de devoir la deviner.
+  C'est exactement ce qui manque quand on arrive sur un produit dont les décisions ne sont
+  pas écrites.
+- Règle de non-collusion à tenir : on ne lit la documentation **qu'après** avoir produit sa
+  propre version. Lire d'abord transforme un test en recopie, et le lab ne mesure plus rien
+  (même esprit que la page blanche exigée ailleurs dans ce curriculum).
 
 ## 6. Points clés
 
@@ -224,7 +229,6 @@ Quel est le critère de sortie d'un ticket de design dans l'existant ?|La modifi
 ## Pont vers le lab
 
 > Lab associé : `24-design-craft/labs/h01-concevoir-dans-existant/`. Tu y traites une
-> évolution d'un écran TribuZen existant par inventaire puis modification minimale, avec la
-> liste écrite du non-touché, et tu mets en place l'exercice de calibration sur un ticket
-> professionnel réel (maquetter avant de voir la maquette officielle, puis comparer) — brief
-> complet, garde-fou de confidentialité et rubrique dans le README du lab.
+> évolution d'une page existante de nahual.fr par inventaire puis modification minimale, avec
+> la liste écrite du non-touché, et tu poses l'exercice de calibration à l'aveugle contre un
+> composant de design system public documenté — brief complet et rubrique dans le README du lab.

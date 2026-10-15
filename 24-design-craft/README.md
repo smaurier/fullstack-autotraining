@@ -93,11 +93,13 @@ A01 exigeait des critères de succès mesurables qu'aucun module n'apprenait à 
 Chaque lab des blocs G et H ouvre par un **échauffement** court, contraint et jetable, sur un
 sujet qui n'est pas un projet de Sylvain : le geste s'isole avant de s'appliquer au réel.
 
-> **Garde-fou de confidentialité.** Ce dépôt est public. Le bloc H prévoit un exercice de
-> calibration sur un ticket professionnel réel (maquetter avant de voir la maquette officielle,
-> puis comparer). Il ne produit **rien** ici : ni capture, ni export, ni nom de client, ni nom
-> de composant interne, ni libellé métier, ni donnée. Ce qui en revient est une note de méthode
-> générique, dans l'espace privé.
+**La calibration du bloc H se fait contre un design system public et documenté** (DSFR, GOV.UK
+Design System, IBM Carbon, Shopify Polaris, Material 3) : concevoir un composant **à
+l'aveugle** avec ses états, puis ouvrir la documentation publiée et relever les écarts — dont
+ce que le design system **refuse** de faire et la raison qu'il en donne. L'oracle est meilleur
+qu'une comparaison à une maquette quelconque parce que la raison des choix y est écrite, ce qui
+répond à la troisième question de l'inventaire (`h01` §2.1) au lieu de la laisser deviner. Règle
+de non-collusion : la documentation ne s'ouvre qu'après la production de sa propre version.
 
 Convention de nommage des fichiers : `modules/<bloc><NN>-<slug>.md` (ex. `b03-typographie.md`).
 Détail complet des modules/labs encore à rédiger : `brain/scratchpad/formation-design-figma-framer-brouillon.md`.
