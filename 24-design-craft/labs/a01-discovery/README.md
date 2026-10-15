@@ -1,5 +1,7 @@
 # Lab A01 — Reformuler le brief Kerion en problème utilisateur
 
+> Kerion Cloud est une société **fictive** inventée pour l'exercice (voir le README du cours).
+
 > **Module associé :** [`modules/a01-discovery.md`](../../modules/a01-discovery.md)
 > **Forme :** Zéro — reformulation écrite, aucun Figma à ce stade.
 > **Outil :** un éditeur de texte, rien d'autre.

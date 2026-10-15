@@ -131,7 +131,7 @@ plusieurs semaines).
   atelier, y compris ceux prévus plus tard autour du capstone console GPU.
 - Le réflexe "collecte puis traduction, jamais l'un sans l'autre" prépare directement à toute
   collaboration future en mission réelle (ex. un atelier avec une équipe produit chez un futur
-  employeur type Kerion), où le même piège (post-its jamais traduits) coûte cher en réunion.
+  employeur de ce type), où le même piège (post-its jamais traduits) coûte cher en réunion.
 
 ## 6. Points clés
 

@@ -18,7 +18,7 @@ but est d'explorer librement, pas de recopier une référence déjà digérée.
 
 ## Brief
 
-Brief fictif : Kerion Cloud demande une direction artistique pour une console de pilotage de
+Brief fictif : **Kerion Cloud** (société inventée pour l'exercice) demande une direction artistique pour une console de pilotage de
 ressources GPU, destinée à des utilisateurs techniques qui surveillent des coûts en temps
 réel (voir le capstone du cours pour le contexte complet).
 

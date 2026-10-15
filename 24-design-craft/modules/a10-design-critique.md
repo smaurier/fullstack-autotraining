@@ -195,7 +195,7 @@ Toute revue de maquette TribuZen (seul en auto-critique, ou avec un pair comme E
 passe par la grille objectif/contrainte/décision plutôt que par un jugement direct. Le
 plan de révision (Exemple B) devient une pièce traçable du process — utile en
 entretien pour montrer qu'on sait recevoir une critique sans la défendre
-systématiquement, une des qualités explicitement citées dans l'offre Kerion
+systématiquement, une des qualités explicitement citées dans l'offre qui a déclenché ce cours
 ("exigeant sur le détail").
 
 ## 6. Points clés

@@ -22,7 +22,7 @@ last-reviewed: 2026-10
 
 Un brief arrive, typique de ce que tu recevrais vraiment en poste : *"Il faut repenser
 l'interface de la console, de l'inscription au pilotage des GPU."* (brief réel, tiré de
-l'offre Kerion Cloud qui a déclenché ce cours).
+l'offre qui a déclenché ce cours).
 
 Réflexe à éviter — ouvrir directement Figma et commencer à dessiner un dashboard parce que
 "console = dashboard avec des graphiques". C'est traiter le brief comme une commande de

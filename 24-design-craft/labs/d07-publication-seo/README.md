@@ -40,7 +40,7 @@ Finaliser et publier la landing page TribuZen des labs précédents :
 
 **Revue qualitative :** le brief demandait un livrable présentable à un recruteur, pas une
 page "qui marche" — la question est toujours "est-ce que ce lien, envoyé tel quel à
-quelqu'un comme le recruteur (déclencheur de ce cours), donnerait une première impression
+un recruteur de ce type (le profil de poste qui a déclenché ce cours), donnerait une première impression
 professionnelle avant même qu'il clique".
 
 ## Variante J+30 (fading)

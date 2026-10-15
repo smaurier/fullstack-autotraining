@@ -6,7 +6,7 @@ notions: [audit critique d'une console réelle, grille heuristique appliquée à
 outcomes: [auditer critiquement une console technique réelle avec une grille heuristique nommée, produire une charte graphique complète pour un produit fictif de l'archétype "console SaaS dense en données", produire des maquettes Figma qui appliquent visiblement cette charte, documenter par écrit le raisonnement complet qui relie l'audit à la charte puis aux maquettes]
 prerequis: [a05-heuristiques-ux, f01-anatomie-identite]
 next: cap02-site-prototype-design-system
-tribuzen: capstone console GPU fictive — miroir générique de l'archétype "console technique dense en données" révélé par l'échange avec Kerion Cloud, jamais construit pour une entreprise précise
+tribuzen: capstone console GPU fictive — client fictif Kerion Cloud, miroir générique de l'archétype "console technique dense en données" révélé par un échange réel anonymisé, jamais construit pour une entreprise réelle
 last-reviewed: 2026-10
 ---
 
@@ -21,11 +21,12 @@ last-reviewed: 2026-10
 ## 0. Ce que ce capstone n'est PAS
 
 À dire une fois, clairement, avant tout le reste : ce capstone n'a jamais été construit pour
-Kerion Cloud ni pour aucune entreprise précise. L'échange avec une personne du recrutement (Talent
-Acquisition Manager, Kerion Cloud) en octobre 2026 a révélé un archétype de poste réel —
-"designer-développeur hybride qui repense une console technique dense en données et fait
-évoluer une charte graphique" — mais le recruteur lui-même a confirmé que ce profil ne correspond
-pas à CETTE offre précise. Le capstone reprend l'archétype, pas l'entreprise : l'exercice sert
+une entreprise réelle. Son client, **Kerion Cloud, est une société fictive** inventée pour
+l'exercice. Ce qui est réel, en revanche, c'est l'archétype de poste : un échange avec une
+personne du recrutement d'un fournisseur de GPU cloud, en octobre 2026, a révélé un besoin
+de marché — "designer-développeur hybride qui repense une console technique dense en données
+et fait évoluer une charte graphique" — tout en confirmant que le profil ne correspondait pas
+à CETTE offre précise. Le capstone reprend l'archétype, pas l'entreprise : l'exercice sert
 de pièce de portfolio réutilisable pour n'importe quelle offre future de ce type, jamais une
 candidature déguisée en exercice d'école. Si un jour ce capstone est montré en entretien, le
 récit correct est "j'ai construit cette pièce pour me préparer à ce type de poste", jamais
@@ -174,7 +175,7 @@ déjà préférée — exactement la même discipline que la revue qualitative d
 ## 7. Seeds Anki
 
 ```
-Pourquoi ce capstone n'est-il pas construit pour Kerion Cloud ?|le recruteur a confirmé que ce profil ne correspond pas à cette offre précise — le capstone reprend l'archétype de poste révélé par l'échange, jamais l'entreprise elle-même
+Pourquoi le client du capstone est-il une société fictive ?|Kerion Cloud est inventée pour l'exercice : seul l'archétype de poste est réel, et le capstone le reprend de poste révélé par l'échange, jamais l'entreprise elle-même
 Pourquoi auditer une console RÉELLE plutôt qu'une console fictive inventée ?|Une console fictive n'offre rien d'observable à critiquer — l'audit deviendrait une projection de goûts personnels habillée de vocabulaire d'audit
 Quelle grille réutiliser pour l'audit du mois 1 ?|La grille heuristique du module a05 (10 heuristiques de Nielsen + lois de Hick, Fitts, Miller), avec le vocabulaire exact, jamais une préférence esthétique déguisée
 Qu'est-ce qui distingue un audit honnête d'un audit de confirmation ?|L'audit honnête note tout ce qui fonctionne ET tout ce qui échoue, y compris ce qui contredirait une direction esthétique déjà préférée ; l'audit de confirmation ne cherche que des arguments pour justifier un choix déjà fait

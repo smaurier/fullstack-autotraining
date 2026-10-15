@@ -21,7 +21,7 @@ last-reviewed: 2026-10
 ## 1. Cas concret d'abord
 
 L'étude de cas écrite au module A12 est solide sur papier : structure claire, contrainte
-assumée, enseignement honnête. Mais face à un recruteur type le recruteur qui demande "racontez-
+assumée, enseignement honnête. Mais face à un recruteur de ce type qui demande "racontez-
 moi ce projet", lire ce texte à voix haute sonnerait mécanique, et une hésitation sur une
 question imprévue ("pourquoi pas une autre solution ?") révélerait vite si le raisonnement a
 vraiment été compris ou seulement rédigé une fois, sans jamais être reformulé à l'oral.
