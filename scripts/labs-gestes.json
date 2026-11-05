@@ -336,6 +336,12 @@
       "I",
       "réécrire un ADR existant avec preuves",
       "oracle"
+    ],
+    [
+      "lab-06-invariant-entre-deux-agregats",
+      "Z",
+      "un invariant sur deux agrégats : compensation et rejeu",
+      "oracle"
     ]
   ],
   "14-securite-applicative": [
