@@ -342,6 +342,12 @@
       "Z",
       "un invariant sur deux agrégats : compensation et rejeu",
       "oracle"
+    ],
+    [
+      "lab-07-cqrs-event-sourcing-de-zero",
+      "Z",
+      "CQRS + event sourcing : rejeu, version du flux, projections rejouables",
+      "oracle"
     ]
   ],
   "14-securite-applicative": [
