@@ -9,6 +9,14 @@
 > « ne gèle pas, mets à jour tous les cours ») : **chantier continu dans l'ordre des arcs**. Chaque cours
 > porte déjà sa table de labs-gestes dans son README (`scripts/labs-gestes.json`, `apply-labs-gestes.mjs`) ;
 > les oracles s'écrivent cours après cours : 06 → 09 → 10 → 04 → arc 2 → arc 3 → bibliothèque.
+>
+> ⚠️ **Le README d'un cours ne s'édite plus à la main dans le bloc `labs-gestes`.** Le 06/11/2026,
+> une régénération a remplacé l'état réel de 5 cours (dont le « 4/5 vérifiés » d'AWS et ses
+> mentions « NON APPLIQUÉ ») par « à écrire », parce que ces tables avaient été écrites à la main
+> sans que le manifeste suive. Le manifeste sait désormais décrire une table personnalisée (titre,
+> intro, colonnes, note, statut d'oracle nuancé, lien vers un lab d'un autre sous-module : voir
+> l'en-tête du script). **Avant tout `--commit`, lancer `node scripts/apply-labs-gestes.mjs --check`** :
+> il n'écrit rien, liste les README qui divergent du manifeste et sort en 1 s'il y en a.
 
 Légende : **Z** = geste de zéro · **I** = geste d'intervention · **fiche** = concept qui reste
 une lecture + retrieval, pas un lab.

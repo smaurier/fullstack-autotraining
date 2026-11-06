@@ -448,66 +448,135 @@
       "oracle"
     ]
   ],
-  "12-aws-cloud": [
-    [
-      "lab-01-deployer-tribuzen",
-      "Z",
-      "IAM, S3, Lambda/ECS, RDS, CloudFront — geste transverse avec 15 et 16",
-      "cible"
+  "12-aws-cloud": {
+    "titre": "Labs — geste transverse sur 12-AWS / 15-CI-CD / 16-Observabilité",
+    "intro": [
+      "> **Un seul geste transverse sur les trois cours**, pas 55 labs par cours (cible détaillée :",
+      "> [`docs/gestes-complets.md`](../docs/gestes-complets.md)). État au 10/10/2026 : **4/5",
+      "> vérifiés**."
     ],
-    [
-      "lab-02-deploiement-casse",
-      "I",
-      "diagnostiquer",
-      "cible"
+    "colonnes": [
+      "#",
+      "Lab",
+      "Cours",
+      "Forme",
+      "Geste",
+      "Oracle"
     ],
-    [
-      "lab-03-facture-a-reduire",
-      "I",
-      "FinOps réel",
-      "cible"
+    "labs": [
+      {
+        "id": "Z",
+        "nom": "lab-01-deployer-tribuzen",
+        "chemin": "labs/lab-01-deployer-tribuzen/README.md",
+        "cours": "12-AWS",
+        "forme": "Z",
+        "geste": "Lambda+API Gateway+RDS+S3/CloudFront (Terraform)",
+        "statut": "oracle",
+        "oracle": "✅ `terraform validate`/`fmt` GREEN (23/09) — `apply` NON APPLIQUÉ, pas de compte AWS"
+      },
+      {
+        "id": "I1",
+        "nom": "lab-geste-i1-deploiement-casse",
+        "chemin": "../15-cicd-devops/labs/lab-geste-i1-deploiement-casse/README.md",
+        "cours": "15-CI-CD",
+        "forme": "I",
+        "geste": "incident réel : release déployée en staging au lieu de prod",
+        "statut": "oracle",
+        "oracle": "✅ vérifié (3 tests)"
+      },
+      {
+        "id": "I2",
+        "nom": "lab-geste-i2-pipeline-lente",
+        "chemin": "../15-cicd-devops/labs/lab-geste-i2-pipeline-lente/README.md",
+        "cours": "15-CI-CD",
+        "forme": "I",
+        "geste": "sélection de tests affectés, 3min → 30s",
+        "statut": "oracle",
+        "oracle": "✅ vérifié (5 tests)"
+      },
+      {
+        "id": "I3",
+        "nom": "lab-geste-i3-alerte-sli-reel",
+        "chemin": "../16-observability-sre/labs/lab-geste-i3-alerte-sli-reel/README.md",
+        "cours": "16-Observabilité",
+        "forme": "I",
+        "geste": "alerte Prometheus réelle (Docker, pas de mock)",
+        "statut": "cible",
+        "oracle": "⏳ écrit, run complet à confirmer (voir README du lab)"
+      },
+      {
+        "id": "I4",
+        "nom": "lab-geste-i4-facture-cloud",
+        "chemin": "labs/lab-geste-i4-facture-cloud/README.md",
+        "cours": "12-AWS",
+        "forme": "I",
+        "geste": "FinOps : détection de gaspillage sur un export de coûts",
+        "statut": "oracle",
+        "oracle": "✅ vérifié (8 tests)"
+      }
     ]
-  ],
-  "15-cicd-devops": [
-    [
-      "lab-01-pipeline-de-tribuzen",
-      "Z",
-      "GitHub Actions + Terraform, preview par PR — geste transverse avec 12 et 16",
-      "cible"
+  },
+  "15-cicd-devops": {
+    "titre": "Labs — geste transverse sur 12-AWS / 15-CI-CD / 16-Observabilité",
+    "intro": [
+      "> **Un seul geste transverse sur les trois cours** (cible détaillée :",
+      "> [`docs/gestes-complets.md`](../docs/gestes-complets.md)) — le Z (pipeline GitHub Actions +",
+      "> Terraform) vit dans [`12-aws-cloud/labs/lab-01-deployer-tribuzen`](../12-aws-cloud/labs/lab-01-deployer-tribuzen/README.md).",
+      "> Ce cours porte 2 des 4 interventions, toutes deux vérifiées **sans compte AWS** (logique",
+      "> pure, aucune infra cloud requise). État au 10/10/2026 : **2/2 vérifiés**."
     ],
-    [
-      "lab-02-pipeline-lente",
-      "I",
-      "accélérer",
-      "cible"
+    "colonnes": [
+      "Lab",
+      "Forme",
+      "Geste",
+      "Oracle"
     ],
-    [
-      "lab-03-pipeline-cassee",
-      "I",
-      "diagnostiquer",
-      "cible"
+    "labs": [
+      {
+        "nom": "lab-geste-i1-deploiement-casse",
+        "chemin": "labs/lab-geste-i1-deploiement-casse/README.md",
+        "forme": "I",
+        "geste": "incident réel : release déployée en staging au lieu de prod",
+        "statut": "oracle",
+        "oracle": "✅ vérifié (3 tests)"
+      },
+      {
+        "nom": "lab-geste-i2-pipeline-lente",
+        "chemin": "labs/lab-geste-i2-pipeline-lente/README.md",
+        "forme": "I",
+        "geste": "sélection de tests affectés, 3min → 30s",
+        "statut": "oracle",
+        "oracle": "✅ vérifié (5 tests)"
+      }
     ]
-  ],
-  "16-observability-sre": [
-    [
-      "lab-01-observer-tribuzen",
-      "Z",
-      "Pino, Sentry, dashboard — geste transverse avec 12 et 15",
-      "cible"
+  },
+  "16-observability-sre": {
+    "titre": "Labs — geste transverse sur 12-AWS / 15-CI-CD / 16-Observabilité",
+    "intro": [
+      "> **Un seul geste transverse sur les trois cours** (cible détaillée :",
+      "> [`docs/gestes-complets.md`](../docs/gestes-complets.md)) — le Z vit dans",
+      "> [`12-aws-cloud/labs/lab-01-deployer-tribuzen`](../12-aws-cloud/labs/lab-01-deployer-tribuzen/README.md)",
+      "> (Pino + Sentry y sont déjà). Ce cours porte l'intervention \"alerte sur un SLI réel\" — la",
+      "> seule des 4 I qui tourne sur de VRAIS conteneurs Docker (Prometheus réel, pas de mock).",
+      "> État au 10/10/2026 : écrit, vérification du run complet en cours (voir README du lab)."
     ],
-    [
-      "lab-02-alerte-sur-un-sli",
-      "I",
-      "réel",
-      "cible"
+    "colonnes": [
+      "Lab",
+      "Forme",
+      "Geste",
+      "Oracle"
     ],
-    [
-      "lab-03-incident-a-remonter",
-      "I",
-      "traces, logs, cause",
-      "cible"
+    "labs": [
+      {
+        "nom": "lab-geste-i3-alerte-sli-reel",
+        "chemin": "labs/lab-geste-i3-alerte-sli-reel/README.md",
+        "forme": "I",
+        "geste": "alerte Prometheus réelle sur un taux d'erreur injecté",
+        "statut": "cible",
+        "oracle": "⏳ voir README du lab pour le statut exact"
+      }
     ]
-  ],
+  },
   "05-algorithms": [
     [
       "lab-01-arbre-familial-en-graphe",
@@ -592,20 +661,48 @@
       "oracle"
     ]
   ],
-  "03-angular": [
-    [
-      "lab-01-feature-de-zero",
-      "Z",
-      "service DI + RxJS (recherche debouncée + création) ; composant hors oracle — @analogjs/vite-plugin-angular + @angular/build crashent (segfault) sur cet environnement",
-      "oracle"
+  "03-angular": {
+    "titre": "Labs — refonte du 22/09/2026 : un lab = un geste métier complet",
+    "intro": [
+      "> Règle qualité 5 du parcours : chaque lab est **un geste métier complet**, sous deux formes — **Zéro** (construire de zéro un artefact réel et entier) ou **Intervention** (modifier de l'existant avec consommateurs, findings avant code, non-régression). Un lab n'entre en file qu'avec un **oracle exécutable** (`src/` starter · `test/` · `solution/` séparée). Les labs historiques de ce cours (un concept par lab, sans oracle) restent dans `labs/` jusqu'à remplacement et **ne sont plus la file**. Cible détaillée : [`docs/gestes-complets.md`](../docs/gestes-complets.md). État : **2/2 avec oracle — cours COMPLET (10/10/2026)**.",
+      ">",
+      "> **Note infra (10/10/2026) :** le rendu de template Angular (TestBed + compilateur) reste hors",
+      "> oracle sur cet environnement — `@analogjs/vite-plugin-angular` + `@angular/build` 19.2",
+      "> segfaultent toujours. **Piste vérifiée** : `@angular/build` fournit un builder natif",
+      "> `unit-test` (runner Vitest intégré, sans ce plugin) à partir de la v20, absent en 19.2 —",
+      "> candidat sérieux pour lever le blocage un jour. Spike d'installation isolée tenté (poste",
+      "> sylva, 10/10) : bloqué par deux chaînes de peer-deps à la suite (`@angular/build@22` exige",
+      "> TypeScript ≥6.0, puis vitest ^4/^5) — pas résolu dans l'effort imparti, nécessiterait de",
+      "> faire monter TOUT le cours (Angular 19→20+, vitest 2→4/5, TS 5.6→6.0+) en même temps, un vrai",
+      "> chantier de version, pas un correctif. **Choix retenu pour lab-02 entre-temps : composant",
+      "> testé comme une classe logique pure** (DI par constructeur, jamais `inject()`, jamais de",
+      "> template rendu), même frontière que lab-01 — cohérent avec la doctrine du cours (\"logique",
+      "> hors template\"), et ça marche : solution GREEN / starter RED vérifiés sans aucun TestBed."
     ],
-    [
-      "lab-02-ajouter-une-capacite",
-      "I",
-      "composant consommé",
-      "cible"
+    "colonnes": [
+      "#",
+      "Lab",
+      "Forme",
+      "Geste",
+      "Oracle"
+    ],
+    "labs": [
+      {
+        "nom": "lab-01-feature-de-zero",
+        "chemin": "labs/lab-01-feature-de-zero/README.md",
+        "forme": "Z",
+        "geste": "service DI + RxJS (recherche debouncée + création) ; composant hors oracle — @analogjs/vite-plugin-angular + @angular/build crashent (segfault) sur cet environnement",
+        "statut": "oracle"
+      },
+      {
+        "nom": "lab-02-intervention-chargement-membres",
+        "chemin": "labs/lab-02-intervention-chargement-membres/README.md",
+        "forme": "I",
+        "geste": "composant consommé (`MembresFamilleComponent`) gagne loading/erreur + switchMap anti-requête-obsolète, sans template rendu (classe testée directement)",
+        "statut": "oracle"
+      }
     ]
-  ],
+  },
   "19-react-native": [
     [
       "lab-01-feature-de-zero",
@@ -634,18 +731,112 @@
       "cible"
     ]
   ],
-  "23-droit-numerique": [
-    [
-      "lab-01-checklist-rgpd-tribuzen",
-      "Z",
-      "registre de traitements + privacy by default sur le vrai formulaire d'inscription TribuZen (module 01 §3) ; DPA hors oracle (module 05, contractuel)",
-      "oracle"
+  "23-droit-numerique": {
+    "titre": "Labs — refonte du 22/09/2026 : un lab = un geste métier complet",
+    "intro": [
+      "> Règle qualité 5 du parcours : chaque lab est **un geste métier complet**, sous deux formes — **Zéro** (construire de zéro un artefact réel et entier) ou **Intervention** (modifier de l'existant avec consommateurs, findings avant code, non-régression). Un lab n'entre en file qu'avec un **oracle exécutable** (`src/` starter · `test/` · `solution/` séparée). Pour ce cours spécifiquement, la cible n'est **pas** un empilement de labs-gestes : c'est **un seul lab-geste avec oracle + des fiches coach-validées** (analyse/décision argumentée, pas de code — un dev qui code un \"oracle\" sur un jugement juridique produirait un faux sentiment de certitude). Cible détaillée : [`docs/gestes-complets.md`](../docs/gestes-complets.md). **État au 10/10/2026 : COMPLET — 1/1 lab-geste avec oracle + 9/9 fiches.**"
     ],
-    [
-      "fiches",
-      "fiche",
-      "RGPD, CGU, PI, accessibilité légale",
-      "cible"
+    "colonnes": [
+      "#",
+      "Entrée",
+      "Forme",
+      "Geste",
+      "Oracle"
+    ],
+    "labs": [
+      {
+        "id": "—",
+        "nom": "lab-01-checklist-rgpd-tribuzen",
+        "chemin": "labs/lab-01-checklist-rgpd-tribuzen/README.md",
+        "forme": "Z",
+        "geste": "registre de traitements + privacy by default sur le vrai formulaire d'inscription TribuZen (module 01 §3) ; DPA hors oracle (module 05, contractuel)",
+        "statut": "oracle",
+        "oracle": "✅ vérifié (30 tests, solution GREEN / starter RED)"
+      },
+      {
+        "id": "00",
+        "nom": "fiche-00-introduction-au-droit-du-numerique",
+        "chemin": "labs/fiche-00-introduction-au-droit-du-numerique/README.md",
+        "forme": "fiche",
+        "geste": "cartographie des obligations qui touchent TribuZen, qui tranche quoi (dev vs juriste/DPO)",
+        "statut": "oracle",
+        "oracle": "✅ coach-validée"
+      },
+      {
+        "id": "01",
+        "nom": "fiche-01-rgpd-reflexes-developpeur",
+        "chemin": "labs/fiche-01-rgpd-reflexes-developpeur/README.md",
+        "forme": "fiche",
+        "geste": "classement des données TribuZen par base légale, repérage Art.9 / mineurs",
+        "statut": "oracle",
+        "oracle": "✅ coach-validée"
+      },
+      {
+        "id": "02",
+        "nom": "fiche-02-consentement-cookies-et-traceurs",
+        "chemin": "labs/fiche-02-consentement-cookies-et-traceurs/README.md",
+        "forme": "fiche",
+        "geste": "audit des traceurs TribuZen + conception d'un bandeau conforme",
+        "statut": "oracle",
+        "oracle": "✅ coach-validée"
+      },
+      {
+        "id": "03",
+        "nom": "fiche-03-droits-des-personnes",
+        "chemin": "labs/fiche-03-droits-des-personnes/README.md",
+        "forme": "fiche",
+        "geste": "parcours « supprimer mon compte » / « exporter mes données »",
+        "statut": "oracle",
+        "oracle": "✅ coach-validée"
+      },
+      {
+        "id": "04",
+        "nom": "fiche-04-dpia-analyse-impact",
+        "chemin": "labs/fiche-04-dpia-analyse-impact/README.md",
+        "forme": "fiche",
+        "geste": "DPIA amorcée sur la feature Sorties (mineurs + géoloc)",
+        "statut": "oracle",
+        "oracle": "✅ coach-validée"
+      },
+      {
+        "id": "05",
+        "nom": "fiche-05-dpa-et-sous-traitants",
+        "chemin": "labs/fiche-05-dpa-et-sous-traitants/README.md",
+        "forme": "fiche",
+        "geste": "registre des sous-traitants + checklist avant intégration",
+        "statut": "oracle",
+        "oracle": "✅ coach-validée"
+      },
+      {
+        "id": "06",
+        "nom": "fiche-06-cgu-mentions-et-obligations-plateforme",
+        "chemin": "labs/fiche-06-cgu-mentions-et-obligations-plateforme/README.md",
+        "forme": "fiche",
+        "geste": "mentions légales obligatoires + points DSA/mineurs",
+        "statut": "oracle",
+        "oracle": "✅ coach-validée"
+      },
+      {
+        "id": "07",
+        "nom": "fiche-07-propriete-intellectuelle-et-licences",
+        "chemin": "labs/fiche-07-propriete-intellectuelle-et-licences/README.md",
+        "forme": "fiche",
+        "geste": "audit des licences des dépendances + choix de licence projet",
+        "statut": "oracle",
+        "oracle": "✅ coach-validée"
+      },
+      {
+        "id": "08",
+        "nom": "fiche-08-accessibilite-legale-et-conformite",
+        "chemin": "labs/fiche-08-accessibilite-legale-et-conformite/README.md",
+        "forme": "Fiche (capstone)",
+        "geste": "checklist de conformité globale TribuZen avant lancement",
+        "statut": "oracle",
+        "oracle": "✅ coach-validée"
+      }
+    ],
+    "note": [
+      "**Note numérotation (10/10/2026) :** `lab-01-checklist-rgpd-tribuzen` (oracle, auto-correcteur) et l'ancien `lab-01-rgpd-reflexes-developpeur` portaient le même préfixe `lab-01` — source de confusion entre le seul lab avec oracle exécutable et une fiche coach-validée. Les 9 fiches historiques (`lab-00` à `lab-08`) ont été renommées `fiche-00` à `fiche-08` ; les renvois des modules (`Fiche associée :`) ont été mis à jour en conséquence."
     ]
-  ]
+  }
 }
