@@ -29,7 +29,7 @@
 import { readFileSync, writeFileSync, existsSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
-import { execSync } from "node:child_process";
+import { execFileSync } from "node:child_process";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const data = JSON.parse(readFileSync(join(ROOT, "scripts/labs-gestes.json"), "utf8"));
@@ -138,22 +138,39 @@ for (const [course, brut] of Object.entries(data)) {
   console.log(course, "README OK", `(${oracles}/${total} oracles)`);
 
   if (doCommit) {
-    const run = (cmd) => execSync(cmd, { cwd: dir, stdio: "pipe" }).toString().trim();
+    // `execFileSync` avec un TABLEAU d'arguments, jamais une chaîne passée à un shell.
+    // Mesuré le 06/11/2026 : l'ancienne version construisait `git commit -m "sujet\n\ncorps"` en
+    // une seule chaîne. Sur Windows, elle partait dans cmd.exe, le commit était accepté, et le
+    // CORPS était silencieusement perdu — les lignes de trailer n'ont jamais atteint un commit.
+    const git = (...argv) => execFileSync("git", argv, { cwd: dir, stdio: "pipe" }).toString().trim();
     try {
-      run("git add README.md");
-      const status = run("git status --short README.md");
-      if (!status) {
+      git("add", "README.md");
+      if (!git("status", "--short", "README.md")) {
         console.log("  rien à commiter");
         continue;
       }
-      run(`git commit -q -m "README : table des labs-gestes (règle 5, un lab = un geste métier complet), 22/09/2026\n\nCo-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_01DVioZdWmfuMn9tTTT2hsXX"`);
+      // Aucune donnée figée dans ce message : pas de date d'écriture, pas de version de modèle,
+      // pas d'URL de session. Tout ça devient faux dès le run suivant.
+      git(
+        "commit",
+        "-q",
+        "-m",
+        "README : table des labs-gestes (règle 5, un lab = un geste métier complet)",
+        "-m",
+        "Généré depuis scripts/labs-gestes.json par scripts/apply-labs-gestes.mjs.\n\nCo-Authored-By: Claude <noreply@anthropic.com>",
+      );
       if (doPush) {
         try {
-          run("git pull -q --rebase origin main");
+          git("pull", "-q", "--rebase", "origin", "main");
         } catch {
           /* pas de remote ou déjà à jour */
         }
-        run("git push -q origin HEAD:main");
+        // `HEAD:main` et non `main` : un sous-module est souvent en HEAD détaché, et
+        // `git push origin main` pousserait alors la ref locale restée en arrière en sortant
+        // en 0, sans rien envoyer. ⚠️ après ce push, la ref locale `main` du sous-module reste
+        // derrière : c'est normal, mais ne jamais conclure d'un code de sortie, vérifier avec
+        // `git ls-remote origin main`.
+        git("push", "-q", "origin", "HEAD:main");
         console.log("  commit + push OK");
       } else console.log("  commit OK");
     } catch (e) {
