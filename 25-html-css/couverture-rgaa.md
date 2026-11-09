@@ -4,11 +4,11 @@
 > Référence : les 106 critères extraits de `rgaa-formation/index-criteres-slides.md`.
 > Le texte qui fait foi reste le référentiel officiel.
 
-**19 / 106 critères cités** par au moins un module.
+**22 / 106 critères cités** par au moins un module.
 
 ✅ Aucun critère inventé : tous les numéros cités existent.
 
-## Critères cités par aucun module (87)
+## Critères cités par aucun module (84)
 
 - `1.1` Images : Images / Images porteuses d’information
 - `1.2` Images : Images / Images de décoration
@@ -53,12 +53,9 @@
 - `8.3` Éléments obligatoires : Langue principale
 - `8.5` Éléments obligatoires : Titre de page
 - `8.7` Éléments obligatoires : Changement de langue
-- `10.2` Présentation de l'information : Contenus visibles
-- `10.3` Présentation de l'information : Contenus compréhensibles CSS désactivées
 - `10.4` Présentation de l'information : Agrandissement du texte
 - `10.5` Présentation de l'information : Couleur de fond et de police / Couleur de fond créée par une image
 - `10.6` Présentation de l'information : Visibilité des liens en environnement de texte
-- `10.7` Présentation de l'information : Visibilité de la prise de focus
 - `10.9` Présentation de l'information : Information par la forme, la taille ou la position
 - `10.10` Présentation de l'information : Information par la forme, la taille ou la position
 - `10.11` Présentation de l'information : Linéarisation des contenus
@@ -115,9 +112,12 @@
 | `9.2` | Structuration de l'information | 01 |
 | `9.3` | Structuration de l'information | 01 |
 | `9.4` | Structuration de l'information | 01 |
-| `10.1` | Présentation de l'information | 01 |
+| `10.1` | Présentation de l'information | 01, 02, 03 |
+| `10.2` | Présentation de l'information | 03 |
+| `10.3` | Présentation de l'information | 04 |
+| `10.7` | Présentation de l'information | 04 |
 | `10.8` | Présentation de l'information | 01 |
 | `11.9` | Formulaires | 01 |
 | `12.6` | Navigation | 01 |
 | `12.7` | Navigation | 01 |
-| `12.8` | Navigation | 01 |
+| `12.8` | Navigation | 01, 04 |
