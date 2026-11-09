@@ -168,14 +168,50 @@ du tableau le permet.
 
 Les points du référentiel, thème 5 :
 
-- `5.4` et `5.5` : un tableau de données a un **titre** (`<caption>`), et ce titre est pertinent ;
-- `5.6` et `5.7` : les en-têtes sont des `<th>` avec une **portée** (`scope`), ou reliés par
+- `5.4 (A)` et `5.5 (A)` : un tableau de données a un **titre** (`<caption>`), et ce titre est pertinent ;
+- `5.6 (A)` et `5.7 (A)` : les en-têtes sont des `<th>` avec une **portée** (`scope`), ou reliés par
   `headers` et `id` quand la structure est complexe ;
-- `5.8` : un tableau de **mise en forme** ne doit avoir ni `<th>`, ni `<caption>`, ni `scope`,
+- `5.8 (A)` : un tableau de **mise en forme** ne doit avoir ni `<th>`, ni `<caption>`, ni `scope`,
   c'est-à-dire aucune sémantique de données. Et il ne devrait plus exister, puisque Grid existe.
 
 Pour le tri, `aria-sort` sur le `<th>` et un `<button>` dans l'en-tête, parce que l'élément qui
 déclenche une action doit être un contrôle.
+
+#### Les tableaux complexes
+
+Un tableau est **complexe** quand une cellule dépend de plus d'un en-tête, par exemple avec des
+en-têtes sur deux niveaux ou des cellules fusionnées. `scope` ne suffit plus, parce qu'il ne sait
+désigner qu'une ligne ou une colonne entière.
+
+```html
+<table>
+  <caption>Créneaux par atelier et par semaine</caption>
+  <tr>
+    <td></td>
+    <th id="s1" colspan="2">Semaine 1</th>
+  </tr>
+  <tr>
+    <td></td>
+    <th id="s1-mat" headers="s1">Matin</th>
+    <th id="s1-apm" headers="s1">Après-midi</th>
+  </tr>
+  <tr>
+    <th id="cuisine">Cuisine</th>
+    <td headers="cuisine s1 s1-mat">4 places</td>
+    <td headers="cuisine s1 s1-apm">complet</td>
+  </tr>
+</table>
+```
+
+- `5.1 (A)` : le tableau complexe a un **résumé** quand il en a besoin, c'est-à-dire une aide à
+  la compréhension de son organisation ;
+- `5.2 (A)` : ce résumé est pertinent ;
+- `5.3 (A)` : un tableau de mise en forme reste **compréhensible linéarisé**, ce qui se vérifie
+  CSS désactivées.
+
+Le mécanisme de `headers` et `id` est verbeux, et c'est le signe qu'il faut se poser la question
+avant : un tableau complexe est souvent deux tableaux simples qu'on a fusionnés pour gagner de la
+place à l'écran. Les séparer coûte moins cher que les annoter, et se lit mieux pour tout le monde.
 
 ## 4. L'accessibilité dans ce module
 
@@ -242,5 +278,5 @@ lecture, puis page blanche. Le lab porte sur les onglets et l'interrupteur.
 5. Quel critère distingue un interrupteur d'une case à cocher ?
 6. Dans un combobox, où est le focus quand on parcourt la liste, et pourquoi ?
 7. Que doit faire `Échap` dans un combobox, et surtout que ne doit-il pas faire ?
-8. Qu'exige `5.8` d'un tableau de mise en forme, et pourquoi ce cas ne devrait-il plus exister ?
+8. Qu'exige `5.8 (A)` d'un tableau de mise en forme, et pourquoi ce cas ne devrait-il plus exister ?
 9. Que dit `7.2 (A)`, et pourquoi n'est-ce pas une permission d'abandonner ?

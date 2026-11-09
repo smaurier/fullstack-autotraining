@@ -139,7 +139,7 @@ contenu dans le nom accessible.**
 </select>
 ```
 
-- `11.5`, `11.6` et `11.7 (A)` : les champs de même nature sont regroupés, par `<fieldset>` et
+- `11.5 (A)`, `11.6 (A)` et `11.7 (A)` : les champs de même nature sont regroupés, par `<fieldset>` et
   `<legend>` ou par `role="group"` avec un nom accessible. Sans cela, un lecteur d'écran annonce
   « Courriel, bouton radio » sans dire de quoi il s'agit : la question est perdue.
 - `11.8 (A)` : les listes de choix sont regroupées par `<optgroup>` quand c'est pertinent.
@@ -297,7 +297,7 @@ coïncidence, c'est une chaîne de cause à effet, et c'est l'argument central d
 3. **Utiliser `placeholder` comme étiquette.** Non conforme `11.1 (A)`.
 4. **Écraser le nom visible avec un `aria-label` différent.** Casse le pilotage vocal,
    non conforme `11.2`.
-5. **Des boutons radio sans `fieldset` et `legend`.** La question est perdue, `11.5` à `11.7`.
+5. **Des boutons radio sans `fieldset` et `legend`.** La question est perdue, `11.5 (A)` à `11.7`.
 6. **Un message d'erreur sans exemple.** Non conforme `11.11 (AA)`.
 7. **Expliquer l'astérisque après le formulaire.** Information inutile là où elle est.
 8. **Ne pas relier l'aide par `aria-describedby`.** Non conforme `11.10 (A)`.

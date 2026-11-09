@@ -185,16 +185,16 @@ passer.
 
 | Critère | Ce qui est jugé |
 |---|---|
-| `8.3 / 8.4 (A)` | `lang` présent sur `<html>`, code ISO 639 valide |
-| `8.5 / 8.6 (A)` | `<title>` présent et pertinent, idéalement unique dans le site |
-| `8.7 / 8.8 (AA)` | chaque changement de langue est signalé par `lang` sur l'élément |
+| `8.3 (A)` et `8.4 (A)` | `lang` présent sur `<html>`, code ISO 639 valide |
+| `8.5 (A)` et `8.6 (A)` | `<title>` présent et pertinent, idéalement unique dans le site |
+| `8.7 (AA)` et `8.8 (AA)` | chaque changement de langue est signalé par `lang` sur l'élément |
 | `8.10 (A)` | les changements de sens de lecture sont signalés par `dir` |
 
 `lang` n'est pas décoratif : il choisit la voix de synthèse. Un texte français lu par une voix
 anglaise est inintelligible, pas seulement inélégant. C'est aussi la clé des propriétés
 logiques du module 07 et de la césure.
 
-Note : `8.1` et `8.2` ne se testent plus et sont toujours conformes. Les citer comme réussite
+Note : `8.1 (A)` et `8.2 (A)` ne se testent plus et sont toujours conformes. Les citer comme réussite
 dans un audit est une erreur de méthode.
 
 ### 2.5 `<template>`
@@ -227,7 +227,7 @@ critère sans visage devient une case à cocher.
 | Troubles vestibulaires (`vestibular_disorders`) | parallaxe, mouvement non contrôlable | `13.8`, `prefers-reduced-motion` |
 | Troubles de l'apprentissage (`learning_disabilities`) | libellés implicites, erreurs sans exemple | `11.10`, `11.11` |
 | Troubles cognitifs (`cognitive_impairments`) | changements de contexte inattendus, délais | `7.4`, `13.1` |
-| Audition (`hearing_impairments`) | média sans sous-titres ni transcription | `4.1` à `4.4` |
+| Audition (`hearing_impairments`) | média sans sous-titres ni transcription | `4.1 (A)` à `4.4 (A)` |
 
 Les techniques que la même enquête recense (`headings_hierarchy`, `skip_to_content`,
 `meaningful_link_text`, `descriptive_alt_text`) sont toutes dans ce module ou le suivant. Ce
@@ -256,10 +256,76 @@ l'image **porte-t-elle de l'information** ou est-elle **décorative** ?
 <svg role="img" aria-label="Logo TribuZen"> … </svg>
 ```
 
-- `1.1` alternative présente, `1.3` alternative pertinente, `1.2` décoration bien ignorée.
+- `1.1 (A)` alternative présente, `1.3 (A)` alternative pertinente, `1.2 (A)` décoration bien
+  ignorée.
 - `1.8 (AA)` : un texte en image se remplace par du texte stylé, sauf logo et cas non
   reproductible. C'est la rencontre du thème 1 et du module 11.
-- `1.9` : image légendée, `<figure role="group" aria-label="…">` avec `<figcaption>`.
+- `1.9 (A)` : image légendée, `<figure role="group" aria-label="…">` avec `<figcaption>`.
+
+Deux cas particuliers du thème 1, qui n'ont l'air exotiques que jusqu'au premier audit.
+
+**Les images complexes** (`1.6 (A)` et `1.7 (A)`). Quand l'alternative ne tient pas dans une
+phrase, un graphique ou un schéma par exemple, elle doit être **structurée** et accessible. Donc
+pas dans l'attribut `alt`, qui est du texte brut, mais dans un texte adjacent ou derrière un lien
+identifiable.
+
+```html
+<figure>
+  <img src="evolution-adhesions.svg" role="img"
+       alt="Évolution des adhésions 2024-2026, détail sous l'image">
+  <figcaption>
+    Évolution des adhésions
+    <a href="#detail-adhesions">Description détaillée</a>
+  </figcaption>
+</figure>
+<div id="detail-adhesions">
+  <h3>Détail des adhésions</h3>
+  <table>…</table>   <!-- un tableau de données est souvent la meilleure alternative -->
+</div>
+```
+
+L'attribut `longdesc` est obsolète : ne pas l'utiliser. Et c'est exactement le motif que le cours
+26 reprend pour les graphiques, avec son tableau de données équivalent.
+
+**Les CAPTCHA** (`1.4 (A)` et `1.5 (A)`). Un CAPTCHA image doit avoir une alternative qui en
+**identifie la nature**, à savoir dire que c'est un test de sécurité et non décrire l'image, plus
+une **alternative non graphique**, sonore ou logique.
+
+```html
+<img src="captcha.png" alt="Test de sécurité : recopiez les cinq caractères affichés">
+<button type="button">Écouter le test de sécurité</button>
+```
+
+Le bon réflexe en conception reste de ne pas en mettre : les solutions sans énigme, par analyse
+comportementale ou par jeton, évitent le problème au lieu de le rendre conforme.
+
+## 4 bis. Les cadres et le contenu cryptique
+
+Deux familles courtes, souvent oubliées parce qu'elles ne ressemblent à rien d'autre.
+
+**Les cadres** (`2.1 (A)` et `2.2 (A)`) : chaque `<iframe>` porte un `title` pertinent, qui dit sa
+**nature**.
+
+```html
+<iframe src="…" title="Vidéo de présentation de TribuZen"></iframe>
+<iframe src="…" title="Carte du lieu de rendez-vous"></iframe>
+```
+
+Sans `title`, un lecteur d'écran annonce « cadre » et rien d'autre. Le contenu d'un cadre tiers
+n'est pas sous ta responsabilité, mais son identification l'est, et l'obligation de
+non-interférence reste.
+
+**Le contenu cryptique** (`13.5 (A)` et `13.6 (A)`) : un art ASCII, une émoticône faite de
+caractères, une suite d'émojis porteuse de sens doivent avoir une alternative, par un `title` ou
+par le contexte.
+
+```html
+<p><span title="Je suis content">:-)</span></p>
+<p>Taux de remplissage <span role="img" aria-label="quatre étoiles sur cinq">★★★★☆</span></p>
+```
+
+C'est le critère qui attrape les « ★★★★☆ » lus caractère par caractère, et les suites d'émojis
+annoncées par leur nom Unicode complet, ce qui est long et incompréhensible.
 
 ## 5. Ce que l'enquête interroge, et où c'est traité
 

@@ -166,7 +166,7 @@ cas non reproductible. Ce module est la réponse technique au critère : avec `t
 `corner-shape`, `shape()` et les dégradés en OKLCH du module 10, la justification « ce rendu
 n'est faisable qu'en image » tient de moins en moins.
 
-**`10.9` et `10.10 (A)` : l'information ne doit pas dépendre uniquement de la forme, de la taille
+**`10.9 (A)` et `10.10 (A)` : l'information ne doit pas dépendre uniquement de la forme, de la taille
 ou de la position.** C'est le critère qui concerne directement ce module.
 
 ```html
@@ -207,7 +207,7 @@ plus qu'une fonctionnalité qui permet un effet de plus.
 3. **Oublier `min-inline-size: 0`** et s'étonner que `text-overflow` ne fasse rien.
 4. **Dessiner un `clip-path` en pixels** autour d'un texte, puis casser à l'agrandissement.
 5. **Oublier que `clip-path` coupe le halo de focus.** `10.7 (A)`.
-6. **Porter le sens par la forme seule.** `10.9` et `10.10 (A)`.
+6. **Porter le sens par la forme seule.** `10.9 (A)` et `10.10 (A)`.
 7. **Animer le long d'un `offset-path` sans respecter `prefers-reduced-motion`.** Voir module 12.
 8. **Utiliser une image pour un rendu que le CSS sait faire.** `1.8 (AA)`.
 
@@ -220,5 +220,5 @@ plus qu'une fonctionnalité qui permet un effet de plus.
 4. Quelles deux choses `shape()` apporte-t-il face à `polygon()` ?
 5. Quel effet de bord de `clip-path` peut mettre `10.7 (A)` en danger ?
 6. Que remplacent les décorations de gouttière, concrètement ?
-7. Donne un exemple de non-conformité `10.9` ou `10.10`, et sa correction.
+7. Donne un exemple de non-conformité `10.9 (A)` ou `10.10`, et sa correction.
 8. Quel critère de tri appliquer à une nouveauté CSS pour savoir si elle mérite ton temps ?
