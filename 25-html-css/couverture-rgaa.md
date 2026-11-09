@@ -4,11 +4,11 @@
 > Référence : les 106 critères extraits de `rgaa-formation/index-criteres-slides.md`.
 > Le texte qui fait foi reste le référentiel officiel.
 
-**36 / 106 critères cités** par au moins un module.
+**42 / 106 critères cités** par au moins un module.
 
 ✅ Aucun critère inventé : tous les numéros cités existent.
 
-## Critères cités par aucun module (70)
+## Critères cités par aucun module (64)
 
 - `1.1` Images : Images / Images porteuses d’information
 - `1.2` Images : Images / Images de décoration
@@ -43,7 +43,6 @@
 - `5.8` Tableaux : Tableaux de mise en forme
 - `7.2` Scripts : Alternative accessible
 - `7.4` Scripts : Changement de contexte
-- `7.5` Scripts : Message de statut
 - `8.1` Éléments obligatoires : Type de document et validation du code source
 - `8.2` Éléments obligatoires : Type de document et validation du code source
 - `8.3` Éléments obligatoires : Langue principale
@@ -68,17 +67,12 @@
 - `12.4` Navigation : Recherche et plan du site
 - `12.5` Navigation : Recherche et plan du site
 - `12.10` Navigation : Raccourcis clavier
-- `12.11` Navigation : Ordre de tabulation cohérent
 - `13.1` Consultation : Rafraîchissements et redirection / Limite de temps de session
 - `13.2` Consultation :  
 - `13.3` Consultation : Documents bureautiques en téléchargement
 - `13.4` Consultation : Documents bureautiques en téléchargement
 - `13.5` Consultation : Contenu cryptique
 - `13.6` Consultation : Contenu cryptique
-- `13.7` Consultation : Effet de flash
-- `13.8` Consultation : Clignotement et contenus en mouvement
-- `13.10` Consultation : Gestes complexes
-- `13.11` Consultation : Annulation de l’action du pointeur
 - `13.12` Consultation : Activation par le mouvement
 
 ## Critères couverts, et par quels modules
@@ -88,11 +82,12 @@
 | `1.8` | Images | 01, 11 |
 | `3.1` | Couleurs | 08, 10 |
 | `3.2` | Couleurs | 08, 10 |
-| `3.3` | Couleurs | 10 |
+| `3.3` | Couleurs | 10, 13 |
 | `6.1` | Liens | 01 |
 | `6.2` | Liens | 01 |
 | `7.1` | Scripts | 01, 09 |
 | `7.3` | Scripts | 09 |
+| `7.5` | Scripts | 13 |
 | `8.4` | Éléments obligatoires | 01 |
 | `8.6` | Éléments obligatoires | 01 |
 | `8.8` | Éléments obligatoires | 01 |
@@ -111,13 +106,18 @@
 | `10.7` | Présentation de l'information | 04, 05, 11 |
 | `10.8` | Présentation de l'information | 01 |
 | `10.10` | Présentation de l'information | 11 |
-| `10.11` | Présentation de l'information | 05, 06, 07, 08 |
+| `10.11` | Présentation de l'information | 05, 06, 07, 08, 13 |
 | `10.12` | Présentation de l'information | 07, 11 |
-| `10.13` | Présentation de l'information | 09 |
+| `10.13` | Présentation de l'information | 09, 12 |
 | `10.14` | Présentation de l'information | 09 |
 | `11.9` | Formulaires | 01 |
 | `12.6` | Navigation | 01 |
 | `12.7` | Navigation | 01 |
-| `12.8` | Navigation | 01, 04, 05, 06 |
+| `12.8` | Navigation | 01, 04, 05, 06, 13 |
 | `12.9` | Navigation | 09 |
+| `12.11` | Navigation | 13 |
+| `13.7` | Consultation | 12 |
+| `13.8` | Consultation | 12, 13 |
 | `13.9` | Consultation | 07, 08 |
+| `13.10` | Consultation | 13 |
+| `13.11` | Consultation | 13 |
