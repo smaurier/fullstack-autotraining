@@ -10,9 +10,22 @@ import { ratioContraste, verdictContraste } from "./contraste.mjs";
 
 export { ratioContraste, verdictContraste };
 
-/** Ouvre le lab dans le dossier correspondant au projet courant (`src` ou `solution`). */
+/**
+ * Ouvre le lab dans le dossier correspondant au projet courant (`src` ou `solution`).
+ *
+ * Vérifie aussi qu'aucune ressource de la page ne manque. Sans ce contrôle, un lab dont la
+ * feuille de style ne se charge pas peut passer des assertions qui ne dépendent pas d'elle,
+ * et donner une fausse confiance. C'est arrivé pendant l'écriture de ce cours, sur un chemin
+ * relatif qui remontait d'un niveau au lieu de deux.
+ */
 export async function ouvrirLab(page: Page, infos: TestInfo, dossierDuLab: string) {
   const cible = infos.project.name === "solution" ? "solution" : "src";
+
+  const manquantes: string[] = [];
+  page.on("response", (reponse) => {
+    if (reponse.status() >= 400) manquantes.push(`${reponse.status()} ${new URL(reponse.url()).pathname}`);
+  });
+
   const reponse = await page.goto(`/${dossierDuLab}/${cible}/index.html`);
 
   // Un 404 doit échouer en disant pourquoi, pas produire vingt assertions incompréhensibles.
@@ -20,6 +33,12 @@ export async function ouvrirLab(page: Page, infos: TestInfo, dossierDuLab: strin
     reponse?.status(),
     `${dossierDuLab}/${cible}/index.html est introuvable. Crée le fichier avant de lancer l'oracle.`,
   ).toBe(200);
+
+  await page.waitForLoadState("load");
+  expect(
+    manquantes,
+    `des ressources de la page sont introuvables : ${manquantes.join(", ")}. Vérifie les chemins relatifs.`,
+  ).toEqual([]);
 
   return cible;
 }
