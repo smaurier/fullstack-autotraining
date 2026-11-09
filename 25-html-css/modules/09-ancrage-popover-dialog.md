@@ -252,6 +252,25 @@ moins.
 8. **Déclencher une infobulle au survol seulement.** Non conforme `10.14 (AA)`, et elle disparaît
    dès qu'on veut la lire, donc aussi `10.13 (AA)`.
 9. **Ancrer un élément hors du top layer sans penser à l'`overflow` des ancêtres.**
+10. **Poser `display` directement sur `[popover]`.** Celui-ci mérite son propre
+    paragraphe, parce qu'il est silencieux et qu'il donne l'impression que l'API est cassée.
+
+```css
+/* ⛔ Le popover reste visible en permanence, et la fermeture ne se voit plus */
+.menu[popover] { display: grid; }
+
+/* ✅ On style l'état ouvert, et la feuille du navigateur garde la main sur l'état fermé */
+.menu[popover] { /* position, bordure, fond… */ }
+.menu:popover-open { display: grid; }
+```
+
+La feuille de style du navigateur met un popover fermé en `display: none`. L'écraser sur le
+sélecteur d'attribut annule ce comportement : le menu s'affiche tout le temps, `Échap` et le
+clic extérieur ferment bien le popover côté état, mais rien ne change à l'écran. On conclut
+alors, à tort, que la fermeture légère ne fonctionne pas.
+
+Le même raisonnement vaut pour `dialog` : son état fermé est géré par la feuille du
+navigateur, et on style `dialog[open]` plutôt que `dialog`.
 
 ## 9. Lire avant le lab
 

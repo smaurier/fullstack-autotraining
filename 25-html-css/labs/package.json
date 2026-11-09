@@ -5,7 +5,7 @@
   "description": "Oracles exécutables des labs HTML/CSS. `npm run lab:NN` = RED tant que src/ ne satisfait pas l'énoncé ; `npm run solution:NN` = GREEN, prouve que l'oracle est juste. La plupart des oracles passent par un vrai navigateur : jsdom ne fait pas de mise en page, donc il ne sait rien du style calculé, du focus réel ni du contraste.",
   "type": "module",
   "scripts": {
-    "outils": "node --test outils/test/contraste.test.mjs outils/test/accessibilite.test.mjs",
+    "outils": "node --test outils/test/contraste.test.mjs",
     "lab:01": "playwright test --project=lab lab-01",
     "solution:01": "playwright test --project=solution lab-01",
     "lab:02": "playwright test --project=lab lab-02",

@@ -198,6 +198,21 @@ qu'un changement a eu lieu, sans subir le mouvement.
 Trois lignes sont souvent oubliées dans ce bloc : couper `animation-timeline`, remettre
 `scroll-behavior: auto`, et neutraliser les transitions de vue.
 
+Et un piège d'ordre, qui fait perdre un quart d'heure la première fois :
+
+```css
+/* ⛔ animation-timeline revient à `auto` : le raccourci `animation` le réinitialise */
+.progression { animation-timeline: none; animation: none; }
+
+/* ✅ le raccourci d'abord, les propriétés précises ensuite */
+.progression { animation: none; animation-timeline: none; }
+```
+
+`animation` est un raccourci, et comme tout raccourci il remet à leur valeur initiale les
+propriétés qu'il englobe, `animation-timeline` comprise. L'écrire après annule donc
+silencieusement la ligne précédente. La règle générale vaut pour tous les raccourcis :
+**le raccourci avant les propriétés précises, jamais l'inverse.**
+
 ```css
 @media (prefers-reduced-motion: reduce) {
   ::view-transition-group(*), ::view-transition-old(*), ::view-transition-new(*) {

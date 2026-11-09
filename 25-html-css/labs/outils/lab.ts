@@ -126,6 +126,42 @@ export async function ratioAvecFond(locator: Locator) {
 }
 
 /**
+ * Le VRAI arbre d'accessibilité, tel que le navigateur le calcule.
+ *
+ * À utiliser quand `getByRole` ne suffit pas, et il y a un cas précis où il ne suffit
+ * pas : `ElementInternals` expose le rôle, le nom et les états à l'arbre de la
+ * plateforme **sans les écrire dans le DOM**. Le moteur de rôles de Playwright, lui, lit
+ * le DOM. Un composant parfaitement accessible via internals est donc invisible pour
+ * `getByRole`, alors qu'un lecteur d'écran l'annonce correctement.
+ *
+ * C'est exactement la raison pour laquelle le module 18 § 6.3 dit d'inspecter l'arbre
+ * aplati plutôt que le DOM.
+ */
+export async function arbreAccessibilite(page: Page) {
+  const client = await page.context().newCDPSession(page);
+  await client.send("Accessibility.enable");
+  const { nodes } = (await client.send("Accessibility.getFullAXTree")) as {
+    nodes: Array<{
+      role?: { value?: string };
+      name?: { value?: string };
+      properties?: Array<{ name: string; value: { value?: unknown } }>;
+      ignored?: boolean;
+    }>;
+  };
+  await client.detach();
+
+  return nodes
+    .filter((n) => !n.ignored)
+    .map((n) => ({
+      role: String(n.role?.value ?? ""),
+      nom: String(n.name?.value ?? ""),
+      proprietes: Object.fromEntries(
+        (n.properties ?? []).map((p) => [p.name, p.value?.value as unknown]),
+      ),
+    }));
+}
+
+/**
  * Les violations trouvées par axe.
  *
  * Rappel du module 20 : un résultat vide n'est pas une conformité, c'est l'absence d'un
