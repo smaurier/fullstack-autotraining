@@ -4,11 +4,11 @@
 > Référence : les 106 critères extraits de `rgaa-formation/index-criteres-slides.md`.
 > Le texte qui fait foi reste le référentiel officiel.
 
-**32 / 106 critères cités** par au moins un module.
+**36 / 106 critères cités** par au moins un module.
 
 ✅ Aucun critère inventé : tous les numéros cités existent.
 
-## Critères cités par aucun module (74)
+## Critères cités par aucun module (70)
 
 - `1.1` Images : Images / Images porteuses d’information
 - `1.2` Images : Images / Images de décoration
@@ -20,7 +20,6 @@
 - `1.9` Images : Images légendées
 - `2.1` Cadres : Cadres
 - `2.2` Cadres : Cadres
-- `3.3` Couleurs : Contrastes : mécanisme / Contraste du contenu non textuel
 - `4.1` Multimédia : Transcription textuelle
 - `4.2` Multimédia : Transcription textuelle
 - `4.3` Multimédia : Sous-titres
@@ -50,10 +49,7 @@
 - `8.3` Éléments obligatoires : Langue principale
 - `8.5` Éléments obligatoires : Titre de page
 - `8.7` Éléments obligatoires : Changement de langue
-- `10.5` Présentation de l'information : Couleur de fond et de police / Couleur de fond créée par une image
-- `10.6` Présentation de l'information : Visibilité des liens en environnement de texte
 - `10.9` Présentation de l'information : Information par la forme, la taille ou la position
-- `10.10` Présentation de l'information : Information par la forme, la taille ou la position
 - `11.1` Formulaires : Étiquette de champ visible et pertinente / Nom accessible pertinent / Nom accessible
 - `11.2` Formulaires : Étiquette de champ visible et pertinente / Nom accessible pertinent / Nom accessible / Nom accessible et nom visible
 - `11.3` Formulaires : Nom accessible pertinent / Nom accessible / Nom accessible et nom visible
@@ -89,9 +85,10 @@
 
 | Critère | Thème | Modules |
 |---|---|---|
-| `1.8` | Images | 01 |
-| `3.1` | Couleurs | 08 |
-| `3.2` | Couleurs | 08 |
+| `1.8` | Images | 01, 11 |
+| `3.1` | Couleurs | 08, 10 |
+| `3.2` | Couleurs | 08, 10 |
+| `3.3` | Couleurs | 10 |
 | `6.1` | Liens | 01 |
 | `6.2` | Liens | 01 |
 | `7.1` | Scripts | 01, 09 |
@@ -109,10 +106,13 @@
 | `10.2` | Présentation de l'information | 03 |
 | `10.3` | Présentation de l'information | 04, 05, 06 |
 | `10.4` | Présentation de l'information | 07 |
-| `10.7` | Présentation de l'information | 04, 05 |
+| `10.5` | Présentation de l'information | 10 |
+| `10.6` | Présentation de l'information | 10 |
+| `10.7` | Présentation de l'information | 04, 05, 11 |
 | `10.8` | Présentation de l'information | 01 |
+| `10.10` | Présentation de l'information | 11 |
 | `10.11` | Présentation de l'information | 05, 06, 07, 08 |
-| `10.12` | Présentation de l'information | 07 |
+| `10.12` | Présentation de l'information | 07, 11 |
 | `10.13` | Présentation de l'information | 09 |
 | `10.14` | Présentation de l'information | 09 |
 | `11.9` | Formulaires | 01 |
