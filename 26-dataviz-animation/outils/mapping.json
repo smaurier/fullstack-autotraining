@@ -1,0 +1,15 @@
+{
+  "00": [],
+  "01": [],
+  "02": [],
+  "03": ["d3"],
+  "04": ["recharts", "nivo", "visx", "victory", "tremor", "react_vis"],
+  "05": ["echarts", "highcharts", "apexcharts", "chart_js"],
+  "06": [],
+  "07": ["pixi_js", "three_js"],
+  "08": [],
+  "09": ["greensock", "gsap", "anime_js", "popmotion", "motion_one"],
+  "10": ["framer_motion", "react_spring", "autoanimate", "react_motion", "react_native_reanimated"],
+  "11": ["lottie", "theatre_js"],
+  "12": []
+}

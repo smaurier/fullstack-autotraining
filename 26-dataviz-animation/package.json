@@ -1,0 +1,16 @@
+{
+  "name": "dataviz-animation-course",
+  "version": "1.0.0",
+  "description": "Dataviz et animation : encoder une donnée sans mentir, choisir son substrat, rendre un graphique accessible, et animer sans trahir la préférence de mouvement",
+  "type": "module",
+  "scripts": {
+    "docs:dev": "vitepress dev",
+    "docs:build": "vitepress build",
+    "audit": "node outils/couverture.mjs",
+    "audit:telecharger": "node outils/couverture.mjs --telecharger",
+    "test:outils": "node --test outils/test/couverture.test.mjs",
+    "labs:install": "npm --prefix labs install"
+  },
+  "engines": { "node": ">=20.0.0" },
+  "devDependencies": { "vitepress": "1.6.4" }
+}
