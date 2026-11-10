@@ -1,5 +1,12 @@
 # Lab B02 — Construire une palette par la théorie, pas au goût
 
+> 📐 **Renvoi réciproque avec le cours 25 HTML & CSS.** Ici, la couleur se décide : harmonie,
+> symbolique, intention. Le **calcul** du ratio de contraste, les trois seuils du référentiel et
+> le piège du ratio mesuré sur la mauvaise couleur sont au module 10 de ce cours-là. Les deux se
+> complètent : une palette peut être juste à l'œil et non conforme, et c'est précisément ce que
+> le § 2.5 de ce lab te fait éprouver.
+
+
 > **Module associé :** [`modules/b02-theorie-couleur.md`](../../modules/b02-theorie-couleur.md)
 > **Forme :** Zéro — construction de palette de zéro (ou extension argumentée).
 > **Outil :** Figma (styles/variables couleur), un convertisseur HSL/RVB/CMJN.
