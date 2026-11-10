@@ -4,11 +4,9 @@
 ![Framer](https://img.shields.io/badge/-Framer-0055FF?style=flat-square&logo=framer&logoColor=white)
 [![fullstack-autotraining](https://img.shields.io/badge/curriculum-fullstack--autotraining-4C1?style=flat-square)](https://github.com/smaurier/fullstack-autotraining)
 
-> **Statut : rédaction en cours, pas encore activé.** Entrée Bibliothèque candidate dans
-> `PARCOURS-SYLVAIN.md` (voir `brain/scratchpad/formation-design-figma-framer-brouillon.md`
-> pour l'étude complète). Ne pas insérer dans le parcours actif avant le jalon
-> `reprise-curriculum` (04/11/2026) et une validation explicite — ce cours peut être rédigé
-> (contenu écrit) sans que ça viole le gel, la pratique elle attend.
+> **Statut : rédaction complète, pratique non commencée.** Entrée en BIBLIOTHÈQUE du
+> parcours : aucun ordre imposé, tirée par un besoin daté. Le contenu est écrit ; la pratique
+> attend son déclencheur.
 
 > **Prérequis** : aucun prérequis technique dur. Profil dev front déjà solide (ce cours
 > *complète* le profil, voir cours 06 Design System pour le pendant code).
@@ -64,7 +62,7 @@ qualitative), sauf b01 dont le lab a un nom distinct
 (`labs/b01-trois-langages-visuels/`, exception historique documentée, à ne pas reproduire).
 **La rédaction est terminée ; le statut "pas encore activé" plus haut reste inchangé** : zéro
 pratique avant le jalon `reprise-curriculum` (04/11/2026) et une validation explicite de
-Sylvain sur l'insertion dans `PARCOURS-SYLVAIN.md`.
+l'insertion de ce cours dans le parcours actif.
 
 ## Pourquoi les blocs G et H existent (ajoutés le 14/10/2026)
 
@@ -108,7 +106,7 @@ répond à la troisième question de l'inventaire (`h01` §2.1) au lieu de la la
 de non-collusion : la documentation ne s'ouvre qu'après la production de sa propre version.
 
 Convention de nommage des fichiers : `modules/<bloc><NN>-<slug>.md` (ex. `b03-typographie.md`).
-Détail complet des modules/labs encore à rédiger : `brain/scratchpad/formation-design-figma-framer-brouillon.md`.
+Les modules et labs restant à rédiger sont suivis hors de ce dépôt, dans le journal du parcours.
 
 ## Ordre recommandé (pas un ordre bibliothèque libre à l'intérieur de ce cours)
 
