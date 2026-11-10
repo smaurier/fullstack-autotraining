@@ -73,3 +73,6 @@
 [submodule "25-html-css"]
 	path = 25-html-css
 	url = https://github.com/smaurier/html-css-autotraining.git
+[submodule "26-dataviz-animation"]
+	path = 26-dataviz-animation
+	url = https://github.com/smaurier/dataviz-animation-autotraining.git
