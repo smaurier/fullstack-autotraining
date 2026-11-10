@@ -25,7 +25,7 @@ besoins se trouve le cadre que j'accepte ».**
 Pour chaque candidat, cinq questions auxquelles on peut répondre par une mesure ou par une
 lecture de documentation, jamais par une impression.
 
-### Axe 1 — Jusqu'où va le cadre, et que se passe-t-il quand on en sort ?
+### Axe 1. Jusqu'où va le cadre, et que se passe-t-il quand on en sort ?
 
 C'est l'axe décisif, et le plus oublié. Tout va bien jusqu'au jour où le design demande une
 annotation, un axe cassé, une série en escalier mêlée à une série lisse, ou un survol
@@ -42,7 +42,7 @@ Trois réponses possibles, et il faut savoir laquelle tu achètes :
 **Le symptôme d'un mauvais choix** n'est pas une lenteur, c'est un graphique sur dix réécrit à
 part, avec un rendu qui ne ressemble pas aux neuf autres.
 
-### Axe 2 — Le poids réel, mesuré
+### Axe 2. Le poids réel, mesuré
 
 ```bash
 # Le poids annonce par la page d'accueil n'est pas le poids que TU paieras.
@@ -53,7 +53,7 @@ Ce qui compte est le poids **après élagage**, sur ton usage réel. Une librair
 entrer tous ses types de graphiques pour un seul utilisé ; une librairie modulaire n'apporte que
 ce que tu importes. Le rapport entre les deux atteint couramment un facteur cinq.
 
-### Axe 3 — L'accessibilité livrée
+### Axe 3. L'accessibilité livrée
 
 **L'axe sur lequel presque personne ne compare**, et c'est le sujet du module 06. Trois questions
 à poser à la documentation :
@@ -65,13 +65,13 @@ ce que tu importes. Le rapport entre les deux atteint couramment un facteur cinq
 Si la documentation ne répond pas aux trois, la réponse est non, et c'est à ta charge. Ce n'est
 pas disqualifiant, c'est une charge à chiffrer.
 
-### Axe 4 — La maintenance
+### Axe 4. La maintenance
 
 Dernière version publiée, nombre de mainteneurs, et surtout : la librairie suit-elle les versions
 de React ? Une librairie de graphiques qui bloque une mise à jour de React est une dette qui se
 paie au pire moment.
 
-### Axe 5 — Le rendu par défaut
+### Axe 5. Le rendu par défaut
 
 Combien de lignes pour qu'un graphique soit **présentable** ? Certaines librairies sortent un
 rendu correct d'emblée, d'autres demandent trente lignes de thème. Cet axe compte surtout quand

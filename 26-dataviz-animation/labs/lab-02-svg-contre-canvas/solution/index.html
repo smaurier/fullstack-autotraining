@@ -1,0 +1,73 @@
+<!doctype html>
+<!-- SOLUTION DE REFERENCE. A n'ouvrir qu'apres ton GREEN. -->
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>SVG contre Canvas | Nahual</title>
+    <link rel="stylesheet" href="../../commun.css" />
+  </head>
+  <body>
+    <main class="contenu">
+      <h1>Fréquentation des ateliers</h1>
+
+      <section>
+        <h2>Version SVG</h2>
+        <!-- role=img : UNE image avec UN nom, au lieu de dizaines de noeuds parcourus
+             un par un. Module 06 § 3.1. -->
+        <svg
+          id="graphe-svg"
+          role="img"
+          aria-labelledby="titre-svg desc-svg"
+          viewBox="0 0 400 220"
+          width="400"
+          height="220"
+        >
+          <title id="titre-svg">Fréquentation des ateliers, version SVG</title>
+          <desc id="desc-svg">
+            La couture domine avec 240 participants, soit le double de la cuisine. La
+            photographie ferme la marche à 90.
+          </desc>
+          <!-- Les marques ne disent rien d'utile : elles sortent de l'arbre. -->
+          <g id="marques-svg" aria-hidden="true"></g>
+        </svg>
+      </section>
+
+      <section>
+        <h2>Version Canvas</h2>
+        <!-- Un canvas n'expose RIEN. Le role et le nom sont le minimum, et ils ne
+             suffisent pas : le tableau ci-dessous est le vrai chemin vers l'information. -->
+        <canvas
+          id="graphe-canvas"
+          role="img"
+          aria-label="Fréquentation des ateliers, version Canvas. La couture domine avec 240 participants, le double de la cuisine. Données détaillées dans le tableau ci-dessous."
+          width="400"
+          height="220"
+        ></canvas>
+      </section>
+
+      <!-- Un seul tableau pour les deux graphiques : c'est la meme donnee.
+           Dans un <details> : il sert a tout le monde, pas seulement aux technologies
+           d'assistance. Module 06 § 4.2. -->
+      <details id="donnees">
+        <summary>Données des graphiques, 4 ateliers</summary>
+        <table>
+          <caption>Fréquentation des ateliers, saison 2026</caption>
+          <thead>
+            <tr>
+              <th scope="col">Atelier</th>
+              <th scope="col">Participants</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">Cuisine</th><td>120</td></tr>
+            <tr><th scope="row">Jardinage</th><td>145</td></tr>
+            <tr><th scope="row">Photographie</th><td>90</td></tr>
+            <tr><th scope="row">Couture</th><td>240</td></tr>
+          </tbody>
+        </table>
+      </details>
+    </main>
+
+    <script type="module" src="rendu.js"></script>
+  </body>
+</html>

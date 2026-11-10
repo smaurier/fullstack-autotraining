@@ -1,0 +1,35 @@
+<!doctype html>
+<!-- STARTER. Deux series, distinguees UNIQUEMENT par la couleur. Aucun role, aucune
+     alternative, aucun tableau. A l'ecran, c'est propre. Au casque, il n'y a rien. -->
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Fréquentation par atelier | Nahual</title>
+    <link rel="stylesheet" href="../../commun.css" />
+    <style>
+      .serie-cuisine { stroke: #0b5fff; }
+      .serie-couture { stroke: #d98c00; }
+      .serie { fill: none; stroke-width: 2; }
+      .legende { display: flex; gap: 1rem; list-style: none; padding: 0; }
+      .puce { display: inline-block; inline-size: 1rem; block-size: 0.25rem; }
+      .puce-cuisine { background: #0b5fff; }
+      .puce-couture { background: #d98c00; }
+    </style>
+  </head>
+  <body>
+    <main class="contenu">
+      <h1>Fréquentation par atelier</h1>
+
+      <svg id="graphe" viewBox="0 0 400 200" width="400" height="200">
+        <g id="marques"></g>
+      </svg>
+
+      <ul class="legende">
+        <li><span class="puce puce-cuisine"></span> Cuisine</li>
+        <li><span class="puce puce-couture"></span> Couture</li>
+      </ul>
+    </main>
+
+    <script type="module" src="rendu.js"></script>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+<!doctype html>
+<!-- STARTER. Une animation importee, integree comme on les integre le plus souvent :
+     elle tourne en boucle, elle porte l'information a elle seule, elle est dans l'arbre
+     d'accessibilite, et personne ne lui a jamais demande si la visiteuse voulait du mouvement.
+
+     Le fichier `animations/confirmation.json` est le livrable du designer. Tu n'y touches pas :
+     tout le travail de ce lab est dans l'integration. -->
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Inscription confirmée | Nahual</title>
+    <link rel="stylesheet" href="../../commun.css" />
+    <style>
+      .scene { display: grid; place-items: center; gap: 1rem; }
+      .lecteur { inline-size: 15rem; block-size: 15rem; }
+      button { font: inherit; padding: .4rem .8rem; }
+    </style>
+  </head>
+  <body>
+    <main class="contenu">
+      <h1>Atelier du samedi</h1>
+
+      <div class="scene">
+        <div class="lecteur" id="lecteur"></div>
+      </div>
+    </main>
+
+    <script src="/node_modules/lottie-web/build/player/lottie.min.js"></script>
+    <script type="module" src="rendu.js"></script>
+  </body>
+</html>

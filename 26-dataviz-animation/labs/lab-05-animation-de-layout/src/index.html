@@ -1,0 +1,31 @@
+<!doctype html>
+<!-- STARTER. Une liste qu'on peut trier et dont on peut retirer le premier element.
+     Les elements SAUTENT a leur nouvelle place : aucune animation de layout.
+     Et quand on retire l'element focuse, le focus est perdu. -->
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Liste animée | Nahual</title>
+    <link rel="stylesheet" href="../../commun.css" />
+    <style>
+      .liste { list-style: none; padding: 0; max-inline-size: 24rem; }
+      .ligne { display: flex; justify-content: space-between; gap: 1rem; align-items: center;
+               border: 1px solid #c8c8c8; border-radius: .4rem; padding: .6rem .8rem; margin-block: .35rem; background: Canvas; }
+      .commandes { display: flex; gap: .5rem; margin-block-end: 1rem; }
+      button { font: inherit; padding: .4rem .8rem; }
+    </style>
+  </head>
+  <body>
+    <main class="contenu">
+      <h1>Participants</h1>
+
+      <div class="commandes">
+        <button type="button" id="trier">Trier par nombre d'ateliers</button>
+      </div>
+
+      <ul class="liste" id="liste"></ul>
+    </main>
+
+    <script type="module" src="rendu.js"></script>
+  </body>
+</html>

@@ -1,0 +1,81 @@
+<!doctype html>
+<!-- SOLUTION DE REFERENCE. A n'ouvrir qu'apres ton GREEN. -->
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Fréquentation par atelier | Nahual</title>
+    <link rel="stylesheet" href="../../commun.css" />
+    <style>
+      .serie { fill: none; stroke-width: 2; }
+      /* Les deux series ont des couleurs CONTRASTEES (3:1 minimum sur fond blanc, 3.3 AA)
+         ET un motif de trait different : le test du niveau de gris passe. Module 06 § 5.1. */
+      .serie-cuisine { stroke: #0b5fff; }
+      .serie-couture { stroke: #8a4b00; stroke-dasharray: 7 4; }
+
+      .legende { display: flex; gap: 1.25rem; list-style: none; padding: 0; }
+      .puce { display: inline-block; inline-size: 1.5rem; block-size: 0; border-block-start-width: 3px; border-block-start-style: solid; vertical-align: middle; }
+      .puce-cuisine { border-color: #0b5fff; }
+      /* Le motif est repris dans la legende, sinon elle ne dit pas la meme chose. */
+      .puce-couture { border-color: #8a4b00; border-block-start-style: dashed; }
+    </style>
+  </head>
+  <body>
+    <main class="contenu">
+      <h1>Fréquentation par atelier</h1>
+
+      <figure>
+        <svg
+          id="graphe"
+          role="img"
+          aria-labelledby="titre-graphe desc-graphe"
+          viewBox="0 0 400 200"
+          width="400"
+          height="200"
+        >
+          <title id="titre-graphe">Fréquentation mensuelle, cuisine et couture, janvier à juin</title>
+          <!-- L'alternative dit la CONCLUSION, les repères, et l'anomalie. Module 06 § 3.2. -->
+          <desc id="desc-graphe">
+            La couture passe de 60 à 240 participants et dépasse la cuisine en mai. La cuisine
+            progresse plus lentement, de 120 à 180, avec un creux à 90 en mars.
+          </desc>
+          <g id="marques" aria-hidden="true"></g>
+        </svg>
+
+        <figcaption>
+          Fréquentation mensuelle par atelier.
+          <a href="#donnees-graphe">Voir les données</a>
+        </figcaption>
+      </figure>
+
+      <ul class="legende">
+        <li><span class="puce puce-cuisine" aria-hidden="true"></span> Cuisine, trait plein</li>
+        <li><span class="puce puce-couture" aria-hidden="true"></span> Couture, trait tireté</li>
+      </ul>
+
+      <!-- Le tableau equivalent : le vrai chemin vers l'information. Module 06 § 4. -->
+      <details id="donnees-graphe">
+        <summary>Données du graphique, 6 mois et 2 ateliers</summary>
+        <table>
+          <caption>Fréquentation mensuelle par atelier, janvier à juin</caption>
+          <thead>
+            <tr>
+              <th scope="col">Mois</th>
+              <th scope="col">Cuisine</th>
+              <th scope="col">Couture</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">Janvier</th><td>120</td><td>60</td></tr>
+            <tr><th scope="row">Février</th><td>132</td><td>75</td></tr>
+            <tr><th scope="row">Mars</th><td>90</td><td>110</td></tr>
+            <tr><th scope="row">Avril</th><td>145</td><td>140</td></tr>
+            <tr><th scope="row">Mai</th><td>160</td><td>200</td></tr>
+            <tr><th scope="row">Juin</th><td>180</td><td>240</td></tr>
+          </tbody>
+        </table>
+      </details>
+    </main>
+
+    <script type="module" src="rendu.js"></script>
+  </body>
+</html>

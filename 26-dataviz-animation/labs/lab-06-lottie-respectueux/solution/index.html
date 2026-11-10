@@ -1,0 +1,38 @@
+<!doctype html>
+<!-- SOLUTION DE REFERENCE. A n'ouvrir qu'apres ton GREEN. -->
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Inscription confirmée | Nahual</title>
+    <link rel="stylesheet" href="../../commun.css" />
+    <style>
+      .scene { display: grid; place-items: center; gap: 1rem; }
+      .lecteur { inline-size: 15rem; block-size: 15rem; }
+      figure { margin: 0; display: grid; place-items: center; gap: .5rem; }
+      figcaption { font-size: 1.1rem; font-weight: 600; }
+      button { font: inherit; padding: .4rem .8rem; }
+    </style>
+  </head>
+  <body>
+    <main class="contenu">
+      <h1>Atelier du samedi</h1>
+
+      <div class="scene">
+        <!-- L'information est portee par du TEXTE. L'animation la decore, elle ne la porte pas :
+             un lecteur Lottie rend des centaines de noeuds sans sens, ou une image muette.
+             Module 11 § 6. -->
+        <figure>
+          <div class="lecteur" id="lecteur" aria-hidden="true" role="presentation"></div>
+          <figcaption>Votre inscription à l'atelier du samedi est confirmée.</figcaption>
+        </figure>
+
+        <!-- 13.8 (A) : la sequence boucle, donc un controle visible est exige, meme pour qui
+             n'a pas declare de preference. -->
+        <button type="button" id="controle" aria-pressed="false">Mettre l'animation en pause</button>
+      </div>
+    </main>
+
+    <script src="/node_modules/lottie-web/build/player/lottie.min.js"></script>
+    <script type="module" src="rendu.js"></script>
+  </body>
+</html>

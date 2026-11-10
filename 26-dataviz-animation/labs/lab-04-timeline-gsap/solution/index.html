@@ -1,0 +1,34 @@
+<!doctype html>
+<!-- SOLUTION DE REFERENCE. A n'ouvrir qu'apres ton GREEN. -->
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Séquence d'entrée | Nahual</title>
+    <link rel="stylesheet" href="../../commun.css" />
+    <style>
+      .scene { position: relative; min-block-size: 16rem; }
+      .carte { opacity: 0; translate: 0 3rem; border: 1px solid #c8c8c8; border-radius: .5rem; padding: 1rem; margin-block: .5rem; max-inline-size: 22rem; }
+    </style>
+  </head>
+  <body>
+    <main class="contenu">
+      <h1>Nahual, les trois couches</h1>
+
+      <!-- 13.8 (A) : un moyen d'ARRETER, visible et utilisable au clavier. Respecter
+           prefers-reduced-motion protege ceux qui l'ont regle ; ce bouton protege les
+           autres. Module 12 § 3. -->
+      <p>
+        <button type="button" id="pause" aria-pressed="false">Mettre l'animation en pause</button>
+      </p>
+
+      <div class="scene">
+        <div class="carte" id="c1">La parole</div>
+        <div class="carte" id="c2">L'amatl</div>
+        <div class="carte" id="c3">La scène</div>
+      </div>
+    </main>
+
+    <script src="/node_modules/gsap/dist/gsap.min.js"></script>
+    <script type="module" src="rendu.js"></script>
+  </body>
+</html>

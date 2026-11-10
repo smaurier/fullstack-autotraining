@@ -1,0 +1,30 @@
+<!doctype html>
+<!-- STARTER. Le MEME graphique, deux fois : en SVG et en Canvas.
+     A l'ecran, ils sont identiques. Dans l'arbre d'accessibilite, l'un existe et l'autre
+     non. Et le SVG, lui, encombre l'arbre de dizaines de noeuds vides. -->
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>SVG contre Canvas | Nahual</title>
+    <link rel="stylesheet" href="../../commun.css" />
+  </head>
+  <body>
+    <main class="contenu">
+      <h1>Fréquentation des ateliers</h1>
+
+      <section>
+        <h2>Version SVG</h2>
+        <svg id="graphe-svg" viewBox="0 0 400 220" width="400" height="220">
+          <g id="marques-svg"></g>
+        </svg>
+      </section>
+
+      <section>
+        <h2>Version Canvas</h2>
+        <canvas id="graphe-canvas" width="400" height="220"></canvas>
+      </section>
+    </main>
+
+    <script type="module" src="rendu.js"></script>
+  </body>
+</html>

@@ -7,24 +7,24 @@ hero:
   tagline: "13 modules, 6 labs à oracle. Le module qui justifie ce cours est le 06 : les graphiques accessibles, un croisement que presque personne n'occupe."
   actions:
     - theme: brand
-      text: Commencer
+      text: "Commencer"
       link: /modules/00-prerequis-et-protocole
     - theme: alt
-      text: Graphiques accessibles
+      text: "Graphiques accessibles"
       link: /modules/06-graphiques-accessibles
     - theme: alt
-      text: Couverture des enquêtes
+      text: "Couverture des enquêtes"
       link: /couverture-state-of
 
 features:
   - title: Encoder, pas décorer
-    details: Variables visuelles et leur efficacité relative, échelles linéaire, log, ordinale et temporelle, et les mensonges graphiques courants : axe tronqué, aire contre rayon, double axe. Le module qui évite de faire un joli graphique faux.
+    details: "Variables visuelles et leur efficacité relative, échelles linéaire, log, ordinale et temporelle, et les mensonges graphiques courants : axe tronqué, aire contre rayon, double axe. Le module qui évite de faire un joli graphique faux."
   - title: Trois substrats, une règle de choix
-    details: SVG est dans le DOM, Canvas est une image opaque, WebGL est un pipeline. Le choix se fait sur le nombre d'éléments, le besoin d'interaction, et ce qui reste accessible. La conséquence du choix est d'abord une conséquence d'accessibilité.
+    details: "SVG est dans le DOM, Canvas est une image opaque, WebGL est un pipeline. Le choix se fait sur le nombre d'éléments, le besoin d'interaction, et ce qui reste accessible. La conséquence du choix est d'abord une conséquence d'accessibilité."
   - title: Des graphiques accessibles
-    details: Alternative pertinente, tableau de données équivalent, navigation clavier dans une série, contraste des séries, motif en plus de la couleur. Avec un verdict par librairie : ce qu'elle livre, ce qu'elle oblige à recoder.
+    details: "Alternative pertinente, tableau de données équivalent, navigation clavier dans une série, contraste des séries, motif en plus de la couleur. Avec un verdict par librairie : ce qu'elle livre, ce qu'elle oblige à recoder."
   - title: Animer sans trahir
-    details: Easing et ce qu'il raconte, timelines, animations liées au défilement, pipeline depuis After Effects. Et prefers-reduced-motion traité comme un contrat, pas comme une option.
+    details: "Easing et ce qu'il raconte, timelines, animations liées au défilement, pipeline depuis After Effects. Et prefers-reduced-motion traité comme un contrat, pas comme une option."
 ---
 
 ## Où ce cours vit dans le curriculum
