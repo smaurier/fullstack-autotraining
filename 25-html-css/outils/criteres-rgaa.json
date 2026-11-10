@@ -1,426 +1,322 @@
 {
+ "_source": "Numeros et thematiques du RGAA, publics : https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/",
+ "_note": "Les libelles descriptifs ont ete volontairement retires : ils provenaient d'un support de formation prive. L'outil n'a besoin que des numeros ; la thematique sert uniquement a grouper le rapport.",
  "1.1": {
-  "sujet": "Images / Images porteuses d’information",
   "theme": "Images"
  },
  "1.2": {
-  "sujet": "Images / Images de décoration",
   "theme": "Images"
  },
  "1.3": {
-  "sujet": "Images / Images porteuses d’information",
   "theme": "Images"
  },
  "1.4": {
-  "sujet": "Images CAPTCHA",
   "theme": "Images"
  },
  "1.5": {
-  "sujet": "Images CAPTCHA",
   "theme": "Images"
  },
  "1.6": {
-  "sujet": "Images : description détaillée",
   "theme": "Images"
  },
  "1.7": {
-  "sujet": "Images : description détaillée",
   "theme": "Images"
  },
  "1.8": {
-  "sujet": "Texte en image",
   "theme": "Images"
  },
  "1.9": {
-  "sujet": "Images légendées",
   "theme": "Images"
  },
  "2.1": {
-  "sujet": "Cadres",
   "theme": "Cadres"
  },
  "2.2": {
-  "sujet": "Cadres",
   "theme": "Cadres"
  },
  "3.1": {
-  "sujet": "Information par la couleur",
   "theme": "Couleurs"
  },
  "3.2": {
-  "sujet": "Contrastes : mécanisme / Contrastes des textes",
   "theme": "Couleurs"
  },
  "3.3": {
-  "sujet": "Contrastes : mécanisme / Contraste du contenu non textuel",
   "theme": "Couleurs"
  },
  "4.1": {
-  "sujet": "Transcription textuelle",
   "theme": "Multimédia"
  },
  "4.2": {
-  "sujet": "Transcription textuelle",
   "theme": "Multimédia"
  },
  "4.3": {
-  "sujet": "Sous-titres",
   "theme": "Multimédia"
  },
  "4.4": {
-  "sujet": "Sous-titres",
   "theme": "Multimédia"
  },
  "4.5": {
-  "sujet": "Audiodescription",
   "theme": "Multimédia"
  },
  "4.6": {
-  "sujet": "Audiodescription",
   "theme": "Multimédia"
  },
  "4.7": {
-  "sujet": "Identification",
   "theme": "Multimédia"
  },
  "4.8": {
-  "sujet": "Média non temporel",
   "theme": "Multimédia"
  },
  "4.9": {
-  "sujet": "Média non temporel",
   "theme": "Multimédia"
  },
  "4.10": {
-  "sujet": " ",
   "theme": "Multimédia"
  },
  "4.11": {
-  "sujet": "Média temporel compatible avec l’accessibilité",
   "theme": "Multimédia"
  },
  "4.12": {
-  "sujet": "Média non temporel",
   "theme": "Multimédia"
  },
  "4.13": {
-  "sujet": "Média temporel compatible avec l’accessibilité / Média non temporel",
   "theme": "Multimédia"
  },
  "5.1": {
-  "sujet": "Tableaux complexes",
   "theme": "Tableaux"
  },
  "5.2": {
-  "sujet": "Tableaux complexes",
   "theme": "Tableaux"
  },
  "5.3": {
-  "sujet": "Tableaux de mise en forme",
   "theme": "Tableaux"
  },
  "5.4": {
-  "sujet": "Tableaux de données / Tableaux simples",
   "theme": "Tableaux"
  },
  "5.5": {
-  "sujet": "Tableaux de données / Tableaux simples",
   "theme": "Tableaux"
  },
  "5.6": {
-  "sujet": "Tableaux de données / Tableaux simples",
   "theme": "Tableaux"
  },
  "5.7": {
-  "sujet": "Tableaux de données / Tableaux simples / Tableaux complexes",
   "theme": "Tableaux"
  },
  "5.8": {
-  "sujet": "Tableaux de mise en forme",
   "theme": "Tableaux"
  },
  "6.1": {
-  "sujet": "Lien explicite 1/4 : nom accessible / Lien explicite 2/4 : nom visible contenu dans le nom accessible / Lien explicite 3/4 : rôle du contexte du lien / Lien explicite 4/4 : infobulle de lien (",
   "theme": "Liens"
  },
  "6.2": {
-  "sujet": "Liens vides",
   "theme": "Liens"
  },
  "7.1": {
-  "sujet": "Rôle pertinent / Nom accessible pertinent / État et changements d’état pertinents / **Aide à la détection : la procédure A42 au bookmarklet `07.1 Scripts`**",
   "theme": "Scripts"
  },
  "7.2": {
-  "sujet": "Alternative accessible",
   "theme": "Scripts"
  },
  "7.3": {
-  "sujet": "Utilisation au clavier et à la souris",
   "theme": "Scripts"
  },
  "7.4": {
-  "sujet": "Changement de contexte",
   "theme": "Scripts"
  },
  "7.5": {
-  "sujet": "Message de statut",
   "theme": "Scripts"
  },
  "8.1": {
-  "sujet": "Type de document et validation du code source",
   "theme": "Éléments obligatoires"
  },
  "8.2": {
-  "sujet": "Type de document et validation du code source",
   "theme": "Éléments obligatoires"
  },
  "8.3": {
-  "sujet": "Langue principale",
   "theme": "Éléments obligatoires"
  },
  "8.4": {
-  "sujet": "Langue principale",
   "theme": "Éléments obligatoires"
  },
  "8.5": {
-  "sujet": "Titre de page",
   "theme": "Éléments obligatoires"
  },
  "8.6": {
-  "sujet": "Titre de page",
   "theme": "Éléments obligatoires"
  },
  "8.7": {
-  "sujet": "Changement de langue",
   "theme": "Éléments obligatoires"
  },
  "8.8": {
-  "sujet": "Changement de langue",
   "theme": "Éléments obligatoires"
  },
  "8.9": {
-  "sujet": "Respect de la sémantique du balisage",
   "theme": "Éléments obligatoires"
  },
  "8.10": {
-  "sujet": "Changements de sens de lecture",
   "theme": "Éléments obligatoires"
  },
  "9.1": {
-  "sujet": "Titrage du contenu",
   "theme": "Structuration de l'information"
  },
  "9.2": {
-  "sujet": "La structure du document (HTML5) /",
   "theme": "Structuration de l'information"
  },
  "9.3": {
-  "sujet": "Listes",
   "theme": "Structuration de l'information"
  },
  "9.4": {
-  "sujet": "Citations",
   "theme": "Structuration de l'information"
  },
  "10.1": {
-  "sujet": "Utilisation exclusive de CSS / Pas d’utilisation d’espaces :",
   "theme": "Présentation de l'information"
  },
  "10.2": {
-  "sujet": "Contenus visibles",
   "theme": "Présentation de l'information"
  },
  "10.3": {
-  "sujet": "Contenus compréhensibles CSS désactivées",
   "theme": "Présentation de l'information"
  },
  "10.4": {
-  "sujet": "Agrandissement du texte",
   "theme": "Présentation de l'information"
  },
  "10.5": {
-  "sujet": "Couleur de fond et de police / Couleur de fond créée par une image",
   "theme": "Présentation de l'information"
  },
  "10.6": {
-  "sujet": "Visibilité des liens en environnement de texte",
   "theme": "Présentation de l'information"
  },
  "10.7": {
-  "sujet": "Visibilité de la prise de focus",
   "theme": "Présentation de l'information"
  },
  "10.8": {
-  "sujet": "Contenus cachés",
   "theme": "Présentation de l'information"
  },
  "10.9": {
-  "sujet": "Information par la forme, la taille ou la position",
   "theme": "Présentation de l'information"
  },
  "10.10": {
-  "sujet": "Information par la forme, la taille ou la position",
   "theme": "Présentation de l'information"
  },
  "10.11": {
-  "sujet": "Linéarisation des contenus",
   "theme": "Présentation de l'information"
  },
  "10.12": {
-  "sujet": "Adaptation des textes",
   "theme": "Présentation de l'information"
  },
  "10.13": {
-  "sujet": "Contrôle des contenus additionnels au survol ou à la prise de focus",
   "theme": "Présentation de l'information"
  },
  "10.14": {
-  "sujet": "Affichage des contenus additionnels au clavier",
   "theme": "Présentation de l'information"
  },
  "11.1": {
-  "sujet": "Étiquette de champ visible et pertinente / Nom accessible pertinent / Nom accessible",
   "theme": "Formulaires"
  },
  "11.2": {
-  "sujet": "Étiquette de champ visible et pertinente / Nom accessible pertinent / Nom accessible / Nom accessible et nom visible",
   "theme": "Formulaires"
  },
  "11.3": {
-  "sujet": "Nom accessible pertinent / Nom accessible / Nom accessible et nom visible",
   "theme": "Formulaires"
  },
  "11.4": {
-  "sujet": "Étiquette & champ accolés",
   "theme": "Formulaires"
  },
  "11.5": {
-  "sujet": "Regroupement de champs",
   "theme": "Formulaires"
  },
  "11.6": {
-  "sujet": "Regroupement de champs",
   "theme": "Formulaires"
  },
  "11.7": {
-  "sujet": "Regroupement de champs",
   "theme": "Formulaires"
  },
  "11.8": {
-  "sujet": "Liste de choix",
   "theme": "Formulaires"
  },
  "11.9": {
-  "sujet": "Intitulés de bouton / Nom accessible des boutons",
   "theme": "Formulaires"
  },
  "11.10": {
-  "sujet": "Aides à la saisie : champs obligatoires / Aides et contrôles de saisie",
   "theme": "Formulaires"
  },
  "11.11": {
-  "sujet": "Aides et contrôles de saisie",
   "theme": "Formulaires"
  },
  "11.12": {
-  "sujet": " ",
   "theme": "Formulaires"
  },
  "11.13": {
-  "sujet": "Nature des champs de formulaires",
   "theme": "Formulaires"
  },
  "12.1": {
-  "sujet": "Systèmes de navigation",
   "theme": "Navigation"
  },
  "12.2": {
-  "sujet": "Menu et barre de navigation",
   "theme": "Navigation"
  },
  "12.3": {
-  "sujet": "Plan du site",
   "theme": "Navigation"
  },
  "12.4": {
-  "sujet": "Recherche et plan du site",
   "theme": "Navigation"
  },
  "12.5": {
-  "sujet": "Recherche et plan du site",
   "theme": "Navigation"
  },
  "12.6": {
-  "sujet": "Navigation dans la page",
   "theme": "Navigation"
  },
  "12.7": {
-  "sujet": "Liens d’accès rapide",
   "theme": "Navigation"
  },
  "12.8": {
-  "sujet": "Ordre de tabulation cohérent",
   "theme": "Navigation"
  },
  "12.9": {
-  "sujet": "Piège au clavier",
   "theme": "Navigation"
  },
  "12.10": {
-  "sujet": "Raccourcis clavier",
   "theme": "Navigation"
  },
  "12.11": {
-  "sujet": "Ordre de tabulation cohérent",
   "theme": "Navigation"
  },
  "13.1": {
-  "sujet": "Rafraîchissements et redirection / Limite de temps de session",
   "theme": "Consultation"
  },
  "13.2": {
-  "sujet": " ",
   "theme": "Consultation"
  },
  "13.3": {
-  "sujet": "Documents bureautiques en téléchargement",
   "theme": "Consultation"
  },
  "13.4": {
-  "sujet": "Documents bureautiques en téléchargement",
   "theme": "Consultation"
  },
  "13.5": {
-  "sujet": "Contenu cryptique",
   "theme": "Consultation"
  },
  "13.6": {
-  "sujet": "Contenu cryptique",
   "theme": "Consultation"
  },
  "13.7": {
-  "sujet": "Effet de flash",
   "theme": "Consultation"
  },
  "13.8": {
-  "sujet": "Clignotement et contenus en mouvement",
   "theme": "Consultation"
  },
  "13.9": {
-  "sujet": "Indépendance de l’orientation",
   "theme": "Consultation"
  },
  "13.10": {
-  "sujet": "Gestes complexes",
   "theme": "Consultation"
  },
  "13.11": {
-  "sujet": "Annulation de l’action du pointeur",
   "theme": "Consultation"
  },
  "13.12": {
-  "sujet": "Activation par le mouvement",
   "theme": "Consultation"
  }
 }

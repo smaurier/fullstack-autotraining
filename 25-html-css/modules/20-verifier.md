@@ -62,15 +62,14 @@ confort ou de l'échelle.
 
 ### 2.1 Les bookmarklets
 
-La formation Access42 fournit des bookmarklets par thématique, et c'est l'outillage le plus direct
-pour un audit critère par critère, parce qu'ils sont organisés **comme le référentiel** et non
-comme une liste de bugs. Le relevé disponible dans `rgaa-formation/fiches-thematiques.md`
-mentionne, entre autres, `01 Images`, `02 Cadres`, `06 Liens`, `07.1 Scripts`, `07.5 Status`,
-`08 Langue et direction`, `08.9 Sémantique`, `09.2 12.6 Structure`, `09.3 Listes`,
-`09.4 Citations`, `10.x`, `11.1 Formulaires`, `11.5 Regroupements`, `11.13 Autocomplete`,
-`12.10 Raccourcis`, `13.3 Documents`, plus `0 Désactiver CSS` et `0 Forcer le focus`.
+La formation Access42 fournit un jeu de bookmarklets organisés **par thématique du
+référentiel**, et c'est l'outillage le plus direct pour un audit critère par critère :
+contrairement à un analyseur généraliste, ils suivent l'ordre dans lequel on remplit une grille
+d'audit, et non une liste de bugs. Ils ne sont pas reproduits ici, c'est de la matière de
+formation.
 
-Deux d'entre eux méritent d'être signalés parce qu'ils servent à tout :
+Deux gestes de cette famille sont des techniques universelles, qu'on peut faire avec n'importe
+quel outil, et ils servent à tout :
 
 - **désactiver les CSS** est le test de `10.1`, `10.2`, `10.3` et `10.6`, soit quatre critères
   d'un seul geste ;

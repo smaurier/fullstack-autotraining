@@ -1,8 +1,9 @@
 # Couverture RGAA du cours
 
 > **Fichier généré.** `node outils/criteres.mjs` depuis `25-html-css/`.
-> Référence : les 106 critères extraits de `rgaa-formation/index-criteres-slides.md`.
-> Le texte qui fait foi reste le référentiel officiel.
+> Référence : les 106 numéros de critères et les treize thématiques du RGAA.
+> Le texte qui fait foi est le référentiel officiel :
+> <https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/>
 
 **88 / 106 critères cités** par au moins un module.
 
@@ -17,24 +18,24 @@ _Aucun._
 Un cours HTML et CSS ne couvre pas tout le référentiel. Ces critères sont déclarés,
 avec leur raison, plutôt que passés sous silence.
 
-- `4.2` Transcription textuelle : Multimédia temporel : la transcription est une production de contenu, pas un geste de code. Hors périmètre d'un cours HTML et CSS.
-- `4.3` Sous-titres : Multimédia temporel : les sous-titres relèvent de la production du média. Le cours traite le balisage de <track>, pas la fabrication des pistes.
-- `4.5` Audiodescription : Multimédia temporel : l'audiodescription est une production audio.
-- `4.6` Audiodescription : Multimédia temporel : pertinence de l'audiodescription, même raison.
-- `4.7` Identification : Multimédia temporel : identification du média par un texte adjacent, relève de la rédaction de la page plutôt que d'un mécanisme.
-- `4.8` Média non temporel : Média non temporel : traité par le cours 26, modules 06 et 07, où l'alternative d'un graphique ou d'un canvas est le sujet central.
-- `4.9` Média non temporel : Média non temporel : voir cours 26, module 06.
-- `4.10`   : Multimédia temporel : contrôle du son déclenché automatiquement, relève du lecteur média.
-- `4.11` Média temporel compatible avec l’accessibilité : Multimédia temporel : compatibilité du lecteur, qui est un composant tiers (Able Player, Video.js) et non un geste du cours.
-- `4.12` Média non temporel : Média non temporel : voir cours 26, module 06.
-- `4.13` Média temporel compatible avec l’accessibilité / Média non temporel : Média non temporel et lecteur média : voir cours 26, module 06.
-- `12.1` Systèmes de navigation : Architecture d'information : le nombre de systèmes de navigation par ensemble de pages est une décision de conception de site, pas de page.
-- `12.2` Menu et barre de navigation : Architecture d'information : cohérence du menu entre les pages d'un ensemble, hors périmètre d'un cours de plateforme.
-- `12.3` Plan du site : Architecture d'information : existence et pertinence du plan du site.
-- `12.4` Recherche et plan du site : Architecture d'information : cohérence de la recherche entre les pages.
-- `12.5` Recherche et plan du site : Architecture d'information : cohérence du plan du site entre les pages.
-- `13.3` Documents bureautiques en téléchargement : Documents bureautiques en téléchargement : autre métier et autre outillage (PAC pour le PDF). Le cours traite le lien et son intitulé, pas l'accessibilité du document.
-- `13.4` Documents bureautiques en téléchargement : Documents bureautiques : alternative accessible d'un document, même raison que 13.3.
+- `4.2` (thème Multimédia) : Multimédia temporel : la transcription est une production de contenu, pas un geste de code. Hors périmètre d'un cours HTML et CSS.
+- `4.3` (thème Multimédia) : Multimédia temporel : les sous-titres relèvent de la production du média. Le cours traite le balisage de <track>, pas la fabrication des pistes.
+- `4.5` (thème Multimédia) : Multimédia temporel : l'audiodescription est une production audio.
+- `4.6` (thème Multimédia) : Multimédia temporel : pertinence de l'audiodescription, même raison.
+- `4.7` (thème Multimédia) : Multimédia temporel : identification du média par un texte adjacent, relève de la rédaction de la page plutôt que d'un mécanisme.
+- `4.8` (thème Multimédia) : Média non temporel : traité par le cours 26, modules 06 et 07, où l'alternative d'un graphique ou d'un canvas est le sujet central.
+- `4.9` (thème Multimédia) : Média non temporel : voir cours 26, module 06.
+- `4.10` (thème Multimédia) : Multimédia temporel : contrôle du son déclenché automatiquement, relève du lecteur média.
+- `4.11` (thème Multimédia) : Multimédia temporel : compatibilité du lecteur, qui est un composant tiers (Able Player, Video.js) et non un geste du cours.
+- `4.12` (thème Multimédia) : Média non temporel : voir cours 26, module 06.
+- `4.13` (thème Multimédia) : Média non temporel et lecteur média : voir cours 26, module 06.
+- `12.1` (thème Navigation) : Architecture d'information : le nombre de systèmes de navigation par ensemble de pages est une décision de conception de site, pas de page.
+- `12.2` (thème Navigation) : Architecture d'information : cohérence du menu entre les pages d'un ensemble, hors périmètre d'un cours de plateforme.
+- `12.3` (thème Navigation) : Architecture d'information : existence et pertinence du plan du site.
+- `12.4` (thème Navigation) : Architecture d'information : cohérence de la recherche entre les pages.
+- `12.5` (thème Navigation) : Architecture d'information : cohérence du plan du site entre les pages.
+- `13.3` (thème Consultation) : Documents bureautiques en téléchargement : autre métier et autre outillage (PAC pour le PDF). Le cours traite le lien et son intitulé, pas l'accessibilité du document.
+- `13.4` (thème Consultation) : Documents bureautiques : alternative accessible d'un document, même raison que 13.3.
 
 ## Critères couverts, et par quels modules
 

@@ -65,3 +65,14 @@ test("rendreMarkdownRgaa alerte en tête quand un critère inconnu est cité", (
   assert.match(md, /critère inventé/i);
   assert.match(md, /`42\.7`/);
 });
+
+test("les cles de metadonnees du fichier de reference ne sont pas des criteres", () => {
+  const reference = { _source: "url", _note: "texte", "1.1": {}, "9.1": {} };
+  const m = matriceCouverture(reference, { "01": ["1.1"] });
+
+  assert.deepEqual(m.nonCouverts, ["9.1"], "_source et _note ne doivent pas compter");
+
+  const md = rendreMarkdownRgaa(m, reference);
+  assert.match(md, /1 \/ 2 critères cités/);
+  assert.doesNotMatch(md, /_source|_note/);
+});

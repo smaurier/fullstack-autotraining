@@ -9,9 +9,10 @@
 //   node outils/criteres.mjs          # régénère couverture-rgaa.md
 //   node --test outils/test/criteres.test.mjs
 //
-// La référence est extraite de rgaa-formation/index-criteres-slides.md, qui liste les 106
-// critères. Elle n'est pas écrite de mémoire, et le script qui l'a produite refuse de
-// continuer si le compte n'est pas 106.
+// La référence (`criteres-rgaa.json`) ne contient que les NUMÉROS et les treize
+// thématiques officielles du RGAA, qui sont publics. Les libellés descriptifs ont été
+// volontairement retirés : ils provenaient de l'index d'un support de formation privé, et
+// ce dépôt est public. L'outil n'a besoin que des numéros.
 
 import { readFileSync, writeFileSync, existsSync, readdirSync } from "node:fs";
 import { dirname, join } from "node:path";
@@ -36,13 +37,23 @@ export function criteresCites(texte) {
  * @param {Record<string, object>} reference critère -> {sujet, theme}
  * @param {Record<string, string[]>} parModule module -> critères cités
  */
+/**
+ * Les clés commençant par un souligné sont des métadonnées du fichier de référence
+ * (`_source`, `_note`), pas des critères. Sans ce filtre, elles seraient comptées comme
+ * deux critères jamais couverts, et le total passerait de 106 à 108.
+ */
+function criteresDe(reference) {
+  return Object.keys(reference).filter((c) => !c.startsWith("_"));
+}
+
 export function matriceCouverture(reference, parModule) {
   const couverts = {};
   const inconnus = new Set();
+  const connus = new Set(criteresDe(reference));
 
   for (const [module, crits] of Object.entries(parModule)) {
     for (const c of crits) {
-      if (!(c in reference)) inconnus.add(c);
+      if (!connus.has(c)) inconnus.add(c);
       (couverts[c] ??= []).push(String(module));
     }
   }
@@ -52,7 +63,7 @@ export function matriceCouverture(reference, parModule) {
   // fichier. Un rapport d'audit doit être déterministe : on trie.
   for (const c of Object.keys(couverts)) couverts[c].sort();
 
-  const nonCouverts = Object.keys(reference).filter((c) => !(c in couverts));
+  const nonCouverts = criteresDe(reference).filter((c) => !(c in couverts));
   return { couverts, nonCouverts, inconnus: [...inconnus].sort() };
 }
 
@@ -71,8 +82,8 @@ function trier(criteres) {
  */
 export function rendreMarkdownRgaa(matrice, reference, horsPerimetre = {}) {
   const { couverts, nonCouverts, inconnus } = matrice;
-  const total = Object.keys(reference).length;
-  const cites = Object.keys(couverts).filter((c) => c in reference).length;
+  const total = criteresDe(reference).length;
+  const cites = Object.keys(couverts).filter((c) => c in reference && !c.startsWith("_")).length;
 
   const assumes = nonCouverts.filter((c) => c in horsPerimetre);
   const trous = nonCouverts.filter((c) => !(c in horsPerimetre));
@@ -81,8 +92,9 @@ export function rendreMarkdownRgaa(matrice, reference, horsPerimetre = {}) {
     "# Couverture RGAA du cours",
     "",
     "> **Fichier généré.** `node outils/criteres.mjs` depuis `25-html-css/`.",
-    "> Référence : les 106 critères extraits de `rgaa-formation/index-criteres-slides.md`.",
-    "> Le texte qui fait foi reste le référentiel officiel.",
+    "> Référence : les 106 numéros de critères et les treize thématiques du RGAA.",
+    "> Le texte qui fait foi est le référentiel officiel :",
+    "> <https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/>",
     "",
     `**${cites} / ${total} critères cités** par au moins un module.`,
     "",
@@ -103,7 +115,7 @@ export function rendreMarkdownRgaa(matrice, reference, horsPerimetre = {}) {
   lignes.push(
     trous.length > 0
       ? trier(trous)
-          .map((c) => `- \`${c}\` ${reference[c]?.theme ?? ""} : ${reference[c]?.sujet ?? ""}`)
+          .map((c) => `- \`${c}\` (thème ${reference[c]?.theme ?? "?"})`)
           .join("\n")
       : "_Aucun._",
     "",
@@ -116,14 +128,14 @@ export function rendreMarkdownRgaa(matrice, reference, horsPerimetre = {}) {
       "avec leur raison, plutôt que passés sous silence.",
       "",
       trier(assumes)
-        .map((c) => `- \`${c}\` ${reference[c]?.sujet ?? ""} : ${horsPerimetre[c]}`)
+        .map((c) => `- \`${c}\` (thème ${reference[c]?.theme ?? "?"}) : ${horsPerimetre[c]}`)
         .join("\n"),
       "",
     );
   }
 
   lignes.push("## Critères couverts, et par quels modules", "", "| Critère | Thème | Modules |", "|---|---|---|");
-  for (const c of trier(Object.keys(couverts).filter((x) => x in reference))) {
+  for (const c of trier(Object.keys(couverts).filter((x) => x in reference && !x.startsWith("_")))) {
     lignes.push(`| \`${c}\` | ${reference[c]?.theme ?? ""} | ${couverts[c].join(", ")} |`);
   }
 
@@ -153,9 +165,10 @@ function principal() {
     "utf8",
   );
 
-  const cites = Object.keys(matrice.couverts).filter((c) => c in reference).length;
+  const cites = Object.keys(matrice.couverts).filter((c) => c in reference && !c.startsWith("_")).length;
+  const totalReference = Object.keys(reference).filter((c) => !c.startsWith("_")).length;
   console.log(
-    `couverture-rgaa.md écrit : ${cites}/${Object.keys(reference).length} critères cités, ` +
+    `couverture-rgaa.md écrit : ${cites}/${totalReference} critères cités, ` +
       `${matrice.nonCouverts.length} non couverts`,
   );
 
