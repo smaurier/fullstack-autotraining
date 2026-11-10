@@ -38,13 +38,15 @@ tableaux, le mode récit, la scène.
 
 ## Pourquoi ce cours existe
 
-Le 09/11/2026, un croisement des enquêtes State of JS et State of React contre les 2 418
-fichiers du curriculum a classé les librairies de graphiques et d'animation en « bruit pour ton
-profil ». C'était faux, et Sylvain l'a corrigé : « les librairies de graphique et d'animations,
-je trouve ça important. J'aimerais approfondir ça aussi. »
+Il part d'un classement qui s'est révélé faux. Le 09/11/2026, un croisement des enquêtes State
+of JS et State of React contre les 2 418 fichiers de ce curriculum a rangé les librairies de
+graphiques et d'animation dans le bruit, au motif qu'elles ne servaient pas l'employabilité
+immédiate. Le critère était mauvais : il ignorait qu'un profil peut tenir précisément à
+l'hybridation entre technique et artistique, et que les projets concernés existaient déjà.
 
-C'est cohérent avec un profil qui tient précisément à l'hybridation entre technique et
-artistique, et avec les projets qui existent déjà : la série de tableaux WebGL, Nahual, R3F.
+C'est la leçon de méthode de ce cours, avant même son contenu : **le retour sur investissement
+à court terme n'est pas un critère de pertinence.** Il mesure la demande d'aujourd'hui, pas ce
+qui fait tenir un profil.
 
 Et il y a un angle que presque personne n'occupe : **la dataviz accessible**. Le module 06 est
 la raison d'être de ce cours.

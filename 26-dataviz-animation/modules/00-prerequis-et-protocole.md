@@ -22,9 +22,9 @@ savoir un graphique et une chorégraphie.
 La BIBLIOTHÈQUE du parcours est définie comme « aucun ordre, tirée par un besoin daté ». Ce
 cours y est, et c'est un choix, pas un rangement par défaut.
 
-La raison tient au plafond d'apprentissage : rien de nouveau n'entre dans les arcs avant que
-TypeScript, NestJS et PostgreSQL ne soient validés page blanche. Un cours en bibliothèque
-n'entre pas dans cet ordre : il s'ouvre quand un projet le tire. Ici, le projet existe déjà,
+La raison est une règle du parcours : rien de nouveau n'entre dans les arcs tant que le socle
+en cours n'est pas validé page blanche. Un cours en bibliothèque n'entre pas dans cet ordre,
+donc il ne le bouscule pas : il s'ouvre quand un projet le tire. Ici, le projet existe déjà,
 c'est Nahual et la série de tableaux.
 
 **Conséquence pratique :** tu peux prendre un module isolé sans suivre l'ordre, à deux
