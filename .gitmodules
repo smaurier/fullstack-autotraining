@@ -76,3 +76,6 @@
 [submodule "26-dataviz-animation"]
 	path = 26-dataviz-animation
 	url = https://github.com/smaurier/dataviz-animation-autotraining.git
+[submodule "24-design-craft"]
+	path = 24-design-craft
+	url = https://github.com/smaurier/design-craft-autotraining.git
